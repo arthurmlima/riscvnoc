@@ -37,10 +37,10 @@ module zcu104 (
 	output ledr_n,
 	output ledg_n,
 
-	input wire [30 : 0] i_read_message,	
+	input wire [31 : 0] i_read_message,	
 	output reg o_write_ack,
 	
-	output reg [30 : 0] o_write_message,
+	output reg [31 : 0] o_write_message,
 	input wire i_read_ack,
 
 
@@ -76,6 +76,7 @@ module zcu104 (
 	end
 
 	wire [7:0] leds;
+	assign leds = gpio;
 
 	assign led1 = leds[1];
 	assign led2 = leds[2];
@@ -103,13 +104,13 @@ module zcu104 (
 	
 	reg write_ack;
 	///
-	
-	assign i_write_ack = write_ack;
-	assign leds = gpio;
-	
 
-
-
+/*
+always @(posedge clk) 
+begin
+write_ack
+end
+*/
 always @(posedge clk) 
 begin
 	if (!reset_riscv) 
@@ -128,14 +129,14 @@ begin
 		    end
 			else if (iomem_valid && !iomem_ready && iomem_addr[31:24] == 8'h 04)  begin
 				iomem_ready <= 1;
-				iomem_rdata <= i_read_message;
-				if (iomem_wstrb[0]) write_ack <= iomem_wdata[0];
+				iomem_rdata <=  {i_read_message[31:1], iomem_wdata[0]};
+				if (iomem_wstrb[0]) o_write_ack <= iomem_wdata[0];
 
 			end	
 			else if (iomem_valid && !iomem_ready && iomem_addr[31:24] == 8'h 05) begin 
 				iomem_ready <= 1;
-				iomem_rdata <= {i_write_message, i_write_ack};
-				if (iomem_wstrb[0]) o_write_message[ 7: 1] <= iomem_wdata[ 7: 1];
+				iomem_rdata <= {o_write_message[31:1], i_read_ack};
+				if (iomem_wstrb[0]) o_write_message[ 7: 0] <= {iomem_wdata[ 7: 1],i_read_ack};
 				if (iomem_wstrb[1]) o_write_message[15: 8] <= iomem_wdata[15: 8];
 				if (iomem_wstrb[2]) o_write_message[23:16] <= iomem_wdata[23:16];
 				if (iomem_wstrb[3]) o_write_message[31:24] <= iomem_wdata[31:24];				

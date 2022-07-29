@@ -1,4 +1,4 @@
-19:30:59 **** Auto Build of project tes_bsp ****
+04:51:02 **** Build of project tes_bsp ****
 make -k all 
 "Running Make include in psu_cortexa53_0/libsrc/avbuf_v2_2/src"
 make -C psu_cortexa53_0/libsrc/avbuf_v2_2/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
@@ -148,5 +148,5 @@ make -C psu_cortexa53_0/libsrc/zdma_v1_7/src -s libs  "SHELL=CMD" "COMPILER=aarc
 "Compiling zdma"
 'Finished building libraries'
 
-19:31:42 Build Finished (took 42s.654ms)
+04:51:44 Build Finished (took 42s.115ms)
 
