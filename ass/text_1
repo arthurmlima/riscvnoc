@@ -1,0 +1,168 @@
+Address     Code        Basic                        Line Source
+
+0  0xfd010113  addi x2,x2,0xffffffd0        2            addi    sp,sp,-48
+4  0x02112623  sw x1,0x0000002c(x2)         3            sw      ra,44(sp)
+8  0x02812423  sw x8,0x00000028(x2)         4            sw      s0,40(sp)
+12  0x03010413  addi x8,x2,0x00000030        5            addi    s0,sp,48
+16  0x020007b7  lui x15,0x00002000           6            li      a5,33554432
+20  0x00078793  addi x15,x15,0                    
+24  0x00478793  addi x15,x15,4               7            addi    a5,a5,4
+28  0x36400713  addi x14,x0,0x00000364       8            li      a4,868
+32  0x00e7a023  sw x14,0(x15)                9            sw      a4,0(a5)
+36  0x000107b7  lui x15,16                   10           li      a5,65536
+40  0x00078793  addi x15,x15,0                    
+44  0x0007a023  sw x0,0(x15)                 11           sw      zero,0(a5)
+48  0x000107b7  lui x15,16                   13           li      a5,65536
+52  0x00078793  addi x15,x15,0                    
+56  0x0007a023  sw x0,0(x15)                 14           sw      zero,0(a5)
+60  0x000107b7  lui x15,16                   15           li      a5,65536
+64  0x00078793  addi x15,x15,0                    
+68  0x0007a783  lw x15,0(x15)                16           lw      a5,0(a5)
+72  0x00f00533  add x10,x0,x15               17           mv      a0,a5
+76  0x00000317  auipc x6,0                   18           call    send_message
+80  0x124300e7  jalr x1,x6,0x00000124             
+84  0xfe042623  sw x0,0xffffffec(x8)         19           sw      zero,-20(s0)
+88  0x0100006f  jal x0,0x00000010            20           j       .L2
+92  0xfec42783  lw x15,0xffffffec(x8)        22           lw      a5,-20(s0)
+96  0x00178793  addi x15,x15,1               23           addi    a5,a5,1
+100  0xfef42623  sw x15,0xffffffec(x8)        24           sw      a5,-20(s0)
+104  0xfec42703  lw x14,0xffffffec(x8)        26           lw      a4,-20(s0)
+108  0x000927b7  lui x15,0x00000092           27           li      a5,598016
+112  0x00078793  addi x15,x15,0                    
+116  0x7bf78793  addi x15,x15,0x000007bf      28           addi    a5,a5,1983
+120  0xfee7d2e3  bge x15,x14,0xffffffe4       29           ble     a4,a5,.L3
+124  0xfe042423  sw x0,0xffffffe8(x8)         30           sw      zero,-24(s0)
+128  0x0100006f  jal x0,0x00000010            31           j       .L4
+132  0xfe842783  lw x15,0xffffffe8(x8)        33           lw      a5,-24(s0)
+136  0x00178793  addi x15,x15,1               34           addi    a5,a5,1
+140  0xfef42423  sw x15,0xffffffe8(x8)        35           sw      a5,-24(s0)
+144  0xfe842703  lw x14,0xffffffe8(x8)        37           lw      a4,-24(s0)
+148  0x000927b7  lui x15,0x00000092           38           li      a5,598016
+152  0x00078793  addi x15,x15,0                    
+156  0x7bf78793  addi x15,x15,0x000007bf      39           addi    a5,a5,1983
+160  0xfee7d2e3  bge x15,x14,0xffffffe4       40           ble     a4,a5,.L5
+164  0xfe042223  sw x0,0xffffffe4(x8)         41           sw      zero,-28(s0)
+168  0x0100006f  jal x0,0x00000010            42           j       .L6
+172  0xfe442783  lw x15,0xffffffe4(x8)        44           lw      a5,-28(s0)
+176  0x00178793  addi x15,x15,1               45           addi    a5,a5,1
+180  0xfef42223  sw x15,0xffffffe4(x8)        46           sw      a5,-28(s0)
+184  0xfe442703  lw x14,0xffffffe4(x8)        48           lw      a4,-28(s0)
+188  0x000927b7  lui x15,0x00000092           49           li      a5,598016
+192  0x00078793  addi x15,x15,0                    
+196  0x7bf78793  addi x15,x15,0x000007bf      50           addi    a5,a5,1983
+200  0xfee7d2e3  bge x15,x14,0xffffffe4       51           ble     a4,a5,.L7
+204  0x000107b7  lui x15,16                   52           li      a5,65536
+208  0x00078793  addi x15,x15,0                    
+212  0x00f00713  addi x14,x0,15               53           li      a4,15
+216  0x00e7a023  sw x14,0(x15)                54           sw      a4,0(a5)
+220  0x000107b7  lui x15,16                   55           li      a5,65536
+224  0x00078793  addi x15,x15,0                    
+228  0x0007a783  lw x15,0(x15)                56           lw      a5,0(a5)
+232  0x00f00533  add x10,x0,x15               57           mv      a0,a5
+236  0x00000317  auipc x6,0                   58           call    send_message
+240  0x084300e7  jalr x1,x6,0x00000084             
+244  0xfe042023  sw x0,0xffffffe0(x8)         59           sw      zero,-32(s0)
+248  0x0100006f  jal x0,0x00000010            60           j       .L8
+252  0xfe042783  lw x15,0xffffffe0(x8)        62           lw      a5,-32(s0)
+256  0x00178793  addi x15,x15,1               63           addi    a5,a5,1
+260  0xfef42023  sw x15,0xffffffe0(x8)        64           sw      a5,-32(s0)
+264  0xfe042703  lw x14,0xffffffe0(x8)        66           lw      a4,-32(s0)
+268  0x000927b7  lui x15,0x00000092           67           li      a5,598016
+272  0x00078793  addi x15,x15,0                    
+276  0x7bf78793  addi x15,x15,0x000007bf      68           addi    a5,a5,1983
+280  0xfee7d2e3  bge x15,x14,0xffffffe4       69           ble     a4,a5,.L9
+284  0xfc042e23  sw x0,0xffffffdc(x8)         70           sw      zero,-36(s0)
+288  0x0100006f  jal x0,0x00000010            71           j       .L10
+292  0xfdc42783  lw x15,0xffffffdc(x8)        73           lw      a5,-36(s0)
+296  0x00178793  addi x15,x15,1               74           addi    a5,a5,1
+300  0xfcf42e23  sw x15,0xffffffdc(x8)        75           sw      a5,-36(s0)
+304  0xfdc42703  lw x14,0xffffffdc(x8)        77           lw      a4,-36(s0)
+308  0x000927b7  lui x15,0x00000092           78           li      a5,598016
+312  0x00078793  addi x15,x15,0                    
+316  0x7bf78793  addi x15,x15,0x000007bf      79           addi    a5,a5,1983
+320  0xfee7d2e3  bge x15,x14,0xffffffe4       80           ble     a4,a5,.L11
+324  0xfc042c23  sw x0,0xffffffd8(x8)         81           sw      zero,-40(s0)
+328  0x0100006f  jal x0,0x00000010            82           j       .L12
+332  0xfd842783  lw x15,0xffffffd8(x8)        84           lw      a5,-40(s0)
+336  0x00178793  addi x15,x15,1               85           addi    a5,a5,1
+340  0xfcf42c23  sw x15,0xffffffd8(x8)        86           sw      a5,-40(s0)
+344  0xfd842703  lw x14,0xffffffd8(x8)        88           lw      a4,-40(s0)
+348  0x000927b7  lui x15,0x00000092           89           li      a5,598016
+352  0x00078793  addi x15,x15,0                    
+356  0x7bf78793  addi x15,x15,0x000007bf      90           addi    a5,a5,1983
+360  0xfee7d2e3  bge x15,x14,0xffffffe4       91           ble     a4,a5,.L13
+364  0xec5ff06f  jal x0,0xfffffec4            92           j       .L14
+368  0xfe010113  addi x2,x2,0xffffffe0        94           addi    sp,sp,-32
+372  0x00812e23  sw x8,28(x2)                 95           sw      s0,28(sp)
+376  0x02010413  addi x8,x2,0x00000020        96           addi    s0,sp,32
+380  0xfea42623  sw x10,0xffffffec(x8)        97           sw      a0,-20(s0)
+384  0x050007b7  lui x15,0x00005000           98           li      a5,83886080
+388  0x00078793  addi x15,x15,0                    
+392  0xfec42703  lw x14,0xffffffec(x8)        99           lw      a4,-20(s0)
+396  0x00171713  slli x14,x14,1               100          slli    a4,a4,1
+400  0x00e7a023  sw x14,0(x15)                101          sw      a4,0(a5)
+404  0xfec42783  lw x15,0xffffffec(x8)        102          lw      a5,-20(s0)
+408  0x0017e793  ori x15,x15,1                103          ori     a5,a5,1
+412  0xfef42623  sw x15,0xffffffec(x8)        104          sw      a5,-20(s0)
+416  0x00000013  addi x0,x0,0                 105          nop
+420  0x01c12403  lw x8,28(x2)                 106          lw      s0,28(sp)
+424  0x02010113  addi x2,x2,0x00000020        107          addi    sp,sp,32
+428  0x00008067  jalr x0,x1,0                 108          jr      ra
+432  0xff010113  addi x2,x2,0xfffffff0        110          addi    sp,sp,-16
+436  0x00812623  sw x8,12(x2)                 111          sw      s0,12(sp)
+440  0x01010413  addi x8,x2,16                112          addi    s0,sp,16
+444  0x040007b7  lui x15,0x00004000           113          li      a5,67108864
+448  0x00078793  addi x15,x15,0                    
+452  0x0007a703  lw x14,0(x15)                114          lw      a4,0(a5)
+456  0x000107b7  lui x15,16                   115          li      a5,65536
+460  0x00078793  addi x15,x15,0                    
+464  0x00175713  srli x14,x14,1               116          srli    a4,a4,1
+468  0x00e7a023  sw x14,0(x15)                117          sw      a4,0(a5)
+472  0x00000013  addi x0,x0,0                 118          nop
+476  0x00c12403  lw x8,12(x2)                 119          lw      s0,12(sp)
+480  0x01010113  addi x2,x2,16                120          addi    sp,sp,16
+484  0x00008067  jalr x0,x1,0                 121          jr      ra
+488  0xfe010113  addi x2,x2,0xffffffe0        123          addi    sp,sp,-32
+492  0x00112e23  sw x1,28(x2)                 124          sw      ra,28(sp)
+496  0x00812c23  sw x8,24(x2)                 125          sw      s0,24(sp)
+500  0x02010413  addi x8,x2,0x00000020        126          addi    s0,sp,32
+504  0x00a007b3  add x15,x0,x10               127          mv      a5,a0
+508  0xfef407a3  sb x15,0xffffffef(x8)        128          sb      a5,-17(s0)
+512  0xfef44703  lbu x14,0xffffffef(x8)       129          lbu     a4,-17(s0)
+516  0x00a00793  addi x15,x0,10               130          li      a5,10
+520  0x00f71863  bne x14,x15,0x00000010       131          bne     a4,a5,.L18
+524  0x00d00513  addi x10,x0,13               132          li      a0,13
+528  0x00000317  auipc x6,0                   133          call    putchar
+532  0xfd8300e7  jalr x1,x6,0xffffffd8             
+536  0x020007b7  lui x15,0x00002000           135          li      a5,33554432
+540  0x00078793  addi x15,x15,0                    
+544  0x00878793  addi x15,x15,8               136          addi    a5,a5,8
+548  0xfef44703  lbu x14,0xffffffef(x8)       137          lbu     a4,-17(s0)
+552  0x00e7a023  sw x14,0(x15)                138          sw      a4,0(a5)
+556  0x00000013  addi x0,x0,0                 139          nop
+560  0x01c12083  lw x1,28(x2)                 140          lw      ra,28(sp)
+564  0x01812403  lw x8,24(x2)                 141          lw      s0,24(sp)
+568  0x02010113  addi x2,x2,0x00000020        142          addi    sp,sp,32
+572  0x00008067  jalr x0,x1,0                 143          jr      ra
+576  0xfe010113  addi x2,x2,0xffffffe0        145          addi    sp,sp,-32
+580  0x00112e23  sw x1,28(x2)                 146          sw      ra,28(sp)
+584  0x00812c23  sw x8,24(x2)                 147          sw      s0,24(sp)
+588  0x02010413  addi x8,x2,0x00000020        148          addi    s0,sp,32
+592  0xfea42623  sw x10,0xffffffec(x8)        149          sw      a0,-20(s0)
+596  0x0200006f  jal x0,0x00000020            150          j       .L20
+600  0xfec42783  lw x15,0xffffffec(x8)        152          lw      a5,-20(s0)
+604  0x00178713  addi x14,x15,1               153          addi    a4,a5,1
+608  0xfee42623  sw x14,0xffffffec(x8)        154          sw      a4,-20(s0)
+612  0x0007c783  lbu x15,0(x15)               155          lbu     a5,0(a5)
+616  0x00f00533  add x10,x0,x15               156          mv      a0,a5
+620  0x00000317  auipc x6,0                   157          call    putchar
+624  0xf7c300e7  jalr x1,x6,0xffffff7c             
+628  0xfec42783  lw x15,0xffffffec(x8)        159          lw      a5,-20(s0)
+632  0x0007c783  lbu x15,0(x15)               160          lbu     a5,0(a5)
+636  0xfc079ee3  bne x15,x0,0xffffffdc        161          bne     a5,zero,.L21
+640  0x00000013  addi x0,x0,0                 162          nop
+644  0x00000013  addi x0,x0,0                 163          nop
+648  0x01c12083  lw x1,28(x2)                 164          lw      ra,28(sp)
+652  0x01812403  lw x8,24(x2)                 165          lw      s0,24(sp)
+656  0x02010113  addi x2,x2,0x00000020        166          addi    sp,sp,32
+660  0x00008067  jalr x0,x1,0                 167          jr      ra

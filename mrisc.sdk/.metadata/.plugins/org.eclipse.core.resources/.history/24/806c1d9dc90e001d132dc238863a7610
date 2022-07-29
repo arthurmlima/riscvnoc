@@ -1,0 +1,579 @@
+#include <stdio.h>
+#include "platform.h"
+#include "sleep.h"
+#include <stdlib.h>
+
+
+#include "xparameters.h"
+#include "xil_printf.h"
+#include "xil_types.h"
+
+enum {
+	VIS_OK,
+	VIS_ERROR
+};
+
+#define VIS_BASE_ADDRESS_0	XPAR_ZCU104_0_BASEADDR
+#define VIS_BASE_ADDRESS_1	XPAR_ZCU104_1_BASEADDR
+
+typedef struct
+{
+	volatile u32 ADDR;
+	volatile u32 DIN;
+	volatile u32 DOUT;
+	volatile u32 RST;
+} Vis_AxiStruct;
+
+#define VIS_AXI_0				((Vis_AxiStruct *)VIS_BASE_ADDRESS_0)
+#define VIS_AXI_1				((Vis_AxiStruct *)VIS_BASE_ADDRESS_1)
+
+/* General Purpose Register - Control Bits */
+#define VIS_AXI_EN			((u32 )0x00000001)
+#define VIS_AXI_WEN			((u32 )0x0000001E) // HABILITA TUDO
+
+/* General Purpose Register - Status Bits */
+#define VIS_AXI_OK			((u32 )0x00100000)
+
+/* Address Register */
+#define VIS_AXI_ADR			((u32)0x000FFFE0)
+#define VIS_AXI_ADR_SHIFT	0UL
+#define VIS_AXI_ADR_MASK	((u32)0xFFFFFFFF)
+
+/* Data In Register */
+#define VIS_AXI_DTI			((u32)0x00000001)
+#define VIS_AXI_DTI_SHIFT	0UL
+#define VIS_AXI_DTI_MASK	((u32)0xFFFFFFFF)
+
+/* Data Out Register */
+#define VIS_AXI_DTO			((u32)0x00000001)
+#define VIS_AXI_DTO_SHIFT	0UL
+#define VIS_AXI_DTO_MASK	((u32)0xFFFFFFFF)
+
+u32 program_0[155]=
+{
+		0xfd010113,
+		0x02112623,
+		0x02812423,
+		0x03010413,
+		0x020007b7,
+		0x00078793,
+		0x00478793,
+		0x36400713,
+		0x00e7a023,
+		0x000107b7,
+		0x00078793,
+		0x0007a023,
+		0xfe042623,
+		0x0100006f,
+		0xfec42783,
+		0x00178793,
+		0xfef42623,
+		0xfec42703,
+		0x000927b7,
+		0x00078793,
+		0x7bf78793,
+		0xfee7d2e3,
+		0xfe042423,
+		0x0100006f,
+		0xfe842783,
+		0x00178793,
+		0xfef42423,
+		0xfe842703,
+		0x000927b7,
+		0x00078793,
+		0x7bf78793,
+		0xfee7d2e3,
+		0xfe042223,
+		0x0100006f,
+		0xfe442783,
+		0x00178793,
+		0xfef42223,
+		0xfe442703,
+		0x000927b7,
+		0x00078793,
+		0x7bf78793,
+		0xfee7d2e3,
+		0x00000317,
+		0x0dc300e7,
+		0x00010737,
+		0x00070713,
+		0x030007b7,
+		0x00078793,
+		0x00072703,
+		0x00e7a023,
+		0xfe042023,
+		0x0100006f,
+		0xfe042783,
+		0x00178793,
+		0xfef42023,
+		0xfe042703,
+		0x000927b7,
+		0x00078793,
+		0x7bf78793,
+		0xfee7d2e3,
+		0xfc042e23,
+		0x0100006f,
+		0xfdc42783,
+		0x00178793,
+		0xfcf42e23,
+		0xfdc42703,
+		0x000927b7,
+		0x00078793,
+		0x7bf78793,
+		0xfee7d2e3,
+		0xfc042c23,
+		0x0100006f,
+		0xfd842783,
+		0x00178793,
+		0xfcf42c23,
+		0xfd842703,
+		0x000927b7,
+		0x00078793,
+		0x7bf78793,
+		0xfee7d2e3,
+		0xef1ff06f,
+		0xfe010113,
+		0x00812e23,
+		0x02010413,
+		0xfea42623,
+		0x050007b7,
+		0x00078793,
+		0xfec42703,
+		0x00171713,
+		0x00e7a023,
+		0xfec42783,
+		0x0017e793,
+		0xfef42623,
+		0x00000013,
+		0x01c12403,
+		0x02010113,
+		0x00008067,
+		0xff010113,
+		0x00812623,
+		0x01010413,
+		0x040007b7,
+		0x00078793,
+		0x0007a703,
+		0x000107b7,
+		0x00078793,
+		0x00175713,
+		0x00e7a023,
+		0x00000013,
+		0x00c12403,
+		0x01010113,
+		0x00008067,
+		0xfe010113,
+		0x00112e23,
+		0x00812c23,
+		0x02010413,
+		0x00a007b3,
+		0xfef407a3,
+		0xfef44703,
+		0x00a00793,
+		0x00f71863,
+		0x00d00513,
+		0x00000317,
+		0xfd8300e7,
+		0x020007b7,
+		0x00078793,
+		0x00878793,
+		0xfef44703,
+		0x00e7a023,
+		0x00000013,
+		0x01c12083,
+		0x01812403,
+		0x02010113,
+		0x00008067,
+		0xfe010113,
+		0x00112e23,
+		0x00812c23,
+		0x02010413,
+		0xfea42623,
+		0x0200006f,
+		0xfec42783,
+		0x00178713,
+		0xfee42623,
+		0x0007c783,
+		0x00f00533,
+		0x00000317,
+		0xf7c300e7,
+		0xfec42783,
+		0x0007c783,
+		0xfc079ee3,
+		0x00000013,
+		0x00000013,
+		0x01c12083,
+		0x01812403,
+		0x02010113,
+		0x00008067,
+};
+
+u32 data_0[48]=
+{
+		0x2020000a,
+		0x5f5f5f5f,
+		0x205f2020,
+		0x20202020,
+		0x20202020,
+		0x5f5f5f20,
+		0x2020205f,
+		0x20202020,
+		0x5f5f2020,
+		0x000a5f5f,
+		0x20207c20,
+		0x285c205f,
+		0x5f20295f,
+		0x5f205f5f,
+		0x202f5f5f,
+		0x7c5f5f5f,
+		0x5f5f2020,
+		0x2f20205f,
+		0x5f5f5f20,
+		0x20000a7c,
+		0x5f7c207c,
+		0x207c2029,
+		0x5f202f7c,
+		0x5f202f5f,
+		0x5f5f5c20,
+		0x205c205f,
+		0x205f202f,
+		0x7c207c5c,
+		0x7c20000a,
+		0x5f5f2020,
+		0x7c207c2f,
+		0x7c5f2820,
+		0x295f2820,
+		0x5f5f7c20,
+		0x207c2029,
+		0x20295f28,
+		0x5f7c207c,
+		0x000a5f5f,
+		0x7c5f7c20,
+		0x7c202020,
+		0x5f5c7c5f,
+		0x5f5c5f5f,
+		0x5f2f5f5f,
+		0x2f5f5f5f,
+		0x5f5f5c20,
+		0x5c202f5f,
+		0x5f5f5f5f,
+		0x00000a7c,
+};
+u32 program_1[166]=
+{
+		0xfd010113,
+		0x02112623,
+		0x02812423,
+		0x03010413,
+		0x020007b7,
+		0x00078793,
+		0x00478793,
+		0x36400713,
+		0x00e7a023,
+		0x000107b7,
+		0x00078793,
+		0x0007a023,
+		0x000107b7,
+		0x00078793,
+		0x0007a023,
+		0x000107b7,
+		0x00078793,
+		0x0007a783,
+		0x00f00533,
+		0x00000317,
+		0x124300e7,
+		0xfe042623,
+		0x0100006f,
+		0xfec42783,
+		0x00178793,
+		0xfef42623,
+		0xfec42703,
+		0x000927b7,
+		0x00078793,
+		0x7bf78793,
+		0xfee7d2e3,
+		0xfe042423,
+		0x0100006f,
+		0xfe842783,
+		0x00178793,
+		0xfef42423,
+		0xfe842703,
+		0x000927b7,
+		0x00078793,
+		0x7bf78793,
+		0xfee7d2e3,
+		0xfe042223,
+		0x0100006f,
+		0xfe442783,
+		0x00178793,
+		0xfef42223,
+		0xfe442703,
+		0x000927b7,
+		0x00078793,
+		0x7bf78793,
+		0xfee7d2e3,
+		0x000107b7,
+		0x00078793,
+		0x0007a783,
+		0x00f00533,
+		0x00000317,
+		0x094300e7,
+		0x000107b7,
+		0x00078793,
+		0x00700713,
+		0x00e7a023,
+		0xfe042023,
+		0x0100006f,
+		0xfe042783,
+		0x00178793,
+		0xfef42023,
+		0xfe042703,
+		0x000927b7,
+		0x00078793,
+		0x7bf78793,
+		0xfee7d2e3,
+		0xfc042e23,
+		0x0100006f,
+		0xfdc42783,
+		0x00178793,
+		0xfcf42e23,
+		0xfdc42703,
+		0x000927b7,
+		0x00078793,
+		0x7bf78793,
+		0xfee7d2e3,
+		0xfc042c23,
+		0x0100006f,
+		0xfd842783,
+		0x00178793,
+		0xfcf42c23,
+		0xfd842703,
+		0x000927b7,
+		0x00078793,
+		0x7bf78793,
+		0xfee7d2e3,
+		0xec5ff06f,
+		0xfe010113,
+		0x00812e23,
+		0x02010413,
+		0xfea42623,
+		0x050007b7,
+		0x00078793,
+		0xfec42703,
+		0x00171713,
+		0x00e7a023,
+		0xfec42783,
+		0x0017e793,
+		0xfef42623,
+		0x00000013,
+		0x01c12403,
+		0x02010113,
+		0x00008067,
+		0xff010113,
+		0x00812623,
+		0x01010413,
+		0x040007b7,
+		0x00078793,
+		0x0007a703,
+		0x000107b7,
+		0x00078793,
+		0x00175713,
+		0x00e7a023,
+		0x00000013,
+		0x00c12403,
+		0x01010113,
+		0x00008067,
+		0xfe010113,
+		0x00112e23,
+		0x00812c23,
+		0x02010413,
+		0x00a007b3,
+		0xfef407a3,
+		0xfef44703,
+		0x00a00793,
+		0x00f71863,
+		0x00d00513,
+		0x00000317,
+		0xfd8300e7,
+		0x020007b7,
+		0x00078793,
+		0x00878793,
+		0xfef44703,
+		0x00e7a023,
+		0x00000013,
+		0x01c12083,
+		0x01812403,
+		0x02010113,
+		0x00008067,
+		0xfe010113,
+		0x00112e23,
+		0x00812c23,
+		0x02010413,
+		0xfea42623,
+		0x0200006f,
+		0xfec42783,
+		0x00178713,
+		0xfee42623,
+		0x0007c783,
+		0x00f00533,
+		0x00000317,
+		0xf7c300e7,
+		0xfec42783,
+		0x0007c783,
+		0xfc079ee3,
+		0x00000013,
+		0x00000013,
+		0x01c12083,
+		0x01812403,
+		0x02010113,
+		0x00008067,
+};
+
+u32 data_1[48]=
+{
+		0x2020000a,
+		0x5f5f5f5f,
+		0x205f2020,
+		0x20202020,
+		0x20202020,
+		0x5f5f5f20,
+		0x2020205f,
+		0x20202020,
+		0x5f5f2020,
+		0x000a5f5f,
+		0x20207c20,
+		0x285c205f,
+		0x5f20295f,
+		0x5f205f5f,
+		0x202f5f5f,
+		0x7c5f5f5f,
+		0x5f5f2020,
+		0x2f20205f,
+		0x5f5f5f20,
+		0x20000a7c,
+		0x5f7c207c,
+		0x207c2029,
+		0x5f202f7c,
+		0x5f202f5f,
+		0x5f5f5c20,
+		0x205c205f,
+		0x205f202f,
+		0x7c207c5c,
+		0x7c20000a,
+		0x5f5f2020,
+		0x7c207c2f,
+		0x7c5f2820,
+		0x295f2820,
+		0x5f5f7c20,
+		0x207c2029,
+		0x20295f28,
+		0x5f7c207c,
+		0x000a5f5f,
+		0x7c5f7c20,
+		0x7c202020,
+		0x5f5c7c5f,
+		0x5f5c5f5f,
+		0x5f2f5f5f,
+		0x2f5f5f5f,
+		0x5f5f5c20,
+		0x5c202f5f,
+		0x5f5f5f5f,
+		0x00000a7c,
+};
+
+int main()
+{
+
+    init_platform();
+
+    FILE *f;
+    int i=0,rv;
+
+for(int i=0; i < sizeof(program_0)/sizeof(program_0[0]);i++)
+{
+	VIS_AXI_0->DIN = (u32 ) program_0[i];
+	VIS_AXI_0->ADDR |= VIS_AXI_WEN ;
+	VIS_AXI_0->ADDR |= ((u32)i << 5);
+
+	VIS_AXI_0->ADDR |= VIS_AXI_EN ; // Gatilho do enable por ultimo
+
+   while(!(VIS_AXI_0->ADDR & VIS_AXI_OK))
+   {
+    	__asm("nop");
+   }
+   VIS_AXI_0->ADDR =0;
+}
+u32 j=0x2000/4;
+for(int i=0; i< sizeof(data_0)/sizeof(data_0[0]);i++)
+{
+    VIS_AXI_0->DIN = (u32 ) data_0[i];
+    VIS_AXI_0->ADDR |= VIS_AXI_WEN ;
+    VIS_AXI_0->ADDR |= ((u32)j << 5);
+
+    VIS_AXI_0->ADDR |= VIS_AXI_EN ; // Gatilho do enable por ultimo
+
+   while(!(VIS_AXI_0->ADDR & VIS_AXI_OK)){
+   __asm("nop");
+   }
+   VIS_AXI_0->ADDR =0;
+   j++;
+}
+
+
+
+for(int i=0; i < sizeof(program_1)/sizeof(program_1[0]);i++)
+{
+	VIS_AXI_1->DIN = (u32 ) program_1[i];
+	VIS_AXI_1->ADDR |= VIS_AXI_WEN ;
+	VIS_AXI_1->ADDR |= ((u32)i << 5);
+
+	VIS_AXI_1->ADDR |= VIS_AXI_EN ; // Gatilho do enable por ultimo
+
+   while(!(VIS_AXI_1->ADDR & VIS_AXI_OK))
+   {
+    	__asm("nop");
+   }
+   VIS_AXI_1->ADDR =0;
+}
+
+
+j=0x2000/4;
+for(int i=0; i< sizeof(data_1)/sizeof(data_1[0]);i++)
+{
+    VIS_AXI_1->DIN = (u32 ) data_1[i];
+    VIS_AXI_1->ADDR |= VIS_AXI_WEN ;
+    VIS_AXI_1->ADDR |= ((u32)j << 5);
+
+    VIS_AXI_1->ADDR |= VIS_AXI_EN ; // Gatilho do enable por ultimo
+
+   while(!(VIS_AXI_1->ADDR & VIS_AXI_OK)){
+   __asm("nop");
+   }
+   VIS_AXI_1->ADDR =0;
+   j++;
+}
+
+
+
+
+
+
+	VIS_AXI_0->RST=0;
+	VIS_AXI_1->RST=0;
+    usleep(50);
+
+    while(1)
+    {
+   	VIS_AXI_0->RST = 1;
+   	VIS_AXI_1->RST = 1;
+    }
+
+
+
+
+
+
+
+    cleanup_platform();
+    return 0;
+}

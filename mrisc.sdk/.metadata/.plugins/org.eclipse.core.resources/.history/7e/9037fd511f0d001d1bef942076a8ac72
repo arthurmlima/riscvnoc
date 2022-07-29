@@ -1,0 +1,192 @@
+#include <stdio.h>
+#include "platform.h"
+#include "sleep.h"
+#include <stdlib.h>
+
+
+#include "xparameters.h"
+#include "xil_printf.h"
+#include "xil_types.h"
+
+enum {
+	VIS_OK,
+	VIS_ERROR
+};
+
+#define VIS_BASE_ADDRESS	XPAR_ZCU104_0_BASEADDR
+
+typedef struct
+{
+	volatile u32 ADDR;
+	volatile u32 DIN;
+	volatile u32 DOUT;
+	volatile u32 RST;
+} Vis_AxiStruct;
+
+#define VIS_AXI				((Vis_AxiStruct *)VIS_BASE_ADDRESS)
+
+/* General Purpose Register - Control Bits */
+#define VIS_AXI_EN			((u32 )0x00000001)
+#define VIS_AXI_WEN			((u32 )0x0000001E) // HABILITA TUDO
+
+/* General Purpose Register - Status Bits */
+#define VIS_AXI_OK			((u32 )0x00100000)
+
+/* Address Register */
+#define VIS_AXI_ADR			((u32)0x000FFFE0)
+#define VIS_AXI_ADR_SHIFT	0UL
+#define VIS_AXI_ADR_MASK	((u32)0xFFFFFFFF)
+
+/* Data In Register */
+#define VIS_AXI_DTI			((u32)0x00000001)
+#define VIS_AXI_DTI_SHIFT	0UL
+#define VIS_AXI_DTI_MASK	((u32)0xFFFFFFFF)
+
+/* Data Out Register */
+#define VIS_AXI_DTO			((u32)0x00000001)
+#define VIS_AXI_DTO_SHIFT	0UL
+#define VIS_AXI_DTO_MASK	((u32)0xFFFFFFFF)
+
+int main()
+{
+
+    init_platform();
+
+    FILE *f;
+    int i=0,rv;
+    u32 program[91]=
+    {
+    		0xfe010113,
+    		0x00112e23,
+    		0x00812c23,
+    		0x02010413,
+    		0x00000533,
+    		0xfea42a23,
+    		0x000185b7,
+    		0xfeb42823,
+    		0xfea42623,
+    		0x0040006f,
+    		0xff042583,
+    		0x00000533,
+    		0x00a5a023,
+    		0xfea42623,
+    		0x0040006f,
+    		0xfec42503,
+    		0x00655593,
+    		0x27000513,
+    		0x00b56e63,
+    		0x0040006f,
+    		0x0040006f,
+    		0xfec42503,
+    		0x00150513,
+    		0xfea42623,
+    		0xfddff06f,
+    		0xff042583,
+    		0x00100513,
+    		0x00a5a023,
+    		0x00000533,
+    		0xfea42623,
+    		0x0040006f,
+    		0xfec42503,
+    		0x00655593,
+    		0x27000513,
+    		0x00b56e63,
+    		0x0040006f,
+    		0x0040006f,
+    		0xfec42503,
+    		0x00150513,
+    		0xfea42623,
+    		0xfddff06f,
+    		0xff042583,
+    		0x00300513,
+    		0x00a5a023,
+    		0x00000533,
+    		0xfea42623,
+    		0x0040006f,
+    		0xfec42503,
+    		0x00655593,
+    		0x27000513,
+    		0x00b56e63,
+    		0x0040006f,
+    		0x0040006f,
+    		0xfec42503,
+    		0x00150513,
+    		0xfea42623,
+    		0xfddff06f,
+    		0xff042583,
+    		0x00700513,
+    		0x00a5a023,
+    		0x00000533,
+    		0xfea42623,
+    		0x0040006f,
+    		0xfec42503,
+    		0x00655593,
+    		0x27000513,
+    		0x00b56e63,
+    		0x0040006f,
+    		0x0040006f,
+    		0xfec42503,
+    		0x00150513,
+    		0xfea42623,
+    		0xfddff06f,
+    		0xff042583,
+    		0x00f00513,
+    		0x00a5a023,
+    		0x00000533,
+    		0xfea42623,
+    		0x0040006f,
+    		0xfec42503,
+    		0x00655593,
+    		0x27000513,
+    		0x00b56e63,
+    		0x0040006f,
+    		0x0040006f,
+    		0xfec42503,
+    		0x00150513,
+    		0xfea42623,
+    		0xfddff06f,
+    		0xec5ff06f,
+
+    };
+
+
+
+
+
+
+for(int i=0;i<92;i++)
+{
+    VIS_AXI->DIN = (u32 ) program[i];
+    VIS_AXI->ADDR |= VIS_AXI_WEN ;
+    VIS_AXI->ADDR |= ((u32)i << 5);
+
+    VIS_AXI->ADDR |= VIS_AXI_EN ; // Gatilho do enable por ultimo
+
+   while(!(VIS_AXI->ADDR & VIS_AXI_OK)){
+    	__asm("nop");
+   }
+    VIS_AXI->ADDR =0;
+}
+
+
+
+
+
+
+    VIS_AXI->RST=0;
+    usleep(50);
+
+
+    while(1){
+    VIS_AXI->RST = 1;
+    }
+
+
+
+
+
+
+
+    cleanup_platform();
+    return 0;
+}
