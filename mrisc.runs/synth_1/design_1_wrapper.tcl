@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 3
 set_msg_config -id {HDL-1065} -limit 10000
 create_project -in_memory -part xczu7ev-ffvc1156-2-e
 

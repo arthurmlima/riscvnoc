@@ -5,8 +5,7 @@
       "device": "xczu7ev-ffvc1156-2-e",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2019.1",
-      "validated": "true"
+      "tool_version": "2019.1"
     },
     "design_tree": {
       "zynq_ultra_ps_e_0": "",
@@ -46,17 +45,7 @@
       },
       "reset_riscv_0": {
         "type": "rst",
-        "direction": "O",
-        "parameters": {
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "POLARITY": {
-            "value": "ACTIVE_LOW",
-            "value_src": "default"
-          }
-        }
+        "direction": "O"
       },
       "ser_rx_0": {
         "direction": "I"
@@ -1046,16 +1035,16 @@
               }
             },
             "interface_nets": {
-              "auto_pc_to_s00_couplers": {
-                "interface_ports": [
-                  "M_AXI",
-                  "auto_pc/M_AXI"
-                ]
-              },
               "s00_couplers_to_auto_pc": {
                 "interface_ports": [
                   "S_AXI",
                   "auto_pc/S_AXI"
+                ]
+              },
+              "auto_pc_to_s00_couplers": {
+                "interface_ports": [
+                  "M_AXI",
+                  "auto_pc/M_AXI"
                 ]
               }
             },
@@ -1282,17 +1271,9 @@
                 "value": "0",
                 "value_src": "constant"
               },
-              "CLK_DOMAIN": {
-                "value": "design_1_zynq_ultra_ps_e_0_0_pl_clk0",
-                "value_src": "default_prop"
-              },
               "DATA_WIDTH": {
                 "value": "32",
                 "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
               },
               "HAS_BRESP": {
                 "value": "1",
@@ -1468,21 +1449,7 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_BUSIF": {
-                "value": "s00_axi",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_zynq_ultra_ps_e_0_0_pl_clk0",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              }
-            }
+            "direction": "I"
           },
           "reset_riscv": {
             "type": "rst",
@@ -1490,31 +1457,11 @@
           },
           "s00_axi_aclk": {
             "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "s00_axi_aresetn",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_zynq_ultra_ps_e_0_0_pl_clk0",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              }
-            }
+            "direction": "I"
           },
           "s00_axi_aresetn": {
             "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "constant"
-              }
-            }
+            "direction": "I"
           },
           "ser_tx": {
             "direction": "O"
@@ -1543,20 +1490,68 @@
           "ledg_n": {
             "direction": "O"
           },
-          "i_read_message": {
+          "in_router_out_n_data": {
             "direction": "I",
-            "left": "31",
+            "left": "63",
             "right": "0"
           },
-          "o_write_ack": {
+          "in_router_out_s_data": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "in_router_out_e_data": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "in_router_out_w_data": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "out_router_in_n_data": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "out_router_in_s_data": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "out_router_in_e_data": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "out_router_in_w_data": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "out_router_in_n_ack": {
             "direction": "O"
           },
-          "o_write_message": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
+          "out_router_in_s_ack": {
+            "direction": "O"
           },
-          "i_read_ack": {
+          "out_router_in_e_ack": {
+            "direction": "O"
+          },
+          "out_router_in_w_ack": {
+            "direction": "O"
+          },
+          "in_router_out_n_ack": {
+            "direction": "I"
+          },
+          "in_router_out_s_ack": {
+            "direction": "I"
+          },
+          "in_router_out_e_ack": {
+            "direction": "I"
+          },
+          "in_router_out_w_ack": {
             "direction": "I"
           }
         }
@@ -1591,17 +1586,9 @@
                 "value": "0",
                 "value_src": "constant"
               },
-              "CLK_DOMAIN": {
-                "value": "design_1_zynq_ultra_ps_e_0_0_pl_clk0",
-                "value_src": "default_prop"
-              },
               "DATA_WIDTH": {
                 "value": "32",
                 "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
               },
               "HAS_BRESP": {
                 "value": "1",
@@ -1777,21 +1764,7 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_BUSIF": {
-                "value": "s00_axi",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_zynq_ultra_ps_e_0_0_pl_clk0",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              }
-            }
+            "direction": "I"
           },
           "reset_riscv": {
             "type": "rst",
@@ -1799,31 +1772,11 @@
           },
           "s00_axi_aclk": {
             "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "s00_axi_aresetn",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_zynq_ultra_ps_e_0_0_pl_clk0",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              }
-            }
+            "direction": "I"
           },
           "s00_axi_aresetn": {
             "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "constant"
-              }
-            }
+            "direction": "I"
           },
           "ser_tx": {
             "direction": "O"
@@ -1852,20 +1805,68 @@
           "ledg_n": {
             "direction": "O"
           },
-          "i_read_message": {
+          "in_router_out_n_data": {
             "direction": "I",
-            "left": "31",
+            "left": "63",
             "right": "0"
           },
-          "o_write_ack": {
+          "in_router_out_s_data": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "in_router_out_e_data": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "in_router_out_w_data": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "out_router_in_n_data": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "out_router_in_s_data": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "out_router_in_e_data": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "out_router_in_w_data": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "out_router_in_n_ack": {
             "direction": "O"
           },
-          "o_write_message": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
+          "out_router_in_s_ack": {
+            "direction": "O"
           },
-          "i_read_ack": {
+          "out_router_in_e_ack": {
+            "direction": "O"
+          },
+          "out_router_in_w_ack": {
+            "direction": "O"
+          },
+          "in_router_out_n_ack": {
+            "direction": "I"
+          },
+          "in_router_out_s_ack": {
+            "direction": "I"
+          },
+          "in_router_out_e_ack": {
+            "direction": "I"
+          },
+          "in_router_out_w_ack": {
             "direction": "I"
           }
         }
@@ -1982,30 +1983,6 @@
         "ports": [
           "zcu104_0/ser_tx",
           "ser_tx_0"
-        ]
-      },
-      "zcu104_1_i_write_message": {
-        "ports": [
-          "zcu104_1/o_write_message",
-          "zcu104_0/i_read_message"
-        ]
-      },
-      "zcu104_0_o_write_message": {
-        "ports": [
-          "zcu104_0/o_write_message",
-          "zcu104_1/i_read_message"
-        ]
-      },
-      "zcu104_0_o_write_ack": {
-        "ports": [
-          "zcu104_0/o_write_ack",
-          "zcu104_1/i_read_ack"
-        ]
-      },
-      "zcu104_1_o_write_ack": {
-        "ports": [
-          "zcu104_1/o_write_ack",
-          "zcu104_0/i_read_ack"
         ]
       }
     },
