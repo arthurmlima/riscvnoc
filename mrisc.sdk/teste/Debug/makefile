@@ -34,14 +34,14 @@ all: teste.elf secondary-outputs
 # Tool invocations
 teste.elf: $(OBJS) ../src/lscript.ld $(USER_OBJS)
 	@echo 'Building target: $@'
-	@echo 'Invoking: ARM v8 32 Bit gcc linker'
-	arm-none-eabi-gcc -march=armv7-a -mfpu=vfpv3 -mfloat-abi=hard -Wl,-T -Wl,../src/lscript.ld -L../../teste_bsp/psu_cortexa53_0/lib -o "teste.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	@echo 'Invoking: ARM v8 gcc linker'
+	aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -L../../teste_bsp/psu_cortexa53_0/lib -o "teste.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 teste.elf.size: teste.elf
-	@echo 'Invoking: ARM v8 32 Bit Print Size'
-	arm-none-eabi-size teste.elf  |tee "teste.elf.size"
+	@echo 'Invoking: ARM v8 Print Size'
+	aarch64-none-elf-size teste.elf  |tee "teste.elf.size"
 	@echo 'Finished building: $@'
 	@echo ' '
 

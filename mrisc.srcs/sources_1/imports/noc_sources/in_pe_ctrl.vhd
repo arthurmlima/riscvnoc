@@ -52,12 +52,13 @@ end entity in_PE_controller;
 
 architecture behavioral of in_PE_controller is
 
-signal mode : integer := 0;
-    
+signal mode : integer := 0; 
 begin
     
     
 process(clk,reset) is
+variable aux1 : std_logic := '0';
+variable aux2 : std_logic := '0';
 begin
     if(reset='1')then
         i_PE_pixel   <= (others => '0');
@@ -89,13 +90,26 @@ begin
                         mode <= 1;
                     end if;
                 end if;
-             when 1 =>
-                if(i_PE_ack='1')then
-                    oc_PE_ack <= '0';
-                    i_PE_req <= '0';
-                    mode <= 0;
-                end if;
+                
+                
+            when 1 =>
+                 if(i_PE_ack='1' )then 
+                       i_PE_req <= '0';
+                       aux1:='1';
+              end if;
+   
+              if(oc_PE_new_msg='0')then
+                oc_PE_ack<='0';
+                 aux2:='1';
 
+              end if;
+              
+              if(aux1='1' and aux2 ='1')then 
+              mode<=0;
+                aux1:='0';
+               aux2:='0';
+              end if;
+            
             when others =>
         
         end case;

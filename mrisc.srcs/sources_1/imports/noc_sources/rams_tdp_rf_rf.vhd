@@ -15,7 +15,7 @@ use IEEE.std_logic_unsigned.all;
 
 entity rams_tdp_rf_rf is
 generic(
-        pixel_size  : natural;
+        pix_depth  : natural;
         addr_size   : natural;
         mem_size    : natural
         );
@@ -28,16 +28,16 @@ port(
         web     : in  std_logic;
         addra   : in  std_logic_vector(addr_size-1 downto 0);
         addrb   : in  std_logic_vector(addr_size-1 downto 0);
-        dia     : in  std_logic_vector(pixel_size-1 downto 0);
-        dib     : in  std_logic_vector(pixel_size-1 downto 0);
-        doa     : out std_logic_vector(pixel_size-1 downto 0);
-        dob     : out std_logic_vector(pixel_size-1 downto 0);
+        dia     : in  std_logic_vector(pix_depth-1 downto 0);
+        dib     : in  std_logic_vector(pix_depth-1 downto 0);
+        doa     : out std_logic_vector(pix_depth-1 downto 0);
+        dob     : out std_logic_vector(pix_depth-1 downto 0);
         doa_ok  : out std_logic;
         dob_ok  : out std_logic 
     );
 end rams_tdp_rf_rf;
 
-architecture syn of rams_tdp_rf_rf is type ram_type is array (mem_size-1 downto 0) of std_logic_vector(pixel_size-1 downto 0);
+architecture syn of rams_tdp_rf_rf is type ram_type is array (mem_size-1 downto 0) of std_logic_vector(pix_depth-1 downto 0);
 
     shared variable RAM : ram_type;
 

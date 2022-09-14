@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/arthu/mrisc/mrisc.hw/hw_1/wave/hw_ila_data_2/hw_ila_data_2.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1024001fs"></ZoomEndTime>
+      <Cursor1Time time="512000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="627"></NameColumnWidth>
+      <ValueColumnWidth column_width="811"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="1" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject fp_name="design_1_i/zcu104_0_signal_out_pm_in_router_data" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/zcu104_0_signal_out_pm_in_router_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">zcu104_0_signal_out_pm_in_router_data[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+</wave_config>

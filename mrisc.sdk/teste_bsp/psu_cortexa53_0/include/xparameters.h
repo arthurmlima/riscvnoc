@@ -690,6 +690,11 @@
 #define XPAR_ZCU104_0_HIGHADDR 0x4FFFFFFFF
 
 
+/* Definitions for peripheral ZCU104_1 */
+#define XPAR_ZCU104_1_BASEADDR 0x1000000000
+#define XPAR_ZCU104_1_HIGHADDR 0x10FFFFFFFF
+
+
 /******************************************************************/
 
 /* Definitions for driver GPIOPS */

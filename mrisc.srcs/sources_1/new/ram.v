@@ -4,7 +4,7 @@ module ram
 
 parameter   NUM_COL             =   4,
 parameter   COL_WIDTH           =   8,
-parameter   ADDR_WIDTH          =  15, 
+parameter   ADDR_WIDTH          =  16, 
 
 // Addr  Width in bits : 2 *ADDR_WIDTH = RAM Depth
 parameter   DATA_WIDTH      =  NUM_COL*COL_WIDTH  // Data  Width in bits

@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../mrisc.srcs/sources_1/imports/noc_sources/in_pm_ctrl.vhd" \
+"../../../../mrisc.srcs/sources_1/imports/noc_sources/out_pm_controller.vhd" \
+"../../../../mrisc.srcs/sources_1/new/pm_wrapper.vhd" \
+"../../../../mrisc.srcs/sources_1/imports/noc_sources/rams_tdp_rf_rf.vhd" \
+"../../../../mrisc.srcs/sim_1/new/tb_pm_wrapper.vhd" \
+
+# Do not sort compile order
+nosort

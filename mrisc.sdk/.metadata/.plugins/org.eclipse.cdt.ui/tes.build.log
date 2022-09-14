@@ -1,36 +1,6 @@
-11:54:53 **** Incremental Build of configuration Release for project tes ****
+23:26:31 **** Incremental Build of configuration Debug for project tes ****
 make all 
-'Building file: ../src/helloworld.c'
-'Invoking: ARM v8 gcc compiler'
-aarch64-none-elf-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../tes_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
-../src/helloworld.c: In function 'main':
-../src/helloworld.c:1154:13: warning: unused variable 'rv' [-Wunused-variable]
-     int i=0,rv;
-             ^~
-../src/helloworld.c:1154:9: warning: unused variable 'i' [-Wunused-variable]
-     int i=0,rv;
-         ^
-../src/helloworld.c:1153:11: warning: unused variable 'f' [-Wunused-variable]
-     FILE *f;
-           ^
-'Finished building: ../src/helloworld.c'
-' '
-'Building file: ../src/platform.c'
-'Invoking: ARM v8 gcc compiler'
-aarch64-none-elf-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/platform.o" -I../../tes_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-'Finished building: ../src/platform.c'
-' '
-'Building target: tes.elf'
-'Invoking: ARM v8 gcc linker'
-aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -L../../tes_bsp/psu_cortexa53_0/lib -o "tes.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: tes.elf'
-' '
-'Invoking: ARM v8 Print Size'
-aarch64-none-elf-size tes.elf  |tee "tes.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  30692	   6376	   6320	  43388	   a97c	tes.elf
-'Finished building: tes.elf.size'
-' '
+make: Nothing to be done for 'all'.
 
-11:54:54 Build Finished (took 1s.71ms)
+23:26:31 Build Finished (took 172ms)
 

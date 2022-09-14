@@ -34,8 +34,8 @@ port(
     oc_PM_x_orig : in std_logic_vector(img_width-1 downto 0);
     oc_PM_y_orig : in std_logic_vector(img_height-1 downto 0);
     oc_PM_fb     : in std_logic; -- message forward/backward
-    oc_PM_new_msg: in std_logic;
-    oc_PM_ack    : out  std_logic;
+    oc_PM_new_msg: in std_logic:='0';
+    oc_PM_ack    : out  std_logic:='0';
     
     oc_free : out std_logic := '1';
     
@@ -48,20 +48,21 @@ port(
     i_PM_x_orig : out std_logic_vector(img_width-1 downto 0);
     i_PM_y_orig : out std_logic_vector(img_height-1 downto 0);
     i_PM_fb     : out std_logic; -- message forward/backward
-    i_PM_req    : inout std_logic;
-    i_PM_ack    : in  std_logic   
+    i_PM_req    : inout std_logic:='0';
+    i_PM_ack    : in  std_logic:='0'   
     
 );
 end entity out_pm_controller;
 
 architecture behavioral of out_pm_controller is
-
 signal mode : integer := 0;
     
 begin
     
     
 process(clk,reset) is
+variable aux1 : std_logic := '0';
+variable aux2 : std_logic := '0';
 begin
     if(reset='1')then
         i_PM_pixel   <= (others => '0');
@@ -97,11 +98,23 @@ begin
                 end if;
              when 1 =>
                 if(i_PM_ack='1')then
-                    oc_PM_ack <= '0';
                     i_PM_req <= '0';
-                    mode <= 0;
-                    oc_free<= '1';
+                     aux1:='1';
                 end if;
+                if(oc_PM_new_msg='0')then 
+                 oc_PM_ack<='0';
+                 aux2:='1';               
+                end if;    
+                            
+                if( aux1='1' and aux2='1')then 
+                mode<=0;
+                aux1:='0';
+                aux2:='0';
+                end if;
+
+                
+
+            
 
             when others =>
             

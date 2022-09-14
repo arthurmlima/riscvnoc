@@ -1,6 +1,6 @@
 /******************************************************************************
 *
-* Copyright (C) 2015 - 2017 Xilinx, Inc.  All rights reserved.
+* Copyright (C) 2014 - 2015 Xilinx, Inc. All rights reserved.
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@
 *
 * @file xil_cache.h
 *
-* @addtogroup a53_32_cache_apis Cortex A53 32bit Processor Cache Functions
+* @addtogroup a53_64_cache_apis Cortex A53 64bit Processor Cache Functions
 *
 * Cache functions provide access to cache related operations such as flush
 * and invalidate for instruction and data caches. It gives option to perform
@@ -44,7 +44,7 @@
 *
 * Ver   Who  Date     Changes
 * ----- ---- -------- -----------------------------------------------
-* 5.2	pkp  28/05/15 First release
+* 5.00 	pkp  05/29/14 First release
 * </pre>
 *
 ******************************************************************************/
@@ -57,21 +57,26 @@
 extern "C" {
 #endif
 
+/************************** Constant Definitions *****************************/
+#define L1_DATA_PREFETCH_CONTROL_MASK  0xE000
+#define L1_DATA_PREFETCH_CONTROL_SHIFT  13
+
+/************************** Function Prototypes ******************************/
 void Xil_DCacheEnable(void);
 void Xil_DCacheDisable(void);
 void Xil_DCacheInvalidate(void);
-void Xil_DCacheInvalidateRange(INTPTR adr, u32 len);
+void Xil_DCacheInvalidateRange(INTPTR adr, INTPTR len);
+void Xil_DCacheInvalidateLine(INTPTR adr);
 void Xil_DCacheFlush(void);
-void Xil_DCacheFlushRange(INTPTR adr, u32 len);
-void Xil_DCacheInvalidateLine(u32 adr);
-void Xil_DCacheFlushLine(u32 adr);
+void Xil_DCacheFlushRange(INTPTR adr, INTPTR len);
+void Xil_DCacheFlushLine(INTPTR adr);
 
-void Xil_ICacheInvalidateLine(u32 adr);
 void Xil_ICacheEnable(void);
 void Xil_ICacheDisable(void);
 void Xil_ICacheInvalidate(void);
-void Xil_ICacheInvalidateRange(INTPTR adr, u32 len);
-
+void Xil_ICacheInvalidateRange(INTPTR adr, INTPTR len);
+void Xil_ICacheInvalidateLine(INTPTR adr);
+void Xil_ConfigureL1Prefetch(u8 num);
 #ifdef __cplusplus
 }
 #endif

@@ -6,7 +6,7 @@
 
         parameter         S_NUM_COL             =   4,
         parameter         S_COL_WIDTH           =   8,
-        parameter         S_ADDR_WIDTH          =  15, 
+        parameter         S_ADDR_WIDTH          =  16, 
         parameter         S_DATA_WIDTH         =  S_NUM_COL*S_COL_WIDTH,  // Data  Width in bits
 		parameter integer C_S00_AXI_DATA_WIDTH	= 32,
 		parameter integer C_S00_AXI_ADDR_WIDTH	= 4

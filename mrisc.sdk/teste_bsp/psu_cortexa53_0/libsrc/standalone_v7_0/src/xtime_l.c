@@ -1,6 +1,6 @@
 /******************************************************************************
 *
-* Copyright (C) 2015 Xilinx, Inc.  All rights reserved.
+* Copyright (C) 2014 - 2017 Xilinx, Inc. All rights reserved.
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -29,18 +29,19 @@
 /**
 * @file xtime_l.c
 *
-* This file contains low level functions to get/set time from the Generic Counter
-* register in the ARM Cortex A53 MPcore.
+* This file contains low level functions to get/set time from the Global Timer
+* register in the ARM Cortex A53 MP core.
 *
 * <pre>
 * MODIFICATION HISTORY:
 *
 * Ver   Who    Date     Changes
 * ----- ------ -------- ---------------------------------------------------
-* 5.2	pkp	   28/05/15 First release
-* 5.5	pkp	   04/13/16 Added XTime_StartTimer API to start the global timer
-*					 	counter if it is disabled. Also XTime_GetTime calls
+* 5.00 	pkp	   05/29/14 First release
+* 5.05	pkp	   04/13/16 Added XTime_StartTimer API to start the global timer
+*						counter if it is disabled. Also XTime_GetTime calls
 *						this API to ensure the global timer counter is enabled
+* 6.02  pkp	   01/22/17 Added support for EL1 non-secure
 * </pre>
 *
 * @note		None.
@@ -53,6 +54,7 @@
 #include "xil_types.h"
 #include "xil_assert.h"
 #include "xil_io.h"
+#include "bspconfig.h"
 
 /***************** Macros (Inline Functions) Definitions *********************/
 
@@ -73,22 +75,25 @@
 * @return	None.
 *
 * @note		The timer is initialized only if it is disabled. If the timer is
-*			already running this function does not perform any operation.
+*			already running this function does not perform any operation. This
+*			API is effective only if BSP is built for EL3. For EL1 Non-secure,
+*			it simply exits.
 *
 ****************************************************************************/
 void XTime_StartTimer(void)
 {
-	/* Enable the counter only if it is disable */
-	if(((Xil_In32(XIOU_SCNTRS_BASEADDR + XIOU_SCNTRS_CNT_CNTRL_REG_OFFSET)) &
-		 XIOU_SCNTRS_CNT_CNTRL_REG_EN_MASK) != XIOU_SCNTRS_CNT_CNTRL_REG_EN){
-
-		/*write frequency to System Time Stamp Generator Register*/
-		Xil_Out32((XIOU_SCNTRS_BASEADDR + XIOU_SCNTRS_FREQ_REG_OFFSET),
+	if (EL3 == 1){
+		/* Enable the global timer counter only if it is disabled */
+		if(((Xil_In32(XIOU_SCNTRS_BASEADDR + XIOU_SCNTRS_CNT_CNTRL_REG_OFFSET))
+					& XIOU_SCNTRS_CNT_CNTRL_REG_EN_MASK) !=
+					XIOU_SCNTRS_CNT_CNTRL_REG_EN){
+			/*write frequency to System Time Stamp Generator Register*/
+			Xil_Out32((XIOU_SCNTRS_BASEADDR + XIOU_SCNTRS_FREQ_REG_OFFSET),
 					XIOU_SCNTRS_FREQ);
-
-		/*Enable the counter*/
-		Xil_Out32((XIOU_SCNTRS_BASEADDR + XIOU_SCNTRS_CNT_CNTRL_REG_OFFSET),
-					XIOU_SCNTRS_CNT_CNTRL_REG_EN);
+			/*Enable the timer/counter*/
+			Xil_Out32((XIOU_SCNTRS_BASEADDR + XIOU_SCNTRS_CNT_CNTRL_REG_OFFSET)
+						,XIOU_SCNTRS_CNT_CNTRL_REG_EN);
+		}
 	}
 }
 /****************************************************************************/
@@ -97,9 +102,9 @@ void XTime_StartTimer(void)
 *			desired. This API doesn't contain anything. It is defined to have
 *			uniformity across platforms.
 *
-* @param	Xtime_Global: 64bit Value to be written to the Global Timer Counter
-*			Register. But since the function does not contain anything, the
-*			value is not used for anything.
+* @param	Xtime_Global: 64bit value to be written to the physical timer
+*			counter register. Since API does not do anything, the value is
+*			not utilized.
 *
 * @return	None.
 *
@@ -117,8 +122,8 @@ so the API is left unimplemented*/
 /**
 * @brief	Get the time from the physical timer counter register.
 *
-* @param	Xtime_Global: Pointer to the 64-bit location to be updated with
-*			the current value in physical timer counter.
+* @param	Xtime_Global: Pointer to the 64-bit location to be updated with the
+*			current value of physical timer counter register.
 *
 * @return	None.
 *
@@ -127,8 +132,9 @@ so the API is left unimplemented*/
 ****************************************************************************/
 void XTime_GetTime(XTime *Xtime_Global)
 {
+	if (EL3 == 1)
 	/* Start global timer counter, it will only be enabled if it is disabled */
-	XTime_StartTimer();
+		XTime_StartTimer();
 
-	*Xtime_Global = arch_counter_get_cntvct();
+	*Xtime_Global = mfcp(CNTPCT_EL0);
 }

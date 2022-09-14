@@ -1,6 +1,6 @@
 /******************************************************************************
 *
-* Copyright (C) 2015 - 2017 Xilinx, Inc. All rights reserved.
+* Copyright (C) 2014 - 2017 Xilinx, Inc. All rights reserved.
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -37,8 +37,7 @@
 *
 * Ver   Who     Date     Changes
 * ----- ------- -------- ---------------------------------------------------
-* 5.2	pkp  	28/05/15 First release
-* 6.0   mus     18/08/16 Defined ARMA53_32 flag
+* 5.00 	pkp  05/29/14 First release
 * </pre>
 *
 * @note
@@ -50,13 +49,10 @@
 #ifndef _XPARAMETERS_PS_H_
 #define _XPARAMETERS_PS_H_
 
-#ifndef ARMA53_32
-#define ARMA53_32 ARMA53_32
-#endif
-
 #ifdef __cplusplus
 extern "C" {
 #endif
+
 /***************************** Include Files *********************************/
 
 
@@ -148,6 +144,8 @@ extern "C" {
 #define XPAR_XSMMU_FPD_INTR 		XPS_FPD_SMMU_INT_ID
 #define XPAR_XUSBPS_0_INTR		XPS_USB3_0_ENDPT_INT_ID
 #define XPAR_XUSBPS_1_INTR		XPS_USB3_1_ENDPT_INT_ID
+#define XPAR_XUSBPS_0_WAKE_INTR		XPS_USB3_0_WAKE_INT_ID
+#define XPAR_XUSBPS_1_WAKE_INTR		XPS_USB3_1_WAKE_INT_ID
 #define	XPAR_XRTCPSU_ALARM_INTR 	XPS_RTC_ALARM_INT_ID
 #define	XPAR_XRTCPSU_SECONDS_INTR	XPS_RTC_SEC_INT_ID
 #define XPAR_XAPMPS_0_INTR		XPS_APM0_INT_ID
@@ -237,6 +235,8 @@ extern "C" {
 #define XPS_GEM3_WAKE_INT_ID		(64U + 32U)
 #define XPS_USB3_0_ENDPT_INT_ID		(65U + 32U)
 #define XPS_USB3_1_ENDPT_INT_ID		(70U + 32U)
+#define XPS_USB3_0_WAKE_INT_ID		(75U + 32U)
+#define XPS_USB3_1_WAKE_INT_ID		(76U + 32U)
 #define XPS_ADMA_CH0_INT_ID		(77U + 32U)
 #define XPS_ADMA_CH1_INT_ID		(78U + 32U)
 #define XPS_ADMA_CH2_INT_ID		(79U + 32U)

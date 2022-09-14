@@ -1,6 +1,6 @@
 /******************************************************************************
 *
-* Copyright (C) 2015 Xilinx, Inc.  All rights reserved.
+* Copyright (C) 2014 - 2017 Xilinx, Inc. All rights reserved.
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -31,13 +31,16 @@
 *
 * This file provides APIs for enabling/disabling MMU and setting the memory
 * attributes for sections, in the MMU translation table.
+* MMU APIs are yet to be implemented. They are left blank to avoid any
+* compilation error
 *
 * <pre>
 * MODIFICATION HISTORY:
 *
 * Ver   Who  Date     Changes
 * ----- ---- -------- ---------------------------------------------------
-* 5.2	pkp  28/05/15 First release
+* 5.00 	pkp  05/29/14 First release
+* 6.02  pkp	 01/22/17 Added support for EL1 non-secure
 * </pre>
 *
 * @note
@@ -52,102 +55,71 @@
 #include "xpseudo_asm.h"
 #include "xil_types.h"
 #include "xil_mmu.h"
-
-
+#include "bspconfig.h"
 /***************** Macros (Inline Functions) Definitions *********************/
 
 /**************************** Type Definitions *******************************/
 
 /************************** Constant Definitions *****************************/
 
+#define BLOCK_SIZE_2MB 0x200000U
+#define BLOCK_SIZE_1GB 0x40000000U
+#define ADDRESS_LIMIT_4GB 0x100000000UL
+
 /************************** Variable Definitions *****************************/
 
-extern u32 MMUTable;
+extern INTPTR MMUTableL1;
+extern INTPTR MMUTableL2;
 
 /************************** Function Prototypes ******************************/
 /*****************************************************************************/
 /**
-* @brief	This function sets the memory attributes for a section covering 1MB
-*			of memory in the translation table.
+* brief		It sets the memory attributes for a section, in the translation
+* 			table. If the address (defined by Addr) is less than 4GB, the
+*			memory attribute(attrib) is set for a section of 2MB memory. If the
+*			address (defined by Addr) is greater than 4GB, the memory attribute
+*			(attrib) is set for a section of 1GB memory.
 *
-* @param	Addr: 32-bit address for which the attributes need to be set.
-* @param	attrib: Attributes for the specified memory region. xil_mmu.h
+* @param	Addr: 64-bit address for which attributes are to be set.
+* @param	attrib: Attribute for the specified memory region. xil_mmu.h
 *			contains commonly used memory attributes definitions which can be
 *			utilized for this function.
 *
-*
 * @return	None.
 *
-* @note		The MMU or D-cache does not need to be disabled before changing a
-*			translation table entry.
+* @note		The MMU and D-cache need not be disabled before changing an
+*			translation table attribute.
 *
 ******************************************************************************/
-void Xil_SetTlbAttributes(UINTPTR Addr, u32 attrib)
+void Xil_SetTlbAttributes(UINTPTR Addr, u64 attrib)
 {
-	u32 *ptr;
-	u32 section;
-
-	section = Addr / 0x100000U;
-	ptr = &MMUTable;
-	ptr += section;
-	if(ptr != NULL) {
-		*ptr = (Addr & 0xFFF00000U) | attrib;
+	INTPTR *ptr;
+	INTPTR section;
+	u64 block_size;
+	/* if region is less than 4GB MMUTable level 2 need to be modified */
+	if(Addr < ADDRESS_LIMIT_4GB){
+		/* block size is 2MB for addressed < 4GB*/
+		block_size = BLOCK_SIZE_2MB;
+		section = Addr / block_size;
+		ptr = &MMUTableL2 + section;
 	}
+	/* if region is greater than 4GB MMUTable level 1 need to be modified */
+	else{
+		/* block size is 1GB for addressed > 4GB */
+		block_size = BLOCK_SIZE_1GB;
+		section = Addr / block_size;
+		ptr = &MMUTableL1 + section;
+	}
+	*ptr = (Addr & (~(block_size-1))) | attrib;
 
 	Xil_DCacheFlush();
 
-	mtcp(XREG_CP15_INVAL_UTLB_UNLOCKED, 0U);
-	/* Invalidate all branch predictors */
-	mtcp(XREG_CP15_INVAL_BRANCH_ARRAY, 0U);
+	if (EL3 == 1)
+		mtcptlbi(ALLE3);
+	else if (EL1_NONSECURE == 1)
+		mtcptlbi(VMALLE1);
 
 	dsb(); /* ensure completion of the BP and TLB invalidation */
     isb(); /* synchronize context on this processor */
-}
 
-/*****************************************************************************/
-/**
-* @brief	Enable MMU for Cortex-A53 processor in 32bit mode. This function
-*			invalidates the instruction and data caches before enabling MMU.
-*
-* @param	None.
-* @return	None.
-*
-******************************************************************************/
-void Xil_EnableMMU(void)
-{
-	u32 Reg;
-	Xil_DCacheInvalidate();
-	Xil_ICacheInvalidate();
-
-	Reg = mfcp(XREG_CP15_SYS_CONTROL);
-	Reg |= (u32)0x05U;
-	mtcp(XREG_CP15_SYS_CONTROL, Reg);
-
-	dsb();
-	isb();
-}
-
-/*****************************************************************************/
-/**
-* @brief	Disable MMU for Cortex A53 processors in 32bit mode. This function
-*			invalidates the TLBs, Branch Predictor Array and flushed the data
-*			cache before disabling the MMU.
-*
-* @param	None.
-*
-* @return	None.
-*
-* @note		When the MMU is disabled, all the memory accesses are treated as
-*			strongly ordered.
-******************************************************************************/
-void Xil_DisableMMU(void)
-{
-	u32 Reg;
-
-	mtcp(XREG_CP15_INVAL_UTLB_UNLOCKED, 0U);
-	mtcp(XREG_CP15_INVAL_BRANCH_ARRAY, 0U);
-	Xil_DCacheFlush();
-	Reg = mfcp(XREG_CP15_SYS_CONTROL);
-	Reg &= (u32)(~0x05U);
-	mtcp(XREG_CP15_SYS_CONTROL, Reg);
 }

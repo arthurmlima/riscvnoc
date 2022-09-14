@@ -69,7 +69,7 @@ module picosoc (
 	parameter [0:0] ENABLE_COUNTERS = 1;
 	parameter [0:0] ENABLE_IRQ_QREGS = 0;
 
-	parameter integer MEM_WORDS = 32768;
+	parameter integer MEM_WORDS = 131071;
 	parameter [31:0] STACKADDR = (4*MEM_WORDS);       // end of memory
 	parameter [31:0] PROGADDR_RESET = 32'h 0000_0000; // 1 MB into flash
 	parameter [31:0] PROGADDR_IRQ = 32'h 0000_0000;
@@ -102,7 +102,7 @@ module picosoc (
 	reg ram_ready;
 	wire [31:0] ram_rdata;
 
-	assign iomem_valid = mem_valid && (mem_addr[31:24] > 8'h 01);
+	assign iomem_valid = mem_valid && (mem_addr[31:0] > 32'h 0008_0000);
 	assign iomem_wstrb = mem_wstrb;
 	assign iomem_addr = mem_addr;
 	assign iomem_wdata = mem_wdata;
@@ -170,7 +170,7 @@ module picosoc (
 	  bram_config #(
         .S_NUM_COL(4),     
         .S_COL_WIDTH(8),   
-        .S_ADDR_WIDTH(15),  
+        .S_ADDR_WIDTH(16),  
         .S_DATA_WIDTH (32), 
         .C_S00_AXI_DATA_WIDTH(32),
         .C_S00_AXI_ADDR_WIDTH(4)

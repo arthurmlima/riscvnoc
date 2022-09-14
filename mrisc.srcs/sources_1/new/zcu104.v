@@ -20,60 +20,66 @@
 `ifdef PICOSOC_V
 `endif
 
-module zcu104# (
+module zcu104#(
 
 parameter   ADDR_WIDTH          =  10, 
 parameter   DATA_WIDTH      =  9,  // Data  Width in bits
-parameter    x_init       , 
-parameter    y_init       , 
-parameter    pix_depth  	 ,
-parameter    img_width	 ,  
-parameter    img_height 	 ,
-parameter    subimg_width ,	
-parameter    subimg_height,	
-parameter    n_steps	 ,  
-parameter    n_frames   	 ,
-parameter    buffer_length,
-parameter integer MEM_WORDS 
+
+parameter    x_init =0      ,
+parameter    y_init =0      , 
+
+parameter    pix_depth =16  	,
+
+parameter    img_width=8	 ,  
+parameter    img_height=8 	 ,
+
+parameter    subimg_width =0 ,
+parameter    subimg_height=0,	
+
+parameter    n_steps=5	 ,
+parameter    n_frames=8   	 ,
+
+parameter    buffer_length=20,
+
+parameter integer MEM_WORDS  =131071
+
+
 
 )(
+
 	input clk,
 
 	output ser_tx,
 	input ser_rx,
 
 	output reset_riscv,
-
-	output led1,
-	output led2,
-	output led3,
-	output led4,
-	output led5,
-
-	output ledr_n,
-	output ledg_n,
-	
-
 	                             
-	input [63 : 0]   in_router_out_n_data,
-	input [63 : 0]   in_router_out_s_data,
-	input [63 : 0]   in_router_out_e_data,
- 	input [63 : 0]   in_router_out_w_data,   
- 	  
-	output[63 : 0]   out_router_in_n_data,
-	output[63 : 0]   out_router_in_s_data,	
-	output[63 : 0]   out_router_in_e_data,	
-	output[63 : 0]   out_router_in_w_data,	
+	input [63 : 0]   IN_N,
+	output           IN_N_ACK,
 
-	output           out_router_in_n_ack,
-	output           out_router_in_s_ack,
-	output           out_router_in_e_ack,
-	output           out_router_in_w_ack,
+	input [63 : 0]   IN_S,
+	output           IN_S_ACK,
+
+	input [63 : 0]   IN_E,
+	output           IN_E_ACK,
+
+ 	input [63 : 0]   IN_W,   
+ 	output           IN_W_ACK,
+  
+	output[63 : 0]   OUT_N,
+	input            OUT_N_ACK,	
+
+	output[63 : 0]   OUT_S,
+	input          OUT_S_ACK,		
+		
+	output[63 : 0]   OUT_E,	
+	input            OUT_E_ACK,
+
+	output[63 : 0]   OUT_W,	
+	input            OUT_W_ACK,	
+
 	
-	input            in_router_out_n_ack,	
-	input            in_router_out_s_ack,		
-	input            in_router_out_e_ack,
-	input            in_router_out_w_ack,	
+
 
 
 	input wire  s00_axi_aclk,
@@ -99,44 +105,33 @@ parameter integer MEM_WORDS
 	input wire  s00_axi_rready
 );
 
-/*
-****** Sinais de entrada do roteador que sao saidas do PM e PE ou de outros routers
-*/
+	wire led1;
+	wire led2;
+	wire led3;
+	wire led4;
+	wire led5;
+	wire ledr_n;
+	wire ledg_n;
+	reg [63:0]  signal_out_pe_in_router_data;
+	wire[63:0]  wsignal_in_pm_out_router_data;
+	wire[63:0]  signal_out_pm_in_router_data;
 
 
+    wire  wsignal_in_pe_out_router_ack;
 	 
-	 
-	 reg [63 : 0]  signal_in_pm_out_router_data;	 
-	 reg [63 : 0]  signal_out_pm_in_router_data;	 
-	 
-	 
-	 
- 	 reg [63 : 0]  signal_out_pe_in_router_data;	   
-     reg [63 : 0]  signal_in_pe_out_router_data;
-     
-     
-     reg           signal_out_pe_in_router_ack;
-	 reg           signal_in_pe_out_router_ack;
-     
-	 reg [63 : 0]  signal_in_N_out_router_data;	
-	 reg [63 : 0]  signal_in_S_out_router_data;	
-     reg [63 : 0]  signal_in_E_out_router_data;
-     reg [63 : 0]  signal_in_W_out_router_data;	
+	 reg [63 : 0]  signal_in_pm_out_router_data;
+	 	 
 
-
-	 reg           signal_out_pm_in_router_ack;
 	 reg           signal_in_pm_out_router_ack;
 
-
-	 
-	 reg           signal_out_N_in_router_ack;	 
-	 reg           signal_out_S_in_router_ack;	 	 	
-	 reg           signal_out_E_in_router_ack;	 
-	 reg           signal_out_W_in_router_ack;
-
-
-
-
+ 	 reg           signal_in_pe_out_router_ack;	   
+     
+     reg           signal_out_pe_in_router_ack;
+     
+wire wsignal_out_pm_in_router_ack;
+wire wsignal_out_riscv_in_pm_ack;
+wire[63:0] wsignal_out_pm_in_router_data;
+assign wsignal_out_pm_in_router_data = 	signal_out_pm_in_router_data	;
 
 	reg [5:0] reset_cnt = 0;
 	wire resetn = &reset_cnt;
@@ -156,8 +151,7 @@ parameter integer MEM_WORDS
 
 	assign ledr_n = !leds[6];
 	assign ledg_n = !leds[7];
-
-	
+		
 	wire        iomem_valid;
 	reg         iomem_ready;
 	wire [3:0]  iomem_wstrb;
@@ -165,54 +159,31 @@ parameter integer MEM_WORDS
 	wire [31:0] iomem_wdata;
 	reg  [31:0] iomem_rdata;
 	
-	
-	
-	/// Gambiarras do tutu
-	reg [31:0] read_message;	
-	reg [31:0] write_message;
-	reg write_ack;
-	
-	//gambiarras do tutu falando da pm
-	// 
-	reg  [31:0]bus_pixel_memory; //busao
-	wire [8:0 ]in_pixel_memory; //sai da PM para memoria
-	reg  [22:0]out_pixel_memory; //vem da memoria do risc para PM
-	
 
-	
-	reg enA;
-	reg weA;
-	reg [9:0] addrA;
-	reg [8:0] dinA;
-	
-	wire [8:0]doutA;
-	wire doa_ok;
-	
-	 reg [pix_depth+img_width+img_height+img_width+img_height+n_frames+n_steps +2 -1 : 0] in_router_out_pm_data;          
-     reg out_router_in_pm_ack;
-     reg [pix_depth+img_width+img_height+img_width+img_height+n_frames+n_steps +2 -1 : 0] out_router_in_pm_data;   
-     reg in_router_out_pm_ack;                                                         
-     reg [pix_depth+img_width+img_height+img_width+img_height+n_frames+n_steps +2 -1 : 0] in_router_out_pe_data;  
-     reg router_in_pe_ack;
-     reg [pix_depth+img_width+img_height+img_width+img_height+n_frames+n_steps +2 -1 :0 0] out_router_in_pe_data;   
-     reg in_router_out_pe_ack;
-	
-	
-	
-	///continuacao da gambi 
-always @(posedge clk) 
-begin
-{dinA,addrA,weA,enA}=bus_pixel_memory[31:10];
-bus_pixel_memory[9:0]={doutA,doa_ok};
-end	 
-	
+wire wsignal_in_riscv_out_pm_ack;
 
-/*
-always @(posedge clk) 
-begin
-write_ack
-end
-*/
+wire  wsignal_out_pe_in_router_ack;
+wire  wsignal_in_pe_out_pm_ack;
+wire[63:0]  wsignal_in_pe_out_router_data;
+
+
+wire wsignal_in_pm_out_router_ack;
+wire[31:0] wsignal_out_riscv_in_pm_data;
+wire  signal_out_pm_in_router_ack;
+
+reg[31:0] signal_out_riscv_in_pm_data;
+assign wsignal_out_riscv_in_pm_data = signal_out_riscv_in_pm_data;
+
+
+
+
+
+
+
+
+
+
+
 always @(posedge clk) 
 begin
 	if (!reset_riscv) 
@@ -235,14 +206,14 @@ begin
 //*************************************RISC LÊ DO ROTEADOR*************************************************************			
 //****************************************************************************************************************************			
 		    
-			else if (iomem_valid && !iomem_ready && iomem_addr[31:24] == 32'h C000_0000)  begin // le mensagem para risc primeiros 8 bytes
+			else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0210_0000)  begin // le mensagem para risc primeiros 8 bytes
 				iomem_ready <= 1;
-				iomem_rdata <=  {signal_in_pe_out_router_data[31:1], iomem_wdata[0]};
+				iomem_rdata <=  {wsignal_in_pe_out_router_data[31:1], iomem_wdata[0]};
 				if (iomem_wstrb[0]) signal_out_pe_in_router_ack <= iomem_wdata[0];
 			end	
-			else if (iomem_valid && !iomem_ready && iomem_addr[31:24] == 32'h C000_0004)  begin // le mensagem para risc ultimos 8 bytes
+			else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0211_0000)  begin // le mensagem para risc ultimos 8 bytes
 				iomem_ready <= 1;
-				iomem_rdata <= signal_in_pe_out_router_data[63:32];
+				iomem_rdata <= wsignal_in_pe_out_router_data[63:32];
 			end	
 
 
@@ -250,18 +221,18 @@ begin
 //*************************************RISC ESCREVE NO ROTEADOR*************************************************************			
 //****************************************************************************************************************************							
 			
-			else if (iomem_valid && !iomem_ready && iomem_addr[31:24] == 32'h C000_0008) begin // escreve mensagem para risc
+			else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0220_0000) begin // escreve mensagem para risc
 				iomem_ready <= 1;
-				iomem_rdata <= {signal_out_pe_in_router_data[31:1], signal_in_pe_out_router_ack};
-				if (iomem_wstrb[0]) signal_out_pe_in_router_data[ 7: 0] <= {iomem_wdata[ 7: 1],signal_in_pe_out_router_ack};
+				iomem_rdata <= {signal_out_pe_in_router_data[31:1], wsignal_in_pe_out_router_ack};
+				if (iomem_wstrb[0]) signal_out_pe_in_router_data[ 7: 0] <= {iomem_wdata[ 7: 1],wsignal_in_pe_out_router_ack};
 				if (iomem_wstrb[1]) signal_out_pe_in_router_data[15: 8] <= iomem_wdata[15: 8];
 				if (iomem_wstrb[2]) signal_out_pe_in_router_data[23:16] <= iomem_wdata[23:16];
 				if (iomem_wstrb[3]) signal_out_pe_in_router_data[31:24] <= iomem_wdata[31:24];				
 			end
 			
-		 else if (iomem_valid && !iomem_ready && iomem_addr[63:32] == 32'h C000_000A) begin // escreve mensagem para risc
+		 else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0221_0000) begin // escreve mensagem para risc
 				iomem_ready <= 1;
-				iomem_rdata <= signal_out_pe_in_router_data[31:1];
+				iomem_rdata <= signal_out_pe_in_router_data[31:0];
 				if (iomem_wstrb[0]) signal_out_pe_in_router_data[39: 32] <= iomem_wdata[ 7: 0];
 				if (iomem_wstrb[1]) signal_out_pe_in_router_data[47: 40] <= iomem_wdata[15: 8];
 				if (iomem_wstrb[2]) signal_out_pe_in_router_data[55:48] <= iomem_wdata[23:16];
@@ -270,22 +241,15 @@ begin
 //****************************************************************************************************************************			
 //****************************************************************************************************************************
 
-
-
-
-
-
-
-			
-			
-			else if (iomem_valid && !iomem_ready && iomem_addr[31:24] == 8'h 06) begin // PM<-->risc
+			else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0222_0000) begin // interface risc-pm
 				iomem_ready <= 1;
-				iomem_rdata <= {bus_pixel_memory[31:10],doutA, doa_ok};
-				if (iomem_wstrb[0]) bus_pixel_memory[ 7: 0] <= iomem_wdata[ 7: 0];
-				if (iomem_wstrb[1]) bus_pixel_memory[15: 8] <= iomem_wdata[ 15: 8];
-				if (iomem_wstrb[2]) bus_pixel_memory[23:16] <= iomem_wdata[23:16];
-				if (iomem_wstrb[3]) bus_pixel_memory[31:24] <= iomem_wdata[31:24];				
+				iomem_rdata <=      {signal_out_riscv_in_pm_data[31:1], wsignal_in_riscv_out_pm_ack};
+				if (iomem_wstrb[0]) signal_out_riscv_in_pm_data[ 7: 0] <= {iomem_wdata[ 7: 1],wsignal_in_riscv_out_pm_ack};
+				if (iomem_wstrb[1]) signal_out_riscv_in_pm_data[15: 8] <= iomem_wdata[15: 8];
+				if (iomem_wstrb[2]) signal_out_riscv_in_pm_data[23:16] <= iomem_wdata[23:16];
+				if (iomem_wstrb[3]) signal_out_riscv_in_pm_data[31:24] <= iomem_wdata[31:24];				
 			end
+
 
 			
 		end
@@ -293,24 +257,8 @@ begin
 		
 end
 
-pixel_memory #( 
-        .ADDR_WIDTH(10),  
-        .DATA_WIDTH(9)
 
- )pixel_memory_00(
- 
-		.clkA(clk),
-		.weA(weA),
-		.enaA(enA),
-		.addrA(addrA),
-		.dinA(dinA),
-		.doutA(doutA),
-        .doa_ok(doa_ok)
-		);
 		
-		
-	
- 
  
 	picosoc #(
 		.BARREL_SHIFTER(0),
@@ -359,62 +307,97 @@ pixel_memory #(
 		.s00_axi_rvalid(s00_axi_rvalid),
 		.s00_axi_rready(s00_axi_rready)
 	);
-	
+
+
+	pm_wrapper #( 
+         .pix_depth      (pix_depth),
+         .addr_size       (9),
+         .mem_size        (10),
+         .x_init(x_init)       , 
+         .y_init(y_init)       , 
+         .img_width(img_width)	 ,  
+         .img_height(img_height) 	 ,
+         .subimg_width(subimg_width) ,	
+         .subimg_height(subimg_height),	
+         .n_steps(n_steps) 	 ,  
+         .n_frames(n_frames)   	 
+
+ )pm_wrapper(
+
+
+.clk(clk),
+.reset(!reset_riscv),
+
+      
+.input_data(wsignal_in_pm_out_router_data), 
+.input_ack (signal_out_pm_in_router_ack ),
+ 
+.input_riscv_data(wsignal_out_riscv_in_pm_data), 
+.input_riscv_ack (wsignal_in_riscv_out_pm_ack ),
+ 
+.output_data(signal_out_pm_in_router_data), 
+.output_ack (wsignal_in_pm_out_router_ack)  
+
+        
+);
+
 router_wrapper #( 
         .ADDR_WIDTH(10),  
         .DATA_WIDTH(9), 
-         .x_init()       , 
-         .y_init()       , 
-         .pix_depth()  	 ,
-         .img_width()	 ,  
-         .img_height() 	 ,
-         .subimg_width() ,	
-         .subimg_height(),	
-         .n_steps() 	 ,  
-         .n_frames()   	 ,
-         .buffer_length()
+         .x_init(x_init)       , 
+         .y_init(y_init)       , 
+         .pix_depth(pix_depth)  	 ,
+         .img_width(img_width)	 ,  
+         .img_height(img_height) 	 ,
+         .subimg_width(subimg_width) ,	
+         .subimg_height(subimg_height),	
+         .n_steps(n_steps) 	 ,  
+         .n_frames(n_frames)   	 ,
+         .buffer_length(buffer_length)
 
  )router_wrapper(
 
 
+.clk(clk),
+.reset(!reset_riscv),
+   
+.in_router_out_pm_data(signal_out_pm_in_router_data), 
+.out_router_in_pm_ack (wsignal_in_pm_out_router_ack ),
+ 
+.out_router_in_pm_data(wsignal_in_pm_out_router_data), 
+.in_router_out_pm_ack (signal_out_pm_in_router_ack),  
 
-
-
-      
-.in_router_out_pm_data(signal_in_router_out_pm_data), 
-.out_router_in_pm_ack (signal_out_router_in_pm_ack ), 
-.out_router_in_pm_data(signal_out_router_in_pm_data), 
-.in_router_out_pm_ack (signal_in_router_out_pm_ack ),                                            
-.in_router_out_pe_data(signal_in_router_out_pe_data), 
-.out_router_in_pe_ack (signal_out_router_in_pe_ack ), 
-.out_router_in_pe_data(signal_out_router_in_pe_data), 
-.in_router_out_pe_ack (signal_in_router_out_pe_ack ),  
+// canal de escrita
+.in_router_out_pe_data(signal_out_pe_in_router_data), 
+.out_router_in_pe_ack (wsignal_in_pe_out_router_ack ),
+ 
+.out_router_in_pe_data(wsignal_in_pe_out_router_data), 
+.in_router_out_pe_ack (signal_out_pe_in_router_ack),  
                                          
-.in_router_out_n_data(in_router_out_n_data),  
-.out_router_in_n_ack (out_router_in_n_ack ),  
-.out_router_in_n_data(out_router_in_n_data),  
-.in_router_out_n_ack (in_router_out_n_ack ),  
-                      
-                      
-.in_router_out_s_data  (in_router_out_s_data  ),
-.out_router_in_s_ack(out_router_in_s_ack),
-.out_router_in_s_data  (out_router_in_s_data  ),
-.in_router_out_s_ack   (in_router_out_s_ack   ),
-                    
-                    
-.in_router_out_e_data ( in_router_out_e_data),
-.out_router_in_e_ack  ( out_router_in_e_ack ),
-.out_router_in_e_data ( out_router_in_e_data),
-.in_router_out_e_ack  ( in_router_out_e_ack ),
-                      
-                      
-.in_router_out_w_data(in_router_out_e_data),  
-.out_router_in_w_ack (out_router_in_e_ack ),  
-.out_router_in_w_data(out_router_in_e_data),  
-.in_router_out_w_ack (in_router_out_e_ack )  
+.in_router_out_N_data(IN_N),  
+.out_router_in_n_ack (IN_N_ACK ),  
 
+.out_router_in_n_data(OUT_N),  
+.in_router_out_n_ack (OUT_N_ACK ),  
+                      
+                      
+.in_router_out_s_data(IN_S  ),
+.out_router_in_s_ack(IN_S_ACK   ),
 
+.out_router_in_s_data(OUT_S  ),
+.in_router_out_s_ack (OUT_S_ACK   ),
+                                        
+.in_router_out_e_data ( IN_E),
+.out_router_in_e_ack  ( IN_E_ACK ),
 
+.out_router_in_e_data ( OUT_E),
+.in_router_out_e_ack  ( OUT_E_ACK ),
+                                             
+.in_router_out_w_data(IN_W),  
+.out_router_in_w_ack (IN_W_ACK ),  
+
+.out_router_in_w_data(OUT_W),  
+.in_router_out_w_ack (OUT_W_ACK )  
         
 		);
 endmodule

@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../mrisc.srcs/sources_1/imports/noc_sources/out_pm_controller.vhd" \
+"../../../../mrisc.srcs/sim_1/new/tb_outcontroller.v" \
+
+# Do not sort compile order
+nosort

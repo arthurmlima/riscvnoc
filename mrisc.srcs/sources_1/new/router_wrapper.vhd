@@ -33,8 +33,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity router_wrapper is
 generic(
-    x_init : natural := 0;
-    y_init : natural := 0;
+    x_init           : natural := 0;
+    y_init           : natural := 0;
     pix_depth  	     : natural; 
     img_width	     : natural ;
     img_height 	     : natural ;
@@ -48,39 +48,40 @@ Port (
         clk          : in std_logic;  
         reset          : in std_logic;
         --PM
-    in_router_out_pm_data   : in std_logic_vector(pix_depth+img_width+img_height+img_width+img_height+n_frames+n_steps +2 -1 downto 0);
+    in_router_out_pm_data   : in std_logic_vector(63  downto 0);
     out_router_in_pm_ack    : out  std_logic;   
-    out_router_in_pm_data   : out std_logic_vector(pix_depth+img_width+img_height+img_width+img_height+n_frames+n_steps +2 -1 downto 0);
+    
+    out_router_in_pm_data   : out std_logic_vector(63  downto 0);
     in_router_out_pm_ack    : in  std_logic;
     
-    
-    in_router_out_pe_data   : in std_logic_vector(pix_depth+img_width+img_height+img_width+img_height+n_frames+n_steps +2 -1 downto 0);
+    in_router_out_pe_data   : in std_logic_vector(63   downto 0);
     out_router_in_pe_ack    : out  std_logic;   
-    out_router_in_pe_data   : out std_logic_vector(pix_depth+img_width+img_height+img_width+img_height+n_frames+n_steps +2 -1 downto 0);
+        
+    out_router_in_pe_data   : out std_logic_vector(63   downto 0);
     in_router_out_pe_ack    : in  std_logic;
-    
-    
-    in_router_out_n_data   : in std_logic_vector(pix_depth+img_width+img_height+img_width+img_height+n_frames+n_steps +2 -1 downto 0);
-    out_router_in_n_ack    : out std_logic;   
-    out_router_in_n_data   : out std_logic_vector(pix_depth+img_width+img_height+img_width+img_height+n_frames+n_steps +2 -1 downto 0);
+        
+    in_router_out_n_data   : in std_logic_vector(63  downto 0);
+    out_router_in_n_ack    : out std_logic; 
+      
+    out_router_in_n_data   : out std_logic_vector(63  downto 0);
     in_router_out_n_ack    : in  std_logic;
+        
+    in_router_out_s_data   : in std_logic_vector(63  downto 0);
+    out_router_in_s_ack : out std_logic;    
     
-    
-    in_router_out_s_data   : in std_logic_vector(pix_depth+img_width+img_height+img_width+img_height+n_frames+n_steps +2 -1 downto 0);
-    out_router_in_s_in_ack     : out std_logic;    
-    out_router_in_s_data   : out std_logic_vector(pix_depth+img_width+img_height+img_width+img_height+n_frames+n_steps +2 -1 downto 0);
+    out_router_in_s_data   : out std_logic_vector(63   downto 0);
     in_router_out_s_ack    : in  std_logic;
+        
+    in_router_out_e_data   : in std_logic_vector(63   downto 0);
+    out_router_in_e_ack    : out std_logic;
     
-    
-    in_router_out_e_data   : in std_logic_vector(pix_depth+img_width+img_height+img_width+img_height+n_frames+n_steps +2 -1 downto 0);
-    out_router_in_e_ack     : out std_logic;
-    out_router_in_e_data   : out std_logic_vector(pix_depth+img_width+img_height+img_width+img_height+n_frames+n_steps +2 -1 downto 0);
+    out_router_in_e_data   : out std_logic_vector(63  downto 0);
     in_router_out_e_ack    : in  std_logic;
     
-    
-    in_router_out_w_data   : in std_logic_vector(pix_depth+img_width+img_height+img_width+img_height+n_frames+n_steps +2 -1 downto 0);
+    in_router_out_w_data   : in std_logic_vector(63   downto 0);
     out_router_in_w_ack   :  out std_logic;
-    out_router_in_w_data   : out std_logic_vector(pix_depth+img_width+img_height+img_width+img_height+n_frames+n_steps +2 -1 downto 0);
+    
+    out_router_in_w_data   : out std_logic_vector(63   downto 0);
     in_router_out_w_ack    : in  std_logic
     
 
@@ -278,6 +279,8 @@ signal    signal_t_PM_y_orig           :       std_logic_vector(img_height-1 dow
 signal    signal_t_PM_fb               :       std_logic; -- identify if the it is a set_pixel or a set_pixel message.  
 signal    signal_t_PM_req              :       std_logic;
 signal    signal_t_PM_ack              :       std_logic;
+
+
 signal    signal_t_PE_pixel            :       std_logic_vector(pix_depth-1 downto 0);
 signal    signal_t_PE_x_dest           :       std_logic_vector(img_width-1 downto 0);
 signal    signal_t_PE_y_dest           :       std_logic_vector(img_height-1 downto 0);
@@ -445,7 +448,8 @@ wrp_router: router_new
     t_PM_y_orig=>signal_t_PM_y_orig ,   
     t_PM_fb    =>signal_t_PM_fb     ,   
     t_PM_req   =>signal_t_PM_req    ,   
-    t_PM_ack   =>signal_t_PM_ack    ,       
+    t_PM_ack   =>out_router_in_pm_ack    ,       
+    
     t_PE_pixel =>signal_t_PE_pixel   ,
     t_PE_x_dest=>signal_t_PE_x_dest  ,
     t_PE_y_dest=>signal_t_PE_y_dest  ,
@@ -455,7 +459,8 @@ wrp_router: router_new
     t_PE_y_orig=>signal_t_PE_y_orig  ,
     t_PE_fb    =>signal_t_PE_fb      ,
     t_PE_req   =>signal_t_PE_req     ,
-    t_PE_ack   =>signal_t_PE_ack     ,
+    t_PE_ack   =>out_router_in_pe_ack  ,
+    
     t_N_pixel  =>signal_t_N_pixel    ,
     t_N_x_dest =>signal_t_N_x_dest    ,
     t_N_y_dest =>signal_t_N_y_dest    ,
@@ -465,7 +470,8 @@ wrp_router: router_new
     t_N_y_orig =>signal_t_N_y_orig    ,
     t_N_fb     =>signal_t_N_fb        ,
     t_N_req    =>signal_t_N_req       ,
-    t_N_ack    =>signal_t_N_ack       ,
+    t_N_ack    =>out_router_in_n_ack       ,
+    
     t_S_pixel  =>signal_t_S_pixel      ,
     t_S_x_dest =>signal_t_S_x_dest     ,
     t_S_y_dest =>signal_t_S_y_dest     ,
@@ -475,7 +481,8 @@ wrp_router: router_new
     t_S_y_orig =>signal_t_S_y_orig     ,
     t_S_fb     =>signal_t_S_fb         ,
     t_S_req    =>signal_t_S_req        ,
-    t_S_ack    =>signal_t_S_ack        ,                     
+    t_S_ack    =>out_router_in_s_ack        ,  
+                       
     t_E_pixel  =>signal_t_E_pixel       ,
     t_E_x_dest =>signal_t_E_x_dest      ,
     t_E_y_dest =>signal_t_E_y_dest      ,
@@ -485,7 +492,8 @@ wrp_router: router_new
     t_E_y_orig =>signal_t_E_y_orig      ,
     t_E_fb     =>signal_t_E_fb          ,
     t_E_req    =>signal_t_E_req         ,
-    t_E_ack    =>signal_t_E_ack         ,
+    t_E_ack    =>out_router_in_e_ack    ,
+    
     t_W_pixel  =>signal_t_W_pixel       ,
     t_W_x_dest =>signal_t_W_x_dest      ,
     t_W_y_dest =>signal_t_W_y_dest      ,
@@ -495,7 +503,8 @@ wrp_router: router_new
     t_W_y_orig =>signal_t_W_y_orig      ,
     t_W_fb     =>signal_t_W_fb          ,
     t_W_req    =>signal_t_W_req         ,
-    t_W_ack    =>signal_t_W_ack         ,
+    t_W_ack    =>out_router_in_w_ack    ,
+    
     i_PM_pixel =>signal_i_PM_pixel   ,
     i_PM_x_dest=>signal_i_PM_x_dest  ,
     i_PM_y_dest=>signal_i_PM_y_dest  ,
@@ -505,7 +514,8 @@ wrp_router: router_new
     i_PM_y_orig=>signal_i_PM_y_orig  ,
     i_PM_fb    =>signal_i_PM_fb      ,
     i_PM_req   =>signal_i_PM_req     ,
-    i_PM_ack   =>signal_i_PM_ack     ,
+    i_PM_ack   =>in_router_out_pm_ack,
+    
     i_PE_pixel =>signal_i_PE_pixel  ,
     i_PE_x_dest=>signal_i_PE_x_dest ,
     i_PE_y_dest=>signal_i_PE_y_dest ,
@@ -515,7 +525,8 @@ wrp_router: router_new
     i_PE_y_orig=>signal_i_PE_y_orig ,
     i_PE_fb    =>signal_i_PE_fb     ,
     i_PE_req   =>signal_i_PE_req    ,
-    i_PE_ack   =>signal_i_PE_ack    ,
+    i_PE_ack   =>in_router_out_pe_ack ,
+    
     i_N_pixel  =>signal_i_N_pixel   ,
     i_N_x_dest =>signal_i_N_x_dest  ,
     i_N_y_dest =>signal_i_N_y_dest  ,
@@ -525,7 +536,8 @@ wrp_router: router_new
     i_N_y_orig =>signal_i_N_y_orig  ,
     i_N_fb     =>signal_i_N_fb      ,
     i_N_req    =>signal_i_N_req     ,
-    i_N_ack    =>signal_i_N_ack     ,
+    i_N_ack    =>in_router_out_n_ack     ,
+    
     i_S_pixel  =>signal_i_S_pixel   ,
     i_S_x_dest =>signal_i_S_x_dest  ,
     i_S_y_dest =>signal_i_S_y_dest  ,
@@ -535,7 +547,8 @@ wrp_router: router_new
     i_S_y_orig =>signal_i_S_y_orig  ,
     i_S_fb     =>signal_i_S_fb      ,
     i_S_req    =>signal_i_S_req     ,
-    i_S_ack    =>signal_i_S_ack     ,
+    i_S_ack    =>in_router_out_s_ack     ,
+    
     i_E_pixel  =>signal_i_E_pixel   ,
     i_E_x_dest =>signal_i_E_x_dest  ,
     i_E_y_dest =>signal_i_E_y_dest  ,
@@ -545,7 +558,8 @@ wrp_router: router_new
     i_E_y_orig =>signal_i_E_y_orig  ,
     i_E_fb     =>signal_i_E_fb      ,
     i_E_req    =>signal_i_E_req     ,
-    i_E_ack    =>signal_i_E_ack     ,
+    i_E_ack    =>in_router_out_e_ack     ,
+    
     i_W_pixel  =>signal_i_W_pixel   ,
     i_W_x_dest =>signal_i_W_x_dest  ,
     i_W_y_dest =>signal_i_W_y_dest  ,
@@ -555,77 +569,77 @@ wrp_router: router_new
     i_W_y_orig =>signal_i_W_y_orig  ,
     i_W_fb     =>signal_i_W_fb      ,
     i_W_req    =>signal_i_W_req     ,
-    i_W_ack    =>signal_i_W_ack     
+    i_W_ack    =>in_router_out_w_ack     
 );
 
 -- slice dos pacotes
 --PM escreve no roteado
-signal_t_PM_pixel  <=in_router_out_pm_data(pix_depth + img_width + img_width + img_width + img_width + n_frames + n_steps +2 -1 downto img_width + img_width + img_width + img_width + n_frames+n_steps +2 );
-signal_t_PM_x_dest <=in_router_out_pm_data(img_width+img_width+img_width+img_width+n_frames+n_steps +2 -1    downto img_width+img_width+img_width+n_frames+n_steps +2 );
-signal_t_PM_y_dest <=in_router_out_pm_data(img_width+img_width+img_width+n_frames+n_steps +2 -1 downto img_width+img_width+n_frames+n_steps +2);
-signal_t_PM_step   <=in_router_out_pm_data(img_width+img_width+n_frames+n_steps +2 -1 downto img_width+n_steps+n_frames +2 );
-signal_t_PM_frame  <=in_router_out_pm_data(img_width+n_frames+n_steps +2 -1 downto n_frames+n_steps +2);
-signal_t_PM_x_orig <=in_router_out_pm_data  (n_steps+n_frames +2 -1 downto n_frames +2);
-signal_t_PM_y_orig  <=in_router_out_pm_data (n_frames +2 -1 downto +2);
-signal_t_PM_fb      <=in_router_out_pm_data(1);
-signal_t_PM_req     <=in_router_out_pm_data(0); --req
+signal_t_PM_pixel   <=in_router_out_pm_data(pix_depth + img_width + img_width +  n_steps+ n_frames + img_width+ img_width  +2  downto  img_width + img_width +  n_steps+ n_frames + img_width+ img_width +2 +1); 
+signal_t_PM_x_dest  <=in_router_out_pm_data(img_width + img_width +  n_steps+ n_frames + img_width+ img_width +2 downto img_width +  n_steps+ n_frames + img_width+ img_width +2 +1);                                          
+signal_t_PM_y_dest  <=in_router_out_pm_data(img_width +  n_steps+ n_frames + img_width+ img_width +2 downto n_steps+ n_frames + img_width+ img_width +2+1);                                                               
+signal_t_PM_step    <=in_router_out_pm_data(n_steps+ n_frames + img_width+ img_width +2 downto n_frames+img_width+img_width +2 +1);                                                                                 
+signal_t_PM_frame   <=in_router_out_pm_data(n_frames + img_width+ img_width +2 downto img_width+img_width +2+1);                                                                                                       
+signal_t_PM_x_orig  <=in_router_out_pm_data(img_width+ img_width +2   downto img_width +2+1);                                                                                                                        
+signal_t_PM_y_orig  <=in_router_out_pm_data(img_width +2  downto +2+1);                                                                                                                                         
+signal_t_PM_fb      <=in_router_out_pm_data(1+1);                                                                                                                                                              
+signal_t_PM_req     <=in_router_out_pm_data(0+1); --req                                                                                                                                                        (0); --req
 
-signal_t_PE_pixel   <=in_router_out_pe_data(pix_depth + img_width + img_width + img_width + img_width + n_frames + n_steps +2 -1 downto img_width + img_width + img_width + img_width + n_frames+n_steps +2 );
-signal_t_PE_x_dest  <=in_router_out_pe_data(img_width+img_width+img_width+img_width+n_frames+n_steps +2 -1    downto img_width+img_width+img_width+n_frames+n_steps +2 );
-signal_t_PE_y_dest  <=in_router_out_pe_data(img_width+img_width+img_width+n_frames+n_steps +2 -1 downto img_width+img_width+n_frames+n_steps +2);
-signal_t_PE_step    <=in_router_out_pe_data(img_width+img_width+n_frames+n_steps +2 -1 downto img_width+n_steps+n_frames +2 );
-signal_t_PE_frame   <=in_router_out_pe_data(img_width+n_frames+n_steps +2 -1 downto n_frames+n_steps +2);
-signal_t_PE_x_orig  <=in_router_out_pe_data  (n_steps+n_frames +2 -1 downto n_frames +2);
-signal_t_PE_y_orig  <=in_router_out_pe_data (n_frames +2 -1 downto +2);
-signal_t_PE_fb      <=in_router_out_pe_data(1);
-signal_t_PE_req     <=in_router_out_pe_data(0); --req
+signal_t_PE_pixel   <=in_router_out_pe_data(pix_depth + img_width + img_width +  n_steps+ n_frames + img_width+ img_width  +2  downto  img_width + img_width +  n_steps+ n_frames + img_width+ img_width +2 +1);         
+signal_t_PE_x_dest  <=in_router_out_pe_data(img_width + img_width +  n_steps+ n_frames + img_width+ img_width +2 downto img_width +  n_steps+ n_frames + img_width+ img_width +2 +1);                                    
+signal_t_PE_y_dest  <=in_router_out_pe_data(img_width +  n_steps+ n_frames + img_width+ img_width +2 downto n_steps+ n_frames + img_width+ img_width +2+1);                                                              
+signal_t_PE_step    <=in_router_out_pe_data(n_steps+ n_frames + img_width+ img_width +2 downto n_frames+img_width+img_width +2 +1);                                                                                      
+signal_t_PE_frame   <=in_router_out_pe_data(n_frames + img_width+ img_width +2 downto img_width+img_width +2+1);                                                                                                         
+signal_t_PE_x_orig  <=in_router_out_pe_data(img_width+ img_width +2   downto img_width +2+1);                                                                                                                            
+signal_t_PE_y_orig  <=in_router_out_pe_data(img_width +2  downto +2+1);                                                                                                                                                  
+signal_t_PE_fb      <=in_router_out_pe_data(1+1);                                                                                                                                                                        
+signal_t_PE_req     <=in_router_out_pe_data(0+1); --req                                                                                                                                                        (0); --req
 
-signal_t_N_pixel   <=in_router_out_n_data(pix_depth + img_width + img_width + img_width + img_width + n_frames + n_steps +2 -1 downto img_width + img_width + img_width + img_width + n_frames+n_steps +2 );
-signal_t_N_x_dest  <=in_router_out_n_data(img_width+img_width+img_width+img_width+n_frames+n_steps +2 -1    downto img_width+img_width+img_width+n_frames+n_steps +2 );
-signal_t_N_y_dest  <=in_router_out_n_data(img_width+img_width+img_width+n_frames+n_steps +2 -1 downto img_width+img_width+n_frames+n_steps +2);
-signal_t_N_step    <=in_router_out_n_data(img_width+img_width+n_frames+n_steps +2 -1 downto img_width+n_steps+n_frames +2 );
-signal_t_N_frame   <=in_router_out_n_data(img_width+n_frames+n_steps +2 -1 downto n_frames+n_steps +2);
-signal_t_N_x_orig  <=in_router_out_n_data  (n_steps+n_frames +2 -1 downto n_frames +2);
-signal_t_N_y_orig  <=in_router_out_n_data (n_frames +2 -1 downto +2);
-signal_t_N_fb      <=in_router_out_n_data(1);
-signal_t_N_req     <=in_router_out_n_data(0); --req
+signal_t_N_pixel   <=in_router_out_n_data(pix_depth + img_width + img_width +  n_steps+ n_frames + img_width+ img_width  +2  downto  img_width + img_width +  n_steps+ n_frames + img_width+ img_width +2 +1);         
+signal_t_N_x_dest  <=in_router_out_n_data(img_width + img_width +  n_steps+ n_frames + img_width+ img_width +2 downto img_width +  n_steps+ n_frames + img_width+ img_width +2 +1);                                    
+signal_t_N_y_dest  <=in_router_out_n_data(img_width +  n_steps+ n_frames + img_width+ img_width +2 downto n_steps+ n_frames + img_width+ img_width +2+1);                                                              
+signal_t_N_step    <=in_router_out_n_data(n_steps+ n_frames + img_width+ img_width +2 downto n_frames+img_width+img_width +2 +1);                                                                                      
+signal_t_N_frame   <=in_router_out_n_data(n_frames + img_width+ img_width +2 downto img_width+img_width +2+1);                                                                                                         
+signal_t_N_x_orig  <=in_router_out_n_data(img_width+ img_width +2   downto img_width +2+1);                                                                                                                            
+signal_t_N_y_orig  <=in_router_out_n_data(img_width +2  downto +2+1);                                                                                                                                                  
+signal_t_N_fb      <=in_router_out_n_data(1+1);                                                                                                                                                                        
+signal_t_N_req     <=in_router_out_n_data(0+1); --req                                                                                                                                                        (0); --req
 
-signal_t_S_pixel   <=in_router_out_s_data(pix_depth + img_width + img_width + img_width + img_width + n_frames + n_steps +2 -1 downto img_width + img_width + img_width + img_width + n_frames+n_steps +2 );
-signal_t_S_x_dest  <=in_router_out_s_data(img_width+img_width+img_width+img_width+n_frames+n_steps +2 -1    downto img_width+img_width+img_width+n_frames+n_steps +2 );
-signal_t_S_y_dest  <=in_router_out_s_data(img_width+img_width+img_width+n_frames+n_steps +2 -1 downto img_width+img_width+n_frames+n_steps +2);
-signal_t_S_step    <=in_router_out_s_data(img_width+img_width+n_frames+n_steps +2 -1 downto img_width+n_steps+n_frames +2 );
-signal_t_S_frame   <=in_router_out_s_data(img_width+n_frames+n_steps +2 -1 downto n_frames+n_steps +2);
-signal_t_S_x_orig  <=in_router_out_s_data  (n_steps+n_frames +2 -1 downto n_frames +2);
-signal_t_S_y_orig  <=in_router_out_s_data (n_frames +2 -1 downto +2);
-signal_t_S_fb      <=in_router_out_s_data(1);
-signal_t_S_req     <=in_router_out_s_data(0); --req
+signal_t_S_pixel   <=in_router_out_s_data(pix_depth + img_width + img_width +  n_steps+ n_frames + img_width+ img_width  +2  downto  img_width + img_width +  n_steps+ n_frames + img_width+ img_width +2 +1);         
+signal_t_S_x_dest  <=in_router_out_s_data(img_width + img_width +  n_steps+ n_frames + img_width+ img_width +2 downto img_width +  n_steps+ n_frames + img_width+ img_width +2 +1);                                    
+signal_t_S_y_dest  <=in_router_out_s_data(img_width +  n_steps+ n_frames + img_width+ img_width +2 downto n_steps+ n_frames + img_width+ img_width +2+1);                                                              
+signal_t_S_step    <=in_router_out_s_data(n_steps+ n_frames + img_width+ img_width +2 downto n_frames+img_width+img_width +2 +1);                                                                                      
+signal_t_S_frame   <=in_router_out_s_data(n_frames + img_width+ img_width +2 downto img_width+img_width +2+1);                                                                                                         
+signal_t_S_x_orig  <=in_router_out_s_data(img_width+ img_width +2   downto img_width +2+1);                                                                                                                            
+signal_t_S_y_orig  <=in_router_out_s_data(img_width +2  downto +2+1);                                                                                                                                                  
+signal_t_S_fb      <=in_router_out_s_data(1+1);                                                                                                                                                                          
+signal_t_S_req     <=in_router_out_s_data(0+1); --req                                                                                                                                                        (0); --req  
 
-signal_t_E_pixel   <=in_router_out_n_data(pix_depth + img_width + img_width + img_width + img_width + n_frames + n_steps +2 -1 downto img_width + img_width + img_width + img_width + n_frames+n_steps +2 );
-signal_t_E_x_dest  <=in_router_out_n_data(img_width+img_width+img_width+img_width+n_frames+n_steps +2 -1    downto img_width+img_width+img_width+n_frames+n_steps +2 );
-signal_t_E_y_dest  <=in_router_out_n_data(img_width+img_width+img_width+n_frames+n_steps +2 -1 downto img_width+img_width+n_frames+n_steps +2);
-signal_t_E_step    <=in_router_out_n_data(img_width+img_width+n_frames+n_steps +2 -1 downto img_width+n_steps+n_frames +2 );
-signal_t_E_frame   <=in_router_out_n_data(img_width+n_frames+n_steps +2 -1 downto n_frames+n_steps +2);
-signal_t_E_x_orig  <=in_router_out_n_data  (n_steps+n_frames +2 -1 downto n_frames +2);
-signal_t_E_y_orig  <=in_router_out_n_data (n_frames +2 -1 downto +2);
-signal_t_E_fb      <=in_router_out_n_data(1);
-signal_t_E_req     <=in_router_out_n_data(0); --req
+signal_t_E_pixel   <=in_router_out_e_data(pix_depth + img_width + img_width +  n_steps+ n_frames + img_width+ img_width  +2  downto  img_width + img_width +  n_steps+ n_frames + img_width+ img_width +2 +1);         
+signal_t_E_x_dest  <=in_router_out_e_data(img_width + img_width +  n_steps+ n_frames + img_width+ img_width +2 downto img_width +  n_steps+ n_frames + img_width+ img_width +2 +1);                                    
+signal_t_E_y_dest  <=in_router_out_e_data(img_width +  n_steps+ n_frames + img_width+ img_width +2 downto n_steps+ n_frames + img_width+ img_width +2+1);                                                              
+signal_t_E_step    <=in_router_out_e_data(n_steps+ n_frames + img_width+ img_width +2 downto n_frames+img_width+img_width +2 +1);                                                                                      
+signal_t_E_frame   <=in_router_out_e_data(n_frames + img_width+ img_width +2 downto img_width+img_width +2+1);                                                                                                         
+signal_t_E_x_orig  <=in_router_out_e_data(img_width+ img_width +2   downto img_width +2+1);                                                                                                                            
+signal_t_E_y_orig  <=in_router_out_e_data(img_width +2  downto +2+1);                                                                                                                                                  
+signal_t_E_fb      <=in_router_out_e_data(1+1);                                                                                                                                                                        
+signal_t_E_req     <=in_router_out_e_data(0+1); --req                                                                                                                                                        (0); --req
 
-signal_t_W_pixel   <=in_router_out_s_data(pix_depth + img_width + img_width + img_width + img_width + n_frames + n_steps +2 -1 downto img_width + img_width + img_width + img_width + n_frames+n_steps +2 );
-signal_t_W_x_dest  <=in_router_out_s_data(img_width+img_width+img_width+img_width+n_frames+n_steps +2 -1    downto img_width+img_width+img_width+n_frames+n_steps +2 );
-signal_t_W_y_dest  <=in_router_out_s_data(img_width+img_width+img_width+n_frames+n_steps +2 -1 downto img_width+img_width+n_frames+n_steps +2);
-signal_t_W_step    <=in_router_out_s_data(img_width+img_width+n_frames+n_steps +2 -1 downto img_width+n_steps+n_frames +2 );
-signal_t_W_frame   <=in_router_out_s_data(img_width+n_frames+n_steps +2 -1 downto n_frames+n_steps +2);
-signal_t_W_x_orig  <=in_router_out_s_data  (n_steps+n_frames +2 -1 downto n_frames +2);
-signal_t_W_y_orig  <=in_router_out_s_data (n_frames +2 -1 downto +2);
-signal_t_W_fb      <=in_router_out_s_data(1);
-signal_t_W_req     <=in_router_out_s_data(0); --req
+signal_t_W_pixel   <=in_router_out_s_data(pix_depth + img_width + img_width +  n_steps+ n_frames + img_width+ img_width  +2  downto  img_width + img_width +  n_steps+ n_frames + img_width+ img_width +2 +1);         
+signal_t_W_x_dest  <=in_router_out_s_data(img_width + img_width +  n_steps+ n_frames + img_width+ img_width +2 downto img_width +  n_steps+ n_frames + img_width+ img_width +2 +1);                                    
+signal_t_W_y_dest  <=in_router_out_s_data(img_width +  n_steps+ n_frames + img_width+ img_width +2 downto n_steps+ n_frames + img_width+ img_width +2+1);                                                              
+signal_t_W_step    <=in_router_out_s_data(n_steps+ n_frames + img_width+ img_width +2 downto n_frames+img_width+img_width +2 +1);                                                                                      
+signal_t_W_frame   <=in_router_out_s_data(n_frames + img_width+ img_width +2 downto img_width+img_width +2+1);                                                                                                         
+signal_t_W_x_orig  <=in_router_out_s_data(img_width+ img_width +2   downto img_width +2+1);                                                                                                                            
+signal_t_W_y_orig  <=in_router_out_s_data(img_width +2  downto +2+1);                                                                                                                                                  
+signal_t_W_fb      <=in_router_out_s_data(1+1);                                                                                                                                                                        
+signal_t_W_req     <=in_router_out_s_data(0+1); --req                                                                                                                                                        (0); --req
 
-out_router_in_pm_data   <= signal_i_PM_pixel & signal_i_PM_x_dest & signal_i_PM_y_dest & signal_i_PM_step &  signal_i_PM_frame &  signal_i_PM_x_orig &  signal_i_PM_y_orig &  signal_i_PM_fb &  signal_i_PM_req;
-out_router_in_pe_data   <= signal_i_PE_pixel & signal_i_PE_x_dest & signal_i_PE_y_dest & signal_i_PE_step &  signal_i_PE_frame &  signal_i_PE_x_orig &  signal_i_PE_y_orig &  signal_i_PE_fb &  signal_i_PE_req;
-out_router_in_n_data    <= signal_i_N_pixel  & signal_i_N_x_dest  & signal_i_N_y_dest  & signal_i_N_step  &  signal_i_N_frame  &  signal_i_N_x_orig  &  signal_i_N_y_orig  &  signal_i_N_fb  &  signal_i_N_req;
-out_router_in_s_data    <= signal_i_S_pixel  & signal_i_S_x_dest  & signal_i_S_y_dest  & signal_i_S_step  &  signal_i_S_frame  &  signal_i_S_x_orig  &  signal_i_S_y_orig  &  signal_i_S_fb  &  signal_i_S_req;
-out_router_in_e_data    <= signal_i_E_pixel  & signal_i_E_x_dest  & signal_i_E_y_dest  & signal_i_E_step  &  signal_i_E_frame  &  signal_i_E_x_orig  &  signal_i_E_y_orig  &  signal_i_E_fb  &  signal_i_E_req;
-out_router_in_w_data    <= signal_i_W_pixel  & signal_i_W_x_dest  & signal_i_W_y_dest  & signal_i_W_step  &  signal_i_W_frame  &  signal_i_W_x_orig  &  signal_i_W_y_orig  &  signal_i_W_fb  &  signal_i_W_req;
+out_router_in_pm_data(63 downto 0)   <=  signal_i_PM_pixel & signal_i_PM_x_dest & signal_i_PM_y_dest & signal_i_PM_step &  signal_i_PM_frame &  signal_i_PM_x_orig &  signal_i_PM_y_orig &  signal_i_PM_fb &  signal_i_PM_req & in_router_out_pm_ack  ;
+out_router_in_pe_data(63 downto 0)   <=  signal_i_PE_pixel & signal_i_PE_x_dest & signal_i_PE_y_dest & signal_i_PE_step &  signal_i_PE_frame &  signal_i_PE_x_orig &  signal_i_PE_y_orig &  signal_i_PE_fb &  signal_i_PE_req & in_router_out_pe_ack  ;
+out_router_in_n_data (63 downto 0)   <=  signal_i_N_pixel  & signal_i_N_x_dest  & signal_i_N_y_dest  & signal_i_N_step  &  signal_i_N_frame  &  signal_i_N_x_orig  &  signal_i_N_y_orig  &  signal_i_N_fb  &  signal_i_N_req  & in_router_out_n_ack ;
+out_router_in_s_data (63 downto 0)   <=  signal_i_S_pixel  & signal_i_S_x_dest  & signal_i_S_y_dest  & signal_i_S_step  &  signal_i_S_frame  &  signal_i_S_x_orig  &  signal_i_S_y_orig  &  signal_i_S_fb  &  signal_i_S_req  & in_router_out_s_ack ;
+out_router_in_e_data (63 downto 0)   <=  signal_i_E_pixel  & signal_i_E_x_dest  & signal_i_E_y_dest  & signal_i_E_step  &  signal_i_E_frame  &  signal_i_E_x_orig  &  signal_i_E_y_orig  &  signal_i_E_fb  &  signal_i_E_req  & in_router_out_e_ack ;
+out_router_in_w_data (63 downto 0)   <=  signal_i_W_pixel  & signal_i_W_x_dest  & signal_i_W_y_dest  & signal_i_W_step  &  signal_i_W_frame  &  signal_i_W_x_orig  &  signal_i_W_y_orig  &  signal_i_W_fb  &  signal_i_W_req  & in_router_out_w_ack ;
 
 
 end Behavioral;

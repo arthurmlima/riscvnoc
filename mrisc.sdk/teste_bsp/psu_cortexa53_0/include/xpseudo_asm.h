@@ -1,6 +1,6 @@
 /******************************************************************************
 *
-* Copyright (C) 2015 Xilinx, Inc.  All rights reserved.
+* Copyright (C) 2014 - 2015 Xilinx, Inc. All rights reserved.
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -30,12 +30,12 @@
 *
 * @file xpseudo_asm.h
 *
-* @addtogroup a53_32_specific Cortex A53 32bit Processor Specific Include Files
+* @addtogroup a53_64_specific Cortex A53 64bit Processor Specific Include Files
 *
 * The xpseudo_asm.h includes xreg_cortexa53.h and xpseudo_asm_gcc.h.
 * The xreg_cortexa53.h file contains definitions for inline assembler code.
-* It provides inline definitions for Cortex A53 GPRs, SPRs, co-processor
-* registers and floating point registers.
+* It provides inline definitions for Cortex A53 GPRs, SPRs and floating point
+* registers.
 *
 * The xpseudo_asm_gcc.h contains the definitions for the most often used inline
 * assembler instructions, available as macros. These can be very useful for
@@ -45,13 +45,12 @@
 *
 * @{
 *
-*
 * <pre>
 * MODIFICATION HISTORY:
 *
 * Ver   Who  Date     Changes
 * ----- ---- -------- -----------------------------------------------
-* 5.2	pkp  	28/05/15 First release
+* 5.00 	pkp  05/29/14 First release
 * </pre>
 *
 ******************************************************************************/
@@ -63,7 +62,11 @@ extern "C" {
 #endif
 
 #include "xreg_cortexa53.h"
+#ifdef __clang__
+#include "xpseudo_asm_armclang.h"
+#else
 #include "xpseudo_asm_gcc.h"
+#endif
 
 #ifdef __cplusplus
 }
@@ -71,5 +74,5 @@ extern "C" {
 
 #endif /* XPSEUDO_ASM_H */
 /**
-* @} End of "addtogroup a53_32_specific".
+* @} End of "addtogroup a53_64_specific".
 */

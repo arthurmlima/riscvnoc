@@ -15,10 +15,6 @@ BEGIN PROCESSOR
  PARAMETER DRIVER_NAME = cpu_cortexa53
  PARAMETER DRIVER_VER = 1.5
  PARAMETER HW_INSTANCE = psu_cortexa53_0
- PARAMETER archiver = arm-none-eabi-ar
- PARAMETER compiler = arm-none-eabi-gcc
- PARAMETER exec_mode = aarch32
- PARAMETER extra_compiler_flags = -g -Wall -Wextra -march=armv7-a -DARMA53_32 -mfpu=vfpv3 -mfloat-abi=hard
 END
 
 
@@ -638,6 +634,12 @@ BEGIN DRIVER
  PARAMETER DRIVER_NAME = generic
  PARAMETER DRIVER_VER = 2.0
  PARAMETER HW_INSTANCE = zcu104_0
+END
+
+BEGIN DRIVER
+ PARAMETER DRIVER_NAME = generic
+ PARAMETER DRIVER_VER = 2.0
+ PARAMETER HW_INSTANCE = zcu104_1
 END
 
 

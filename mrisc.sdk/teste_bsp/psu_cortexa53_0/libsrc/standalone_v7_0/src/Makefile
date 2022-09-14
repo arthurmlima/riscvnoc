@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# Copyright (C) 2015 Xilinx, Inc.  All rights reserved.
+# Copyright (C) 2014 - 2015 Xilinx, Inc. All rights reserved.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -25,7 +25,6 @@
 # this Software without prior written authorization from Xilinx.
 #
 ###############################################################################
-
 include config.make
 
 CC=$(COMPILER)
@@ -34,12 +33,11 @@ CP=cp
 COMPILER_FLAGS=
 EXTRA_COMPILER_FLAGS=
 LIB=libxil.a
-
 CC_FLAGS = $(subst -pg, -DPROFILING, $(COMPILER_FLAGS))
 ECC_FLAGS = $(subst -pg, -DPROFILING, $(EXTRA_COMPILER_FLAGS))
 
 ECC_FLAGS	+= -nostartfiles\
-		  -march=armv7-a
+		  -march=armv8-a
 ECC_FLAGS_NO_FLTO1 = $(subst -flto,,$(ECC_FLAGS))
 ECC_FLAGS_NO_FLTO = $(subst -ffat-lto-objects,,$(ECC_FLAGS_NO_FLTO1))
 
@@ -56,10 +54,10 @@ INCLUDEFILES+=includes_ps/*.h
 libs: $(LIBS)
 
 standalone_libs: $(LIBSOURCES)
-	echo "Compiling standalone"
+	echo "Compiling standalone ARMv8 64 bit"
 	$(CC) $(CC_FLAGS) $(ECC_FLAGS) $(INCLUDES) $(filter-out _exit.c, $^)
 	$(CC) $(CC_FLAGS) $(ECC_FLAGS_NO_FLTO) $(INCLUDES) _exit.c
-	$(ARCHIVER) -r ${RELEASEDIR}/${LIB} ${OBJECTS} ${ASSEMBLY_OBJECTS}
+	$(AR) -r ${RELEASEDIR}/${LIB} ${OBJECTS} ${ASSEMBLY_OBJECTS}
 
 .PHONY: include
 include: standalone_includes

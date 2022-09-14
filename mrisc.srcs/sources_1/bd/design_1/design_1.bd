@@ -1,11 +1,12 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x93FDA404512D3C68",
+      "boundary_crc": "0x3D34E957F1F8FD6E",
       "device": "xczu7ev-ffvc1156-2-e",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2019.1"
+      "tool_version": "2019.1",
+      "validated": "true"
     },
     "design_tree": {
       "zynq_ultra_ps_e_0": "",
@@ -25,32 +26,33 @@
       "led1_0": {
         "direction": "O"
       },
-      "led2_0": {
-        "direction": "O"
-      },
-      "led3_0": {
-        "direction": "O"
-      },
-      "led4_0": {
-        "direction": "O"
-      },
-      "led5_0": {
-        "direction": "O"
-      },
-      "ledg_n_0": {
-        "direction": "O"
-      },
-      "ledr_n_0": {
-        "direction": "O"
-      },
       "reset_riscv_0": {
         "type": "rst",
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
       },
       "ser_rx_0": {
         "direction": "I"
       },
       "ser_tx_0": {
+        "direction": "O"
+      },
+      "ser_tx_1": {
+        "direction": "O"
+      },
+      "ser_rx_1": {
+        "direction": "I"
+      },
+      "led2_0": {
         "direction": "O"
       }
     },
@@ -1035,16 +1037,16 @@
               }
             },
             "interface_nets": {
-              "s00_couplers_to_auto_pc": {
-                "interface_ports": [
-                  "S_AXI",
-                  "auto_pc/S_AXI"
-                ]
-              },
               "auto_pc_to_s00_couplers": {
                 "interface_ports": [
                   "M_AXI",
                   "auto_pc/M_AXI"
+                ]
+              },
+              "s00_couplers_to_auto_pc": {
+                "interface_ports": [
+                  "S_AXI",
+                  "auto_pc/S_AXI"
                 ]
               }
             },
@@ -1173,24 +1175,6 @@
           }
         },
         "interface_nets": {
-          "ps8_0_axi_periph_to_s00_couplers": {
-            "interface_ports": [
-              "S00_AXI",
-              "s00_couplers/S_AXI"
-            ]
-          },
-          "s00_couplers_to_xbar": {
-            "interface_ports": [
-              "s00_couplers/M_AXI",
-              "xbar/S00_AXI"
-            ]
-          },
-          "m00_couplers_to_ps8_0_axi_periph": {
-            "interface_ports": [
-              "M00_AXI",
-              "m00_couplers/M_AXI"
-            ]
-          },
           "m01_couplers_to_ps8_0_axi_periph": {
             "interface_ports": [
               "M01_AXI",
@@ -1207,6 +1191,24 @@
             "interface_ports": [
               "xbar/M01_AXI",
               "m01_couplers/S_AXI"
+            ]
+          },
+          "ps8_0_axi_periph_to_s00_couplers": {
+            "interface_ports": [
+              "S00_AXI",
+              "s00_couplers/S_AXI"
+            ]
+          },
+          "s00_couplers_to_xbar": {
+            "interface_ports": [
+              "s00_couplers/M_AXI",
+              "xbar/S00_AXI"
+            ]
+          },
+          "m00_couplers_to_ps8_0_axi_periph": {
+            "interface_ports": [
+              "M00_AXI",
+              "m00_couplers/M_AXI"
             ]
           }
         },
@@ -1244,6 +1246,20 @@
       "zcu104_0": {
         "vlnv": "xilinx.com:module_ref:zcu104:1.0",
         "xci_name": "design_1_zcu104_0_0",
+        "parameters": {
+          "buffer_length": {
+            "value": "3"
+          },
+          "subimg_height": {
+            "value": "20"
+          },
+          "subimg_width": {
+            "value": "20"
+          },
+          "y_init": {
+            "value": "0"
+          }
+        },
         "reference_info": {
           "ref_type": "hdl",
           "ref_name": "zcu104",
@@ -1271,9 +1287,17 @@
                 "value": "0",
                 "value_src": "constant"
               },
+              "CLK_DOMAIN": {
+                "value": "design_1_zynq_ultra_ps_e_0_0_pl_clk0",
+                "value_src": "default_prop"
+              },
               "DATA_WIDTH": {
                 "value": "32",
                 "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
               },
               "HAS_BRESP": {
                 "value": "1",
@@ -1449,7 +1473,21 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "s00_axi",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_zynq_ultra_ps_e_0_0_pl_clk0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              }
+            }
           },
           "reset_riscv": {
             "type": "rst",
@@ -1457,11 +1495,31 @@
           },
           "s00_axi_aclk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "s00_axi_aresetn",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_zynq_ultra_ps_e_0_0_pl_clk0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              }
+            }
           },
           "s00_axi_aresetn": {
             "type": "rst",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
           },
           "ser_tx": {
             "direction": "O"
@@ -1469,89 +1527,68 @@
           "ser_rx": {
             "direction": "I"
           },
-          "led1": {
-            "direction": "O"
-          },
-          "led2": {
-            "direction": "O"
-          },
-          "led3": {
-            "direction": "O"
-          },
-          "led4": {
-            "direction": "O"
-          },
-          "led5": {
-            "direction": "O"
-          },
-          "ledr_n": {
-            "direction": "O"
-          },
-          "ledg_n": {
-            "direction": "O"
-          },
-          "in_router_out_n_data": {
+          "IN_N": {
             "direction": "I",
             "left": "63",
             "right": "0"
           },
-          "in_router_out_s_data": {
+          "IN_N_ACK": {
+            "direction": "O"
+          },
+          "IN_S": {
             "direction": "I",
             "left": "63",
             "right": "0"
           },
-          "in_router_out_e_data": {
+          "IN_S_ACK": {
+            "direction": "O"
+          },
+          "IN_E": {
             "direction": "I",
             "left": "63",
             "right": "0"
           },
-          "in_router_out_w_data": {
+          "IN_E_ACK": {
+            "direction": "O"
+          },
+          "IN_W": {
             "direction": "I",
             "left": "63",
             "right": "0"
           },
-          "out_router_in_n_data": {
+          "IN_W_ACK": {
+            "direction": "O"
+          },
+          "OUT_N": {
             "direction": "O",
             "left": "63",
             "right": "0"
           },
-          "out_router_in_s_data": {
-            "direction": "O",
-            "left": "63",
-            "right": "0"
-          },
-          "out_router_in_e_data": {
-            "direction": "O",
-            "left": "63",
-            "right": "0"
-          },
-          "out_router_in_w_data": {
-            "direction": "O",
-            "left": "63",
-            "right": "0"
-          },
-          "out_router_in_n_ack": {
-            "direction": "O"
-          },
-          "out_router_in_s_ack": {
-            "direction": "O"
-          },
-          "out_router_in_e_ack": {
-            "direction": "O"
-          },
-          "out_router_in_w_ack": {
-            "direction": "O"
-          },
-          "in_router_out_n_ack": {
+          "OUT_N_ACK": {
             "direction": "I"
           },
-          "in_router_out_s_ack": {
+          "OUT_S": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "OUT_S_ACK": {
             "direction": "I"
           },
-          "in_router_out_e_ack": {
+          "OUT_E": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "OUT_E_ACK": {
             "direction": "I"
           },
-          "in_router_out_w_ack": {
+          "OUT_W": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "OUT_W_ACK": {
             "direction": "I"
           }
         }
@@ -1559,6 +1596,20 @@
       "zcu104_1": {
         "vlnv": "xilinx.com:module_ref:zcu104:1.0",
         "xci_name": "design_1_zcu104_1_0",
+        "parameters": {
+          "buffer_length": {
+            "value": "3"
+          },
+          "subimg_height": {
+            "value": "20"
+          },
+          "subimg_width": {
+            "value": "20"
+          },
+          "y_init": {
+            "value": "20"
+          }
+        },
         "reference_info": {
           "ref_type": "hdl",
           "ref_name": "zcu104",
@@ -1586,9 +1637,17 @@
                 "value": "0",
                 "value_src": "constant"
               },
+              "CLK_DOMAIN": {
+                "value": "design_1_zynq_ultra_ps_e_0_0_pl_clk0",
+                "value_src": "default_prop"
+              },
               "DATA_WIDTH": {
                 "value": "32",
                 "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
               },
               "HAS_BRESP": {
                 "value": "1",
@@ -1764,7 +1823,21 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "s00_axi",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_zynq_ultra_ps_e_0_0_pl_clk0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              }
+            }
           },
           "reset_riscv": {
             "type": "rst",
@@ -1772,11 +1845,31 @@
           },
           "s00_axi_aclk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "s00_axi_aresetn",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_zynq_ultra_ps_e_0_0_pl_clk0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              }
+            }
           },
           "s00_axi_aresetn": {
             "type": "rst",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
           },
           "ser_tx": {
             "direction": "O"
@@ -1784,89 +1877,68 @@
           "ser_rx": {
             "direction": "I"
           },
-          "led1": {
-            "direction": "O"
-          },
-          "led2": {
-            "direction": "O"
-          },
-          "led3": {
-            "direction": "O"
-          },
-          "led4": {
-            "direction": "O"
-          },
-          "led5": {
-            "direction": "O"
-          },
-          "ledr_n": {
-            "direction": "O"
-          },
-          "ledg_n": {
-            "direction": "O"
-          },
-          "in_router_out_n_data": {
+          "IN_N": {
             "direction": "I",
             "left": "63",
             "right": "0"
           },
-          "in_router_out_s_data": {
+          "IN_N_ACK": {
+            "direction": "O"
+          },
+          "IN_S": {
             "direction": "I",
             "left": "63",
             "right": "0"
           },
-          "in_router_out_e_data": {
+          "IN_S_ACK": {
+            "direction": "O"
+          },
+          "IN_E": {
             "direction": "I",
             "left": "63",
             "right": "0"
           },
-          "in_router_out_w_data": {
+          "IN_E_ACK": {
+            "direction": "O"
+          },
+          "IN_W": {
             "direction": "I",
             "left": "63",
             "right": "0"
           },
-          "out_router_in_n_data": {
+          "IN_W_ACK": {
+            "direction": "O"
+          },
+          "OUT_N": {
             "direction": "O",
             "left": "63",
             "right": "0"
           },
-          "out_router_in_s_data": {
-            "direction": "O",
-            "left": "63",
-            "right": "0"
-          },
-          "out_router_in_e_data": {
-            "direction": "O",
-            "left": "63",
-            "right": "0"
-          },
-          "out_router_in_w_data": {
-            "direction": "O",
-            "left": "63",
-            "right": "0"
-          },
-          "out_router_in_n_ack": {
-            "direction": "O"
-          },
-          "out_router_in_s_ack": {
-            "direction": "O"
-          },
-          "out_router_in_e_ack": {
-            "direction": "O"
-          },
-          "out_router_in_w_ack": {
-            "direction": "O"
-          },
-          "in_router_out_n_ack": {
+          "OUT_N_ACK": {
             "direction": "I"
           },
-          "in_router_out_s_ack": {
+          "OUT_S": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "OUT_S_ACK": {
             "direction": "I"
           },
-          "in_router_out_e_ack": {
+          "OUT_E": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "OUT_E_ACK": {
             "direction": "I"
           },
-          "in_router_out_w_ack": {
+          "OUT_W": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "OUT_W_ACK": {
             "direction": "I"
           }
         }
@@ -1925,48 +1997,6 @@
           "zcu104_1/s00_axi_aresetn"
         ]
       },
-      "zcu104_0_led1": {
-        "ports": [
-          "zcu104_0/led1",
-          "led1_0"
-        ]
-      },
-      "zcu104_0_led2": {
-        "ports": [
-          "zcu104_0/led2",
-          "led2_0"
-        ]
-      },
-      "zcu104_0_led3": {
-        "ports": [
-          "zcu104_0/led3",
-          "led3_0"
-        ]
-      },
-      "zcu104_0_led4": {
-        "ports": [
-          "zcu104_0/led4",
-          "led4_0"
-        ]
-      },
-      "zcu104_0_led5": {
-        "ports": [
-          "zcu104_0/led5",
-          "led5_0"
-        ]
-      },
-      "zcu104_0_ledg_n": {
-        "ports": [
-          "zcu104_0/ledg_n",
-          "ledg_n_0"
-        ]
-      },
-      "zcu104_0_ledr_n": {
-        "ports": [
-          "zcu104_0/ledr_n",
-          "ledr_n_0"
-        ]
-      },
       "zcu104_0_reset_riscv": {
         "ports": [
           "zcu104_0/reset_riscv",
@@ -1983,6 +2013,49 @@
         "ports": [
           "zcu104_0/ser_tx",
           "ser_tx_0"
+        ]
+      },
+      "zcu104_0_IN_N_ACK": {
+        "ports": [
+          "zcu104_0/IN_N_ACK",
+          "led1_0"
+        ]
+      },
+      "ser_rx_1_1": {
+        "ports": [
+          "ser_rx_1",
+          "zcu104_1/ser_rx"
+        ]
+      },
+      "zcu104_1_ser_tx": {
+        "ports": [
+          "zcu104_1/ser_tx",
+          "ser_tx_1"
+        ]
+      },
+      "zcu104_0_IN_S_ACK": {
+        "ports": [
+          "zcu104_0/IN_S_ACK",
+          "led2_0",
+          "zcu104_1/OUT_N_ACK"
+        ]
+      },
+      "zcu104_1_OUT_N": {
+        "ports": [
+          "zcu104_1/OUT_N",
+          "zcu104_0/IN_S"
+        ]
+      },
+      "zcu104_0_OUT_S": {
+        "ports": [
+          "zcu104_0/OUT_S",
+          "zcu104_1/IN_N"
+        ]
+      },
+      "zcu104_1_IN_N_ACK": {
+        "ports": [
+          "zcu104_1/IN_N_ACK",
+          "zcu104_0/OUT_S_ACK"
         ]
       }
     },

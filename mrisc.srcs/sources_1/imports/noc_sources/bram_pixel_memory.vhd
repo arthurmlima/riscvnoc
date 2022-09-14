@@ -194,8 +194,7 @@ begin
     begin
         if(i_reset='0')then
             if(i_enable='1')then
-                s_router_addr   := resize(  img_size*(s_router_x-x_init)*steps*frames+(s_router_y-y_init)*steps*frames+
-                                            s_router_s*frames+s_router_f, s_router_addr'length);
+                s_router_addr   := resize(  img_size*(s_router_x-x_init)*steps*frames+(s_router_y-y_init)*steps*frames+s_router_s*frames+s_router_f, s_router_addr'length);
                 s_enb <= '1';
                 if(s_router_addr < mem_size) then
                     s_addrb <= std_logic_vector(s_router_addr(s_addrb'length-1 downto 0));
