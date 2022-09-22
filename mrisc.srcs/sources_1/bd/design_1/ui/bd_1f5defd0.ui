@@ -2,52 +2,93 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port reset_riscv_0 -pg 1 -lvl 5 -x 2730 -y -580 -defaultsOSRD
-preplace port ser_rx_0 -pg 1 -lvl 0 -x -30 -y 380 -defaultsOSRD
-preplace port ser_tx_0 -pg 1 -lvl 5 -x 2730 -y -520 -defaultsOSRD
-preplace port led2_0 -pg 1 -lvl 5 -x 2730 -y -550 -defaultsOSRD
-preplace port ser_rx_1 -pg 1 -lvl 0 -x -30 -y 910 -defaultsOSRD
-preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 1 -x 490 -y 90 -defaultsOSRD
-preplace inst ps8_0_axi_periph -pg 1 -lvl 2 -x 950 -y 80 -defaultsOSRD
-preplace inst rst_ps8_0_100M -pg 1 -lvl 1 -x 490 -y 490 -defaultsOSRD
-preplace inst zcu104_0 -pg 1 -lvl 3 -x 1360 -y 660 -defaultsOSRD
-preplace inst zcu104_1 -pg 1 -lvl 3 -x 1360 -y 1040 -defaultsOSRD
-preplace inst zcu104_2 -pg 1 -lvl 4 -x 1820 -y 680 -defaultsOSRD
-preplace inst zcu104_3 -pg 1 -lvl 4 -x 1820 -y 1070 -defaultsOSRD
-preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 0 4 -10 -10 810 260 1090 1240 1550
-preplace netloc zynq_ultra_ps_e_0_pl_resetn0 1 0 2 0 0 780
-preplace netloc rst_ps8_0_100M_peripheral_aresetn 1 1 3 800 780 1120J 1220 1560
-preplace netloc zcu104_0_reset_riscv 1 3 2 1500J 470 1960
-preplace netloc ser_rx_0_1 1 0 3 NJ 380 780J 580 NJ
-preplace netloc zcu104_0_ser_tx 1 3 2 1510J 480 2030
-preplace netloc zcu104_0_OUT_S 1 2 2 1180 850 1500
-preplace netloc zcu104_1_OUT_N 1 2 2 1160 860 1510
-preplace netloc zcu104_1_IN_N_ACK 1 2 2 1150 1230 1500
-preplace netloc ser_rx_1_1 1 0 3 NJ 910 NJ 910 1100J
-preplace netloc Net 1 2 2 1170 840 1510J
-preplace netloc zcu104_3_OUT_W 1 2 3 1160 1280 NJ 1280 1990
-preplace netloc zcu104_3_IN_W_ACK 1 2 3 1180 1270 NJ 1270 2000
-preplace netloc zcu104_1_IN_E_ACK 1 3 1 1520 1030n
-preplace netloc zcu104_3_OUT_N 1 3 2 1590 500 2020
-preplace netloc zcu104_2_IN_S_ACK 1 3 2 1580 860 1970
-preplace netloc zcu104_2_OUT_S 1 3 2 1590 870 1960
-preplace netloc zcu104_3_IN_N_ACK 1 3 2 1560 490 2030
-preplace netloc zcu104_2_OUT_W 1 2 3 1130 1250 NJ 1250 1980
-preplace netloc zcu104_0_IN_E_ACK 1 3 1 1520 650n
-preplace netloc zcu104_0_OUT_E 1 3 1 1540 680n
-preplace netloc zcu104_2_IN_W_ACK 1 2 3 1140 1260 NJ 1260 2010
-preplace netloc zcu104_1_OUT_E 1 3 1 1570 1070n
-preplace netloc ps8_0_axi_periph_M00_AXI 1 2 1 1180 50n
-preplace netloc ps8_0_axi_periph_M01_AXI 1 2 1 1110 70n
-preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_FPD 1 1 1 790 -40n
-preplace netloc ps8_0_axi_periph_M02_AXI 1 2 2 NJ 90 1550
-preplace netloc ps8_0_axi_periph_M03_AXI 1 2 2 NJ 110 1530
-levelinfo -pg 1 -30 490 950 1360 1820 2730
-pagesize -pg 1 -db -bbox -sgen -130 -750 2860 1730
+preplace port ser_rx_0 -pg 1 -lvl 0 -x -150 -y 110 -defaultsOSRD
+preplace port ser_tx_0 -pg 1 -lvl 5 -x 2810 -y -1460 -defaultsOSRD
+preplace port ser_rx_1 -pg 1 -lvl 0 -x -150 -y -880 -defaultsOSRD
+preplace port ser_tx_1 -pg 1 -lvl 5 -x 2810 -y -890 -defaultsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 1 -x 200 -y 170 -defaultsOSRD
+preplace inst ps8_0_axi_periph -pg 1 -lvl 1 -x 200 -y 530 -defaultsOSRD
+preplace inst rst_ps8_0_100M -pg 1 -lvl 1 -x 200 -y 890 -defaultsOSRD
+preplace inst zcu104_0 -pg 1 -lvl 2 -x 1330 -y -1150 -defaultsOSRD
+preplace inst zcu104_1 -pg 1 -lvl 3 -x 1820 -y -1170 -defaultsOSRD
+preplace inst zcu104_2 -pg 1 -lvl 4 -x 2290 -y -1160 -defaultsOSRD
+preplace inst zcu104_3 -pg 1 -lvl 2 -x 1330 -y -760 -defaultsOSRD
+preplace inst zcu104_4 -pg 1 -lvl 3 -x 1820 -y -800 -defaultsOSRD
+preplace inst zcu104_5 -pg 1 -lvl 4 -x 2290 -y -780 -defaultsOSRD
+preplace inst zcu104_6 -pg 1 -lvl 2 -x 1330 -y -390 -defaultsOSRD
+preplace inst zcu104_7 -pg 1 -lvl 3 -x 1820 -y -410 -defaultsOSRD
+preplace inst zcu104_8 -pg 1 -lvl 4 -x 2290 -y -410 -defaultsOSRD
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 0 4 -120 70 500 -1370 1570 -1380 2050
+preplace netloc zynq_ultra_ps_e_0_pl_resetn0 1 0 2 -100 1000 490
+preplace netloc rst_ps8_0_100M_peripheral_aresetn 1 0 4 -110 990 560 -1360 1540 -1390 2060
+preplace netloc ser_rx_0_1 1 0 2 -130J -1230 NJ
+preplace netloc zcu104_0_ser_tx 1 2 3 1510 -1450 N -1450 2490
+preplace netloc zcu104_3_IN_N_ACK 1 1 2 640 -1340 1500
+preplace netloc zcu104_0_IN_S_ACK 1 1 2 650 -960 1470
+preplace netloc zcu104_0_OUT_S 1 1 2 600 -1350 1480
+preplace netloc zcu104_3_OUT_N 1 1 2 650 -1330 1490
+preplace netloc zcu104_6_IN_N_ACK 1 1 2 650 -580 1480
+preplace netloc zcu104_3_IN_S_ACK 1 1 2 650 -210 1500
+preplace netloc zcu104_3_OUT_S 1 1 2 630 -200 1490
+preplace netloc zcu104_6_OUT_N 1 1 2 640 -570 1470
+preplace netloc zcu104_4_IN_N_ACK 1 2 2 1650 -1400 2020
+preplace netloc zcu104_1_IN_S_ACK 1 2 2 1650 -980 1970
+preplace netloc zcu104_1_OUT_S 1 2 2 1660 -990 1960
+preplace netloc zcu104_4_OUT_N 1 2 2 1660 -1350 2000
+preplace netloc zcu104_7_IN_N_ACK 1 2 2 1660 -620 1960
+preplace netloc zcu104_4_IN_S_ACK 1 2 2 1610 -1370 2010
+preplace netloc zcu104_4_OUT_S 1 2 2 1660 -600 1970
+preplace netloc zcu104_7_OUT_N 1 2 2 1630 -1360 2030
+preplace netloc zcu104_5_IN_N_ACK 1 3 2 2100 -1350 2490
+preplace netloc zcu104_2_IN_S_ACK 1 3 2 2100 -980 2440
+preplace netloc zcu104_2_OUT_S 1 3 2 2110 -970 2430
+preplace netloc zcu104_5_OUT_N 1 3 2 2110 -1340 2480
+preplace netloc zcu104_8_IN_N_ACK 1 3 2 2100 -220 2440
+preplace netloc zcu104_5_IN_S_ACK 1 3 2 2110 -230 2470
+preplace netloc zcu104_5_OUT_S 1 3 2 2110 -590 2440
+preplace netloc zcu104_8_OUT_N 1 3 2 2110 -600 2430
+preplace netloc zcu104_1_IN_W_ACK 1 1 3 580 -1440 NJ -1440 1990
+preplace netloc zcu104_0_IN_E_ACK 1 2 1 1580 -1160n
+preplace netloc zcu104_0_OUT_E 1 2 1 1530 -1170n
+preplace netloc zcu104_1_OUT_W 1 1 3 610 -1430 NJ -1430 1980
+preplace netloc zcu104_2_IN_W_ACK 1 2 3 1620 -1420 NJ -1420 2470
+preplace netloc zcu104_1_IN_E_ACK 1 3 1 2070 -1180n
+preplace netloc zcu104_1_OUT_E 1 3 1 2040 -1160n
+preplace netloc zcu104_2_OUT_W 1 2 3 1640 -1410 NJ -1410 2460
+preplace netloc zcu104_4_IN_W_ACK 1 1 3 610 -180 NJ -180 2010
+preplace netloc zcu104_3_IN_E_ACK 1 2 1 1520 -770n
+preplace netloc zcu104_3_OUT_E 1 2 1 1550 -800n
+preplace netloc zcu104_4_OUT_W 1 1 3 600 -190 NJ -190 1980
+preplace netloc zcu104_5_IN_W_ACK 1 2 3 1640 -150 NJ -150 2490
+preplace netloc zcu104_4_IN_E_ACK 1 3 1 2080 -810n
+preplace netloc zcu104_4_OUT_E 1 3 1 2090 -780n
+preplace netloc zcu104_5_OUT_W 1 2 3 1630 -200 NJ -200 2460
+preplace netloc zcu104_7_IN_W_ACK 1 1 3 640 -170 NJ -170 1970
+preplace netloc zcu104_6_IN_E_ACK 1 2 1 1510 -400n
+preplace netloc zcu104_6_OUT_E 1 2 1 1600 -410n
+preplace netloc zcu104_7_OUT_W 1 1 3 620 -160 NJ -160 1960
+preplace netloc zcu104_8_IN_W_ACK 1 2 3 1650 -140 NJ -140 2450
+preplace netloc zcu104_7_IN_E_ACK 1 3 1 2040 -420n
+preplace netloc zcu104_7_OUT_E 1 3 1 2090 -410n
+preplace netloc zcu104_8_OUT_W 1 2 3 1660 -210 NJ -210 2430
+preplace netloc ser_rx_1_1 1 0 3 NJ -880 530J -950 1560J
+preplace netloc zcu104_4_ser_tx 1 3 2 2070J -960 2500J
+preplace netloc ps8_0_axi_periph_M00_AXI 1 1 1 520 -1270n
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_FPD 1 0 2 -110 80 490
+preplace netloc ps8_0_axi_periph_M01_AXI 1 1 2 550 -970 1520J
+preplace netloc ps8_0_axi_periph_M02_AXI 1 1 3 510 -1470 NJ -1470 2090J
+preplace netloc ps8_0_axi_periph_M03_AXI 1 1 1 580 -880n
+preplace netloc ps8_0_axi_periph_M04_AXI 1 1 2 570J -940 1550
+preplace netloc ps8_0_axi_periph_M05_AXI 1 1 3 540J -1460 NJ -1460 2080
+preplace netloc ps8_0_axi_periph_M06_AXI 1 1 1 590 -510n
+preplace netloc ps8_0_axi_periph_M07_AXI 1 1 2 NJ 590 1590
+preplace netloc ps8_0_axi_periph_M08_AXI 1 1 3 640J 600 1580J -590 2040
+levelinfo -pg 1 -150 200 1330 1820 2290 2810
+pagesize -pg 1 -db -bbox -sgen -250 -1820 2910 2160
 "
 }
 {
-   "da_axi4_cnt":"9",
-   "da_clkrst_cnt":"15",
+   "da_axi4_cnt":"22",
+   "da_clkrst_cnt":"28",
    "da_zynq_ultra_ps_e_cnt":"1"
 }

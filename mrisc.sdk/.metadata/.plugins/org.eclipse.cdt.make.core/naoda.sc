@@ -2,6 +2,7 @@
 <?scdStore version="2"?><scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="xilinx.gnu.arm.a53.exe.debug.707407005;xilinx.gnu.arm.a53.exe.debug.707407005.">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="#undef __ARM_BIG_ENDIAN" removed="true"/>
 <includePath path="#undef __FLT_EVAL_METHOD_C99__" removed="true"/>
 <includePath path="#undef __AARCH64_CMODEL_TINY__" removed="true"/>
 <includePath path="#undef __AARCH64_CMODEL_SMALL__" removed="true"/>

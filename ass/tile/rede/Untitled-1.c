@@ -128,30 +128,29 @@ void delay(void);
 void set_local_image(void);
 void get_local_image(void);
 void get_external_image(uint8_t tilex, uint8_t tiley);
+void get_external_image_noprint(uint8_t tilex, uint8_t tiley);
 
 void teste_local_image(void); //seta e le a pm interna
 void teste_leitura_imagem(void);
+void teste_com_entre_risc_mestre(void);
+//void teste_com_entre_risc_escravo(void);
+
 
 
 void main()
 {
         reg_uart_clkdiv=868;
-        print(" ");
-        print("   "); 
-        print("|");
-        print("   ");  
-        print("\r\n\n\r");
-
-        print("teste de escrita na PM local e leitura da PM local");
-        teste_local_image();
+        set_local_image();
         delay();
-        print("teste de leitura na PM externa");
-        teste_leitura_imagem();
+        //get_external_image_noprint(0,1);        
+        write_gpio(0,0,10,0,0,X_INIT,Y_INIT,0);
 
+        volatile int k=0;
         while(1)
         {
             read_gpio();
-            print_dec(1);
+            k=k+1;
+            print_dec(k);
         }
 
 }
@@ -448,6 +447,38 @@ void print_dec(uint32_t v)
 ////////////////////////////////////////////////////
 //TESTES E APLICACOES//////////////////////////////
 
+void teste_com_entre_risc_mestre(void)
+{
+volatile uint32_t pixel;
+    for(volatile uint32_t i = 0; i < IMAGE_HEIGHT; i++)
+    {   
+        for(volatile uint32_t j = 0; j < IMAGE_WIDTH; j++)
+        {
+        pixel=j+20*i;
+        write_gpio(pixel,0,10,0,0,X_INIT,Y_INIT,1);
+        read_gpio();
+        print("|");
+        print_dec(read_message_pixelValue);
+        print("|");         
+        print("   "); 
+        }
+    print("\r\n\n\r");
+    }
+}
+
+void teste_com_entre_risc_escravo(void)
+{
+    for(volatile uint32_t i = Y_INIT; i < IMAGE_HEIGHT; i++)
+    {   
+        for(volatile uint32_t j = X_INIT; j < IMAGE_WIDTH; j++)
+        {
+        read_gpio();
+        write_gpio(read_message_pixelValue,0,0,0,0,X_INIT,Y_INIT,1);
+        }
+    }
+}
+
+
 
 void set_local_image(void)
 {
@@ -497,6 +528,18 @@ void get_external_image(uint8_t tilex, uint8_t tiley)
     }
 }
 
+void get_external_image_noprint(uint8_t tilex, uint8_t tiley)
+{
+    for(volatile uint32_t i = (tiley*SUB_IMAG_HEIGHT); i < ((tiley+1)*SUB_IMAG_HEIGHT); i++)
+    {   
+        for(volatile uint32_t j = (tilex*SUB_IMAG_WIDTH); j < ((tilex+1)*SUB_IMAG_WIDTH); j++)
+        {
+        write_gpio(0,j,i,0,0,X_INIT,Y_INIT,0);
+        read_gpio();
+        }
+       
+    }
+}
 void teste_local_image(void)
 {
     set_local_image();
@@ -510,7 +553,7 @@ void teste_leitura_imagem(void)
             for(volatile uint32_t j = 0; j<Y_TILES; j++)
         {
             {        
-            get_external_image( i,j );            
+       //     get_external_image( i,j );            
             }
         }
 

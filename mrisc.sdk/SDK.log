@@ -45150,3 +45150,484 @@ con
 ----------------End of Script----------------
 
 01:13:13 INFO  : Launch script is exported to file 'C:\Users\arthu\mrisc\mrisc.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\release.tcl'
+01:13:41 INFO  : Disconnected from the channel tcfchan#47.
+01:13:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:13:42 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 87066A' is selected.
+01:13:42 INFO  : 'jtag frequency' command is executed.
+01:13:42 INFO  : Sourcing of 'C:/Xilinx/SDK/2019.1/scripts/sdk/util/zynqmp_utils.tcl' is done.
+01:13:42 INFO  : Context for 'APU' is selected.
+01:13:44 INFO  : System reset is completed.
+01:13:47 INFO  : 'after 3000' command is executed.
+01:13:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A" && level==0} -index 0' command is executed.
+01:13:58 INFO  : FPGA configured successfully with bitstream "C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+01:13:58 INFO  : Context for 'APU' is selected.
+01:13:58 INFO  : Hardware design information is loaded from 'C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+01:13:58 INFO  : 'configparams force-mem-access 1' command is executed.
+01:13:58 INFO  : Context for 'APU' is selected.
+01:13:58 INFO  : Sourcing of 'C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+01:13:59 INFO  : 'psu_init' command is executed.
+01:14:00 INFO  : 'after 1000' command is executed.
+01:14:00 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+01:14:01 INFO  : 'after 1000' command is executed.
+01:14:01 INFO  : 'psu_ps_pl_reset_config' command is executed.
+01:14:01 INFO  : 'catch {psu_protection}' command is executed.
+01:14:01 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+01:14:01 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+01:14:01 INFO  : The application 'C:/Users/arthu/mrisc/mrisc.sdk/naoda/Release/naoda.elf' is downloaded to processor 'psu_cortexa53_0'.
+01:14:01 INFO  : 'configparams force-mem-access 0' command is executed.
+01:14:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/SDK/2019.1/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A" && level==0} -index 0
+fpga -file C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+loadhw -hw C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+source C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+rst -processor
+dow C:/Users/arthu/mrisc/mrisc.sdk/naoda/Release/naoda.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:14:01 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+01:14:01 INFO  : 'con' command is executed.
+01:14:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+con
+----------------End of Script----------------
+
+01:14:01 INFO  : Launch script is exported to file 'C:\Users\arthu\mrisc\mrisc.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\release.tcl'
+04:15:54 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1663828337029,  Project:1663819788988
+04:15:54 INFO  : Project design_1_wrapper_hw_platform_0's source hardware specification located at C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+04:16:03 INFO  : Copied contents of C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf into \design_1_wrapper_hw_platform_0\system.hdf.
+04:16:21 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+04:16:25 INFO  : 
+04:16:26 INFO  : Updating hardware inferred compiler options for naoda.
+04:16:26 INFO  : Clearing existing target manager status.
+04:16:26 INFO  : Closing and re-opening the MSS file of ther project naoda_bsp
+04:16:29 INFO  : Closing and re-opening the MSS file of ther project naoda_bsp
+04:16:30 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+04:17:07 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+04:18:42 INFO  : Disconnected from the channel tcfchan#48.
+04:18:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:18:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+04:19:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:19:17 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 87066A' is selected.
+04:19:17 INFO  : 'jtag frequency' command is executed.
+04:19:17 INFO  : Sourcing of 'C:/Xilinx/SDK/2019.1/scripts/sdk/util/zynqmp_utils.tcl' is done.
+04:19:17 INFO  : Context for 'APU' is selected.
+04:19:18 INFO  : System reset is completed.
+04:19:21 INFO  : 'after 3000' command is executed.
+04:19:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A" && level==0} -index 0' command is executed.
+04:19:32 INFO  : FPGA configured successfully with bitstream "C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+04:19:32 INFO  : Context for 'APU' is selected.
+04:19:32 INFO  : Hardware design information is loaded from 'C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+04:19:32 INFO  : 'configparams force-mem-access 1' command is executed.
+04:19:32 INFO  : Context for 'APU' is selected.
+04:19:32 INFO  : Sourcing of 'C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+04:19:33 INFO  : 'psu_init' command is executed.
+04:19:34 INFO  : 'after 1000' command is executed.
+04:19:34 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+04:19:35 INFO  : 'after 1000' command is executed.
+04:19:35 INFO  : 'psu_ps_pl_reset_config' command is executed.
+04:19:35 INFO  : 'catch {psu_protection}' command is executed.
+04:19:36 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+04:19:36 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+04:19:36 INFO  : The application 'C:/Users/arthu/mrisc/mrisc.sdk/naoda/Release/naoda.elf' is downloaded to processor 'psu_cortexa53_0'.
+04:19:36 INFO  : 'configparams force-mem-access 0' command is executed.
+04:19:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/SDK/2019.1/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A" && level==0} -index 0
+fpga -file C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+loadhw -hw C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+source C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+rst -processor
+dow C:/Users/arthu/mrisc/mrisc.sdk/naoda/Release/naoda.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+04:19:36 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+04:19:36 INFO  : 'con' command is executed.
+04:19:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+con
+----------------End of Script----------------
+
+04:19:36 INFO  : Launch script is exported to file 'C:\Users\arthu\mrisc\mrisc.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\release.tcl'
+04:20:02 INFO  : Disconnected from the channel tcfchan#49.
+04:20:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:20:04 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 87066A' is selected.
+04:20:04 INFO  : 'jtag frequency' command is executed.
+04:20:04 INFO  : Sourcing of 'C:/Xilinx/SDK/2019.1/scripts/sdk/util/zynqmp_utils.tcl' is done.
+04:20:04 INFO  : Context for 'APU' is selected.
+04:20:05 INFO  : System reset is completed.
+04:20:08 INFO  : 'after 3000' command is executed.
+04:20:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A" && level==0} -index 0' command is executed.
+04:20:19 INFO  : FPGA configured successfully with bitstream "C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+04:20:19 INFO  : Context for 'APU' is selected.
+04:20:19 INFO  : Hardware design information is loaded from 'C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+04:20:19 INFO  : 'configparams force-mem-access 1' command is executed.
+04:20:19 INFO  : Context for 'APU' is selected.
+04:20:19 INFO  : Sourcing of 'C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+04:20:20 INFO  : 'psu_init' command is executed.
+04:20:21 INFO  : 'after 1000' command is executed.
+04:20:21 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+04:20:22 INFO  : 'after 1000' command is executed.
+04:20:22 INFO  : 'psu_ps_pl_reset_config' command is executed.
+04:20:22 INFO  : 'catch {psu_protection}' command is executed.
+04:20:22 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+04:20:22 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+04:20:23 INFO  : The application 'C:/Users/arthu/mrisc/mrisc.sdk/naoda/Release/naoda.elf' is downloaded to processor 'psu_cortexa53_0'.
+04:20:23 INFO  : 'configparams force-mem-access 0' command is executed.
+04:20:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/SDK/2019.1/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A" && level==0} -index 0
+fpga -file C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+loadhw -hw C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+source C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+rst -processor
+dow C:/Users/arthu/mrisc/mrisc.sdk/naoda/Release/naoda.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+04:20:23 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+04:20:23 INFO  : 'con' command is executed.
+04:20:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+con
+----------------End of Script----------------
+
+04:20:23 INFO  : Launch script is exported to file 'C:\Users\arthu\mrisc\mrisc.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\release.tcl'
+04:22:23 INFO  : Disconnected from the channel tcfchan#50.
+04:22:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:22:24 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 87066A' is selected.
+04:22:24 INFO  : 'jtag frequency' command is executed.
+04:22:24 INFO  : Sourcing of 'C:/Xilinx/SDK/2019.1/scripts/sdk/util/zynqmp_utils.tcl' is done.
+04:22:24 INFO  : Context for 'APU' is selected.
+04:22:25 INFO  : System reset is completed.
+04:22:28 INFO  : 'after 3000' command is executed.
+04:22:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A" && level==0} -index 0' command is executed.
+04:22:39 INFO  : FPGA configured successfully with bitstream "C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+04:22:40 INFO  : Context for 'APU' is selected.
+04:22:40 INFO  : Hardware design information is loaded from 'C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+04:22:40 INFO  : 'configparams force-mem-access 1' command is executed.
+04:22:40 INFO  : Context for 'APU' is selected.
+04:22:40 INFO  : Sourcing of 'C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+04:22:40 INFO  : 'psu_init' command is executed.
+04:22:42 INFO  : 'after 1000' command is executed.
+04:22:42 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+04:22:43 INFO  : 'after 1000' command is executed.
+04:22:43 INFO  : 'psu_ps_pl_reset_config' command is executed.
+04:22:43 INFO  : 'catch {psu_protection}' command is executed.
+04:22:43 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+04:22:43 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+04:22:43 INFO  : The application 'C:/Users/arthu/mrisc/mrisc.sdk/naoda/Release/naoda.elf' is downloaded to processor 'psu_cortexa53_0'.
+04:22:43 INFO  : 'configparams force-mem-access 0' command is executed.
+04:22:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/SDK/2019.1/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A" && level==0} -index 0
+fpga -file C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+loadhw -hw C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+source C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+rst -processor
+dow C:/Users/arthu/mrisc/mrisc.sdk/naoda/Release/naoda.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+04:22:43 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+04:22:43 INFO  : 'con' command is executed.
+04:22:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+con
+----------------End of Script----------------
+
+04:22:43 INFO  : Launch script is exported to file 'C:\Users\arthu\mrisc\mrisc.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\release.tcl'
+04:24:10 INFO  : Disconnected from the channel tcfchan#51.
+04:24:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:24:11 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 87066A' is selected.
+04:24:11 INFO  : 'jtag frequency' command is executed.
+04:24:11 INFO  : Sourcing of 'C:/Xilinx/SDK/2019.1/scripts/sdk/util/zynqmp_utils.tcl' is done.
+04:24:11 INFO  : Context for 'APU' is selected.
+04:24:12 INFO  : System reset is completed.
+04:24:15 INFO  : 'after 3000' command is executed.
+04:24:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A" && level==0} -index 0' command is executed.
+04:24:26 INFO  : FPGA configured successfully with bitstream "C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+04:24:26 INFO  : Context for 'APU' is selected.
+04:24:26 INFO  : Hardware design information is loaded from 'C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+04:24:26 INFO  : 'configparams force-mem-access 1' command is executed.
+04:24:26 INFO  : Context for 'APU' is selected.
+04:24:26 INFO  : Sourcing of 'C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+04:24:27 INFO  : 'psu_init' command is executed.
+04:24:28 INFO  : 'after 1000' command is executed.
+04:24:28 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+04:24:29 INFO  : 'after 1000' command is executed.
+04:24:29 INFO  : 'psu_ps_pl_reset_config' command is executed.
+04:24:29 INFO  : 'catch {psu_protection}' command is executed.
+04:24:29 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+04:24:29 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+04:24:30 INFO  : The application 'C:/Users/arthu/mrisc/mrisc.sdk/naoda/Debug/naoda.elf' is downloaded to processor 'psu_cortexa53_0'.
+04:24:30 INFO  : 'configparams force-mem-access 0' command is executed.
+04:24:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/SDK/2019.1/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A" && level==0} -index 0
+fpga -file C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+loadhw -hw C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+source C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+rst -processor
+dow C:/Users/arthu/mrisc/mrisc.sdk/naoda/Debug/naoda.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+04:24:30 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+04:24:30 INFO  : 'con' command is executed.
+04:24:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+con
+----------------End of Script----------------
+
+04:24:30 INFO  : Launch script is exported to file 'C:\Users\arthu\mrisc\mrisc.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\debug.tcl'
+04:25:50 INFO  : Disconnected from the channel tcfchan#52.
+04:25:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:25:51 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 87066A' is selected.
+04:25:51 INFO  : 'jtag frequency' command is executed.
+04:25:51 INFO  : Sourcing of 'C:/Xilinx/SDK/2019.1/scripts/sdk/util/zynqmp_utils.tcl' is done.
+04:25:51 INFO  : Context for 'APU' is selected.
+04:25:52 INFO  : System reset is completed.
+04:25:55 INFO  : 'after 3000' command is executed.
+04:25:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A" && level==0} -index 0' command is executed.
+04:26:06 INFO  : FPGA configured successfully with bitstream "C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+04:26:07 INFO  : Context for 'APU' is selected.
+04:26:07 INFO  : Hardware design information is loaded from 'C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+04:26:07 INFO  : 'configparams force-mem-access 1' command is executed.
+04:26:07 INFO  : Context for 'APU' is selected.
+04:26:07 INFO  : Sourcing of 'C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+04:26:08 INFO  : 'psu_init' command is executed.
+04:26:09 INFO  : 'after 1000' command is executed.
+04:26:09 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+04:26:10 INFO  : 'after 1000' command is executed.
+04:26:10 INFO  : 'psu_ps_pl_reset_config' command is executed.
+04:26:10 INFO  : 'catch {psu_protection}' command is executed.
+04:26:10 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+04:26:10 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+04:26:10 INFO  : The application 'C:/Users/arthu/mrisc/mrisc.sdk/naoda/Debug/naoda.elf' is downloaded to processor 'psu_cortexa53_0'.
+04:26:10 INFO  : 'configparams force-mem-access 0' command is executed.
+04:26:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/SDK/2019.1/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A" && level==0} -index 0
+fpga -file C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+loadhw -hw C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+source C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+rst -processor
+dow C:/Users/arthu/mrisc/mrisc.sdk/naoda/Debug/naoda.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+04:26:10 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+04:26:10 INFO  : 'con' command is executed.
+04:26:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+con
+----------------End of Script----------------
+
+04:26:10 INFO  : Launch script is exported to file 'C:\Users\arthu\mrisc\mrisc.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\debug.tcl'
+04:29:43 INFO  : Disconnected from the channel tcfchan#53.
+04:29:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:29:56 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 87066A' is selected.
+04:29:56 INFO  : 'jtag frequency' command is executed.
+04:29:56 INFO  : Sourcing of 'C:/Xilinx/SDK/2019.1/scripts/sdk/util/zynqmp_utils.tcl' is done.
+04:29:56 INFO  : Context for 'APU' is selected.
+04:29:57 INFO  : System reset is completed.
+04:30:00 INFO  : 'after 3000' command is executed.
+04:30:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A" && level==0} -index 0' command is executed.
+04:30:11 INFO  : FPGA configured successfully with bitstream "C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+04:30:11 INFO  : Context for 'APU' is selected.
+04:30:11 INFO  : Hardware design information is loaded from 'C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+04:30:11 INFO  : 'configparams force-mem-access 1' command is executed.
+04:30:11 INFO  : Context for 'APU' is selected.
+04:30:11 INFO  : Sourcing of 'C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+04:30:12 INFO  : 'psu_init' command is executed.
+04:30:13 INFO  : 'after 1000' command is executed.
+04:30:13 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+04:30:14 INFO  : 'after 1000' command is executed.
+04:30:14 INFO  : 'psu_ps_pl_reset_config' command is executed.
+04:30:14 INFO  : 'catch {psu_protection}' command is executed.
+04:30:14 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+04:30:14 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+04:30:15 INFO  : The application 'C:/Users/arthu/mrisc/mrisc.sdk/naoda/Release/naoda.elf' is downloaded to processor 'psu_cortexa53_0'.
+04:30:15 INFO  : 'configparams force-mem-access 0' command is executed.
+04:30:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/SDK/2019.1/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A" && level==0} -index 0
+fpga -file C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+loadhw -hw C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+source C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+rst -processor
+dow C:/Users/arthu/mrisc/mrisc.sdk/naoda/Release/naoda.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+04:30:15 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+04:30:15 INFO  : 'con' command is executed.
+04:30:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+con
+----------------End of Script----------------
+
+04:30:15 INFO  : Launch script is exported to file 'C:\Users\arthu\mrisc\mrisc.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\release.tcl'
+04:45:13 INFO  : Disconnected from the channel tcfchan#54.
+04:45:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+04:45:14 INFO  : Jtag cable 'Xilinx HW-Z1-ZCU104 FT4232H 87066A' is selected.
+04:45:14 INFO  : 'jtag frequency' command is executed.
+04:45:14 INFO  : Sourcing of 'C:/Xilinx/SDK/2019.1/scripts/sdk/util/zynqmp_utils.tcl' is done.
+04:45:14 INFO  : Context for 'APU' is selected.
+04:45:15 INFO  : System reset is completed.
+04:45:18 INFO  : 'after 3000' command is executed.
+04:45:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A" && level==0} -index 0' command is executed.
+04:45:29 INFO  : FPGA configured successfully with bitstream "C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+04:45:29 INFO  : Context for 'APU' is selected.
+04:45:30 INFO  : Hardware design information is loaded from 'C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+04:45:30 INFO  : 'configparams force-mem-access 1' command is executed.
+04:45:30 INFO  : Context for 'APU' is selected.
+04:45:30 INFO  : Sourcing of 'C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+04:45:30 INFO  : 'psu_init' command is executed.
+04:45:31 INFO  : 'after 1000' command is executed.
+04:45:31 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+04:45:32 INFO  : 'after 1000' command is executed.
+04:45:32 INFO  : 'psu_ps_pl_reset_config' command is executed.
+04:45:33 INFO  : 'catch {psu_protection}' command is executed.
+04:45:33 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+04:45:33 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+04:45:33 INFO  : The application 'C:/Users/arthu/mrisc/mrisc.sdk/naoda/Release/naoda.elf' is downloaded to processor 'psu_cortexa53_0'.
+04:45:33 INFO  : 'configparams force-mem-access 0' command is executed.
+04:45:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/SDK/2019.1/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A" && level==0} -index 0
+fpga -file C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+loadhw -hw C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+source C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+rst -processor
+dow C:/Users/arthu/mrisc/mrisc.sdk/naoda/Release/naoda.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+04:45:33 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+04:45:33 INFO  : 'con' command is executed.
+04:45:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+con
+----------------End of Script----------------
+
+04:45:33 INFO  : Launch script is exported to file 'C:\Users\arthu\mrisc\mrisc.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\release.tcl'

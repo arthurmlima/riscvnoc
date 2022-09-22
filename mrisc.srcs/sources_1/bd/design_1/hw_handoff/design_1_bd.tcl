@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# zcu104, zcu104, zcu104, zcu104
+# zcu104, zcu104, zcu104, zcu104, zcu104, zcu104, zcu104, zcu104, zcu104
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -165,16 +165,15 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
-  set led2_0 [ create_bd_port -dir O led2_0 ]
-  set reset_riscv_0 [ create_bd_port -dir O -type rst reset_riscv_0 ]
   set ser_rx_0 [ create_bd_port -dir I ser_rx_0 ]
   set ser_rx_1 [ create_bd_port -dir I ser_rx_1 ]
   set ser_tx_0 [ create_bd_port -dir O ser_tx_0 ]
+  set ser_tx_1 [ create_bd_port -dir O ser_tx_1 ]
 
   # Create instance: ps8_0_axi_periph, and set properties
   set ps8_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps8_0_axi_periph ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {4} \
+   CONFIG.NUM_MI {9} \
  ] $ps8_0_axi_periph
 
   # Create instance: rst_ps8_0_100M, and set properties
@@ -213,7 +212,8 @@ proc create_root_design { parentCell } {
    CONFIG.buffer_length {20} \
    CONFIG.subimg_height {10} \
    CONFIG.subimg_width {10} \
-   CONFIG.y_init {10} \
+   CONFIG.x_init {10} \
+   CONFIG.y_init {0} \
  ] $zcu104_1
 
   # Create instance: zcu104_2, and set properties
@@ -231,7 +231,7 @@ proc create_root_design { parentCell } {
    CONFIG.buffer_length {20} \
    CONFIG.subimg_height {10} \
    CONFIG.subimg_width {10} \
-   CONFIG.x_init {10} \
+   CONFIG.x_init {20} \
    CONFIG.y_init {0} \
  ] $zcu104_2
 
@@ -250,9 +250,103 @@ proc create_root_design { parentCell } {
    CONFIG.buffer_length {20} \
    CONFIG.subimg_height {10} \
    CONFIG.subimg_width {10} \
-   CONFIG.x_init {10} \
+   CONFIG.x_init {0} \
    CONFIG.y_init {10} \
  ] $zcu104_3
+
+  # Create instance: zcu104_4, and set properties
+  set block_name zcu104
+  set block_cell_name zcu104_4
+  if { [catch {set zcu104_4 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $zcu104_4 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.a_steps {2} \
+   CONFIG.buffer_length {20} \
+   CONFIG.subimg_height {10} \
+   CONFIG.subimg_width {10} \
+   CONFIG.x_init {10} \
+   CONFIG.y_init {10} \
+ ] $zcu104_4
+
+  # Create instance: zcu104_5, and set properties
+  set block_name zcu104
+  set block_cell_name zcu104_5
+  if { [catch {set zcu104_5 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $zcu104_5 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.a_steps {2} \
+   CONFIG.buffer_length {20} \
+   CONFIG.subimg_height {10} \
+   CONFIG.subimg_width {10} \
+   CONFIG.x_init {20} \
+   CONFIG.y_init {10} \
+ ] $zcu104_5
+
+  # Create instance: zcu104_6, and set properties
+  set block_name zcu104
+  set block_cell_name zcu104_6
+  if { [catch {set zcu104_6 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $zcu104_6 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.a_steps {2} \
+   CONFIG.buffer_length {20} \
+   CONFIG.subimg_height {10} \
+   CONFIG.subimg_width {10} \
+   CONFIG.y_init {20} \
+ ] $zcu104_6
+
+  # Create instance: zcu104_7, and set properties
+  set block_name zcu104
+  set block_cell_name zcu104_7
+  if { [catch {set zcu104_7 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $zcu104_7 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.a_steps {2} \
+   CONFIG.buffer_length {20} \
+   CONFIG.subimg_height {10} \
+   CONFIG.subimg_width {10} \
+   CONFIG.x_init {10} \
+   CONFIG.y_init {20} \
+ ] $zcu104_7
+
+  # Create instance: zcu104_8, and set properties
+  set block_name zcu104
+  set block_cell_name zcu104_8
+  if { [catch {set zcu104_8 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $zcu104_8 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.a_steps {2} \
+   CONFIG.buffer_length {20} \
+   CONFIG.subimg_height {10} \
+   CONFIG.subimg_width {10} \
+   CONFIG.x_init {20} \
+   CONFIG.y_init {20} \
+ ] $zcu104_8
 
   # Create instance: zynq_ultra_ps_e_0, and set properties
   set zynq_ultra_ps_e_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:zynq_ultra_ps_e:3.3 zynq_ultra_ps_e_0 ]
@@ -837,31 +931,68 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net ps8_0_axi_periph_M01_AXI [get_bd_intf_pins ps8_0_axi_periph/M01_AXI] [get_bd_intf_pins zcu104_1/s00_axi]
   connect_bd_intf_net -intf_net ps8_0_axi_periph_M02_AXI [get_bd_intf_pins ps8_0_axi_periph/M02_AXI] [get_bd_intf_pins zcu104_2/s00_axi]
   connect_bd_intf_net -intf_net ps8_0_axi_periph_M03_AXI [get_bd_intf_pins ps8_0_axi_periph/M03_AXI] [get_bd_intf_pins zcu104_3/s00_axi]
+  connect_bd_intf_net -intf_net ps8_0_axi_periph_M04_AXI [get_bd_intf_pins ps8_0_axi_periph/M04_AXI] [get_bd_intf_pins zcu104_4/s00_axi]
+  connect_bd_intf_net -intf_net ps8_0_axi_periph_M05_AXI [get_bd_intf_pins ps8_0_axi_periph/M05_AXI] [get_bd_intf_pins zcu104_5/s00_axi]
+  connect_bd_intf_net -intf_net ps8_0_axi_periph_M06_AXI [get_bd_intf_pins ps8_0_axi_periph/M06_AXI] [get_bd_intf_pins zcu104_6/s00_axi]
+  connect_bd_intf_net -intf_net ps8_0_axi_periph_M07_AXI [get_bd_intf_pins ps8_0_axi_periph/M07_AXI] [get_bd_intf_pins zcu104_7/s00_axi]
+  connect_bd_intf_net -intf_net ps8_0_axi_periph_M08_AXI [get_bd_intf_pins ps8_0_axi_periph/M08_AXI] [get_bd_intf_pins zcu104_8/s00_axi]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD [get_bd_intf_pins ps8_0_axi_periph/S00_AXI] [get_bd_intf_pins zynq_ultra_ps_e_0/M_AXI_HPM0_FPD]
 
   # Create port connections
-  connect_bd_net -net Net [get_bd_pins zcu104_0/IN_S_ACK] [get_bd_pins zcu104_1/OUT_N_ACK]
-  connect_bd_net -net rst_ps8_0_100M_peripheral_aresetn [get_bd_pins ps8_0_axi_periph/ARESETN] [get_bd_pins ps8_0_axi_periph/M00_ARESETN] [get_bd_pins ps8_0_axi_periph/M01_ARESETN] [get_bd_pins ps8_0_axi_periph/M02_ARESETN] [get_bd_pins ps8_0_axi_periph/M03_ARESETN] [get_bd_pins ps8_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps8_0_100M/peripheral_aresetn] [get_bd_pins zcu104_0/s00_axi_aresetn] [get_bd_pins zcu104_1/s00_axi_aresetn] [get_bd_pins zcu104_2/s00_axi_aresetn] [get_bd_pins zcu104_3/s00_axi_aresetn]
+  connect_bd_net -net rst_ps8_0_100M_peripheral_aresetn [get_bd_pins ps8_0_axi_periph/ARESETN] [get_bd_pins ps8_0_axi_periph/M00_ARESETN] [get_bd_pins ps8_0_axi_periph/M01_ARESETN] [get_bd_pins ps8_0_axi_periph/M02_ARESETN] [get_bd_pins ps8_0_axi_periph/M03_ARESETN] [get_bd_pins ps8_0_axi_periph/M04_ARESETN] [get_bd_pins ps8_0_axi_periph/M05_ARESETN] [get_bd_pins ps8_0_axi_periph/M06_ARESETN] [get_bd_pins ps8_0_axi_periph/M07_ARESETN] [get_bd_pins ps8_0_axi_periph/M08_ARESETN] [get_bd_pins ps8_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps8_0_100M/peripheral_aresetn] [get_bd_pins zcu104_0/s00_axi_aresetn] [get_bd_pins zcu104_1/s00_axi_aresetn] [get_bd_pins zcu104_2/s00_axi_aresetn] [get_bd_pins zcu104_3/s00_axi_aresetn] [get_bd_pins zcu104_4/s00_axi_aresetn] [get_bd_pins zcu104_5/s00_axi_aresetn] [get_bd_pins zcu104_6/s00_axi_aresetn] [get_bd_pins zcu104_7/s00_axi_aresetn] [get_bd_pins zcu104_8/s00_axi_aresetn]
   connect_bd_net -net ser_rx_0_1 [get_bd_ports ser_rx_0] [get_bd_pins zcu104_0/ser_rx]
-  connect_bd_net -net ser_rx_1_1 [get_bd_ports ser_rx_1] [get_bd_pins zcu104_1/ser_rx]
-  connect_bd_net -net zcu104_0_IN_E_ACK [get_bd_pins zcu104_0/IN_E_ACK] [get_bd_pins zcu104_2/OUT_W_ACK]
-  connect_bd_net -net zcu104_0_OUT_E [get_bd_pins zcu104_0/OUT_E] [get_bd_pins zcu104_2/IN_W]
-  connect_bd_net -net zcu104_0_OUT_S [get_bd_pins zcu104_0/OUT_S] [get_bd_pins zcu104_1/IN_N]
-  connect_bd_net -net zcu104_0_reset_riscv [get_bd_ports reset_riscv_0] [get_bd_pins zcu104_0/reset_riscv]
+  connect_bd_net -net ser_rx_1_1 [get_bd_ports ser_rx_1] [get_bd_pins zcu104_4/ser_rx]
+  connect_bd_net -net zcu104_0_IN_E_ACK [get_bd_pins zcu104_0/IN_E_ACK] [get_bd_pins zcu104_1/OUT_W_ACK]
+  connect_bd_net -net zcu104_0_IN_S_ACK [get_bd_pins zcu104_0/IN_S_ACK] [get_bd_pins zcu104_3/OUT_N_ACK]
+  connect_bd_net -net zcu104_0_OUT_E [get_bd_pins zcu104_0/OUT_E] [get_bd_pins zcu104_1/IN_W]
+  connect_bd_net -net zcu104_0_OUT_S [get_bd_pins zcu104_0/OUT_S] [get_bd_pins zcu104_3/IN_N]
   connect_bd_net -net zcu104_0_ser_tx [get_bd_ports ser_tx_0] [get_bd_pins zcu104_0/ser_tx]
-  connect_bd_net -net zcu104_1_IN_E_ACK [get_bd_pins zcu104_1/IN_E_ACK] [get_bd_pins zcu104_3/OUT_W_ACK]
-  connect_bd_net -net zcu104_1_IN_N_ACK [get_bd_pins zcu104_0/OUT_S_ACK] [get_bd_pins zcu104_1/IN_N_ACK]
-  connect_bd_net -net zcu104_1_OUT_E [get_bd_pins zcu104_1/OUT_E] [get_bd_pins zcu104_3/IN_W]
-  connect_bd_net -net zcu104_1_OUT_N [get_bd_pins zcu104_0/IN_S] [get_bd_pins zcu104_1/OUT_N]
-  connect_bd_net -net zcu104_2_IN_S_ACK [get_bd_pins zcu104_2/IN_S_ACK] [get_bd_pins zcu104_3/OUT_N_ACK]
-  connect_bd_net -net zcu104_2_IN_W_ACK [get_bd_pins zcu104_0/OUT_E_ACK] [get_bd_pins zcu104_2/IN_W_ACK]
-  connect_bd_net -net zcu104_2_OUT_S [get_bd_pins zcu104_2/OUT_S] [get_bd_pins zcu104_3/IN_N]
-  connect_bd_net -net zcu104_2_OUT_W [get_bd_pins zcu104_0/IN_E] [get_bd_pins zcu104_2/OUT_W]
-  connect_bd_net -net zcu104_3_IN_N_ACK [get_bd_pins zcu104_2/OUT_S_ACK] [get_bd_pins zcu104_3/IN_N_ACK]
-  connect_bd_net -net zcu104_3_IN_W_ACK [get_bd_pins zcu104_1/OUT_E_ACK] [get_bd_pins zcu104_3/IN_W_ACK]
-  connect_bd_net -net zcu104_3_OUT_N [get_bd_pins zcu104_2/IN_S] [get_bd_pins zcu104_3/OUT_N]
-  connect_bd_net -net zcu104_3_OUT_W [get_bd_pins zcu104_1/IN_E] [get_bd_pins zcu104_3/OUT_W]
-  connect_bd_net -net zynq_ultra_ps_e_0_pl_clk0 [get_bd_pins ps8_0_axi_periph/ACLK] [get_bd_pins ps8_0_axi_periph/M00_ACLK] [get_bd_pins ps8_0_axi_periph/M01_ACLK] [get_bd_pins ps8_0_axi_periph/M02_ACLK] [get_bd_pins ps8_0_axi_periph/M03_ACLK] [get_bd_pins ps8_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps8_0_100M/slowest_sync_clk] [get_bd_pins zcu104_0/clk] [get_bd_pins zcu104_0/s00_axi_aclk] [get_bd_pins zcu104_1/clk] [get_bd_pins zcu104_1/s00_axi_aclk] [get_bd_pins zcu104_2/clk] [get_bd_pins zcu104_2/s00_axi_aclk] [get_bd_pins zcu104_3/clk] [get_bd_pins zcu104_3/s00_axi_aclk] [get_bd_pins zynq_ultra_ps_e_0/maxihpm0_fpd_aclk] [get_bd_pins zynq_ultra_ps_e_0/pl_clk0]
+  connect_bd_net -net zcu104_1_IN_E_ACK [get_bd_pins zcu104_1/IN_E_ACK] [get_bd_pins zcu104_2/OUT_W_ACK]
+  connect_bd_net -net zcu104_1_IN_S_ACK [get_bd_pins zcu104_1/IN_S_ACK] [get_bd_pins zcu104_4/OUT_N_ACK]
+  connect_bd_net -net zcu104_1_IN_W_ACK [get_bd_pins zcu104_0/OUT_E_ACK] [get_bd_pins zcu104_1/IN_W_ACK]
+  connect_bd_net -net zcu104_1_OUT_E [get_bd_pins zcu104_1/OUT_E] [get_bd_pins zcu104_2/IN_W]
+  connect_bd_net -net zcu104_1_OUT_S [get_bd_pins zcu104_1/OUT_S] [get_bd_pins zcu104_4/IN_N]
+  connect_bd_net -net zcu104_1_OUT_W [get_bd_pins zcu104_0/IN_E] [get_bd_pins zcu104_1/OUT_W]
+  connect_bd_net -net zcu104_2_IN_S_ACK [get_bd_pins zcu104_2/IN_S_ACK] [get_bd_pins zcu104_5/OUT_N_ACK]
+  connect_bd_net -net zcu104_2_IN_W_ACK [get_bd_pins zcu104_1/OUT_E_ACK] [get_bd_pins zcu104_2/IN_W_ACK]
+  connect_bd_net -net zcu104_2_OUT_S [get_bd_pins zcu104_2/OUT_S] [get_bd_pins zcu104_5/IN_N]
+  connect_bd_net -net zcu104_2_OUT_W [get_bd_pins zcu104_1/IN_E] [get_bd_pins zcu104_2/OUT_W]
+  connect_bd_net -net zcu104_3_IN_E_ACK [get_bd_pins zcu104_3/IN_E_ACK] [get_bd_pins zcu104_4/OUT_W_ACK]
+  connect_bd_net -net zcu104_3_IN_N_ACK [get_bd_pins zcu104_0/OUT_S_ACK] [get_bd_pins zcu104_3/IN_N_ACK]
+  connect_bd_net -net zcu104_3_IN_S_ACK [get_bd_pins zcu104_3/IN_S_ACK] [get_bd_pins zcu104_6/OUT_N_ACK]
+  connect_bd_net -net zcu104_3_OUT_E [get_bd_pins zcu104_3/OUT_E] [get_bd_pins zcu104_4/IN_W]
+  connect_bd_net -net zcu104_3_OUT_N [get_bd_pins zcu104_0/IN_S] [get_bd_pins zcu104_3/OUT_N]
+  connect_bd_net -net zcu104_3_OUT_S [get_bd_pins zcu104_3/OUT_S] [get_bd_pins zcu104_6/IN_N]
+  connect_bd_net -net zcu104_4_IN_E_ACK [get_bd_pins zcu104_4/IN_E_ACK] [get_bd_pins zcu104_5/OUT_W_ACK]
+  connect_bd_net -net zcu104_4_IN_N_ACK [get_bd_pins zcu104_1/OUT_S_ACK] [get_bd_pins zcu104_4/IN_N_ACK]
+  connect_bd_net -net zcu104_4_IN_S_ACK [get_bd_pins zcu104_4/IN_S_ACK] [get_bd_pins zcu104_7/OUT_N_ACK]
+  connect_bd_net -net zcu104_4_IN_W_ACK [get_bd_pins zcu104_3/OUT_E_ACK] [get_bd_pins zcu104_4/IN_W_ACK]
+  connect_bd_net -net zcu104_4_OUT_E [get_bd_pins zcu104_4/OUT_E] [get_bd_pins zcu104_5/IN_W]
+  connect_bd_net -net zcu104_4_OUT_N [get_bd_pins zcu104_1/IN_S] [get_bd_pins zcu104_4/OUT_N]
+  connect_bd_net -net zcu104_4_OUT_S [get_bd_pins zcu104_4/OUT_S] [get_bd_pins zcu104_7/IN_N]
+  connect_bd_net -net zcu104_4_OUT_W [get_bd_pins zcu104_3/IN_E] [get_bd_pins zcu104_4/OUT_W]
+  connect_bd_net -net zcu104_4_ser_tx [get_bd_ports ser_tx_1] [get_bd_pins zcu104_4/ser_tx]
+  connect_bd_net -net zcu104_5_IN_N_ACK [get_bd_pins zcu104_2/OUT_S_ACK] [get_bd_pins zcu104_5/IN_N_ACK]
+  connect_bd_net -net zcu104_5_IN_S_ACK [get_bd_pins zcu104_5/IN_S_ACK] [get_bd_pins zcu104_8/OUT_N_ACK]
+  connect_bd_net -net zcu104_5_IN_W_ACK [get_bd_pins zcu104_4/OUT_E_ACK] [get_bd_pins zcu104_5/IN_W_ACK]
+  connect_bd_net -net zcu104_5_OUT_N [get_bd_pins zcu104_2/IN_S] [get_bd_pins zcu104_5/OUT_N]
+  connect_bd_net -net zcu104_5_OUT_S [get_bd_pins zcu104_5/OUT_S] [get_bd_pins zcu104_8/IN_N]
+  connect_bd_net -net zcu104_5_OUT_W [get_bd_pins zcu104_4/IN_E] [get_bd_pins zcu104_5/OUT_W]
+  connect_bd_net -net zcu104_6_IN_E_ACK [get_bd_pins zcu104_6/IN_E_ACK] [get_bd_pins zcu104_7/OUT_W_ACK]
+  connect_bd_net -net zcu104_6_IN_N_ACK [get_bd_pins zcu104_3/OUT_S_ACK] [get_bd_pins zcu104_6/IN_N_ACK]
+  connect_bd_net -net zcu104_6_OUT_E [get_bd_pins zcu104_6/OUT_E] [get_bd_pins zcu104_7/IN_W]
+  connect_bd_net -net zcu104_6_OUT_N [get_bd_pins zcu104_3/IN_S] [get_bd_pins zcu104_6/OUT_N]
+  connect_bd_net -net zcu104_7_IN_E_ACK [get_bd_pins zcu104_7/IN_E_ACK] [get_bd_pins zcu104_8/OUT_W_ACK]
+  connect_bd_net -net zcu104_7_IN_N_ACK [get_bd_pins zcu104_4/OUT_S_ACK] [get_bd_pins zcu104_7/IN_N_ACK]
+  connect_bd_net -net zcu104_7_IN_W_ACK [get_bd_pins zcu104_6/OUT_E_ACK] [get_bd_pins zcu104_7/IN_W_ACK]
+  connect_bd_net -net zcu104_7_OUT_E [get_bd_pins zcu104_7/OUT_E] [get_bd_pins zcu104_8/IN_W]
+  connect_bd_net -net zcu104_7_OUT_N [get_bd_pins zcu104_4/IN_S] [get_bd_pins zcu104_7/OUT_N]
+  connect_bd_net -net zcu104_7_OUT_W [get_bd_pins zcu104_6/IN_E] [get_bd_pins zcu104_7/OUT_W]
+  connect_bd_net -net zcu104_8_IN_N_ACK [get_bd_pins zcu104_5/OUT_S_ACK] [get_bd_pins zcu104_8/IN_N_ACK]
+  connect_bd_net -net zcu104_8_IN_W_ACK [get_bd_pins zcu104_7/OUT_E_ACK] [get_bd_pins zcu104_8/IN_W_ACK]
+  connect_bd_net -net zcu104_8_OUT_N [get_bd_pins zcu104_5/IN_S] [get_bd_pins zcu104_8/OUT_N]
+  connect_bd_net -net zcu104_8_OUT_W [get_bd_pins zcu104_7/IN_E] [get_bd_pins zcu104_8/OUT_W]
+  connect_bd_net -net zynq_ultra_ps_e_0_pl_clk0 [get_bd_pins ps8_0_axi_periph/ACLK] [get_bd_pins ps8_0_axi_periph/M00_ACLK] [get_bd_pins ps8_0_axi_periph/M01_ACLK] [get_bd_pins ps8_0_axi_periph/M02_ACLK] [get_bd_pins ps8_0_axi_periph/M03_ACLK] [get_bd_pins ps8_0_axi_periph/M04_ACLK] [get_bd_pins ps8_0_axi_periph/M05_ACLK] [get_bd_pins ps8_0_axi_periph/M06_ACLK] [get_bd_pins ps8_0_axi_periph/M07_ACLK] [get_bd_pins ps8_0_axi_periph/M08_ACLK] [get_bd_pins ps8_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps8_0_100M/slowest_sync_clk] [get_bd_pins zcu104_0/clk] [get_bd_pins zcu104_0/s00_axi_aclk] [get_bd_pins zcu104_1/clk] [get_bd_pins zcu104_1/s00_axi_aclk] [get_bd_pins zcu104_2/clk] [get_bd_pins zcu104_2/s00_axi_aclk] [get_bd_pins zcu104_3/clk] [get_bd_pins zcu104_3/s00_axi_aclk] [get_bd_pins zcu104_4/clk] [get_bd_pins zcu104_4/s00_axi_aclk] [get_bd_pins zcu104_5/clk] [get_bd_pins zcu104_5/s00_axi_aclk] [get_bd_pins zcu104_6/clk] [get_bd_pins zcu104_6/s00_axi_aclk] [get_bd_pins zcu104_7/clk] [get_bd_pins zcu104_7/s00_axi_aclk] [get_bd_pins zcu104_8/clk] [get_bd_pins zcu104_8/s00_axi_aclk] [get_bd_pins zynq_ultra_ps_e_0/maxihpm0_fpd_aclk] [get_bd_pins zynq_ultra_ps_e_0/pl_clk0]
   connect_bd_net -net zynq_ultra_ps_e_0_pl_resetn0 [get_bd_pins rst_ps8_0_100M/ext_reset_in] [get_bd_pins zynq_ultra_ps_e_0/pl_resetn0]
 
   # Create address segments
@@ -869,6 +1000,11 @@ proc create_root_design { parentCell } {
   create_bd_addr_seg -range 0x000100000000 -offset 0x001000000000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs zcu104_1/s00_axi/reg0] SEG_zcu104_1_reg0
   create_bd_addr_seg -range 0x000100000000 -offset 0x001100000000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs zcu104_2/s00_axi/reg0] SEG_zcu104_2_reg0
   create_bd_addr_seg -range 0x000100000000 -offset 0x001200000000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs zcu104_3/s00_axi/reg0] SEG_zcu104_3_reg0
+  create_bd_addr_seg -range 0x000100000000 -offset 0x001300000000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs zcu104_4/s00_axi/reg0] SEG_zcu104_4_reg0
+  create_bd_addr_seg -range 0x000100000000 -offset 0x001400000000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs zcu104_5/s00_axi/reg0] SEG_zcu104_5_reg0
+  create_bd_addr_seg -range 0x000100000000 -offset 0x001500000000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs zcu104_6/s00_axi/reg0] SEG_zcu104_6_reg0
+  create_bd_addr_seg -range 0x000100000000 -offset 0x001600000000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs zcu104_7/s00_axi/reg0] SEG_zcu104_7_reg0
+  create_bd_addr_seg -range 0x000100000000 -offset 0x001700000000 [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs zcu104_8/s00_axi/reg0] SEG_zcu104_8_reg0
 
 
   # Restore current instance

@@ -21,14 +21,29 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_rst_ps
 # IP: bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_xbar_0 || ORIG_REF_NAME==design_1_xbar_0} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_zcu104_0_1/design_1_zcu104_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_zcu104_0_1 || ORIG_REF_NAME==design_1_zcu104_0_1} -quiet] -quiet
+# IP: bd/design_1/ip/design_1_zcu104_0_4/design_1_zcu104_0_4.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_zcu104_0_4 || ORIG_REF_NAME==design_1_zcu104_0_4} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_zcu104_1_0/design_1_zcu104_1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_zcu104_1_0 || ORIG_REF_NAME==design_1_zcu104_1_0} -quiet] -quiet
+# IP: bd/design_1/ip/design_1_zcu104_1_2/design_1_zcu104_1_2.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_zcu104_1_2 || ORIG_REF_NAME==design_1_zcu104_1_2} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_zcu104_2_0/design_1_zcu104_2_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_zcu104_2_0 || ORIG_REF_NAME==design_1_zcu104_2_0} -quiet] -quiet
+# IP: bd/design_1/ip/design_1_zcu104_0_5/design_1_zcu104_0_5.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_zcu104_0_5 || ORIG_REF_NAME==design_1_zcu104_0_5} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_zcu104_1_3 || ORIG_REF_NAME==design_1_zcu104_1_3} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_zcu104_2_1/design_1_zcu104_2_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_zcu104_2_1 || ORIG_REF_NAME==design_1_zcu104_2_1} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_zcu104_3_1/design_1_zcu104_3_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_zcu104_3_1 || ORIG_REF_NAME==design_1_zcu104_3_1} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_zcu104_4_0/design_1_zcu104_4_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_zcu104_4_0 || ORIG_REF_NAME==design_1_zcu104_4_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_zcu104_5_1/design_1_zcu104_5_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_zcu104_5_1 || ORIG_REF_NAME==design_1_zcu104_5_1} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_auto_pc_0 || ORIG_REF_NAME==design_1_auto_pc_0} -quiet] -quiet

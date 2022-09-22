@@ -20,4 +20,5 @@ targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z
 rst -processor
 dow C:/Users/arthu/mrisc/mrisc.sdk/naoda/Debug/naoda.elf
 configparams force-mem-access 0
-bpadd -addr &main
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
+con

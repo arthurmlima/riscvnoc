@@ -1,6 +1,6 @@
-01:13:39 **** Incremental Build of configuration Release for project naoda ****
+04:46:11 **** Incremental Build of configuration Release for project naoda ****
 make all 
 make: Nothing to be done for 'all'.
 
-01:13:40 Build Finished (took 172ms)
+04:46:12 Build Finished (took 172ms)
 
