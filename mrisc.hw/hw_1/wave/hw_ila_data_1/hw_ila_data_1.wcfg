@@ -9,43 +9,84 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="79495550fs"></ZoomStartTime>
-      <ZoomEndTime time="79522491fs"></ZoomEndTime>
-      <Cursor1Time time="79554000fs"></Cursor1Time>
+      <ZoomStartTime time="2590350fs"></ZoomStartTime>
+      <ZoomEndTime time="2704701fs"></ZoomEndTime>
+      <Cursor1Time time="2617000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="166"></NameColumnWidth>
-      <ValueColumnWidth column_width="91"></ValueColumnWidth>
+      <NameColumnWidth column_width="451"></NameColumnWidth>
+      <ValueColumnWidth column_width="98"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="10" />
    <wave_markers>
    </wave_markers>
-   <wvobject fp_name="vbus52" type="vbus">
-      <obj_property name="label">New Virtual Bus</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject fp_name="design_1_i/zcu104_0_wsignal_in_pm_out_router_data[1]" type="logic">
-      <obj_property name="ElementShortName">[1]</obj_property>
-      <obj_property name="ObjectShortName">[1]</obj_property>
-   </wvobject>
-   <wvobject fp_name="design_1_i/zcu104_0_wsignal_in_pm_out_router_data[0]" type="logic">
-      <obj_property name="ElementShortName">[0]</obj_property>
-      <obj_property name="ObjectShortName">[0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="design_1_i/zcu104_0_signal_out_pm_in_router_data[1]" type="logic">
-      <obj_property name="ElementShortName">[1]</obj_property>
-      <obj_property name="ObjectShortName">[1]</obj_property>
-   </wvobject>
-   <wvobject fp_name="design_1_i/zcu104_0_signal_out_pm_in_router_data[0]" type="logic">
-      <obj_property name="ElementShortName">[0]</obj_property>
-      <obj_property name="ObjectShortName">[0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="design_1_i/zcu104_0_wsignal_in_pm_out_router_data" type="array">
+   <wvobject fp_name="design_1_i/zcu104_0_t_PE_req" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">design_1_i/zcu104_0_wsignal_in_pm_out_router_data[1:0]</obj_property>
-      <obj_property name="ObjectShortName">zcu104_0_wsignal_in_pm_out_router_data[1:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">design_1_i/zcu104_0_t_PE_req</obj_property>
+      <obj_property name="ObjectShortName">zcu104_0_t_PE_req</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/zcu104_0_t_PE_ack" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/zcu104_0_t_PE_ack</obj_property>
+      <obj_property name="ObjectShortName">zcu104_0_t_PE_ack</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/xlslice_1_Dout" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/xlslice_1_Dout</obj_property>
+      <obj_property name="ObjectShortName">xlslice_1_Dout</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/zcu104_1_IN_N_ACK" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/zcu104_1_IN_N_ACK</obj_property>
+      <obj_property name="ObjectShortName">zcu104_1_IN_N_ACK</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/zcu104_1_debug_t_PM_req" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/zcu104_1_debug_t_PM_req</obj_property>
+      <obj_property name="ObjectShortName">zcu104_1_debug_t_PM_req</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/zcu104_1_debug_t_PM_ack" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/zcu104_1_debug_t_PM_ack</obj_property>
+      <obj_property name="ObjectShortName">zcu104_1_debug_t_PM_ack</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/xlslice_2_Dout" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/xlslice_2_Dout</obj_property>
+      <obj_property name="ObjectShortName">xlslice_2_Dout</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/Net" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/Net</obj_property>
+      <obj_property name="ObjectShortName">Net</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/zcu104_0_i_PE_req" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/zcu104_0_i_PE_req</obj_property>
+      <obj_property name="ObjectShortName">zcu104_0_i_PE_req</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/zcu104_0_i_PE_ack" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/zcu104_0_i_PE_ack</obj_property>
+      <obj_property name="ObjectShortName">zcu104_0_i_PE_ack</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

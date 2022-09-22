@@ -48,8 +48,10 @@ read_verilog -library xil_defaultlib {
 read_vhdl -library xil_defaultlib {
   C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd
   C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/E_dec.vhd
+  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/in_E_ctrl.vhd
   C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/E_wrapper_EB_DEC.vhd
   C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/N_dec.vhd
+  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/in_N_ctrl.vhd
   C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/N_wrapper_EB_DEC.vhd
   C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PE_dec.vhd
   C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/in_pe_ctrl.vhd
@@ -58,13 +60,19 @@ read_vhdl -library xil_defaultlib {
   C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/in_pm_ctrl.vhd
   C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PM_wrapper_EB_DEC.vhd
   C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/S_dec.vhd
+  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/in_S_ctrl.vhd
   C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/S_wrapper_EB_DEC.vhd
   C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/W_dec.vhd
+  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/in_W_ctrl.vhd
   C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/W_wrapper_EB_DEC.vhd
+  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/out_E_controller.vhd
+  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/out_N_controller.vhd
   C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/out_PE_controller.vhd
+  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/out_S_controller.vhd
+  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/out_W_controller.vhd
   C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/out_pm_controller.vhd
   C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/pm_wrapper.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/rams_tdp_rf_rf.vhd
+  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/rams_tdp_rf_rf.vhd
   C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/router_new.vhd
   C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/router_wrapper.vhd
 }

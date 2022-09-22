@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date                      : Wed Sep 14 06:10:28 2022
+| Date                      : Wed Sep 21 20:11:02 2022
 | Host                      : DESKTOP-1Q96SJ0 running 64-bit major release  (build 9200)
 | Command                   : report_io -file design_1_wrapper_io_placed.rpt
 | Design                    : design_1_wrapper
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|             7 |
+|             6 |
 +---------------+
 
 
@@ -617,8 +617,8 @@ Table of Contents
 | D2         |                          | High Density     | IO_L5P_HDGC_88                     | GCLK          |             |      88 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |
 | D3         |                          | High Density     | VCCO_88                            | VCCO          |             |      88 |            |                         |      |                   |                      |      3.30 |            |           |          |      |                  |              |                   |              |
 | D4         |                          | High Density     | IO_L8N_HDGC_88                     | GCLK          |             |      88 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |
-| D5         | led1_0                   | High Density     | IO_L11N_AD9N_88                    | OUTPUT        | LVCMOS33    |      88 |         12 |                         | SLOW |                   |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
-| D6         | led2_0                   | High Density     | IO_L11P_AD9P_88                    | OUTPUT        | LVCMOS33    |      88 |         12 |                         | SLOW |                   |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
+| D5         |                          | High Density     | IO_L11N_AD9N_88                    | User IO       |             |      88 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |
+| D6         | led2_0                   | High Density     | IO_L11P_AD9P_88                    | TRISTATE      | LVCMOS33    |      88 |         12 |                         | SLOW |                   |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
 | D7         |                          | High Performance | IO_T1U_N12_68                      | User IO       |             |      68 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |
 | D8         |                          |                  | GND                                | GND           |             |         |            |                         |      |                   |                      |       0.0 |            |           |          |      |                  |              |                   |              |
 | D9         |                          | High Performance | IO_L10N_T1U_N7_QBC_AD4N_68         | User IO       |             |      68 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |

@@ -22,24 +22,27 @@
 
 module zcu104#(
 
-parameter   ADDR_WIDTH          =  10, 
+parameter   ADDR_WIDTH      =  10, 
 parameter   DATA_WIDTH      =  9,  // Data  Width in bits
 
-parameter    x_init =0      ,
-parameter    y_init =0      , 
+parameter    integer  x_init =  0,
+parameter    integer  y_init =  0, 
 
 parameter    pix_depth =16  	,
 
 parameter    img_width=8	 ,  
 parameter    img_height=8 	 ,
 
-parameter    subimg_width =0 ,
-parameter    subimg_height=0,	
+parameter    subimg_width =10,
+parameter    subimg_height=10,	
 
 parameter    n_steps=5	 ,
 parameter    n_frames=8   	 ,
 
-parameter    buffer_length=20,
+parameter    a_steps=1	 ,
+parameter    a_frames=1   	 ,
+
+parameter    buffer_length=3,
 
 parameter integer MEM_WORDS  =131071
 
@@ -70,7 +73,7 @@ parameter integer MEM_WORDS  =131071
 	input            OUT_N_ACK,	
 
 	output[63 : 0]   OUT_S,
-	input          OUT_S_ACK,		
+	input            OUT_S_ACK,		
 		
 	output[63 : 0]   OUT_E,	
 	input            OUT_E_ACK,
@@ -78,9 +81,49 @@ parameter integer MEM_WORDS  =131071
 	output[63 : 0]   OUT_W,	
 	input            OUT_W_ACK,	
 
-	
+
+output[pix_depth-1:0] debug_t_PM_pixel   , 
+output[img_width-1:0] debug_t_PM_x_dest  , 
+output[img_width-1:0] debug_t_PM_y_dest  ,
+output[n_steps-1:0]   debug_t_PM_steps   ,
+output[n_frames-1:0]  debug_t_PM_frames  ,
+output[img_width-1:0] debug_t_PM_x_orig  ,
+output[img_width-1:0] debug_t_PM_y_orig  ,
+output                debug_t_PM_fb      ,
+output                debug_t_PM_req     ,
+output                debug_t_PM_ack     ,
 
 
+output[pix_depth-1:0] debug_i_PM_pixel   , 
+output[img_width-1:0] debug_i_PM_x_dest  , 
+output[img_width-1:0] debug_i_PM_y_dest  ,
+output[n_steps-1:0]   debug_i_PM_steps   ,
+output[n_frames-1:0]  debug_i_PM_frames  ,
+output[img_width-1:0] debug_i_PM_x_orig  ,
+output[img_width-1:0] debug_i_PM_y_orig  ,
+output                debug_i_PM_fb      ,
+output                debug_i_PM_req     ,
+output                debug_i_PM_ack     ,
+
+
+output[10-1:0] debug_add_leitura   , 
+output[10-1:0] debug_add_escrita   , 
+
+output[pix_depth-1:0] i_PE_pixel   ,
+output[img_width-1:0] i_PE_x_dest  ,
+output[img_width-1:0] i_PE_y_dest  ,
+output[n_steps-1:0]   i_PE_step  ,
+output[n_frames-1:0]  i_PE_frame  ,
+output[img_width-1:0] i_PE_x_orig  ,
+output[img_width-1:0] i_PE_y_orig  ,
+output                i_PE_fb      ,
+
+
+output                i_PE_req     ,
+output                i_PE_ack     ,
+
+output                t_PE_req     ,
+output                t_PE_ack     ,
 
 	input wire  s00_axi_aclk,
 	input wire  s00_axi_aresetn,
@@ -115,8 +158,8 @@ parameter integer MEM_WORDS  =131071
 	reg [63:0]  signal_out_pe_in_router_data;
 	wire[63:0]  wsignal_in_pm_out_router_data;
 	wire[63:0]  signal_out_pm_in_router_data;
-
-
+	
+  
     wire  wsignal_in_pe_out_router_ack;
 	 
 	 reg [63 : 0]  signal_in_pm_out_router_data;
@@ -132,6 +175,8 @@ wire wsignal_out_pm_in_router_ack;
 wire wsignal_out_riscv_in_pm_ack;
 wire[63:0] wsignal_out_pm_in_router_data;
 assign wsignal_out_pm_in_router_data = 	signal_out_pm_in_router_data	;
+
+
 
 	reg [5:0] reset_cnt = 0;
 	wire resetn = &reset_cnt;
@@ -168,10 +213,10 @@ wire[63:0]  wsignal_in_pe_out_router_data;
 
 
 wire wsignal_in_pm_out_router_ack;
-wire[31:0] wsignal_out_riscv_in_pm_data;
+wire[63:0] wsignal_out_riscv_in_pm_data;
 wire  signal_out_pm_in_router_ack;
 
-reg[31:0] signal_out_riscv_in_pm_data;
+reg[63:0] signal_out_riscv_in_pm_data;
 assign wsignal_out_riscv_in_pm_data = signal_out_riscv_in_pm_data;
 
 
@@ -249,6 +294,14 @@ begin
 				if (iomem_wstrb[2]) signal_out_riscv_in_pm_data[23:16] <= iomem_wdata[23:16];
 				if (iomem_wstrb[3]) signal_out_riscv_in_pm_data[31:24] <= iomem_wdata[31:24];				
 			end
+			else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0223_0000) begin // interface risc-pm
+				iomem_ready <= 1;
+				iomem_rdata <=      signal_out_riscv_in_pm_data[63:32] ;
+				if (iomem_wstrb[0]) signal_out_riscv_in_pm_data[39:32] <=  iomem_wdata[7: 0];
+				if (iomem_wstrb[1]) signal_out_riscv_in_pm_data[47:40] <=  iomem_wdata[15: 8];
+				if (iomem_wstrb[2]) signal_out_riscv_in_pm_data[55:48]  <= iomem_wdata[23:16];
+				if (iomem_wstrb[3]) signal_out_riscv_in_pm_data[63:56]  <= iomem_wdata[31:24];				
+			end
 
 
 			
@@ -311,16 +364,20 @@ end
 
 	pm_wrapper #( 
          .pix_depth      (pix_depth),
-         .addr_size       (9),
-         .mem_size        (10),
-         .x_init(x_init)       , 
-         .y_init(y_init)       , 
+         .addr_size       (10),
+         .mem_size        (100),
+
          .img_width(img_width)	 ,  
          .img_height(img_height) 	 ,
          .subimg_width(subimg_width) ,	
          .subimg_height(subimg_height),	
          .n_steps(n_steps) 	 ,  
-         .n_frames(n_frames)   	 
+         .n_frames(n_frames),
+         .a_steps(a_steps),
+         .a_frames(a_frames),
+         .x_init(x_init)       , 
+         .y_init(y_init)       
+	  	 
 
  )pm_wrapper(
 
@@ -328,7 +385,7 @@ end
 .clk(clk),
 .reset(!reset_riscv),
 
-      
+ 
 .input_data(wsignal_in_pm_out_router_data), 
 .input_ack (signal_out_pm_in_router_ack ),
  
@@ -336,24 +393,54 @@ end
 .input_riscv_ack (wsignal_in_riscv_out_pm_ack ),
  
 .output_data(signal_out_pm_in_router_data), 
-.output_ack (wsignal_in_pm_out_router_ack)  
+.output_ack (wsignal_in_pm_out_router_ack) ,
+
+.debug_t_PM_pixel  (debug_t_PM_pixel  ),
+.debug_t_PM_x_dest (debug_t_PM_x_dest ),
+.debug_t_PM_y_dest (debug_t_PM_y_dest ),
+.debug_t_PM_steps  (debug_t_PM_steps  ),
+.debug_t_PM_frames (debug_t_PM_frames ),
+.debug_t_PM_x_orig (debug_t_PM_x_orig ),
+.debug_t_PM_y_orig (debug_t_PM_y_orig ),
+.debug_t_PM_fb     (debug_t_PM_fb     ),
+.debug_t_PM_req    (debug_t_PM_req    ),
+.debug_t_PM_ack    (debug_t_PM_ack    ),
+.debug_i_PM_pixel  (debug_i_PM_pixel  ),
+.debug_i_PM_x_dest (debug_i_PM_x_dest ),
+.debug_i_PM_y_dest (debug_i_PM_y_dest ),
+.debug_i_PM_steps  (debug_i_PM_steps  ),
+.debug_i_PM_frames (debug_i_PM_frames ),
+.debug_i_PM_x_orig (debug_i_PM_x_orig ),
+.debug_i_PM_y_orig (debug_i_PM_y_orig ),
+.debug_i_PM_fb     (debug_i_PM_fb     ),
+.debug_i_PM_req    (debug_i_PM_req    ),
+.debug_i_PM_ack    (debug_i_PM_ack    ) ,
+.debug_add_leitura(debug_add_leitura),
+.debug_add_escrita(debug_add_escrita)
+
 
         
 );
+assign t_PE_ack = wsignal_in_pe_out_router_ack;
+assign t_PE_req = signal_out_pe_in_router_data[1];
 
-router_wrapper #( 
+assign i_PE_ack = signal_out_pe_in_router_ack;
+assign i_PE_req = wsignal_in_pe_out_router_data[1];
+
+
+router_wrapper #(
+        .x_init(x_init),
+        .y_init(y_init),    
         .ADDR_WIDTH(10),  
         .DATA_WIDTH(9), 
-         .x_init(x_init)       , 
-         .y_init(y_init)       , 
-         .pix_depth(pix_depth)  	 ,
-         .img_width(img_width)	 ,  
-         .img_height(img_height) 	 ,
-         .subimg_width(subimg_width) ,	
-         .subimg_height(subimg_height),	
-         .n_steps(n_steps) 	 ,  
-         .n_frames(n_frames)   	 ,
-         .buffer_length(buffer_length)
+        .pix_depth(pix_depth)  	 ,
+        .img_width(img_width)	 ,  
+        .img_height(img_height) 	 ,
+        .subimg_width(subimg_width) ,	
+        .subimg_height(subimg_height),	
+        .n_steps(n_steps) 	 ,  
+        .n_frames(n_frames)   	 ,
+        .buffer_length(buffer_length)
 
  )router_wrapper(
 
@@ -371,7 +458,7 @@ router_wrapper #(
 .in_router_out_pe_data(signal_out_pe_in_router_data), 
 .out_router_in_pe_ack (wsignal_in_pe_out_router_ack ),
  
-.out_router_in_pe_data(wsignal_in_pe_out_router_data), 
+.out_router_in_pe_data(wsignal_in_pe_out_router_data), //i_data  
 .in_router_out_pe_ack (signal_out_pe_in_router_ack),  
                                          
 .in_router_out_N_data(IN_N),  
@@ -397,7 +484,19 @@ router_wrapper #(
 .out_router_in_w_ack (IN_W_ACK ),  
 
 .out_router_in_w_data(OUT_W),  
-.in_router_out_w_ack (OUT_W_ACK )  
+.in_router_out_w_ack (OUT_W_ACK ) ,
+
+.i_PE_pixel  (i_PE_pixel  ),
+.i_PE_x_dest (i_PE_x_dest ),
+.i_PE_y_dest (i_PE_y_dest ),
+.i_PE_step   (i_PE_step   ),
+.i_PE_frame  (i_PE_frame  ),
+.i_PE_x_orig (i_PE_x_orig ),
+.i_PE_y_orig (i_PE_y_orig ),
+.i_PE_fb     (i_PE_fb     )
+//.i_PE_fb     (i_PE_fb     ),
+//.i_PE_fb     (i_PE_fb     ),
         
 		);
+		
 endmodule

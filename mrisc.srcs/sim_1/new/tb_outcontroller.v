@@ -13,7 +13,7 @@ generic(
     subimg_height	:natural := 20;
     n_steps 	   : natural := 5;
     n_frames   	   : natural := 8;
-    x_init          : integer := 0;
+    x_init            : integer := 0;
     y_init          : integer := 0
 
 );

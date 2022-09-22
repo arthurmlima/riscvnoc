@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x3D34E957F1F8FD6E",
+      "boundary_crc": "0x9A326EDB5187F2A6",
       "device": "xczu7ev-ffvc1156-2-e",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
@@ -16,16 +16,18 @@
           "auto_pc": ""
         },
         "m00_couplers": {},
-        "m01_couplers": {}
+        "m01_couplers": {},
+        "m02_couplers": {},
+        "m03_couplers": {}
       },
       "rst_ps8_0_100M": "",
+      "ila_0": "",
+      "xlslice_1": "",
+      "xlslice_2": "",
       "zcu104_0": "",
       "zcu104_1": ""
     },
     "ports": {
-      "led1_0": {
-        "direction": "O"
-      },
       "reset_riscv_0": {
         "type": "rst",
         "direction": "O",
@@ -46,13 +48,13 @@
       "ser_tx_0": {
         "direction": "O"
       },
-      "ser_tx_1": {
+      "led2_0": {
         "direction": "O"
       },
       "ser_rx_1": {
         "direction": "I"
       },
-      "led2_0": {
+      "ser_tx_1": {
         "direction": "O"
       }
     },
@@ -881,7 +883,7 @@
         "xci_name": "design_1_ps8_0_axi_periph_0",
         "parameters": {
           "NUM_MI": {
-            "value": "2"
+            "value": "4"
           }
         },
         "interface_ports": {
@@ -894,6 +896,14 @@
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
           },
           "M01_AXI": {
+            "mode": "Master",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          },
+          "M02_AXI": {
+            "mode": "Master",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          },
+          "M03_AXI": {
             "mode": "Master",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
           }
@@ -959,6 +969,38 @@
           "M01_ARESETN": {
             "type": "rst",
             "direction": "I"
+          },
+          "M02_ACLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "M02_AXI"
+              },
+              "ASSOCIATED_RESET": {
+                "value": "M02_ARESETN"
+              }
+            }
+          },
+          "M02_ARESETN": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "M03_ACLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "M03_AXI"
+              },
+              "ASSOCIATED_RESET": {
+                "value": "M03_ARESETN"
+              }
+            }
+          },
+          "M03_ARESETN": {
+            "type": "rst",
+            "direction": "I"
           }
         },
         "components": {
@@ -967,7 +1009,7 @@
             "xci_name": "design_1_xbar_0",
             "parameters": {
               "NUM_MI": {
-                "value": "2"
+                "value": "4"
               },
               "NUM_SI": {
                 "value": "1"
@@ -1172,31 +1214,127 @@
                 ]
               }
             }
+          },
+          "m02_couplers": {
+            "interface_ports": {
+              "M_AXI": {
+                "mode": "Master",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              },
+              "S_AXI": {
+                "mode": "Slave",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              }
+            },
+            "ports": {
+              "M_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "M_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "M_ARESETN"
+                  }
+                }
+              },
+              "M_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "S_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "S_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "S_ARESETN"
+                  }
+                }
+              },
+              "S_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              }
+            },
+            "interface_nets": {
+              "m02_couplers_to_m02_couplers": {
+                "interface_ports": [
+                  "S_AXI",
+                  "M_AXI"
+                ]
+              }
+            }
+          },
+          "m03_couplers": {
+            "interface_ports": {
+              "M_AXI": {
+                "mode": "Master",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              },
+              "S_AXI": {
+                "mode": "Slave",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              }
+            },
+            "ports": {
+              "M_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "M_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "M_ARESETN"
+                  }
+                }
+              },
+              "M_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "S_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "S_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "S_ARESETN"
+                  }
+                }
+              },
+              "S_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              }
+            },
+            "interface_nets": {
+              "m03_couplers_to_m03_couplers": {
+                "interface_ports": [
+                  "S_AXI",
+                  "M_AXI"
+                ]
+              }
+            }
           }
         },
         "interface_nets": {
-          "m01_couplers_to_ps8_0_axi_periph": {
-            "interface_ports": [
-              "M01_AXI",
-              "m01_couplers/M_AXI"
-            ]
-          },
-          "xbar_to_m00_couplers": {
-            "interface_ports": [
-              "xbar/M00_AXI",
-              "m00_couplers/S_AXI"
-            ]
-          },
-          "xbar_to_m01_couplers": {
-            "interface_ports": [
-              "xbar/M01_AXI",
-              "m01_couplers/S_AXI"
-            ]
-          },
           "ps8_0_axi_periph_to_s00_couplers": {
             "interface_ports": [
               "S00_AXI",
               "s00_couplers/S_AXI"
+            ]
+          },
+          "m00_couplers_to_ps8_0_axi_periph": {
+            "interface_ports": [
+              "M00_AXI",
+              "m00_couplers/M_AXI"
             ]
           },
           "s00_couplers_to_xbar": {
@@ -1205,10 +1343,46 @@
               "xbar/S00_AXI"
             ]
           },
-          "m00_couplers_to_ps8_0_axi_periph": {
+          "xbar_to_m00_couplers": {
             "interface_ports": [
-              "M00_AXI",
-              "m00_couplers/M_AXI"
+              "xbar/M00_AXI",
+              "m00_couplers/S_AXI"
+            ]
+          },
+          "m01_couplers_to_ps8_0_axi_periph": {
+            "interface_ports": [
+              "M01_AXI",
+              "m01_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m01_couplers": {
+            "interface_ports": [
+              "xbar/M01_AXI",
+              "m01_couplers/S_AXI"
+            ]
+          },
+          "m02_couplers_to_ps8_0_axi_periph": {
+            "interface_ports": [
+              "M02_AXI",
+              "m02_couplers/M_AXI"
+            ]
+          },
+          "m03_couplers_to_ps8_0_axi_periph": {
+            "interface_ports": [
+              "M03_AXI",
+              "m03_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m02_couplers": {
+            "interface_ports": [
+              "xbar/M02_AXI",
+              "m02_couplers/S_AXI"
+            ]
+          },
+          "xbar_to_m03_couplers": {
+            "interface_ports": [
+              "xbar/M03_AXI",
+              "m03_couplers/S_AXI"
             ]
           }
         },
@@ -1221,8 +1395,12 @@
               "s00_couplers/M_ACLK",
               "m00_couplers/M_ACLK",
               "m01_couplers/M_ACLK",
+              "m02_couplers/M_ACLK",
+              "m03_couplers/M_ACLK",
               "m00_couplers/S_ACLK",
-              "m01_couplers/S_ACLK"
+              "m01_couplers/S_ACLK",
+              "m02_couplers/S_ACLK",
+              "m03_couplers/S_ACLK"
             ]
           },
           "ps8_0_axi_periph_ARESETN_net": {
@@ -1233,8 +1411,12 @@
               "s00_couplers/M_ARESETN",
               "m00_couplers/M_ARESETN",
               "m01_couplers/M_ARESETN",
+              "m02_couplers/M_ARESETN",
+              "m03_couplers/M_ARESETN",
               "m00_couplers/S_ARESETN",
-              "m01_couplers/S_ARESETN"
+              "m01_couplers/S_ARESETN",
+              "m02_couplers/S_ARESETN",
+              "m03_couplers/S_ARESETN"
             ]
           }
         }
@@ -1243,18 +1425,93 @@
         "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
         "xci_name": "design_1_rst_ps8_0_100M_0"
       },
+      "ila_0": {
+        "vlnv": "xilinx.com:ip:ila:6.2",
+        "xci_name": "design_1_ila_0_0",
+        "parameters": {
+          "C_DATA_DEPTH": {
+            "value": "131072"
+          },
+          "C_ENABLE_ILA_AXI_MON": {
+            "value": "false"
+          },
+          "C_MONITOR_TYPE": {
+            "value": "Native"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "12"
+          },
+          "C_PROBE10_WIDTH": {
+            "value": "1"
+          },
+          "C_PROBE12_WIDTH": {
+            "value": "1"
+          },
+          "C_PROBE13_WIDTH": {
+            "value": "1"
+          },
+          "C_PROBE7_WIDTH": {
+            "value": "1"
+          },
+          "C_PROBE8_WIDTH": {
+            "value": "1"
+          },
+          "C_PROBE9_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "xlslice_1": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "design_1_xlslice_0_1",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "1"
+          },
+          "DIN_TO": {
+            "value": "1"
+          },
+          "DIN_WIDTH": {
+            "value": "64"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "xlslice_2": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "design_1_xlslice_1_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "1"
+          },
+          "DIN_TO": {
+            "value": "1"
+          },
+          "DIN_WIDTH": {
+            "value": "64"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
       "zcu104_0": {
         "vlnv": "xilinx.com:module_ref:zcu104:1.0",
         "xci_name": "design_1_zcu104_0_0",
         "parameters": {
+          "a_steps": {
+            "value": "2"
+          },
           "buffer_length": {
-            "value": "3"
+            "value": "20"
           },
           "subimg_height": {
-            "value": "20"
+            "value": "10"
           },
           "subimg_width": {
-            "value": "20"
+            "value": "10"
           },
           "y_init": {
             "value": "0"
@@ -1590,24 +1847,175 @@
           },
           "OUT_W_ACK": {
             "direction": "I"
+          },
+          "debug_t_PM_pixel": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "debug_t_PM_x_dest": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_t_PM_y_dest": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_t_PM_steps": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "debug_t_PM_frames": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_t_PM_x_orig": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_t_PM_y_orig": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_t_PM_fb": {
+            "direction": "O"
+          },
+          "debug_t_PM_req": {
+            "direction": "O"
+          },
+          "debug_t_PM_ack": {
+            "direction": "O"
+          },
+          "debug_i_PM_pixel": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "debug_i_PM_x_dest": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_i_PM_y_dest": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_i_PM_steps": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "debug_i_PM_frames": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_i_PM_x_orig": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_i_PM_y_orig": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_i_PM_fb": {
+            "direction": "O"
+          },
+          "debug_i_PM_req": {
+            "direction": "O"
+          },
+          "debug_i_PM_ack": {
+            "direction": "O"
+          },
+          "debug_add_leitura": {
+            "direction": "O",
+            "left": "9",
+            "right": "0"
+          },
+          "debug_add_escrita": {
+            "direction": "O",
+            "left": "9",
+            "right": "0"
+          },
+          "i_PE_pixel": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "i_PE_x_dest": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "i_PE_y_dest": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "i_PE_step": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "i_PE_frame": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "i_PE_x_orig": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "i_PE_y_orig": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "i_PE_fb": {
+            "direction": "O"
+          },
+          "i_PE_req": {
+            "direction": "O"
+          },
+          "i_PE_ack": {
+            "direction": "O"
+          },
+          "t_PE_req": {
+            "direction": "O"
+          },
+          "t_PE_ack": {
+            "direction": "O"
           }
         }
       },
       "zcu104_1": {
         "vlnv": "xilinx.com:module_ref:zcu104:1.0",
-        "xci_name": "design_1_zcu104_1_0",
+        "xci_name": "design_1_zcu104_0_1",
         "parameters": {
+          "a_steps": {
+            "value": "2"
+          },
           "buffer_length": {
-            "value": "3"
+            "value": "20"
           },
           "subimg_height": {
-            "value": "20"
+            "value": "10"
           },
           "subimg_width": {
-            "value": "20"
+            "value": "10"
           },
           "y_init": {
-            "value": "20"
+            "value": "10"
           }
         },
         "reference_info": {
@@ -1940,6 +2348,154 @@
           },
           "OUT_W_ACK": {
             "direction": "I"
+          },
+          "debug_t_PM_pixel": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "debug_t_PM_x_dest": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_t_PM_y_dest": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_t_PM_steps": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "debug_t_PM_frames": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_t_PM_x_orig": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_t_PM_y_orig": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_t_PM_fb": {
+            "direction": "O"
+          },
+          "debug_t_PM_req": {
+            "direction": "O"
+          },
+          "debug_t_PM_ack": {
+            "direction": "O"
+          },
+          "debug_i_PM_pixel": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "debug_i_PM_x_dest": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_i_PM_y_dest": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_i_PM_steps": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "debug_i_PM_frames": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_i_PM_x_orig": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_i_PM_y_orig": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "debug_i_PM_fb": {
+            "direction": "O"
+          },
+          "debug_i_PM_req": {
+            "direction": "O"
+          },
+          "debug_i_PM_ack": {
+            "direction": "O"
+          },
+          "debug_add_leitura": {
+            "direction": "O",
+            "left": "9",
+            "right": "0"
+          },
+          "debug_add_escrita": {
+            "direction": "O",
+            "left": "9",
+            "right": "0"
+          },
+          "i_PE_pixel": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "i_PE_x_dest": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "i_PE_y_dest": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "i_PE_step": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "i_PE_frame": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "i_PE_x_orig": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "i_PE_y_orig": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "i_PE_fb": {
+            "direction": "O"
+          },
+          "i_PE_req": {
+            "direction": "O"
+          },
+          "i_PE_ack": {
+            "direction": "O"
+          },
+          "t_PE_req": {
+            "direction": "O"
+          },
+          "t_PE_ack": {
+            "direction": "O"
           }
         }
       }
@@ -1974,6 +2530,9 @@
           "ps8_0_axi_periph/M00_ACLK",
           "ps8_0_axi_periph/ACLK",
           "ps8_0_axi_periph/M01_ACLK",
+          "ps8_0_axi_periph/M02_ACLK",
+          "ps8_0_axi_periph/M03_ACLK",
+          "ila_0/clk",
           "zcu104_0/clk",
           "zcu104_0/s00_axi_aclk",
           "zcu104_1/clk",
@@ -1993,6 +2552,8 @@
           "ps8_0_axi_periph/M00_ARESETN",
           "ps8_0_axi_periph/ARESETN",
           "ps8_0_axi_periph/M01_ARESETN",
+          "ps8_0_axi_periph/M02_ARESETN",
+          "ps8_0_axi_periph/M03_ARESETN",
           "zcu104_0/s00_axi_aresetn",
           "zcu104_1/s00_axi_aresetn"
         ]
@@ -2015,10 +2576,25 @@
           "ser_tx_0"
         ]
       },
-      "zcu104_0_IN_N_ACK": {
+      "zcu104_0_OUT_S": {
         "ports": [
-          "zcu104_0/IN_N_ACK",
-          "led1_0"
+          "zcu104_0/OUT_S",
+          "xlslice_1/Din",
+          "zcu104_1/IN_N"
+        ]
+      },
+      "zcu104_1_OUT_N": {
+        "ports": [
+          "zcu104_1/OUT_N",
+          "xlslice_2/Din",
+          "zcu104_0/IN_S"
+        ]
+      },
+      "zcu104_1_IN_N_ACK": {
+        "ports": [
+          "zcu104_1/IN_N_ACK",
+          "ila_0/probe3",
+          "zcu104_0/OUT_S_ACK"
         ]
       },
       "ser_rx_1_1": {
@@ -2033,29 +2609,71 @@
           "ser_tx_1"
         ]
       },
-      "zcu104_0_IN_S_ACK": {
+      "zcu104_0_i_PE_req": {
+        "ports": [
+          "zcu104_0/i_PE_req",
+          "ila_0/probe0"
+        ]
+      },
+      "zcu104_0_i_PE_ack": {
+        "ports": [
+          "zcu104_0/i_PE_ack",
+          "ila_0/probe1"
+        ]
+      },
+      "xlslice_1_Dout": {
+        "ports": [
+          "xlslice_1/Dout",
+          "ila_0/probe2"
+        ]
+      },
+      "zcu104_1_debug_t_PM_req": {
+        "ports": [
+          "zcu104_1/debug_t_PM_req",
+          "ila_0/probe4"
+        ]
+      },
+      "zcu104_1_debug_t_PM_ack": {
+        "ports": [
+          "zcu104_1/debug_t_PM_ack",
+          "ila_0/probe5"
+        ]
+      },
+      "zcu104_1_i_PE_req": {
+        "ports": [
+          "zcu104_1/i_PE_req",
+          "ila_0/probe6"
+        ]
+      },
+      "zcu104_1_i_PE_ack": {
+        "ports": [
+          "zcu104_1/i_PE_ack",
+          "ila_0/probe7"
+        ]
+      },
+      "xlslice_2_Dout": {
+        "ports": [
+          "xlslice_2/Dout",
+          "ila_0/probe8"
+        ]
+      },
+      "Net": {
         "ports": [
           "zcu104_0/IN_S_ACK",
-          "led2_0",
+          "ila_0/probe9",
           "zcu104_1/OUT_N_ACK"
         ]
       },
-      "zcu104_1_OUT_N": {
+      "zcu104_0_t_PE_req": {
         "ports": [
-          "zcu104_1/OUT_N",
-          "zcu104_0/IN_S"
+          "zcu104_0/t_PE_req",
+          "ila_0/probe10"
         ]
       },
-      "zcu104_0_OUT_S": {
+      "zcu104_0_t_PE_ack": {
         "ports": [
-          "zcu104_0/OUT_S",
-          "zcu104_1/IN_N"
-        ]
-      },
-      "zcu104_1_IN_N_ACK": {
-        "ports": [
-          "zcu104_1/IN_N_ACK",
-          "zcu104_0/OUT_S_ACK"
+          "zcu104_0/t_PE_ack",
+          "ila_0/probe11"
         ]
       }
     },

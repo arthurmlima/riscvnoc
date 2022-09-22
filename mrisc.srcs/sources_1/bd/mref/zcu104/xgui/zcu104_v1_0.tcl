@@ -6,6 +6,8 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "ADDR_WIDTH" -parent ${Page_0}
   ipgui::add_param $IPINST -name "DATA_WIDTH" -parent ${Page_0}
   ipgui::add_param $IPINST -name "MEM_WORDS" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "a_frames" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "a_steps" -parent ${Page_0}
   ipgui::add_param $IPINST -name "buffer_length" -parent ${Page_0}
   ipgui::add_param $IPINST -name "img_height" -parent ${Page_0}
   ipgui::add_param $IPINST -name "img_width" -parent ${Page_0}
@@ -44,6 +46,24 @@ proc update_PARAM_VALUE.MEM_WORDS { PARAM_VALUE.MEM_WORDS } {
 
 proc validate_PARAM_VALUE.MEM_WORDS { PARAM_VALUE.MEM_WORDS } {
 	# Procedure called to validate MEM_WORDS
+	return true
+}
+
+proc update_PARAM_VALUE.a_frames { PARAM_VALUE.a_frames } {
+	# Procedure called to update a_frames when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.a_frames { PARAM_VALUE.a_frames } {
+	# Procedure called to validate a_frames
+	return true
+}
+
+proc update_PARAM_VALUE.a_steps { PARAM_VALUE.a_steps } {
+	# Procedure called to update a_steps when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.a_steps { PARAM_VALUE.a_steps } {
+	# Procedure called to validate a_steps
 	return true
 }
 
@@ -191,6 +211,16 @@ proc update_MODELPARAM_VALUE.n_steps { MODELPARAM_VALUE.n_steps PARAM_VALUE.n_st
 proc update_MODELPARAM_VALUE.n_frames { MODELPARAM_VALUE.n_frames PARAM_VALUE.n_frames } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.n_frames}] ${MODELPARAM_VALUE.n_frames}
+}
+
+proc update_MODELPARAM_VALUE.a_steps { MODELPARAM_VALUE.a_steps PARAM_VALUE.a_steps } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.a_steps}] ${MODELPARAM_VALUE.a_steps}
+}
+
+proc update_MODELPARAM_VALUE.a_frames { MODELPARAM_VALUE.a_frames PARAM_VALUE.a_frames } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.a_frames}] ${MODELPARAM_VALUE.a_frames}
 }
 
 proc update_MODELPARAM_VALUE.buffer_length { MODELPARAM_VALUE.buffer_length PARAM_VALUE.buffer_length } {

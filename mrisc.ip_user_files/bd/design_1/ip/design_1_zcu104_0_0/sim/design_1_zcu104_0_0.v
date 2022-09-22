@@ -59,17 +59,6 @@ module design_1_zcu104_0_0 (
   ser_tx,
   ser_rx,
   reset_riscv,
-  led1,
-  led2,
-  led3,
-  led4,
-  led5,
-  ledr_n,
-  ledg_n,
-  signal_out_pe_in_router_data,
-  wsignal_in_pm_out_router_data,
-  signal_out_pm_in_router_data,
-  wsignal_in_pe_out_router_ack,
   IN_N,
   IN_N_ACK,
   IN_S,
@@ -86,6 +75,22 @@ module design_1_zcu104_0_0 (
   OUT_E_ACK,
   OUT_W,
   OUT_W_ACK,
+  output_debug_escrita,
+  output_debug_leitura,
+  input_debug_pixel,
+  input_debug_x_dest,
+  input_debug_y_dest,
+  input_debug_step,
+  input_debug_frame,
+  input_debug_req,
+  input_debug_ack,
+  output_debug_pixel,
+  output_debug_x_dest,
+  output_debug_y_dest,
+  output_debug_step,
+  output_debug_frame,
+  output_debug_req,
+  output_debug_ack,
   s00_axi_aclk,
   s00_axi_aresetn,
   s00_axi_awaddr,
@@ -117,17 +122,6 @@ input wire ser_rx;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset_riscv, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset_riscv RST" *)
 output wire reset_riscv;
-output wire led1;
-output wire led2;
-output wire led3;
-output wire led4;
-output wire led5;
-output wire ledr_n;
-output wire ledg_n;
-output wire [63 : 0] signal_out_pe_in_router_data;
-output wire [63 : 0] wsignal_in_pm_out_router_data;
-output wire [63 : 0] signal_out_pm_in_router_data;
-output wire wsignal_in_pe_out_router_ack;
 input wire [63 : 0] IN_N;
 output wire IN_N_ACK;
 input wire [63 : 0] IN_S;
@@ -144,6 +138,22 @@ output wire [63 : 0] OUT_E;
 input wire OUT_E_ACK;
 output wire [63 : 0] OUT_W;
 input wire OUT_W_ACK;
+output wire [9 : 0] output_debug_escrita;
+output wire [9 : 0] output_debug_leitura;
+output wire [15 : 0] input_debug_pixel;
+output wire [7 : 0] input_debug_x_dest;
+output wire [7 : 0] input_debug_y_dest;
+output wire [4 : 0] input_debug_step;
+output wire [7 : 0] input_debug_frame;
+output wire input_debug_req;
+output wire input_debug_ack;
+output wire [15 : 0] output_debug_pixel;
+output wire [7 : 0] output_debug_x_dest;
+output wire [7 : 0] output_debug_y_dest;
+output wire [4 : 0] output_debug_step;
+output wire [7 : 0] output_debug_frame;
+output wire output_debug_req;
+output wire output_debug_ack;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s00_axi_aclk, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_zynq_ultra_ps_e_0_0_pl_clk0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 s00_axi_aclk CLK" *)
 input wire s00_axi_aclk;
@@ -199,28 +209,19 @@ input wire s00_axi_rready;
     .pix_depth(16),
     .img_width(8),
     .img_height(8),
-    .subimg_width(20),
-    .subimg_height(20),
+    .subimg_width(10),
+    .subimg_height(10),
     .n_steps(5),
     .n_frames(8),
-    .buffer_length(20),
+    .a_steps(2),
+    .a_frames(1),
+    .buffer_length(3),
     .MEM_WORDS(131071)
   ) inst (
     .clk(clk),
     .ser_tx(ser_tx),
     .ser_rx(ser_rx),
     .reset_riscv(reset_riscv),
-    .led1(led1),
-    .led2(led2),
-    .led3(led3),
-    .led4(led4),
-    .led5(led5),
-    .ledr_n(ledr_n),
-    .ledg_n(ledg_n),
-    .signal_out_pe_in_router_data(signal_out_pe_in_router_data),
-    .wsignal_in_pm_out_router_data(wsignal_in_pm_out_router_data),
-    .signal_out_pm_in_router_data(signal_out_pm_in_router_data),
-    .wsignal_in_pe_out_router_ack(wsignal_in_pe_out_router_ack),
     .IN_N(IN_N),
     .IN_N_ACK(IN_N_ACK),
     .IN_S(IN_S),
@@ -237,6 +238,22 @@ input wire s00_axi_rready;
     .OUT_E_ACK(OUT_E_ACK),
     .OUT_W(OUT_W),
     .OUT_W_ACK(OUT_W_ACK),
+    .output_debug_escrita(output_debug_escrita),
+    .output_debug_leitura(output_debug_leitura),
+    .input_debug_pixel(input_debug_pixel),
+    .input_debug_x_dest(input_debug_x_dest),
+    .input_debug_y_dest(input_debug_y_dest),
+    .input_debug_step(input_debug_step),
+    .input_debug_frame(input_debug_frame),
+    .input_debug_req(input_debug_req),
+    .input_debug_ack(input_debug_ack),
+    .output_debug_pixel(output_debug_pixel),
+    .output_debug_x_dest(output_debug_x_dest),
+    .output_debug_y_dest(output_debug_y_dest),
+    .output_debug_step(output_debug_step),
+    .output_debug_frame(output_debug_frame),
+    .output_debug_req(output_debug_req),
+    .output_debug_ack(output_debug_ack),
     .s00_axi_aclk(s00_axi_aclk),
     .s00_axi_aresetn(s00_axi_aresetn),
     .s00_axi_awaddr(s00_axi_awaddr),

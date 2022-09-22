@@ -24,7 +24,6 @@ generic(
 	clk                             : in std_logic;
 	reset                           : in std_logic;
 
-    input_oc_free                   :in std_logic;
 	
     PM_in_pixel                     : in           std_logic_vector(pix_depth-1 downto 0);
     PM_in_x_dest                    : in           std_logic_vector(img_width-1 downto 0);

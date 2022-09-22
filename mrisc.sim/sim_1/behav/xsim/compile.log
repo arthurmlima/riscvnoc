@@ -1,4 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/in_pm_ctrl.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'in_PM_controller'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/arthu/mrisc/mrisc.srcs/sim_1/new/tb_pm_wrapper.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'tb_pm_wrapper'

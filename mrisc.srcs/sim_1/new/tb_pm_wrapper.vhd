@@ -13,7 +13,7 @@ generic(
     subimg_height	:natural := 20;
     n_steps 	   : natural := 5;
     n_frames   	   : natural := 8;
-    x_init        :natural:=0;
+    x_init          :natural:=0;
     y_init        :natural:=0
     
     
@@ -165,7 +165,7 @@ oc_PM_ack_in <=input_data_in(0);
         UUT1 : entity work.out_pm_controller 
     generic map
     (
-     x_init        => x_init        ,
+     x_init          => x_init          ,
      y_init        => y_init        ,
      img_width     => img_width     ,
      img_height    => img_height    ,
@@ -205,7 +205,7 @@ oc_PM_ack_in <=input_data_in(0);
         UUT2 : entity work.in_pm_controller 
     generic map
     (
-     x_init        => x_init        ,
+     x_init          => x_init          ,
      y_init        => y_init        ,
      img_width     => img_width     ,
      img_height    => img_height    ,

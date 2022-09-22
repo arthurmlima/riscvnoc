@@ -21,6 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -38,26 +39,67 @@ generic(
     pix_depth        : natural;
     addr_size        : natural;
     mem_size         : natural;
-    img_width	     : natural ;
-    img_height 	     : natural ;
+    img_width	     : natural;
+    img_height 	     : natural;
     subimg_width 	 : natural; 
-    subimg_height	 : natural ;
-    n_steps 	     : natural ;
-    n_frames   	     : natural 
+    subimg_height	 : natural;
+    n_steps 	     : natural;
+    n_frames   	     : natural;
+    
+    a_steps	         : natural;
+    a_frames   	     : natural;
+    
+    x_init           : natural;
+    y_init           : natural
+    
+   
+    
+    
+    
+    
+    
 );
 port(
-  clk   : in std_logic;
-  reset   : in std_logic;
+  clk                  : in std_logic;
+  reset                : in std_logic;
     
-  input_data   : in std_logic_vector(63   downto 0);
-  input_ack   : out std_logic:='0';
+  input_data           : in std_logic_vector(63   downto 0);
+  input_ack            : inout std_logic:='0';
   
-  input_riscv_data  : in std_logic_vector(63   downto 0);
-  input_riscv_ack   : out std_logic;
+  input_riscv_data     : in std_logic_vector(63   downto 0);
+  input_riscv_ack      : out std_logic;
+    
+  output_data          : out std_logic_vector(63   downto 0);
+  output_ack           : in std_logic:='0';
   
-  
-  output_data   : out std_logic_vector(63   downto 0);
-  output_ack   : in std_logic:='0'
+
+   debug_t_PM_pixel   :  out     std_logic_vector(pix_depth-1 downto 0);
+   debug_t_PM_x_dest  :  out     std_logic_vector(img_width-1 downto 0);
+   debug_t_PM_y_dest  :  out     std_logic_vector(img_width-1 downto 0);
+   debug_t_PM_steps   :  out     std_logic_vector(n_steps-1 downto 0);
+   debug_t_PM_frames  :  out     std_logic_vector(n_frames-1 downto 0);
+   debug_t_PM_x_orig  :  out     std_logic_vector(img_width-1 downto 0);
+   debug_t_PM_y_orig  :  out     std_logic_vector(img_width-1 downto 0);
+   debug_t_PM_fb      :  out     std_logic;
+   debug_t_PM_req     :  out     std_logic;
+   debug_t_PM_ack     :  out     std_logic;
+       
+       
+       
+       
+   debug_i_PM_pixel   :  out     std_logic_vector(pix_depth-1 downto 0);
+   debug_i_PM_x_dest  :  out     std_logic_vector(img_width-1 downto 0);
+   debug_i_PM_y_dest  :  out     std_logic_vector(img_width-1 downto 0);
+   debug_i_PM_steps   :  out     std_logic_vector(n_steps-1 downto 0);
+   debug_i_PM_frames  :  out     std_logic_vector(n_frames-1 downto 0);
+   debug_i_PM_x_orig  :  out     std_logic_vector(img_width-1 downto 0);
+   debug_i_PM_y_orig  :  out     std_logic_vector(img_width-1 downto 0);
+   debug_i_PM_fb      :  out     std_logic;
+   debug_i_PM_req     :  out     std_logic;
+   debug_i_PM_ack     :  out     std_logic;
+   debug_add_leitura  :  out     std_logic_vector(10-1 downto 0); 
+   debug_add_escrita  :  out     std_logic_vector(10-1 downto 0)                      
+      
   );
   
 end pm_wrapper;
@@ -65,7 +107,7 @@ end pm_wrapper;
 architecture Behavioral of pm_wrapper is
 
 
-component rams_tdp_rf_rf is
+component rams_tdp_rf_rf_rf is
 generic(
      addr_size   : natural;
      mem_size    : natural;
@@ -86,10 +128,13 @@ port(
         doa     : out std_logic_vector(pix_depth-1 downto 0);
         dob     : out std_logic_vector(pix_depth-1 downto 0);
         doa_ok  : out std_logic;
-        dob_ok  : out std_logic 
+        dob_ok  : out std_logic
+
+
+
 
 );    
-end component rams_tdp_rf_rf;
+end component rams_tdp_rf_rf_rf;
    
 signal    clka    :  std_logic;
 signal    clkb    :  std_logic;
@@ -102,14 +147,22 @@ signal    addrb   :  std_logic_vector(addr_size-1 downto 0);
 signal    dia     :  std_logic_vector(pix_depth-1 downto 0);
 signal    dib     :  std_logic_vector(pix_depth-1 downto 0);
 signal    doa     :  std_logic_vector(pix_depth-1 downto 0);
+
 signal    dob     :  std_logic_vector(pix_depth-1 downto 0);
 signal    doa_ok  :  std_logic;
 signal    dob_ok  :  std_logic ;
+
+
+
+
+
         
 signal    signal_t_PM_pixel            :       std_logic_vector(pix_depth-1 downto 0);
 signal    signal_t_PM_x_dest           :       std_logic_vector(img_width-1 downto 0);
 signal    signal_t_PM_y_dest           :       std_logic_vector(img_height-1 downto 0);
+signal    signal_t_PM_step_x             :       std_logic_vector(n_steps-1 downto 0);
 signal    signal_t_PM_step             :       std_logic_vector(n_steps-1 downto 0);
+signal    signal_t_PM_frame_x            :       std_logic_vector(n_frames-1 downto 0);
 signal    signal_t_PM_frame            :       std_logic_vector(n_frames-1 downto 0);
 signal    signal_t_PM_x_orig           :       std_logic_vector(img_width-1 downto 0);
 signal    signal_t_PM_y_orig           :       std_logic_vector(img_height-1 downto 0);
@@ -130,22 +183,146 @@ signal    signal_i_PM_ack              :       std_logic:='0';
 signal    signal_wr_pm                 :       std_logic:='0';
 
 
-signal    signal_input_riscv_pixel     :       std_logic_vector(pix_depth-1 downto 0);
-signal    signal_input_riscv_address   :       std_logic_vector(addr_size-1 downto 0);
-signal    signal_input_riscv_req       :       std_logic;
+signal    signal_input_riscv_pixel   :       std_logic_vector(pix_depth-1 downto 0);
+signal    signal_input_riscv_x_dest  :       std_logic_vector(img_width-1 downto 0);
+signal    signal_input_riscv_y_dest  :       std_logic_vector(img_width-1 downto 0);
+signal    signal_input_riscv_steps   :       std_logic_vector(n_steps-1 downto 0);
+signal    signal_input_riscv_frames  :       std_logic_vector(n_frames-1 downto 0);
+signal    signal_input_riscv_req     :       std_logic;
 
 
 
+
+
+
+
+
+
+
+
+
+
+signal x_img : unsigned(n_steps-1 downto 0);
+signal y_img : unsigned(n_steps-1 downto 0);
 
 signal aux1:std_logic:='0';
 signal aux2:std_logic:='0';
     
 type proc_router is (forward, write_mode, normal_mode,handshake);  -- Define the states
-type proc_riscv is (forward, write_mode, normal_mode,handshake);  -- Define the states
+type proc_riscv is (forward,forward2, write_mode, normal_mode,handshake);  -- Define the states
 signal mode_router : proc_router:= forward;    -- 
 signal mode_riscv  : proc_riscv:= forward;     --  
 
+
+signal tileheight  : unsigned(addr_size-1 downto 0);
+
+signal c_x      : unsigned(addr_size-1 downto 0);
+signal c_y      : unsigned(addr_size-1 downto 0);
+
+signal r_x      : unsigned(addr_size-1 downto 0);
+signal r_y      : unsigned(addr_size-1 downto 0);
+
+signal sa_f      : unsigned(addr_size-1 downto 0);
+signal sa_s      : unsigned(addr_size-1 downto 0);
+
+signal su_x      : unsigned(addr_size-1 downto 0);
+signal su_y      : unsigned(addr_size-1 downto 0);
+signal su_f      : unsigned(addr_size-1 downto 0);
+signal su_s      : unsigned(addr_size-1 downto 0);
+
+signal xysf      : unsigned(addr_size-1 downto 0);
+
+
+signal r_x_1      : unsigned(addr_size-1 downto 0);
+signal r_y_1      : unsigned(addr_size-1 downto 0);
+
+signal sa_f_1     : unsigned(addr_size-1 downto 0);
+signal sa_s_1     : unsigned(addr_size-1 downto 0);
+
+signal su_x_1      : unsigned(addr_size-1 downto 0);
+signal su_y_1      : unsigned(addr_size-1 downto 0);
+signal su_f_1      : unsigned(addr_size-1 downto 0);
+signal su_s_1      : unsigned(addr_size-1 downto 0);
+
+signal xysf_1      : unsigned(addr_size-1 downto 0);
+
+signal    gamb     :       std_logic;
+
+
+
+
 begin
+
+
+debug_t_PM_pixel    <=      signal_t_PM_pixel  ;
+debug_t_PM_x_dest   <=      signal_t_PM_x_dest ;
+debug_t_PM_y_dest   <=      signal_t_PM_y_dest ;
+debug_t_PM_steps    <=      signal_t_PM_step   ;
+debug_t_PM_frames   <=      signal_t_PM_frame  ;
+debug_t_PM_x_orig   <=      signal_t_PM_x_orig ;
+debug_t_PM_y_orig   <=      signal_t_PM_y_orig ;
+debug_t_PM_fb       <=      signal_t_PM_fb     ;
+debug_t_PM_req      <=      signal_t_PM_req    ;
+debug_t_PM_ack      <=      input_ack   ;   
+
+debug_i_PM_pixel    <=      signal_i_PM_pixel  ;
+debug_i_PM_x_dest   <=      signal_i_PM_x_dest ;
+debug_i_PM_y_dest   <=      signal_i_PM_y_dest ;
+debug_i_PM_steps    <=      signal_i_PM_step   ;
+debug_i_PM_frames   <=      signal_i_PM_frame  ;
+debug_i_PM_x_orig   <=      signal_i_PM_x_orig ;
+debug_i_PM_y_orig   <=      signal_i_PM_y_orig ;
+debug_i_PM_fb       <=      signal_i_PM_fb     ;
+debug_i_PM_req      <=      signal_i_PM_req    ;
+debug_i_PM_ack      <=      output_ack    ;   
+debug_add_leitura   <=      std_logic_vector(xysf_1);
+debug_add_escrita   <=      std_logic_vector(xysf) ;                         
+                          
+tileheight<=to_unsigned(subimg_width,addr_size);
+
+
+-- constante init                                      
+c_x<=to_unsigned(x_init,addr_size);
+c_y<=to_unsigned(y_init,addr_size);
+
+-- contante frame
+sa_f<=to_unsigned(a_frames,addr_size);
+sa_s<=to_unsigned(a_steps,addr_size);
+
+
+----------------------------------------------------------------------------------------------------------
+su_x<=resize(unsigned(signal_input_riscv_x_dest),addr_size);
+su_y<=resize(unsigned(signal_input_riscv_y_dest),addr_size);
+
+su_f<=resize(unsigned(signal_input_riscv_frames),addr_size);
+su_s<=resize(unsigned(signal_input_riscv_steps),addr_size);
+
+r_x <= resize(su_x-c_x,addr_size);
+r_y <= resize(su_y-c_y,addr_size);
+
+--xysf<=resize(sa_s*sa_f*(su_x-c_x) + tileheight*sa_s*sa_f*(su_y_1-c_y) +sa_f*su_s + su_f,addr_size);
+xysf<=resize((su_x-c_x) + tileheight*(su_y-c_y),xysf'length);
+----------------------------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+
+su_x_1<=resize(unsigned(signal_t_PM_x_dest),addr_size);
+su_y_1<=resize(unsigned(signal_t_PM_y_dest),addr_size);
+
+su_f_1<=resize(unsigned(signal_t_PM_step),addr_size);
+su_s_1<=resize(unsigned(signal_t_PM_frame),addr_size);
+
+r_x_1 <= resize(su_x_1-c_x,addr_size);
+r_y_1 <= resize(su_y_1-c_y,addr_size);
+
+--xysf_1<=resize(sa_s*sa_f*(su_x_1-c_x) + tileheight*sa_s*sa_f*(su_y_1-c_y) +sa_f*su_s_1 + su_f_1,addr_size);
+xysf_1<=resize((su_x_1-c_x) + tileheight*(su_y_1-c_y),xysf_1'length);
+
+----------------------------------------------------------------------------------------------------------
+
+
 
 output_data  <= signal_i_PM_pixel & signal_i_PM_x_dest & signal_i_PM_y_dest & signal_i_PM_step &  signal_i_PM_frame &  signal_i_PM_x_orig &  signal_i_PM_y_orig &  signal_i_PM_fb &  signal_i_PM_req & output_ack  ;
 
@@ -159,12 +336,15 @@ signal_t_PM_y_orig  <=input_data(img_width +2  downto +2+1);
 signal_t_PM_fb      <=input_data(1+1);                                                                                                                                                              
 signal_t_PM_req     <=input_data(1);
  
-signal_input_riscv_pixel    <= input_riscv_data(pix_depth+addr_size+1+1-1 downto addr_size+1+1 ); 
-signal_input_riscv_address  <= input_riscv_data(addr_size+1+1-1 downto 1+1); 
-signal_input_riscv_req      <= input_riscv_data(1); 
+signal_input_riscv_pixel       <=       input_riscv_data(pix_depth + 32 -1 downto 32 ); 
+signal_input_riscv_x_dest      <=       input_riscv_data(img_width + img_width +  n_steps+ n_frames  +2-1 downto img_width +  n_steps+ n_frames +2); 
+signal_input_riscv_y_dest      <=       input_riscv_data(img_width +  n_steps+ n_frames  +2-1 downto n_steps+ n_frames +2);   
+signal_input_riscv_steps       <=       input_riscv_data(n_steps+ n_frames  +2-1 downto n_frames+2); 
+signal_input_riscv_frames      <=       input_riscv_data(n_frames +2-1 downto 2); 
+signal_input_riscv_req         <=       input_riscv_data(1); 
  
 
-inst_pm: rams_tdp_rf_rf
+inst_pm: rams_tdp_rf_rf_rf
     generic map(
     pix_depth   =>   pix_depth  ,
     addr_size    =>   addr_size   ,
@@ -185,12 +365,12 @@ doa     =>doa   ,
 dob     =>dob   ,
 doa_ok  =>doa_ok,
 dob_ok  =>dob_ok
-  );  
 
-enb<='1'; 
-web<='1';     
+         );  
 
-ena<='1'; 
+
+   
+
 wea<='0';    
 process(clk,reset) is
 variable aux1 : std_logic := '0';
@@ -213,26 +393,21 @@ begin
         case mode_router is
             when forward =>
                 if(signal_t_PM_req='1')then
-
-                            signal_i_PM_pixel      <= (others => '0');
-                            signal_i_PM_x_dest     <= (others => '0');
-                            signal_i_PM_y_dest     <= (others => '0');
-                            signal_i_PM_step       <= (others => '0');
-                            signal_i_PM_frame      <= (others => '0');
-                            signal_i_PM_x_orig     <= (others => '0');
-                            signal_i_PM_y_orig     <= (others => '0');
-                            signal_i_PM_fb         <= '0';
+                              ena<='1'; 
                             signal_i_PM_req        <= '0';
                             input_ack              <= '0';                           
-                            addra<= '0' & signal_t_PM_y_dest;                                               
+                            addra<= std_logic_vector(xysf_1);                                               
                             mode_router<=normal_mode;
                 end if;
              
              
                     
              when normal_mode =>
+              
+
              if(signal_i_PM_ack='0'and signal_t_PM_req='1')then
                           if(doa_ok='1')then
+                             
                                 signal_i_PM_pixel<=doa;
                                 signal_i_PM_x_dest <=  signal_t_PM_x_dest ;
                                 signal_i_PM_y_dest <=  signal_t_PM_y_dest ;
@@ -241,7 +416,7 @@ begin
                                 signal_i_PM_x_orig <=  signal_t_PM_x_orig ;
                                 signal_i_PM_y_orig <=  signal_t_PM_y_orig ;
                                 signal_i_PM_fb<='1';      
-                               -- ena<='0';          
+                                ena<='0';          
                                 signal_i_PM_req        <= '1';
                                 input_ack              <= '1';                           
 
@@ -301,19 +476,22 @@ begin
         case mode_riscv is
             when forward =>
                 if(signal_input_riscv_req='1')then
-                           -- enb<='1'; 
-                           -- web<='1';
-                            input_riscv_ack <= '1';                           
-                            addrb<= signal_input_riscv_address;
+
+                            input_riscv_ack <= '0';                           
+                            addrb<= std_logic_vector(xysf);
                             dib<=signal_input_riscv_pixel;
-                            mode_riscv<=write_mode;
+                            mode_riscv<=forward2;
                 end if;
-             
+             when forward2 =>
+                                enb<='1'; 
+                                web<='1';
+                                mode_riscv<=write_mode;
+ 
                                  
              when write_mode =>
                           if(dob_ok='1')then
-                             --   enb<='0'; 
-                             --   web<='0';                               
+                                enb<='0'; 
+                                web<='0';                               
                                 input_riscv_ack<= '1';
                                 mode_riscv<=handshake;                        
                           end if;

@@ -18,7 +18,5 @@ psu_ps_pl_reset_config
 catch {psu_protection}
 targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
 rst -processor
-dow C:/Users/arthu/mrisc/mrisc.sdk/teste/Release/teste.elf
+dow C:/Users/arthu/mrisc/mrisc.sdk/naoda/Debug/naoda.elf
 configparams force-mem-access 0
-targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Xilinx HW-Z1-ZCU104 FT4232H 87066A"} -index 1
-con

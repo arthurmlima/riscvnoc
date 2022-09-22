@@ -843,6 +843,8 @@ set_property src_info {type:XDC file:1 line:649 export:INPUT save:INPUT read:REA
 set_property IOSTANDARD  LVCMOS33 [get_ports "HDMI_RX_HPD"] ;# Bank  88 VCCO - VCC3V3   - IO_L12P_AD8P_88
 set_property src_info {type:XDC file:1 line:651 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN D5       [get_ports "led1_0"] ;# Bank  88 VCCO - VCC3V3   - IO_L11N_AD9N_88
+set_property src_info {type:XDC file:1 line:652 export:INPUT save:INPUT read:READ} [current_design]
+set_property IOSTANDARD  LVCMOS33 [get_ports "led1_0"] ;# Bank  88 VCCO - VCC3V3   - IO_L11N_AD9N_88
 set_property src_info {type:XDC file:1 line:654 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN D6       [get_ports "led2_0"] ;# Bank  88 VCCO - VCC3V3   - IO_L11P_AD9P_88
 set_property src_info {type:XDC file:1 line:657 export:INPUT save:INPUT read:READ} [current_design]

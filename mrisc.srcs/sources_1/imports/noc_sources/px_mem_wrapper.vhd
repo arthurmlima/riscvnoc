@@ -66,7 +66,7 @@ entity px_mem_wrapper is
         i_PM_x_orig : out STD_LOGIC_VECTOR(img_width-1 downto 0);
         i_PM_y_orig : out STD_LOGIC_VECTOR(img_height-1 downto 0);
         i_PM_fb     : out STD_LOGIC; -- message forward/backward
-        i_PM_req    : inout STD_LOGIC; -- message request
+        i_PM_req    : in STD_LOGIC; -- message request
         i_PM_ack    : in STD_LOGIC := '0'; -- message acknowledge  
             
         t_PM_pixel  : in STD_LOGIC_VECTOR(pix_depth-1 downto 0);

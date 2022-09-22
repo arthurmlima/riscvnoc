@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1663146267">
+<GenRun Id="impl_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1663801272">
   <File Type="BITSTR-BMM" Name="design_1_wrapper_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="design_1_wrapper_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="design_1_wrapper_timing_summary_init.rpt"/>
@@ -137,6 +137,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/add/in_E_ctrl.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/gambsRouter/add/in_E_ctrl.vhd"/>
+        <Attr Name="ImportTime" Val="1663780547"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/noc_sources/E_wrapper_EB_DEC.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="D:/noc_sources/E_wrapper_EB_DEC.vhd"/>
@@ -157,6 +165,14 @@
       <FileInfo SFType="VHDL2008">
         <Attr Name="ImportPath" Val="D:/noc_sources/N_elastic_buffer.vhd"/>
         <Attr Name="ImportTime" Val="1659563025"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/add/in_N_ctrl.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/gambsRouter/add/in_N_ctrl.vhd"/>
+        <Attr Name="ImportTime" Val="1663780508"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -249,6 +265,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/add/in_S_ctrl.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/gambsRouter/add/in_S_ctrl.vhd"/>
+        <Attr Name="ImportTime" Val="1663780522"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/noc_sources/S_wrapper_EB_DEC.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="D:/noc_sources/S_wrapper_EB_DEC.vhd"/>
@@ -273,6 +297,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/add/in_W_ctrl.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/gambsRouter/add/in_W_ctrl.vhd"/>
+        <Attr Name="ImportTime" Val="1663780584"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/noc_sources/W_wrapper_EB_DEC.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="D:/noc_sources/W_wrapper_EB_DEC.vhd"/>
@@ -281,10 +313,42 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/add/out_E_controller.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/gambsRouter/add/out_E_controller.vhd"/>
+        <Attr Name="ImportTime" Val="1663780698"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/add/out_N_controller.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/gambsRouter/add/out_N_controller.vhd"/>
+        <Attr Name="ImportTime" Val="1663780695"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/noc_sources/out_PE_controller.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="D:/noc_sources/out_PE_controller.vhd"/>
         <Attr Name="ImportTime" Val="1659563026"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/add/out_S_controller.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/gambsRouter/add/out_S_controller.vhd"/>
+        <Attr Name="ImportTime" Val="1663780717"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/add/out_W_controller.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/gambsRouter/add/out_W_controller.vhd"/>
+        <Attr Name="ImportTime" Val="1663780748"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -303,10 +367,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/noc_sources/rams_tdp_rf_rf.vhd">
+    <File Path="$PSRCDIR/sources_1/new/rams_tdp_rf_rf.vhd">
       <FileInfo>
-        <Attr Name="ImportPath" Val="D:/noc_sources/rams_tdp_rf_rf.vhd"/>
-        <Attr Name="ImportTime" Val="1659563026"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -356,7 +418,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/noc_sources/bram_pixel_memory.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="D:/noc_sources/bram_pixel_memory.vhd"/>
         <Attr Name="ImportTime" Val="1659563026"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -365,7 +427,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/noc_sources/px_mem_wrapper.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="D:/noc_sources/px_mem_wrapper.vhd"/>
         <Attr Name="ImportTime" Val="1659563026"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -441,9 +503,7 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_zynq_ultra_ps_e_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_rst_ps8_0_100M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_ila_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_0_1"/>
 </GenRun>

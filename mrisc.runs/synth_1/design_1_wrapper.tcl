@@ -43,6 +43,10 @@ set_property used_in_implementation false [get_files -all c:/Users/arthu/mrisc/m
 set_property used_in_implementation false [get_files -all c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_rst_ps8_0_100M_0/design_1_rst_ps8_0_100M_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_rst_ps8_0_100M_0/design_1_rst_ps8_0_100M_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_ooc.xdc]
+set_property used_in_synthesis false [get_files -all c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_ila_0_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_ila_0_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_ila_0_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_ila_0_0/design_1_ila_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
 
