@@ -11,6 +11,10 @@
         .string "teste de funcionamento da memoria local --- leitura e escrita"
 .LC5:
         .string "teste de funcionamento da memoria externa --- tile01 --- leitura"
+.LC6:
+        .string "teste de funcionamento da memoria externa --- tile10 --- leitura"
+.LC7:
+        .string "teste de funcionamento da memoria externa --- tile11 --- leitura"
 .text
 main:
         addi    sp,sp,-32
@@ -56,6 +60,24 @@ main:
         call    print
         li      a1,1
         li      a0,0
+        call    get_external_image
+        lui     a5,%hi(.LC6)
+        addi    a0,a5,%lo(.LC6)
+        call    print
+        lui     a5,%hi(.LC2)
+        addi    a0,a5,%lo(.LC2)
+        call    print
+        li      a1,0
+        li      a0,1
+        call    get_external_image
+        lui     a5,%hi(.LC7)
+        addi    a0,a5,%lo(.LC7)
+        call    print
+        lui     a5,%hi(.LC2)
+        addi    a0,a5,%lo(.LC2)
+        call    print
+        li      a1,1
+        li      a0,1
         call    get_external_image
         lui     a5,%hi(.LC2)
         addi    a0,a5,%lo(.LC2)

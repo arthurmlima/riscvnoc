@@ -44,7 +44,7 @@ parameter    a_frames=1   	 ,
 
 parameter    buffer_length=3,
 
-parameter integer MEM_WORDS  =131071
+parameter integer MEM_WORDS  =32768
 
 
 
@@ -82,48 +82,6 @@ parameter integer MEM_WORDS  =131071
 	input            OUT_W_ACK,	
 
 
-output[pix_depth-1:0] debug_t_PM_pixel   , 
-output[img_width-1:0] debug_t_PM_x_dest  , 
-output[img_width-1:0] debug_t_PM_y_dest  ,
-output[n_steps-1:0]   debug_t_PM_steps   ,
-output[n_frames-1:0]  debug_t_PM_frames  ,
-output[img_width-1:0] debug_t_PM_x_orig  ,
-output[img_width-1:0] debug_t_PM_y_orig  ,
-output                debug_t_PM_fb      ,
-output                debug_t_PM_req     ,
-output                debug_t_PM_ack     ,
-
-
-output[pix_depth-1:0] debug_i_PM_pixel   , 
-output[img_width-1:0] debug_i_PM_x_dest  , 
-output[img_width-1:0] debug_i_PM_y_dest  ,
-output[n_steps-1:0]   debug_i_PM_steps   ,
-output[n_frames-1:0]  debug_i_PM_frames  ,
-output[img_width-1:0] debug_i_PM_x_orig  ,
-output[img_width-1:0] debug_i_PM_y_orig  ,
-output                debug_i_PM_fb      ,
-output                debug_i_PM_req     ,
-output                debug_i_PM_ack     ,
-
-
-output[10-1:0] debug_add_leitura   , 
-output[10-1:0] debug_add_escrita   , 
-
-output[pix_depth-1:0] i_PE_pixel   ,
-output[img_width-1:0] i_PE_x_dest  ,
-output[img_width-1:0] i_PE_y_dest  ,
-output[n_steps-1:0]   i_PE_step  ,
-output[n_frames-1:0]  i_PE_frame  ,
-output[img_width-1:0] i_PE_x_orig  ,
-output[img_width-1:0] i_PE_y_orig  ,
-output                i_PE_fb      ,
-
-
-output                i_PE_req     ,
-output                i_PE_ack     ,
-
-output                t_PE_req     ,
-output                t_PE_ack     ,
 
 	input wire  s00_axi_aclk,
 	input wire  s00_axi_aresetn,
@@ -393,39 +351,11 @@ end
 .input_riscv_ack (wsignal_in_riscv_out_pm_ack ),
  
 .output_data(signal_out_pm_in_router_data), 
-.output_ack (wsignal_in_pm_out_router_ack) ,
-
-.debug_t_PM_pixel  (debug_t_PM_pixel  ),
-.debug_t_PM_x_dest (debug_t_PM_x_dest ),
-.debug_t_PM_y_dest (debug_t_PM_y_dest ),
-.debug_t_PM_steps  (debug_t_PM_steps  ),
-.debug_t_PM_frames (debug_t_PM_frames ),
-.debug_t_PM_x_orig (debug_t_PM_x_orig ),
-.debug_t_PM_y_orig (debug_t_PM_y_orig ),
-.debug_t_PM_fb     (debug_t_PM_fb     ),
-.debug_t_PM_req    (debug_t_PM_req    ),
-.debug_t_PM_ack    (debug_t_PM_ack    ),
-.debug_i_PM_pixel  (debug_i_PM_pixel  ),
-.debug_i_PM_x_dest (debug_i_PM_x_dest ),
-.debug_i_PM_y_dest (debug_i_PM_y_dest ),
-.debug_i_PM_steps  (debug_i_PM_steps  ),
-.debug_i_PM_frames (debug_i_PM_frames ),
-.debug_i_PM_x_orig (debug_i_PM_x_orig ),
-.debug_i_PM_y_orig (debug_i_PM_y_orig ),
-.debug_i_PM_fb     (debug_i_PM_fb     ),
-.debug_i_PM_req    (debug_i_PM_req    ),
-.debug_i_PM_ack    (debug_i_PM_ack    ) ,
-.debug_add_leitura(debug_add_leitura),
-.debug_add_escrita(debug_add_escrita)
-
+.output_ack (wsignal_in_pm_out_router_ack) 
 
         
 );
-assign t_PE_ack = wsignal_in_pe_out_router_ack;
-assign t_PE_req = signal_out_pe_in_router_data[1];
 
-assign i_PE_ack = signal_out_pe_in_router_ack;
-assign i_PE_req = wsignal_in_pe_out_router_data[1];
 
 
 router_wrapper #(
@@ -484,18 +414,9 @@ router_wrapper #(
 .out_router_in_w_ack (IN_W_ACK ),  
 
 .out_router_in_w_data(OUT_W),  
-.in_router_out_w_ack (OUT_W_ACK ) ,
+.in_router_out_w_ack (OUT_W_ACK ) 
 
-.i_PE_pixel  (i_PE_pixel  ),
-.i_PE_x_dest (i_PE_x_dest ),
-.i_PE_y_dest (i_PE_y_dest ),
-.i_PE_step   (i_PE_step   ),
-.i_PE_frame  (i_PE_frame  ),
-.i_PE_x_orig (i_PE_x_orig ),
-.i_PE_y_orig (i_PE_y_orig ),
-.i_PE_fb     (i_PE_fb     )
-//.i_PE_fb     (i_PE_fb     ),
-//.i_PE_fb     (i_PE_fb     ),
+
         
 		);
 		

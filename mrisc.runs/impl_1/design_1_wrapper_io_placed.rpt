@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date                      : Wed Sep 21 20:11:02 2022
+| Date                      : Thu Sep 22 01:04:27 2022
 | Host                      : DESKTOP-1Q96SJ0 running 64-bit major release  (build 9200)
 | Command                   : report_io -file design_1_wrapper_io_placed.rpt
 | Design                    : design_1_wrapper
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|             6 |
+|             5 |
 +---------------+
 
 
@@ -721,7 +721,7 @@ Table of Contents
 | G4         |                          |                  | GND                                | GND           |             |         |            |                         |      |                   |                      |       0.0 |            |           |          |      |                  |              |                   |              |
 | G5         |                          |                  | GND                                | GND           |             |         |            |                         |      |                   |                      |       0.0 |            |           |          |      |                  |              |                   |              |
 | G6         |                          | High Density     | IO_L10N_AD2N_87                    | User IO       |             |      87 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |
-| G7         | ser_tx_1                 | High Density     | IO_L11N_AD1N_87                    | OUTPUT        | LVCMOS33    |      87 |         12 |                         | SLOW |                   |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
+| G7         |                          | High Density     | IO_L11N_AD1N_87                    | User IO       |             |      87 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |
 | G8         | ser_tx_0                 | High Density     | IO_L12N_AD0N_87                    | OUTPUT        | LVCMOS33    |      87 |         12 |                         | SLOW |                   |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
 | G9         |                          | High Performance | IO_L11N_T1U_N9_GC_68               | GCLK          |             |      68 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |
 | G10        |                          | High Performance | IO_L12P_T1U_N10_GC_68              | GCLK          |             |      68 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |

@@ -933,6 +933,8 @@ set_property src_info {type:XDC file:1 line:702 export:INPUT save:INPUT read:REA
 set_property PACKAGE_PIN H8       [get_ports "ser_rx_0"] ;# Bank  87 VCCO - VCC3V3   - IO_L12P_AD0P_87
 set_property src_info {type:XDC file:1 line:704 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN G7       [get_ports "ser_tx_1"] ;# Bank  87 VCCO - VCC3V3   - IO_L11N_AD1N_87
+set_property src_info {type:XDC file:1 line:705 export:INPUT save:INPUT read:READ} [current_design]
+set_property IOSTANDARD  LVCMOS33 [get_ports "ser_tx_1"] ;# Bank  87 VCCO - VCC3V3   - IO_L11N_AD1N_87
 set_property src_info {type:XDC file:1 line:706 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN H7       [get_ports "ser_rx_1"] ;# Bank  87 VCCO - VCC3V3   - IO_L11P_AD1P_87
 set_property src_info {type:XDC file:1 line:709 export:INPUT save:INPUT read:READ} [current_design]

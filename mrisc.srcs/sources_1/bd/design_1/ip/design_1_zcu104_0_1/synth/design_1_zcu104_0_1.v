@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "zcu104,Vivado 2019.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_zcu104_0_1,zcu104,{}" *)
-(* CORE_GENERATION_INFO = "design_1_zcu104_0_1,zcu104,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=zcu104,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,ADDR_WIDTH=10,DATA_WIDTH=9,x_init=0,y_init=10,pix_depth=16,img_width=8,img_height=8,subimg_width=10,subimg_height=10,n_steps=5,n_frames=8,a_steps=2,a_frames=1,buffer_length=20,MEM_WORDS=131071}" *)
+(* CORE_GENERATION_INFO = "design_1_zcu104_0_1,zcu104,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=zcu104,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,ADDR_WIDTH=10,DATA_WIDTH=9,x_init=0,y_init=10,pix_depth=16,img_width=8,img_height=8,subimg_width=10,subimg_height=10,n_steps=5,n_frames=8,a_steps=2,a_frames=1,buffer_length=20,MEM_WORDS=32768}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_zcu104_0_1 (
@@ -76,40 +76,6 @@ module design_1_zcu104_0_1 (
   OUT_E_ACK,
   OUT_W,
   OUT_W_ACK,
-  debug_t_PM_pixel,
-  debug_t_PM_x_dest,
-  debug_t_PM_y_dest,
-  debug_t_PM_steps,
-  debug_t_PM_frames,
-  debug_t_PM_x_orig,
-  debug_t_PM_y_orig,
-  debug_t_PM_fb,
-  debug_t_PM_req,
-  debug_t_PM_ack,
-  debug_i_PM_pixel,
-  debug_i_PM_x_dest,
-  debug_i_PM_y_dest,
-  debug_i_PM_steps,
-  debug_i_PM_frames,
-  debug_i_PM_x_orig,
-  debug_i_PM_y_orig,
-  debug_i_PM_fb,
-  debug_i_PM_req,
-  debug_i_PM_ack,
-  debug_add_leitura,
-  debug_add_escrita,
-  i_PE_pixel,
-  i_PE_x_dest,
-  i_PE_y_dest,
-  i_PE_step,
-  i_PE_frame,
-  i_PE_x_orig,
-  i_PE_y_orig,
-  i_PE_fb,
-  i_PE_req,
-  i_PE_ack,
-  t_PE_req,
-  t_PE_ack,
   s00_axi_aclk,
   s00_axi_aresetn,
   s00_axi_awaddr,
@@ -157,40 +123,6 @@ output wire [63 : 0] OUT_E;
 input wire OUT_E_ACK;
 output wire [63 : 0] OUT_W;
 input wire OUT_W_ACK;
-output wire [15 : 0] debug_t_PM_pixel;
-output wire [7 : 0] debug_t_PM_x_dest;
-output wire [7 : 0] debug_t_PM_y_dest;
-output wire [4 : 0] debug_t_PM_steps;
-output wire [7 : 0] debug_t_PM_frames;
-output wire [7 : 0] debug_t_PM_x_orig;
-output wire [7 : 0] debug_t_PM_y_orig;
-output wire debug_t_PM_fb;
-output wire debug_t_PM_req;
-output wire debug_t_PM_ack;
-output wire [15 : 0] debug_i_PM_pixel;
-output wire [7 : 0] debug_i_PM_x_dest;
-output wire [7 : 0] debug_i_PM_y_dest;
-output wire [4 : 0] debug_i_PM_steps;
-output wire [7 : 0] debug_i_PM_frames;
-output wire [7 : 0] debug_i_PM_x_orig;
-output wire [7 : 0] debug_i_PM_y_orig;
-output wire debug_i_PM_fb;
-output wire debug_i_PM_req;
-output wire debug_i_PM_ack;
-output wire [9 : 0] debug_add_leitura;
-output wire [9 : 0] debug_add_escrita;
-output wire [15 : 0] i_PE_pixel;
-output wire [7 : 0] i_PE_x_dest;
-output wire [7 : 0] i_PE_y_dest;
-output wire [4 : 0] i_PE_step;
-output wire [7 : 0] i_PE_frame;
-output wire [7 : 0] i_PE_x_orig;
-output wire [7 : 0] i_PE_y_orig;
-output wire i_PE_fb;
-output wire i_PE_req;
-output wire i_PE_ack;
-output wire t_PE_req;
-output wire t_PE_ack;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s00_axi_aclk, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_zynq_ultra_ps_e_0_0_pl_clk0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 s00_axi_aclk CLK" *)
 input wire s00_axi_aclk;
@@ -253,7 +185,7 @@ input wire s00_axi_rready;
     .a_steps(2),
     .a_frames(1),
     .buffer_length(20),
-    .MEM_WORDS(131071)
+    .MEM_WORDS(32768)
   ) inst (
     .clk(clk),
     .ser_tx(ser_tx),
@@ -275,40 +207,6 @@ input wire s00_axi_rready;
     .OUT_E_ACK(OUT_E_ACK),
     .OUT_W(OUT_W),
     .OUT_W_ACK(OUT_W_ACK),
-    .debug_t_PM_pixel(debug_t_PM_pixel),
-    .debug_t_PM_x_dest(debug_t_PM_x_dest),
-    .debug_t_PM_y_dest(debug_t_PM_y_dest),
-    .debug_t_PM_steps(debug_t_PM_steps),
-    .debug_t_PM_frames(debug_t_PM_frames),
-    .debug_t_PM_x_orig(debug_t_PM_x_orig),
-    .debug_t_PM_y_orig(debug_t_PM_y_orig),
-    .debug_t_PM_fb(debug_t_PM_fb),
-    .debug_t_PM_req(debug_t_PM_req),
-    .debug_t_PM_ack(debug_t_PM_ack),
-    .debug_i_PM_pixel(debug_i_PM_pixel),
-    .debug_i_PM_x_dest(debug_i_PM_x_dest),
-    .debug_i_PM_y_dest(debug_i_PM_y_dest),
-    .debug_i_PM_steps(debug_i_PM_steps),
-    .debug_i_PM_frames(debug_i_PM_frames),
-    .debug_i_PM_x_orig(debug_i_PM_x_orig),
-    .debug_i_PM_y_orig(debug_i_PM_y_orig),
-    .debug_i_PM_fb(debug_i_PM_fb),
-    .debug_i_PM_req(debug_i_PM_req),
-    .debug_i_PM_ack(debug_i_PM_ack),
-    .debug_add_leitura(debug_add_leitura),
-    .debug_add_escrita(debug_add_escrita),
-    .i_PE_pixel(i_PE_pixel),
-    .i_PE_x_dest(i_PE_x_dest),
-    .i_PE_y_dest(i_PE_y_dest),
-    .i_PE_step(i_PE_step),
-    .i_PE_frame(i_PE_frame),
-    .i_PE_x_orig(i_PE_x_orig),
-    .i_PE_y_orig(i_PE_y_orig),
-    .i_PE_fb(i_PE_fb),
-    .i_PE_req(i_PE_req),
-    .i_PE_ack(i_PE_ack),
-    .t_PE_req(t_PE_req),
-    .t_PE_ack(t_PE_ack),
     .s00_axi_aclk(s00_axi_aclk),
     .s00_axi_aresetn(s00_axi_aresetn),
     .s00_axi_awaddr(s00_axi_awaddr),

@@ -70,35 +70,8 @@ port(
   input_riscv_ack      : out std_logic;
     
   output_data          : out std_logic_vector(63   downto 0);
-  output_ack           : in std_logic:='0';
-  
-
-   debug_t_PM_pixel   :  out     std_logic_vector(pix_depth-1 downto 0);
-   debug_t_PM_x_dest  :  out     std_logic_vector(img_width-1 downto 0);
-   debug_t_PM_y_dest  :  out     std_logic_vector(img_width-1 downto 0);
-   debug_t_PM_steps   :  out     std_logic_vector(n_steps-1 downto 0);
-   debug_t_PM_frames  :  out     std_logic_vector(n_frames-1 downto 0);
-   debug_t_PM_x_orig  :  out     std_logic_vector(img_width-1 downto 0);
-   debug_t_PM_y_orig  :  out     std_logic_vector(img_width-1 downto 0);
-   debug_t_PM_fb      :  out     std_logic;
-   debug_t_PM_req     :  out     std_logic;
-   debug_t_PM_ack     :  out     std_logic;
-       
-       
-       
-       
-   debug_i_PM_pixel   :  out     std_logic_vector(pix_depth-1 downto 0);
-   debug_i_PM_x_dest  :  out     std_logic_vector(img_width-1 downto 0);
-   debug_i_PM_y_dest  :  out     std_logic_vector(img_width-1 downto 0);
-   debug_i_PM_steps   :  out     std_logic_vector(n_steps-1 downto 0);
-   debug_i_PM_frames  :  out     std_logic_vector(n_frames-1 downto 0);
-   debug_i_PM_x_orig  :  out     std_logic_vector(img_width-1 downto 0);
-   debug_i_PM_y_orig  :  out     std_logic_vector(img_width-1 downto 0);
-   debug_i_PM_fb      :  out     std_logic;
-   debug_i_PM_req     :  out     std_logic;
-   debug_i_PM_ack     :  out     std_logic;
-   debug_add_leitura  :  out     std_logic_vector(10-1 downto 0); 
-   debug_add_escrita  :  out     std_logic_vector(10-1 downto 0)                      
+  output_ack           : in std_logic:='0'
+             
       
   );
   
@@ -254,29 +227,6 @@ signal    gamb     :       std_logic;
 begin
 
 
-debug_t_PM_pixel    <=      signal_t_PM_pixel  ;
-debug_t_PM_x_dest   <=      signal_t_PM_x_dest ;
-debug_t_PM_y_dest   <=      signal_t_PM_y_dest ;
-debug_t_PM_steps    <=      signal_t_PM_step   ;
-debug_t_PM_frames   <=      signal_t_PM_frame  ;
-debug_t_PM_x_orig   <=      signal_t_PM_x_orig ;
-debug_t_PM_y_orig   <=      signal_t_PM_y_orig ;
-debug_t_PM_fb       <=      signal_t_PM_fb     ;
-debug_t_PM_req      <=      signal_t_PM_req    ;
-debug_t_PM_ack      <=      input_ack   ;   
-
-debug_i_PM_pixel    <=      signal_i_PM_pixel  ;
-debug_i_PM_x_dest   <=      signal_i_PM_x_dest ;
-debug_i_PM_y_dest   <=      signal_i_PM_y_dest ;
-debug_i_PM_steps    <=      signal_i_PM_step   ;
-debug_i_PM_frames   <=      signal_i_PM_frame  ;
-debug_i_PM_x_orig   <=      signal_i_PM_x_orig ;
-debug_i_PM_y_orig   <=      signal_i_PM_y_orig ;
-debug_i_PM_fb       <=      signal_i_PM_fb     ;
-debug_i_PM_req      <=      signal_i_PM_req    ;
-debug_i_PM_ack      <=      output_ack    ;   
-debug_add_leitura   <=      std_logic_vector(xysf_1);
-debug_add_escrita   <=      std_logic_vector(xysf) ;                         
                           
 tileheight<=to_unsigned(subimg_width,addr_size);
 

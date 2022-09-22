@@ -1,4 +1,4 @@
-20:16:33 **** Build of project naoda_bsp ****
+01:11:47 **** Build of project naoda_bsp ****
 make -k all 
 "Running Make include in psu_cortexa53_0/libsrc/avbuf_v2_2/src"
 make -C psu_cortexa53_0/libsrc/avbuf_v2_2/src -s include  "SHELL=CMD" "COMPILER=aarch64-none-elf-gcc" "ARCHIVER=aarch64-none-elf-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g -Wall -Wextra"
@@ -148,5 +148,5 @@ make -C psu_cortexa53_0/libsrc/zdma_v1_7/src -s libs  "SHELL=CMD" "COMPILER=aarc
 "Compiling zdma"
 'Finished building libraries'
 
-20:17:14 Build Finished (took 40s.870ms)
+01:12:25 Build Finished (took 38s.114ms)
 
