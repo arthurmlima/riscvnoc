@@ -148,8 +148,6 @@ void design_1_zynq_ultra_ps_e_0_0::before_end_of_elaboration()
     m_M_AXI_HPM0_FPD_transactor_rst_signal.write(1);
     mp_M_AXI_HPM0_FPD_transactor->RST(m_M_AXI_HPM0_FPD_transactor_rst_signal);
 
-    mp_impl->M_AXI_HPM0_FPD_wr_socket->bind(*(mp_M_AXI_HPM0_FPD_transactor->wr_socket));
-    mp_impl->M_AXI_HPM0_FPD_rd_socket->bind(*(mp_M_AXI_HPM0_FPD_transactor->rd_socket));
   }
 }
 

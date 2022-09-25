@@ -75,6 +75,13 @@ module design_1_zcu104_0_5 (
   OUT_E_ACK,
   OUT_W,
   OUT_W_ACK,
+  axi_image_pixel,
+  axi_image_x,
+  axi_image_y,
+  axi_image_req,
+  axi_image_ack,
+  entrada_init_prog_fim,
+  saida_init_prog_fim,
   s00_axi_aclk,
   s00_axi_aresetn,
   s00_axi_awaddr,
@@ -122,6 +129,13 @@ output wire [63 : 0] OUT_E;
 input wire OUT_E_ACK;
 output wire [63 : 0] OUT_W;
 input wire OUT_W_ACK;
+input wire [31 : 0] axi_image_pixel;
+input wire [31 : 0] axi_image_x;
+input wire [31 : 0] axi_image_y;
+input wire [31 : 0] axi_image_req;
+output wire [31 : 0] axi_image_ack;
+input wire [31 : 0] entrada_init_prog_fim;
+output wire saida_init_prog_fim;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s00_axi_aclk, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_zynq_ultra_ps_e_0_0_pl_clk0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 s00_axi_aclk CLK" *)
 input wire s00_axi_aclk;
@@ -173,18 +187,24 @@ input wire s00_axi_rready;
     .ADDR_WIDTH(10),
     .DATA_WIDTH(9),
     .x_init(0),
-    .y_init(10),
+    .y_init(80),
     .pix_depth(16),
     .img_width(8),
     .img_height(8),
-    .subimg_width(10),
-    .subimg_height(10),
+    .img_width_size(240),
+    .img_height_size(240),
+    .subimg_width(80),
+    .subimg_height(80),
     .n_steps(5),
     .n_frames(8),
     .a_steps(2),
     .a_frames(1),
     .buffer_length(20),
-    .MEM_WORDS(32768)
+    .x_tiles(3),
+    .y_tiles(3),
+    .x_local(0),
+    .y_local(1),
+    .MEM_WORDS(6500)
   ) inst (
     .clk(clk),
     .ser_tx(ser_tx),
@@ -206,6 +226,13 @@ input wire s00_axi_rready;
     .OUT_E_ACK(OUT_E_ACK),
     .OUT_W(OUT_W),
     .OUT_W_ACK(OUT_W_ACK),
+    .axi_image_pixel(axi_image_pixel),
+    .axi_image_x(axi_image_x),
+    .axi_image_y(axi_image_y),
+    .axi_image_req(axi_image_req),
+    .axi_image_ack(axi_image_ack),
+    .entrada_init_prog_fim(entrada_init_prog_fim),
+    .saida_init_prog_fim(saida_init_prog_fim),
     .s00_axi_aclk(s00_axi_aclk),
     .s00_axi_aresetn(s00_axi_aresetn),
     .s00_axi_awaddr(s00_axi_awaddr),

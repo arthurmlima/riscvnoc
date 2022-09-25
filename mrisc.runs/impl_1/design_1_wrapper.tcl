@@ -60,22 +60,21 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param tcl.collectionResultDisplayLimit 0
   set_param chipscope.maxJobs 3
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xczu7ev-ffvc1156-2-e
   set_property board_part xilinx.com:zcu104:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir C:/Users/arthu/mrisc/mrisc.cache/wt [current_project]
   set_property parent.project_path C:/Users/arthu/mrisc/mrisc.xpr [current_project]
+  set_property ip_repo_paths C:/Users/arthu/ip_repo/contador_ciclos_1.0 [current_project]
+  update_ip_catalog
   set_property ip_output_repo C:/Users/arthu/mrisc/mrisc.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]

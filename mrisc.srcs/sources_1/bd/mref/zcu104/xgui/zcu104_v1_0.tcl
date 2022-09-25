@@ -10,14 +10,20 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "a_steps" -parent ${Page_0}
   ipgui::add_param $IPINST -name "buffer_length" -parent ${Page_0}
   ipgui::add_param $IPINST -name "img_height" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "img_height_size" -parent ${Page_0}
   ipgui::add_param $IPINST -name "img_width" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "img_width_size" -parent ${Page_0}
   ipgui::add_param $IPINST -name "n_frames" -parent ${Page_0}
   ipgui::add_param $IPINST -name "n_steps" -parent ${Page_0}
   ipgui::add_param $IPINST -name "pix_depth" -parent ${Page_0}
   ipgui::add_param $IPINST -name "subimg_height" -parent ${Page_0}
   ipgui::add_param $IPINST -name "subimg_width" -parent ${Page_0}
   ipgui::add_param $IPINST -name "x_init" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "x_local" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "x_tiles" -parent ${Page_0}
   ipgui::add_param $IPINST -name "y_init" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "y_local" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "y_tiles" -parent ${Page_0}
 
 
 }
@@ -85,12 +91,30 @@ proc validate_PARAM_VALUE.img_height { PARAM_VALUE.img_height } {
 	return true
 }
 
+proc update_PARAM_VALUE.img_height_size { PARAM_VALUE.img_height_size } {
+	# Procedure called to update img_height_size when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.img_height_size { PARAM_VALUE.img_height_size } {
+	# Procedure called to validate img_height_size
+	return true
+}
+
 proc update_PARAM_VALUE.img_width { PARAM_VALUE.img_width } {
 	# Procedure called to update img_width when any of the dependent parameters in the arguments change
 }
 
 proc validate_PARAM_VALUE.img_width { PARAM_VALUE.img_width } {
 	# Procedure called to validate img_width
+	return true
+}
+
+proc update_PARAM_VALUE.img_width_size { PARAM_VALUE.img_width_size } {
+	# Procedure called to update img_width_size when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.img_width_size { PARAM_VALUE.img_width_size } {
+	# Procedure called to validate img_width_size
 	return true
 }
 
@@ -148,12 +172,48 @@ proc validate_PARAM_VALUE.x_init { PARAM_VALUE.x_init } {
 	return true
 }
 
+proc update_PARAM_VALUE.x_local { PARAM_VALUE.x_local } {
+	# Procedure called to update x_local when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.x_local { PARAM_VALUE.x_local } {
+	# Procedure called to validate x_local
+	return true
+}
+
+proc update_PARAM_VALUE.x_tiles { PARAM_VALUE.x_tiles } {
+	# Procedure called to update x_tiles when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.x_tiles { PARAM_VALUE.x_tiles } {
+	# Procedure called to validate x_tiles
+	return true
+}
+
 proc update_PARAM_VALUE.y_init { PARAM_VALUE.y_init } {
 	# Procedure called to update y_init when any of the dependent parameters in the arguments change
 }
 
 proc validate_PARAM_VALUE.y_init { PARAM_VALUE.y_init } {
 	# Procedure called to validate y_init
+	return true
+}
+
+proc update_PARAM_VALUE.y_local { PARAM_VALUE.y_local } {
+	# Procedure called to update y_local when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.y_local { PARAM_VALUE.y_local } {
+	# Procedure called to validate y_local
+	return true
+}
+
+proc update_PARAM_VALUE.y_tiles { PARAM_VALUE.y_tiles } {
+	# Procedure called to update y_tiles when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.y_tiles { PARAM_VALUE.y_tiles } {
+	# Procedure called to validate y_tiles
 	return true
 }
 
@@ -193,6 +253,16 @@ proc update_MODELPARAM_VALUE.img_height { MODELPARAM_VALUE.img_height PARAM_VALU
 	set_property value [get_property value ${PARAM_VALUE.img_height}] ${MODELPARAM_VALUE.img_height}
 }
 
+proc update_MODELPARAM_VALUE.img_width_size { MODELPARAM_VALUE.img_width_size PARAM_VALUE.img_width_size } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.img_width_size}] ${MODELPARAM_VALUE.img_width_size}
+}
+
+proc update_MODELPARAM_VALUE.img_height_size { MODELPARAM_VALUE.img_height_size PARAM_VALUE.img_height_size } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.img_height_size}] ${MODELPARAM_VALUE.img_height_size}
+}
+
 proc update_MODELPARAM_VALUE.subimg_width { MODELPARAM_VALUE.subimg_width PARAM_VALUE.subimg_width } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.subimg_width}] ${MODELPARAM_VALUE.subimg_width}
@@ -226,6 +296,26 @@ proc update_MODELPARAM_VALUE.a_frames { MODELPARAM_VALUE.a_frames PARAM_VALUE.a_
 proc update_MODELPARAM_VALUE.buffer_length { MODELPARAM_VALUE.buffer_length PARAM_VALUE.buffer_length } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.buffer_length}] ${MODELPARAM_VALUE.buffer_length}
+}
+
+proc update_MODELPARAM_VALUE.x_tiles { MODELPARAM_VALUE.x_tiles PARAM_VALUE.x_tiles } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.x_tiles}] ${MODELPARAM_VALUE.x_tiles}
+}
+
+proc update_MODELPARAM_VALUE.y_tiles { MODELPARAM_VALUE.y_tiles PARAM_VALUE.y_tiles } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.y_tiles}] ${MODELPARAM_VALUE.y_tiles}
+}
+
+proc update_MODELPARAM_VALUE.x_local { MODELPARAM_VALUE.x_local PARAM_VALUE.x_local } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.x_local}] ${MODELPARAM_VALUE.x_local}
+}
+
+proc update_MODELPARAM_VALUE.y_local { MODELPARAM_VALUE.y_local PARAM_VALUE.y_local } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.y_local}] ${MODELPARAM_VALUE.y_local}
 }
 
 proc update_MODELPARAM_VALUE.MEM_WORDS { MODELPARAM_VALUE.MEM_WORDS PARAM_VALUE.MEM_WORDS } {

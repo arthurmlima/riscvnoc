@@ -75,22 +75,13 @@ module design_1_zcu104_0_0 (
   OUT_E_ACK,
   OUT_W,
   OUT_W_ACK,
-  output_debug_escrita,
-  output_debug_leitura,
-  input_debug_pixel,
-  input_debug_x_dest,
-  input_debug_y_dest,
-  input_debug_step,
-  input_debug_frame,
-  input_debug_req,
-  input_debug_ack,
-  output_debug_pixel,
-  output_debug_x_dest,
-  output_debug_y_dest,
-  output_debug_step,
-  output_debug_frame,
-  output_debug_req,
-  output_debug_ack,
+  axi_image_pixel,
+  axi_image_x,
+  axi_image_y,
+  axi_image_req,
+  axi_image_ack,
+  entrada_init_prog_fim,
+  saida_init_prog_fim,
   s00_axi_aclk,
   s00_axi_aresetn,
   s00_axi_awaddr,
@@ -138,22 +129,13 @@ output wire [63 : 0] OUT_E;
 input wire OUT_E_ACK;
 output wire [63 : 0] OUT_W;
 input wire OUT_W_ACK;
-output wire [9 : 0] output_debug_escrita;
-output wire [9 : 0] output_debug_leitura;
-output wire [15 : 0] input_debug_pixel;
-output wire [7 : 0] input_debug_x_dest;
-output wire [7 : 0] input_debug_y_dest;
-output wire [4 : 0] input_debug_step;
-output wire [7 : 0] input_debug_frame;
-output wire input_debug_req;
-output wire input_debug_ack;
-output wire [15 : 0] output_debug_pixel;
-output wire [7 : 0] output_debug_x_dest;
-output wire [7 : 0] output_debug_y_dest;
-output wire [4 : 0] output_debug_step;
-output wire [7 : 0] output_debug_frame;
-output wire output_debug_req;
-output wire output_debug_ack;
+input wire [31 : 0] axi_image_pixel;
+input wire [31 : 0] axi_image_x;
+input wire [31 : 0] axi_image_y;
+input wire [31 : 0] axi_image_req;
+output wire [31 : 0] axi_image_ack;
+input wire [31 : 0] entrada_init_prog_fim;
+output wire saida_init_prog_fim;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s00_axi_aclk, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_zynq_ultra_ps_e_0_0_pl_clk0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 s00_axi_aclk CLK" *)
 input wire s00_axi_aclk;
@@ -209,14 +191,20 @@ input wire s00_axi_rready;
     .pix_depth(16),
     .img_width(8),
     .img_height(8),
+    .img_width_size(30),
+    .img_height_size(30),
     .subimg_width(10),
     .subimg_height(10),
     .n_steps(5),
     .n_frames(8),
     .a_steps(2),
     .a_frames(1),
-    .buffer_length(3),
-    .MEM_WORDS(131071)
+    .buffer_length(20),
+    .x_tiles(3),
+    .y_tiles(3),
+    .x_local(0),
+    .y_local(0),
+    .MEM_WORDS(32768)
   ) inst (
     .clk(clk),
     .ser_tx(ser_tx),
@@ -238,22 +226,13 @@ input wire s00_axi_rready;
     .OUT_E_ACK(OUT_E_ACK),
     .OUT_W(OUT_W),
     .OUT_W_ACK(OUT_W_ACK),
-    .output_debug_escrita(output_debug_escrita),
-    .output_debug_leitura(output_debug_leitura),
-    .input_debug_pixel(input_debug_pixel),
-    .input_debug_x_dest(input_debug_x_dest),
-    .input_debug_y_dest(input_debug_y_dest),
-    .input_debug_step(input_debug_step),
-    .input_debug_frame(input_debug_frame),
-    .input_debug_req(input_debug_req),
-    .input_debug_ack(input_debug_ack),
-    .output_debug_pixel(output_debug_pixel),
-    .output_debug_x_dest(output_debug_x_dest),
-    .output_debug_y_dest(output_debug_y_dest),
-    .output_debug_step(output_debug_step),
-    .output_debug_frame(output_debug_frame),
-    .output_debug_req(output_debug_req),
-    .output_debug_ack(output_debug_ack),
+    .axi_image_pixel(axi_image_pixel),
+    .axi_image_x(axi_image_x),
+    .axi_image_y(axi_image_y),
+    .axi_image_req(axi_image_req),
+    .axi_image_ack(axi_image_ack),
+    .entrada_init_prog_fim(entrada_init_prog_fim),
+    .saida_init_prog_fim(saida_init_prog_fim),
     .s00_axi_aclk(s00_axi_aclk),
     .s00_axi_aresetn(s00_axi_aresetn),
     .s00_axi_awaddr(s00_axi_awaddr),

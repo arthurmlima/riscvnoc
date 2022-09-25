@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Sep 22 02:59:35 2022
-# Process ID: 6352
+# Start of session at: Sun Sep 25 07:03:08 2022
+# Process ID: 30216
 # Current directory: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_4_synth_1
 # Command line: vivado.exe -log design_1_zcu104_0_4.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_zcu104_0_4.tcl
 # Log file: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_4_synth_1/design_1_zcu104_0_4.vds

@@ -96,10 +96,10 @@ port(
         web     : in  std_logic;
         addra   : in  std_logic_vector(addr_size-1 downto 0);
         addrb   : in  std_logic_vector(addr_size-1 downto 0);
-        dia     : in  std_logic_vector(pix_depth-1 downto 0);
-        dib     : in  std_logic_vector(pix_depth-1 downto 0);
-        doa     : out std_logic_vector(pix_depth-1 downto 0);
-        dob     : out std_logic_vector(pix_depth-1 downto 0);
+        dia     : in  std_logic_vector(8-1 downto 0);
+        dib     : in  std_logic_vector(8-1 downto 0);
+        doa     : out std_logic_vector(8-1 downto 0);
+        dob     : out std_logic_vector(8-1 downto 0);
         doa_ok  : out std_logic;
         dob_ok  : out std_logic
 
@@ -117,11 +117,11 @@ signal    wea     :  std_logic;
 signal    web     :  std_logic;
 signal    addra   :  std_logic_vector(addr_size-1 downto 0);
 signal    addrb   :  std_logic_vector(addr_size-1 downto 0);
-signal    dia     :  std_logic_vector(pix_depth-1 downto 0);
-signal    dib     :  std_logic_vector(pix_depth-1 downto 0);
-signal    doa     :  std_logic_vector(pix_depth-1 downto 0);
+signal    dia     :  std_logic_vector(8-1 downto 0);
+signal    dib     :  std_logic_vector(8-1 downto 0);
+signal    doa     :  std_logic_vector(8-1 downto 0);
 
-signal    dob     :  std_logic_vector(pix_depth-1 downto 0);
+signal    dob     :  std_logic_vector(8-1 downto 0);
 signal    doa_ok  :  std_logic;
 signal    dob_ok  :  std_logic ;
 
@@ -296,7 +296,7 @@ signal_input_riscv_req         <=       input_riscv_data(1);
 
 inst_pm: rams_tdp_rf_rf_rf
     generic map(
-    pix_depth   =>   pix_depth  ,
+    pix_depth   =>   8  ,
     addr_size    =>   addr_size   ,
     mem_size     =>   mem_size 
     )
@@ -358,7 +358,7 @@ begin
              if(signal_i_PM_ack='0'and signal_t_PM_req='1')then
                           if(doa_ok='1')then
                              
-                                signal_i_PM_pixel<=doa;
+                                signal_i_PM_pixel<=    "00000000"& doa;
                                 signal_i_PM_x_dest <=  signal_t_PM_x_dest ;
                                 signal_i_PM_y_dest <=  signal_t_PM_y_dest ;
                                 signal_i_PM_step   <=  signal_t_PM_step   ;
@@ -429,7 +429,7 @@ begin
 
                             input_riscv_ack <= '0';                           
                             addrb<= std_logic_vector(xysf);
-                            dib<=signal_input_riscv_pixel;
+                            dib<=signal_input_riscv_pixel(7 downto 0);
                             mode_riscv<=forward2;
                 end if;
              when forward2 =>

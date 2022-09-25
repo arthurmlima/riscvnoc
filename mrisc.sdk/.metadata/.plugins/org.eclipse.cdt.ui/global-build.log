@@ -1,59 +1,21 @@
-04:29:51 **** Incremental Build of configuration Release for project naoda ****
-make all 
-'Building file: ../src/helloworld.c'
-'Invoking: ARM v8 gcc compiler'
-aarch64-none-elf-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../naoda_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
-../src/helloworld.c: In function 'main':
-../src/helloworld.c:11729:13: warning: unused variable 'rv' [-Wunused-variable]
-     int i=0,rv;
-             ^~
-../src/helloworld.c:11729:9: warning: unused variable 'i' [-Wunused-variable]
-     int i=0,rv;
-         ^
-'Finished building: ../src/helloworld.c'
-' '
-'Building target: naoda.elf'
-'Invoking: ARM v8 gcc linker'
-aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -L../../naoda_bsp/psu_cortexa53_0/lib -o "naoda.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: naoda.elf'
-' '
-'Invoking: ARM v8 Print Size'
-aarch64-none-elf-size naoda.elf  |tee "naoda.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  32216	  60048	14004296	14096560	 d718b0	naoda.elf
-'Finished building: naoda.elf.size'
-' '
-04:29:55 **** Incremental Build of configuration Release for project naoda ****
+07:43:15 **** Incremental Build of configuration Debug for project naoda ****
 make all 
 make: Nothing to be done for 'all'.
-04:45:04 **** Auto Build of configuration Release for project naoda ****
-make all 
-'Building file: ../src/helloworld.c'
-'Invoking: ARM v8 gcc compiler'
-aarch64-none-elf-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../naoda_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
-../src/helloworld.c: In function 'main':
-../src/helloworld.c:11734:13: warning: unused variable 'rv' [-Wunused-variable]
-     int i=0,rv;
-             ^~
-../src/helloworld.c:11734:9: warning: unused variable 'i' [-Wunused-variable]
-     int i=0,rv;
-         ^
-'Finished building: ../src/helloworld.c'
-' '
-'Building target: naoda.elf'
-'Invoking: ARM v8 gcc linker'
-aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -L../../naoda_bsp/psu_cortexa53_0/lib -o "naoda.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: naoda.elf'
-' '
-'Invoking: ARM v8 Print Size'
-aarch64-none-elf-size naoda.elf  |tee "naoda.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  32216	  61648	14004296	14098160	 d71ef0	naoda.elf
-'Finished building: naoda.elf.size'
-' '
-04:45:11 **** Incremental Build of configuration Release for project naoda ****
+07:43:17 **** Incremental Build of configuration Debug for project naoda ****
 make all 
 make: Nothing to be done for 'all'.
-04:46:11 **** Incremental Build of configuration Release for project naoda ****
+07:46:29 **** Incremental Build of configuration Debug for project naoda ****
+make all 
+make: Nothing to be done for 'all'.
+07:48:05 **** Incremental Build of configuration Debug for project naoda ****
+make all 
+make: Nothing to be done for 'all'.
+07:50:00 **** Incremental Build of configuration Debug for project naoda ****
+make all 
+make: Nothing to be done for 'all'.
+07:59:16 **** Incremental Build of configuration Debug for project naoda ****
+make all 
+make: Nothing to be done for 'all'.
+08:00:21 **** Incremental Build of configuration Debug for project naoda ****
 make all 
 make: Nothing to be done for 'all'.

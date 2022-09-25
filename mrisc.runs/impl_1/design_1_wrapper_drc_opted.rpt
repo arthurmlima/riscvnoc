@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Sep 22 03:11:51 2022
+| Date         : Sun Sep 25 07:14:27 2022
 | Host         : DESKTOP-1Q96SJ0 running 64-bit major release  (build 9200)
 | Command      : report_drc -file design_1_wrapper_drc_opted.rpt -pb design_1_wrapper_drc_opted.pb -rpx design_1_wrapper_drc_opted.rpx
 | Design       : design_1_wrapper
@@ -24,12 +24,154 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 0
-+------+----------+-------------+------------+
-| Rule | Severity | Description | Violations |
-+------+----------+-------------+------------+
-+------+----------+-------------+------------+
+             Violations found: 28
++--------+----------+------------------------+------------+
+| Rule   | Severity | Description            | Violations |
++--------+----------+------------------------+------------+
+| DPIP-2 | Warning  | Input pipelining       | 24         |
+| DPOP-4 | Warning  | MREG Output pipelining | 4          |
++--------+----------+------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+DPIP-2#1 Warning
+Input pipelining  
+DSP design_1_i/zcu104_3/inst/pm_wrapper/addra_reg input design_1_i/zcu104_3/inst/pm_wrapper/addra_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#2 Warning
+Input pipelining  
+DSP design_1_i/zcu104_3/inst/pm_wrapper/addra_reg input design_1_i/zcu104_3/inst/pm_wrapper/addra_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#3 Warning
+Input pipelining  
+DSP design_1_i/zcu104_3/inst/pm_wrapper/addrb_reg input design_1_i/zcu104_3/inst/pm_wrapper/addrb_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#4 Warning
+Input pipelining  
+DSP design_1_i/zcu104_3/inst/pm_wrapper/addrb_reg input design_1_i/zcu104_3/inst/pm_wrapper/addrb_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#5 Warning
+Input pipelining  
+DSP design_1_i/zcu104_4/inst/pm_wrapper/addra_reg input design_1_i/zcu104_4/inst/pm_wrapper/addra_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#6 Warning
+Input pipelining  
+DSP design_1_i/zcu104_4/inst/pm_wrapper/addrb_reg input design_1_i/zcu104_4/inst/pm_wrapper/addrb_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#7 Warning
+Input pipelining  
+DSP design_1_i/zcu104_4/inst/pm_wrapper/xysf0 input design_1_i/zcu104_4/inst/pm_wrapper/xysf0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#8 Warning
+Input pipelining  
+DSP design_1_i/zcu104_4/inst/pm_wrapper/xysf_10 input design_1_i/zcu104_4/inst/pm_wrapper/xysf_10/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#9 Warning
+Input pipelining  
+DSP design_1_i/zcu104_5/inst/pm_wrapper/addra_reg input design_1_i/zcu104_5/inst/pm_wrapper/addra_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#10 Warning
+Input pipelining  
+DSP design_1_i/zcu104_5/inst/pm_wrapper/addrb_reg input design_1_i/zcu104_5/inst/pm_wrapper/addrb_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#11 Warning
+Input pipelining  
+DSP design_1_i/zcu104_5/inst/pm_wrapper/xysf0 input design_1_i/zcu104_5/inst/pm_wrapper/xysf0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#12 Warning
+Input pipelining  
+DSP design_1_i/zcu104_5/inst/pm_wrapper/xysf_10 input design_1_i/zcu104_5/inst/pm_wrapper/xysf_10/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#13 Warning
+Input pipelining  
+DSP design_1_i/zcu104_6/inst/pm_wrapper/addra_reg input design_1_i/zcu104_6/inst/pm_wrapper/addra_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#14 Warning
+Input pipelining  
+DSP design_1_i/zcu104_6/inst/pm_wrapper/addra_reg input design_1_i/zcu104_6/inst/pm_wrapper/addra_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#15 Warning
+Input pipelining  
+DSP design_1_i/zcu104_6/inst/pm_wrapper/addrb_reg input design_1_i/zcu104_6/inst/pm_wrapper/addrb_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#16 Warning
+Input pipelining  
+DSP design_1_i/zcu104_6/inst/pm_wrapper/addrb_reg input design_1_i/zcu104_6/inst/pm_wrapper/addrb_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#17 Warning
+Input pipelining  
+DSP design_1_i/zcu104_7/inst/pm_wrapper/addra_reg input design_1_i/zcu104_7/inst/pm_wrapper/addra_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#18 Warning
+Input pipelining  
+DSP design_1_i/zcu104_7/inst/pm_wrapper/addrb_reg input design_1_i/zcu104_7/inst/pm_wrapper/addrb_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#19 Warning
+Input pipelining  
+DSP design_1_i/zcu104_7/inst/pm_wrapper/xysf0 input design_1_i/zcu104_7/inst/pm_wrapper/xysf0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#20 Warning
+Input pipelining  
+DSP design_1_i/zcu104_7/inst/pm_wrapper/xysf_10 input design_1_i/zcu104_7/inst/pm_wrapper/xysf_10/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#21 Warning
+Input pipelining  
+DSP design_1_i/zcu104_8/inst/pm_wrapper/addra_reg input design_1_i/zcu104_8/inst/pm_wrapper/addra_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#22 Warning
+Input pipelining  
+DSP design_1_i/zcu104_8/inst/pm_wrapper/addrb_reg input design_1_i/zcu104_8/inst/pm_wrapper/addrb_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#23 Warning
+Input pipelining  
+DSP design_1_i/zcu104_8/inst/pm_wrapper/xysf0 input design_1_i/zcu104_8/inst/pm_wrapper/xysf0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#24 Warning
+Input pipelining  
+DSP design_1_i/zcu104_8/inst/pm_wrapper/xysf_10 input design_1_i/zcu104_8/inst/pm_wrapper/xysf_10/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPOP-4#1 Warning
+MREG Output pipelining  
+DSP design_1_i/zcu104_3/inst/pm_wrapper/addra_reg multiplier stage design_1_i/zcu104_3/inst/pm_wrapper/addra_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-4#2 Warning
+MREG Output pipelining  
+DSP design_1_i/zcu104_3/inst/pm_wrapper/addrb_reg multiplier stage design_1_i/zcu104_3/inst/pm_wrapper/addrb_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-4#3 Warning
+MREG Output pipelining  
+DSP design_1_i/zcu104_6/inst/pm_wrapper/addra_reg multiplier stage design_1_i/zcu104_6/inst/pm_wrapper/addra_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-4#4 Warning
+MREG Output pipelining  
+DSP design_1_i/zcu104_6/inst/pm_wrapper/addrb_reg multiplier stage design_1_i/zcu104_6/inst/pm_wrapper/addrb_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
 

@@ -1,0 +1,123 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat Sep 24 19:48:12 2022
+# Process ID: 12992
+# Current directory: C:/Users/arthu/mrisc
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25396 C:\Users\arthu\mrisc\mrisc.xpr
+# Log file: C:/Users/arthu/mrisc/vivado.log
+# Journal file: C:/Users/arthu/mrisc\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/arthu/mrisc/mrisc.xpr
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+create_peripheral xilinx.com user contador_ciclos 1.0 -dir C:/Users/arthu/mrisc/../ip_repo
+add_peripheral_interface S00_AXI -interface_mode slave -axi_type lite [ipx::find_open_core xilinx.com:user:contador_ciclos:1.0]
+set_property VALUE 7 [ipx::get_bus_parameters WIZ_NUM_REG -of_objects [ipx::get_bus_interfaces S00_AXI -of_objects [ipx::find_open_core xilinx.com:user:contador_ciclos:1.0]]]
+generate_peripheral -driver -bfm_example_design -debug_hw_example_design [ipx::find_open_core xilinx.com:user:contador_ciclos:1.0]
+write_peripheral [ipx::find_open_core xilinx.com:user:contador_ciclos:1.0]
+set_property  ip_repo_paths  C:/Users/arthu/mrisc/../ip_repo/contador_ciclos_1.0 [current_project]
+update_ip_catalog -rebuild
+ipx::edit_ip_in_project -upgrade true -name edit_contador_ciclos_v1_0 -directory C:/Users/arthu/mrisc/../ip_repo c:/Users/arthu/ip_repo/contador_ciclos_1.0/component.xml
+current_project mrisc
+current_project edit_contador_ciclos_v1_0
+close_project
+close [ open C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/contador_ciclos_S00.vhd w ]
+add_files C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/contador_ciclos_S00.vhd
+close [ open C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/contador_ciclos.vhd w ]
+add_files C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/contador_ciclos.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_module_reference design_1_img_set_v1_0_0_0
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/design_1.bd}
+create_bd_cell -type module -reference contador_ciclos contador_ciclos_0
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/zynq_ultra_ps_e_0/pl_clk0 (100 MHz)} Clk_slave {Auto} Clk_xbar {/zynq_ultra_ps_e_0/pl_clk0 (100 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_FPD} Slave {/contador_ciclos_0/s00_axi} intc_ip {/ps8_0_axi_periph} master_apm {0}}  [get_bd_intf_pins contador_ciclos_0/s00_axi]
+set_property location {2 1381 668} [get_bd_cells contador_ciclos_0]
+set_property location {2 1570 398} [get_bd_cells contador_ciclos_0]
+set_property location {3 2133 315} [get_bd_cells xlconcat_0]
+connect_bd_net [get_bd_pins xlconcat_0/dout] [get_bd_pins contador_ciclos_0/PROBE_IMAGE_COMPLETED]
+set_property location {2 1560 384} [get_bd_cells contador_ciclos_0]
+set_property location {2 1529 540} [get_bd_cells contador_ciclos_0]
+set_property location {2 1521 311} [get_bd_cells img_set_v1_0_0]
+save_bd_design
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+file copy -force C:/Users/arthu/mrisc/mrisc.runs/impl_1/design_1_wrapper.sysdef C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+file copy -force C:/Users/arthu/mrisc/mrisc.runs/impl_1/design_1_wrapper.sysdef C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+file copy -force C:/Users/arthu/mrisc/mrisc.runs/impl_1/design_1_wrapper.sysdef C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+startgroup
+set_property -dict [list CONFIG.subimg_width {80} CONFIG.subimg_height {80}] [get_bd_cells zcu104_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.x_init {80} CONFIG.subimg_width {80} CONFIG.subimg_height {80}] [get_bd_cells zcu104_1]
+endgroup
+startgroup
+set_property -dict [list CONFIG.x_init {160} CONFIG.y_init {0} CONFIG.subimg_width {80} CONFIG.subimg_height {80}] [get_bd_cells zcu104_2]
+endgroup
+startgroup
+set_property -dict [list CONFIG.x_init {0} CONFIG.y_init {80} CONFIG.subimg_width {80} CONFIG.subimg_height {80}] [get_bd_cells zcu104_3]
+endgroup
+startgroup
+set_property -dict [list CONFIG.x_init {80} CONFIG.y_init {80} CONFIG.subimg_width {80} CONFIG.subimg_height {80}] [get_bd_cells zcu104_4]
+endgroup
+startgroup
+set_property -dict [list CONFIG.x_init {160} CONFIG.y_init {80} CONFIG.subimg_width {80} CONFIG.subimg_height {80}] [get_bd_cells zcu104_5]
+endgroup
+startgroup
+set_property -dict [list CONFIG.x_init {0} CONFIG.y_init {160} CONFIG.subimg_width {80} CONFIG.subimg_height {80}] [get_bd_cells zcu104_6]
+endgroup
+startgroup
+set_property -dict [list CONFIG.x_init {80} CONFIG.y_init {160} CONFIG.subimg_width {80} CONFIG.subimg_height {80}] [get_bd_cells zcu104_7]
+endgroup
+startgroup
+set_property -dict [list CONFIG.x_init {160} CONFIG.y_init {160} CONFIG.subimg_width {80} CONFIG.subimg_height {80}] [get_bd_cells zcu104_8]
+endgroup
+startgroup
+endgroup
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+launch_sdk -workspace C:/Users/arthu/mrisc/mrisc.sdk -hwspec C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+file copy -force C:/Users/arthu/mrisc/mrisc.runs/impl_1/design_1_wrapper.sysdef C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+
+file copy -force C:/Users/arthu/mrisc/mrisc.runs/impl_1/design_1_wrapper.sysdef C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace C:/Users/arthu/mrisc/mrisc.sdk -hwspec C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+file copy -force C:/Users/arthu/mrisc/mrisc.runs/impl_1/design_1_wrapper.sysdef C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace C:/Users/arthu/mrisc/mrisc.sdk -hwspec C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf

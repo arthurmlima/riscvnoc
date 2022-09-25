@@ -1,10 +1,17 @@
-verilog xil_defaultlib --include "../../../../mrisc.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../mrisc.srcs/sources_1/bd/design_1/ipshared/cac7/hdl" --include "../../../../mrisc.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/sim_tlm" --include "../../../../mrisc.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0" --include "../../../../mrisc.srcs/sources_1/bd/design_1/ipshared/1b7e/hdl/verilog" --include "../../../../mrisc.srcs/sources_1/bd/design_1/ipshared/122e/hdl/verilog" --include "../../../../mrisc.srcs/sources_1/bd/design_1/ipshared/6887/hdl/verilog" --include "../../../../mrisc.srcs/sources_1/bd/design_1/ipshared/9623/hdl/verilog" \
+verilog xil_defaultlib --include "../../../../mrisc.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../mrisc.srcs/sources_1/bd/design_1/ipshared/cac7/hdl" --include "../../../../mrisc.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/sim_tlm" --include "../../../../mrisc.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0" \
 "../../../bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/sim/design_1_zynq_ultra_ps_e_0_0_vip_wrapper.v" \
 "../../../bd/design_1/ip/design_1_zcu104_0_0/sim/design_1_zcu104_0_0.v" \
 "../../../bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
-"../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/sim/bd_f60c.v" \
-"../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/ip/ip_0/sim/bd_f60c_ila_lib_0.v" \
-"../../../bd/design_1/ip/design_1_system_ila_0_0/sim/design_1_system_ila_0_0.v" \
+"../../../bd/design_1/ip/design_1_zcu104_0_4/sim/design_1_zcu104_0_4.v" \
+"../../../bd/design_1/ip/design_1_zcu104_1_2/sim/design_1_zcu104_1_2.v" \
+"../../../bd/design_1/ip/design_1_zcu104_0_5/sim/design_1_zcu104_0_5.v" \
+"../../../bd/design_1/ip/design_1_zcu104_1_3/sim/design_1_zcu104_1_3.v" \
+"../../../bd/design_1/ip/design_1_zcu104_2_1/sim/design_1_zcu104_2_1.v" \
+"../../../bd/design_1/ip/design_1_zcu104_3_1/sim/design_1_zcu104_3_1.v" \
+"../../../bd/design_1/ip/design_1_zcu104_4_0/sim/design_1_zcu104_4_0.v" \
+"../../../bd/design_1/ip/design_1_zcu104_5_1/sim/design_1_zcu104_5_1.v" \
+"../../../bd/design_1/ip/design_1_img_set_v1_0_0_0/sim/design_1_img_set_v1_0_0_0.v" \
+"../../../bd/design_1/ip/design_1_xlconcat_0_0/sim/design_1_xlconcat_0_0.v" \
 "../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
 "../../../bd/design_1/sim/design_1.v" \
 

@@ -28,7 +28,7 @@ parameter   DATA_WIDTH      =  NUM_COL*COL_WIDTH  // Data  Width in bits
      output reg [DATA_WIDTH-1:0] doutB
      );
    // Core Memory  
-   reg [DATA_WIDTH-1:0]   ram_block [(2**ADDR_WIDTH)-1:0];
+   reg [DATA_WIDTH-1:0]   ram_block [(6500)-1:0];
    integer                i;
    
        initial begin

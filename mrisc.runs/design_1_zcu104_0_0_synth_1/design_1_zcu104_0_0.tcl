@@ -17,9 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 3
-set_param xicom.use_bs_reader 1
 set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 create_project -in_memory -part xczu7ev-ffvc1156-2-e
@@ -34,6 +32,8 @@ set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part xilinx.com:zcu104:part0:1.1 [current_project]
+set_property ip_repo_paths c:/Users/arthu/ip_repo/contador_ciclos_1.0 [current_project]
+update_ip_catalog
 set_property ip_output_repo c:/Users/arthu/mrisc/mrisc.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {

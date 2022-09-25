@@ -25,16 +25,19 @@ module zcu104#(
 parameter   ADDR_WIDTH      =  10, 
 parameter   DATA_WIDTH      =  9,  // Data  Width in bits
 
-parameter    integer  x_init =  0,
-parameter    integer  y_init =  0, 
+parameter    x_init = 0,
+parameter    y_init = 0, 
 
 parameter    pix_depth =16  	,
 
 parameter    img_width=8	 ,  
 parameter    img_height=8 	 ,
 
-parameter    subimg_width =10,
-parameter    subimg_height=10,	
+parameter    img_width_size=240,  
+parameter    img_height_size=240,
+
+parameter    subimg_width =80,
+parameter    subimg_height=80,	
 
 parameter    n_steps=5	 ,
 parameter    n_frames=8   	 ,
@@ -42,9 +45,17 @@ parameter    n_frames=8   	 ,
 parameter    a_steps=1	 ,
 parameter    a_frames=1   	 ,
 
-parameter    buffer_length=3,
+parameter    buffer_length=20,
 
-parameter integer MEM_WORDS  =32768
+
+parameter   x_tiles=3,
+parameter   y_tiles=3,
+
+parameter   x_local=0,
+parameter   y_local=0,
+
+
+parameter integer MEM_WORDS=6500
 
 
 
@@ -81,6 +92,14 @@ parameter integer MEM_WORDS  =32768
 	output[63 : 0]   OUT_W,	
 	input            OUT_W_ACK,	
 
+    input[31:0] axi_image_pixel,
+    input[31:0] axi_image_x    ,
+    input[31:0] axi_image_y    ,
+    input[31:0] axi_image_req   ,
+    output[31:0] axi_image_ack  ,
+
+    input[31:0] entrada_init_prog_fim,
+    output      saida_init_prog_fim,
 
 
 	input wire  s00_axi_aclk,
@@ -105,7 +124,53 @@ parameter integer MEM_WORDS  =32768
 	output wire  s00_axi_rvalid,
 	input wire  s00_axi_rready
 );
+wire[31:0] w_x_tiles         ;
+wire[31:0] w_y_tiles         ;
+wire[31:0] w_x_local         ;
+wire[31:0] w_y_local         ;
+wire[31:0] w_img_width_size  ;
+wire[31:0] w_img_height_size ;
+wire[31:0] w_subimg_width    ;
+wire[31:0] w_subimg_height   ;
+wire[31:0] w_x_init          ;
+wire[31:0] w_y_init          ;
 
+reg [31:0] r_x_tiles         ;
+reg [31:0] r_y_tiles         ;
+reg [31:0] r_x_local         ;
+reg [31:0] r_y_local         ;
+reg [31:0] r_img_width_size  ;
+reg [31:0] r_img_height_size ;
+reg [31:0] r_subimg_width    ;
+reg [31:0] r_subimg_height   ;
+reg [31:0] r_x_init          ;
+reg [31:0] r_y_init          ;
+assign w_x_tiles        =  w_x_tiles        ;
+assign w_y_tiles        =  w_y_tiles        ;
+assign w_x_local        =  w_x_local        ;
+assign w_y_local        =  w_y_local        ;
+assign w_img_width_size =  w_img_width_size ;
+assign w_img_height_size=  w_img_height_size;
+assign w_subimg_width   =  w_subimg_width   ;
+assign w_subimg_height  =  w_subimg_height  ;
+
+always @(posedge clk) 
+begin
+r_x_tiles        <= w_x_tiles        ;
+r_y_tiles        <= w_y_tiles        ;
+r_x_local        <= w_x_local        ;
+r_y_local        <= w_y_local        ;
+r_img_width_size <= w_img_width_size ;
+r_img_height_size<= w_img_height_size;
+r_subimg_width   <= w_subimg_width   ;
+r_subimg_height  <= w_subimg_height  ;
+
+end
+
+
+
+
+    reg[31:0] axi_req_help;
 	wire led1;
 	wire led2;
 	wire led3;
@@ -133,7 +198,8 @@ wire wsignal_out_pm_in_router_ack;
 wire wsignal_out_riscv_in_pm_ack;
 wire[63:0] wsignal_out_pm_in_router_data;
 assign wsignal_out_pm_in_router_data = 	signal_out_pm_in_router_data	;
-
+		   reg r_saida_init_prog_fim;
+		   assign saida_init_prog_fim= r_saida_init_prog_fim;
 
 
 	reg [5:0] reset_cnt = 0;
@@ -181,11 +247,16 @@ assign wsignal_out_riscv_in_pm_data = signal_out_riscv_in_pm_data;
 
 
 
+//parameter    width_pixels=30,
+//parameter    height_pixels=30,
 
+//parameter    x_tiles=3,
+//parameter    y_tiles=3,
 
+//parameter    x_local=0,
+//parameter    y_local=0,
 
-
-
+assign axi_image_ack[31:0]=axi_req_help[31:0];
 
 always @(posedge clk) 
 begin
@@ -203,7 +274,90 @@ begin
 				if (iomem_wstrb[2]) gpio[23:16] <= iomem_wdata[23:16];
 				if (iomem_wstrb[3]) gpio[31:24] <= iomem_wdata[31:24];
 		    end
+		    //dados para genericos serem IOs
+		    else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0231_0000)  begin // le mensagem para risc primeiros 8 bytes
+				iomem_ready <= 1;
+				iomem_rdata <=  img_width_size[31:0];		
+			end	
+			else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0231_0004)  begin // le mensagem para risc ultimos 8 bytes
+				iomem_ready <= 1;
+				iomem_rdata <= img_height_size[31:0];
+			end	
+		    else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0231_0008)  begin // le mensagem para risc primeiros 8 bytes
+				iomem_ready <= 1;
+				iomem_rdata <=  subimg_width[31:0];
+				
+			end	
+			else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0231_000C)  begin // le mensagem para risc ultimos 8 bytes
+				iomem_ready <= 1;
+				iomem_rdata <= subimg_height[31:0];
+			end	
+		    else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0231_0010)  begin // le mensagem para risc primeiros 8 bytes
+				iomem_ready <= 1;
+				iomem_rdata <=  x_tiles[31:0];
+			end	
+			else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0231_0014)  begin // le mensagem para risc ultimos 8 bytes
+				iomem_ready <= 1;
+				iomem_rdata <= y_tiles[31:0];
+			end	
+			else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0231_0018)  begin // le mensagem para risc ultimos 8 bytes
+				iomem_ready <= 1;
+				iomem_rdata <= x_local[31:0];
+			end	
+			else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0231_001C)  begin // le mensagem para risc ultimos 8 bytes
+				iomem_ready <= 1;
+				iomem_rdata <= y_local[31:0];
+			end	
+			
+            else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0231_0020)  begin // le mensagem para risc ultimos 8 bytes
+				iomem_ready <= 1;
+				iomem_rdata <= x_init[31:0];
+			end	
+			else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0231_0024)  begin // le mensagem para risc ultimos 8 bytes
+				iomem_ready <= 1;
+				iomem_rdata <= y_init[31:0];
+			end	
+	
+	
+	
+	
+	       else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0230_0000)  begin // le mensagem para risc primeiros 8 bytes
+				iomem_ready <= 1;
+				iomem_rdata <=  axi_image_pixel;
+			end	
+			else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0230_0004)  begin // le mensagem para risc ultimos 8 bytes
+				iomem_ready <= 1;
+				iomem_rdata <= axi_image_x;
+			end	
+			else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0230_0008)  begin // le mensagem para risc ultimos 8 bytes
+				iomem_ready <= 1;
+				iomem_rdata <= axi_image_y;
+			end			
+			else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0230_000C)  begin // le mensagem para risc ultimos 8 bytes
+				iomem_ready <= 1;
+				iomem_rdata <= axi_image_req;
+			end	
+	    	else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0230_0010) begin // escreve mensagem para risc
+				iomem_ready <= 1;
+				iomem_rdata <= axi_image_ack[31:0];
+				if (iomem_wstrb[0]) axi_req_help[ 7: 0] <= iomem_wdata[ 7: 0];
+				if (iomem_wstrb[1]) axi_req_help[15: 8] <= iomem_wdata[15: 8];
+				if (iomem_wstrb[2]) axi_req_help[23:16] <= iomem_wdata [23:16];
+				if (iomem_wstrb[3]) axi_req_help[31:24] <= iomem_wdata [31:24];				
+			end
+		   
+		   
+
+		   //dados para deteccao do final da mensagem
+		   else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0230_0014)  begin // le mensagem para risc ultimos 8 bytes
+				iomem_ready <= 1;
+				iomem_rdata <= entrada_init_prog_fim[31:0];
+			end	
 		    
+		    else if (iomem_valid && !iomem_ready && iomem_addr[31:0] == 32'h 0230_0018) begin // escreve mensagem para risc
+				iomem_ready <= 1;
+				if (iomem_wstrb[0]) r_saida_init_prog_fim <= iomem_wdata[0];				
+			end
 		    
 //****************************************************************************************************************************			
 //*************************************RISC LÊ DO ROTEADOR*************************************************************			
@@ -322,8 +476,8 @@ end
 
 	pm_wrapper #( 
          .pix_depth      (pix_depth),
-         .addr_size       (10),
-         .mem_size        (100),
+         .addr_size       (32),
+         .mem_size        (80*80*2),
 
          .img_width(img_width)	 ,  
          .img_height(img_height) 	 ,

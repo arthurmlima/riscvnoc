@@ -170,7 +170,7 @@ module picosoc (
 	  bram_config #(
         .S_NUM_COL(4),     
         .S_COL_WIDTH(8),   
-        .S_ADDR_WIDTH(15),  
+        .S_ADDR_WIDTH(14),  
         .S_DATA_WIDTH (32), 
         .C_S00_AXI_DATA_WIDTH(32),
         .C_S00_AXI_ADDR_WIDTH(4)

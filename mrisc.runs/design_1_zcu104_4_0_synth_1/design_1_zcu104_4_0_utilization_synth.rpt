@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Sep 22 03:06:01 2022
+| Date         : Sun Sep 25 07:08:53 2022
 | Host         : DESKTOP-1Q96SJ0 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_zcu104_4_0_utilization_synth.rpt -pb design_1_zcu104_4_0_utilization_synth.pb
 | Design       : design_1_zcu104_4_0
@@ -31,17 +31,17 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| CLB LUTs*                  |  4823 |     0 |    230400 |  2.09 |
-|   LUT as Logic             |  4735 |     0 |    230400 |  2.06 |
-|   LUT as Memory            |    88 |     0 |    101760 |  0.09 |
-|     LUT as Distributed RAM |    88 |     0 |           |       |
+| CLB LUTs*                  |  4880 |     0 |    230400 |  2.12 |
+|   LUT as Logic             |  4832 |     0 |    230400 |  2.10 |
+|   LUT as Memory            |    48 |     0 |    101760 |  0.05 |
+|     LUT as Distributed RAM |    48 |     0 |           |       |
 |     LUT as Shift Register  |     0 |     0 |           |       |
-| CLB Registers              | 10472 |     0 |    460800 |  2.27 |
-|   Register as Flip Flop    | 10472 |     0 |    460800 |  2.27 |
+| CLB Registers              | 10283 |     0 |    460800 |  2.23 |
+|   Register as Flip Flop    | 10283 |     0 |    460800 |  2.23 |
 |   Register as Latch        |     0 |     0 |    460800 |  0.00 |
-| CARRY8                     |    64 |     0 |     28800 |  0.22 |
-| F7 Muxes                   |   792 |     0 |    115200 |  0.69 |
-| F8 Muxes                   |     6 |     0 |     57600 |  0.01 |
+| CARRY8                     |    62 |     0 |     28800 |  0.22 |
+| F7 Muxes                   |   758 |     0 |    115200 |  0.66 |
+| F8 Muxes                   |     0 |     0 |     57600 |  0.00 |
 | F9 Muxes                   |     0 |     0 |     28800 |  0.00 |
 +----------------------------+-------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -60,9 +60,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 1     |          Yes |           - |          Set |
-| 9044  |          Yes |           - |        Reset |
-| 43    |          Yes |         Set |            - |
-| 1384  |          Yes |       Reset |            - |
+| 8860  |          Yes |           - |        Reset |
+| 28    |          Yes |         Set |            - |
+| 1394  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -72,9 +72,9 @@ Table of Contents
 +-------------------+------+-------+-----------+-------+
 |     Site Type     | Used | Fixed | Available | Util% |
 +-------------------+------+-------+-----------+-------+
-| Block RAM Tile    |   32 |     0 |       312 | 10.26 |
-|   RAMB36/FIFO*    |   32 |     0 |       312 | 10.26 |
-|     RAMB36E2 only |   32 |       |           |       |
+| Block RAM Tile    |   12 |     0 |       312 |  3.85 |
+|   RAMB36/FIFO*    |   12 |     0 |       312 |  3.85 |
+|     RAMB36E2 only |   12 |       |           |       |
 |   RAMB18          |    0 |     0 |       624 |  0.00 |
 | URAM              |    0 |     0 |        96 |  0.00 |
 +-------------------+------+-------+-----------+-------+
@@ -84,11 +84,12 @@ Table of Contents
 3. ARITHMETIC
 -------------
 
-+-----------+------+-------+-----------+-------+
-| Site Type | Used | Fixed | Available | Util% |
-+-----------+------+-------+-----------+-------+
-| DSPs      |    0 |     0 |      1728 |  0.00 |
-+-----------+------+-------+-----------+-------+
++----------------+------+-------+-----------+-------+
+|    Site Type   | Used | Fixed | Available | Util% |
++----------------+------+-------+-----------+-------+
+| DSPs           |    4 |     0 |      1728 |  0.23 |
+|   DSP48E2 only |    4 |       |           |       |
++----------------+------+-------+-----------+-------+
 
 
 4. I/O
@@ -158,22 +159,21 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDCE     | 9044 |            Register |
-| LUT6     | 2927 |                 CLB |
-| FDRE     | 1384 |            Register |
-| LUT5     |  972 |                 CLB |
-| MUXF7    |  792 |                 CLB |
-| LUT4     |  656 |                 CLB |
-| LUT2     |  434 |                 CLB |
-| LUT3     |  319 |                 CLB |
+| FDCE     | 8860 |            Register |
+| LUT6     | 3060 |                 CLB |
+| FDRE     | 1394 |            Register |
+| LUT5     |  807 |                 CLB |
+| MUXF7    |  758 |                 CLB |
+| LUT4     |  750 |                 CLB |
+| LUT2     |  439 |                 CLB |
+| LUT3     |  361 |                 CLB |
 | RAMD32   |   84 |                 CLB |
-| CARRY8   |   64 |                 CLB |
-| FDSE     |   43 |            Register |
-| RAMD64E  |   40 |                 CLB |
-| RAMB36E2 |   32 |           Block Ram |
+| CARRY8   |   62 |                 CLB |
+| FDSE     |   28 |            Register |
+| LUT1     |   13 |                 CLB |
 | RAMS32   |   12 |                 CLB |
-| LUT1     |   12 |                 CLB |
-| MUXF8    |    6 |                 CLB |
+| RAMB36E2 |   12 |           Block Ram |
+| DSP48E2  |    4 |          Arithmetic |
 | FDPE     |    1 |            Register |
 +----------+------+---------------------+
 

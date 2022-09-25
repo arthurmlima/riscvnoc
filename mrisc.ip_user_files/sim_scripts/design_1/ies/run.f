@@ -61,9 +61,21 @@
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
-  "../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/sim/bd_f60c.v" \
-  "../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/ip/ip_0/sim/bd_f60c_ila_lib_0.v" \
-  "../../../bd/design_1/ip/design_1_system_ila_0_0/sim/design_1_system_ila_0_0.v" \
+  "../../../bd/design_1/ip/design_1_zcu104_0_4/sim/design_1_zcu104_0_4.v" \
+  "../../../bd/design_1/ip/design_1_zcu104_1_2/sim/design_1_zcu104_1_2.v" \
+  "../../../bd/design_1/ip/design_1_zcu104_0_5/sim/design_1_zcu104_0_5.v" \
+  "../../../bd/design_1/ip/design_1_zcu104_1_3/sim/design_1_zcu104_1_3.v" \
+  "../../../bd/design_1/ip/design_1_zcu104_2_1/sim/design_1_zcu104_2_1.v" \
+  "../../../bd/design_1/ip/design_1_zcu104_3_1/sim/design_1_zcu104_3_1.v" \
+  "../../../bd/design_1/ip/design_1_zcu104_4_0/sim/design_1_zcu104_4_0.v" \
+  "../../../bd/design_1/ip/design_1_zcu104_5_1/sim/design_1_zcu104_5_1.v" \
+  "../../../bd/design_1/ip/design_1_img_set_v1_0_0_0/sim/design_1_img_set_v1_0_0_0.v" \
+-endlib
+-makelib ies_lib/xlconcat_v2_1_3 \
+  "../../../../mrisc.srcs/sources_1/bd/design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/design_1/ip/design_1_xlconcat_0_0/sim/design_1_xlconcat_0_0.v" \
 -endlib
 -makelib ies_lib/axi_protocol_converter_v2_1_19 \
   "../../../../mrisc.srcs/sources_1/bd/design_1/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

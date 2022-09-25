@@ -730,6 +730,16 @@
 #define XPAR_ZCU104_8_HIGHADDR 0x17FFFFFFFF
 
 
+/* Definitions for peripheral IMG_SET_V1_0_0 */
+#define XPAR_IMG_SET_V1_0_0_BASEADDR 0xA0000000
+#define XPAR_IMG_SET_V1_0_0_HIGHADDR 0xA0000FFF
+
+
+/* Definitions for peripheral CONTADOR_CICLOS_0 */
+#define XPAR_CONTADOR_CICLOS_0_BASEADDR 0xA0001000
+#define XPAR_CONTADOR_CICLOS_0_HIGHADDR 0xA0001FFF
+
+
 /******************************************************************/
 
 /* Definitions for driver GPIOPS */
