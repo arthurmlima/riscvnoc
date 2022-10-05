@@ -197,7 +197,7 @@ input wire s00_axi_rready;
     .subimg_height(80),
     .n_steps(5),
     .n_frames(8),
-    .a_steps(2),
+    .a_steps(10),
     .a_frames(1),
     .buffer_length(20),
     .x_tiles(3),

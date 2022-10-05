@@ -111,13 +111,14 @@ vlog -work xlconcat_v2_1_3  -v2k5 "+incdir+../../../../mrisc.srcs/sources_1/bd/d
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../mrisc.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../mrisc.srcs/sources_1/bd/design_1/ipshared/cac7/hdl" "+incdir+../../../../mrisc.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/sim_tlm" "+incdir+../../../../mrisc.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../bd/design_1/ip/design_1_xlconcat_0_0/sim/design_1_xlconcat_0_0.v" \
+"../../../bd/design_1/ip/design_1_contador_ciclos_0_0/sim/design_1_contador_ciclos_0_0.v" \
+"../../../bd/design_1/sim/design_1.v" \
 
 vlog -work axi_protocol_converter_v2_1_19  -v2k5 "+incdir+../../../../mrisc.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../mrisc.srcs/sources_1/bd/design_1/ipshared/cac7/hdl" "+incdir+../../../../mrisc.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/sim_tlm" "+incdir+../../../../mrisc.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../../mrisc.srcs/sources_1/bd/design_1/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../mrisc.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../mrisc.srcs/sources_1/bd/design_1/ipshared/cac7/hdl" "+incdir+../../../../mrisc.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/sim_tlm" "+incdir+../../../../mrisc.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
-"../../../bd/design_1/sim/design_1.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

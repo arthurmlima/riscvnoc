@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1664100178">
+<GenRun Id="synth_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1664907810">
   <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="design_1_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="design_1_wrapper_reports.tcl"/>
@@ -459,16 +459,15 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_4_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_3_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_4_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_1_3"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_0_4"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_img_set_v1_0_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_2_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_1_2"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_contador_ciclos_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_5_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_0_5"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_5_1"/>
 </GenRun>

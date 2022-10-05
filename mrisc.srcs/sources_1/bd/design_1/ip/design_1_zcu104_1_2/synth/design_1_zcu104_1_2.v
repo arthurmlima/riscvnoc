@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "zcu104,Vivado 2019.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_zcu104_1_2,zcu104,{}" *)
-(* CORE_GENERATION_INFO = "design_1_zcu104_1_2,zcu104,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=zcu104,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,ADDR_WIDTH=10,DATA_WIDTH=9,x_init=160,y_init=0,pix_depth=16,img_width=8,img_height=8,img_width_size=240,img_height_size=240,subimg_width=80,subimg_height=80,n_steps=5,n_frames=8,a_steps=2,a_frames=1,buffer_length=20,x_tiles=3,y_tiles=3,x_local=2,y_local=0,MEM_WORDS=6500}" *)
+(* CORE_GENERATION_INFO = "design_1_zcu104_1_2,zcu104,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=zcu104,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,ADDR_WIDTH=10,DATA_WIDTH=9,x_init=160,y_init=0,pix_depth=16,img_width=8,img_height=8,img_width_size=240,img_height_size=240,subimg_width=80,subimg_height=80,n_steps=5,n_frames=8,a_steps=10,a_frames=1,buffer_length=20,x_tiles=3,y_tiles=3,x_local=2,y_local=0,MEM_WORDS=6500}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_zcu104_1_2 (
@@ -198,7 +198,7 @@ input wire s00_axi_rready;
     .subimg_height(80),
     .n_steps(5),
     .n_frames(8),
-    .a_steps(2),
+    .a_steps(10),
     .a_frames(1),
     .buffer_length(20),
     .x_tiles(3),

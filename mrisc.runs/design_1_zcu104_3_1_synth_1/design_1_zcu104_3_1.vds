@@ -2,12 +2,12 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sun Sep 25 07:03:08 2022
-# Process ID: 8320
-# Current directory: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_3_1_synth_1
+# Start of session at: Tue Oct  4 15:23:41 2022
+# Process ID: 5160
+# Current directory: C:/Users/arthu/rep_git_riscvnoc/mrisc.runs/design_1_zcu104_3_1_synth_1
 # Command line: vivado.exe -log design_1_zcu104_3_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_zcu104_3_1.tcl
-# Log file: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_3_1_synth_1/design_1_zcu104_3_1.vds
-# Journal file: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_3_1_synth_1\vivado.jou
+# Log file: C:/Users/arthu/rep_git_riscvnoc/mrisc.runs/design_1_zcu104_3_1_synth_1/design_1_zcu104_3_1.vds
+# Journal file: C:/Users/arthu/rep_git_riscvnoc/mrisc.runs/design_1_zcu104_3_1_synth_1\vivado.jou
 #-----------------------------------------------------------
 source design_1_zcu104_3_1.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -21,12 +21,12 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
 INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 14488 
+INFO: Helper process launched with PID 22764 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1373.676 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1373.398 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'design_1_zcu104_3_1' [c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_3_1/synth/design_1_zcu104_3_1.v:58]
-INFO: [Synth 8-6157] synthesizing module 'zcu104' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/zcu104.v:23]
+INFO: [Synth 8-6157] synthesizing module 'design_1_zcu104_3_1' [c:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_3_1/synth/design_1_zcu104_3_1.v:58]
+INFO: [Synth 8-6157] synthesizing module 'zcu104' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/zcu104.v:23]
 	Parameter ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter DATA_WIDTH bound to: 9 - type: integer 
 	Parameter x_init bound to: 0 - type: integer 
@@ -40,7 +40,7 @@ INFO: [Synth 8-6157] synthesizing module 'zcu104' [C:/Users/arthu/mrisc/mrisc.sr
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter n_steps bound to: 5 - type: integer 
 	Parameter n_frames bound to: 8 - type: integer 
-	Parameter a_steps bound to: 2 - type: integer 
+	Parameter a_steps bound to: 10 - type: integer 
 	Parameter a_frames bound to: 1 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
 	Parameter x_tiles bound to: 3 - type: integer 
@@ -48,9 +48,9 @@ INFO: [Synth 8-6157] synthesizing module 'zcu104' [C:/Users/arthu/mrisc/mrisc.sr
 	Parameter x_local bound to: 0 - type: integer 
 	Parameter y_local bound to: 2 - type: integer 
 	Parameter MEM_WORDS bound to: 6500 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'picosoc' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picosoc.v:24]
-	Parameter BARREL_SHIFTER bound to: 1'b0 
-	Parameter ENABLE_MULDIV bound to: 1'b0 
+INFO: [Synth 8-6157] synthesizing module 'picosoc' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picosoc.v:24]
+	Parameter BARREL_SHIFTER bound to: 1'b1 
+	Parameter ENABLE_MULDIV bound to: 1'b1 
 	Parameter ENABLE_COMPRESSED bound to: 1'b0 
 	Parameter ENABLE_COUNTERS bound to: 1'b1 
 	Parameter ENABLE_IRQ_QREGS bound to: 1'b0 
@@ -58,23 +58,23 @@ INFO: [Synth 8-6157] synthesizing module 'picosoc' [C:/Users/arthu/mrisc/mrisc.s
 	Parameter STACKADDR bound to: 32'b00000000000000000110010110010000 
 	Parameter PROGADDR_RESET bound to: 0 - type: integer 
 	Parameter PROGADDR_IRQ bound to: 0 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'picorv32' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:62]
+INFO: [Synth 8-6157] synthesizing module 'picorv32' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:62]
 	Parameter ENABLE_COUNTERS bound to: 1'b1 
 	Parameter ENABLE_COUNTERS64 bound to: 1'b1 
 	Parameter ENABLE_REGS_16_31 bound to: 1'b1 
 	Parameter ENABLE_REGS_DUALPORT bound to: 1'b1 
 	Parameter LATCHED_MEM_RDATA bound to: 1'b0 
 	Parameter TWO_STAGE_SHIFT bound to: 1'b1 
-	Parameter BARREL_SHIFTER bound to: 1'b0 
+	Parameter BARREL_SHIFTER bound to: 1'b1 
 	Parameter TWO_CYCLE_COMPARE bound to: 1'b0 
 	Parameter TWO_CYCLE_ALU bound to: 1'b0 
 	Parameter COMPRESSED_ISA bound to: 1'b0 
 	Parameter CATCH_MISALIGN bound to: 1'b1 
 	Parameter CATCH_ILLINSN bound to: 1'b1 
-	Parameter ENABLE_PCPI bound to: 1'b0 
-	Parameter ENABLE_MUL bound to: 1'b0 
-	Parameter ENABLE_FAST_MUL bound to: 1'b0 
-	Parameter ENABLE_DIV bound to: 1'b0 
+	Parameter ENABLE_PCPI bound to: 1'b1 
+	Parameter ENABLE_MUL bound to: 1'b1 
+	Parameter ENABLE_FAST_MUL bound to: 1'b1 
+	Parameter ENABLE_DIV bound to: 1'b1 
 	Parameter ENABLE_IRQ bound to: 1'b0 
 	Parameter ENABLE_IRQ_QREGS bound to: 1'b0 
 	Parameter ENABLE_IRQ_TIMER bound to: 1'b1 
@@ -91,7 +91,7 @@ INFO: [Synth 8-6157] synthesizing module 'picorv32' [C:/Users/arthu/mrisc/mrisc.
 	Parameter irqregs_offset bound to: 32 - type: integer 
 	Parameter regfile_size bound to: 32 - type: integer 
 	Parameter regindex_bits bound to: 5 - type: integer 
-	Parameter WITH_PCPI bound to: 1'b0 
+	Parameter WITH_PCPI bound to: 1'b1 
 	Parameter TRACE_BRANCH bound to: 36'b000100000000000000000000000000000000 
 	Parameter TRACE_ADDR bound to: 36'b001000000000000000000000000000000000 
 	Parameter TRACE_IRQ bound to: 36'b100000000000000000000000000000000000 
@@ -103,98 +103,115 @@ INFO: [Synth 8-6157] synthesizing module 'picorv32' [C:/Users/arthu/mrisc/mrisc.
 	Parameter cpu_state_shift bound to: 8'b00000100 
 	Parameter cpu_state_stmem bound to: 8'b00000010 
 	Parameter cpu_state_ldmem bound to: 8'b00000001 
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:406]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1120]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1250]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1250]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1267]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1267]
-WARNING: [Synth 8-151] case item 1'b0 is unreachable [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1267]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1313]
-WARNING: [Synth 8-151] case item 1'b0 is unreachable [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1313]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1313]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1484]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1484]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1496]
-WARNING: [Synth 8-151] case item 1'b0 is unreachable [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1496]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1496]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1582]
-WARNING: [Synth 8-151] case item 1'b0 is unreachable [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1582]
-WARNING: [Synth 8-151] case item 1'b0 is unreachable [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1582]
-WARNING: [Synth 8-151] case item 1'b0 is unreachable [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1582]
-WARNING: [Synth 8-151] case item 1'b0 is unreachable [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1582]
-WARNING: [Synth 8-151] case item 1'b0 is unreachable [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1582]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1626]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1626]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1734]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1765]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1835]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1835]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1843]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1843]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1858]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1858]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1883]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1883]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1900]
-INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1900]
-WARNING: [Synth 8-6014] Unused sequential element mem_la_firstword_reg_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:395]
-WARNING: [Synth 8-6014] Unused sequential element last_mem_valid_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:396]
-WARNING: [Synth 8-6014] Unused sequential element next_insn_opcode_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:436]
-WARNING: [Synth 8-6014] Unused sequential element mem_la_secondword_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:574]
-WARNING: [Synth 8-6014] Unused sequential element prefetched_high_word_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:575]
-WARNING: [Synth 8-6014] Unused sequential element q_ascii_instr_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:780]
-WARNING: [Synth 8-6014] Unused sequential element q_insn_imm_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:781]
-WARNING: [Synth 8-6014] Unused sequential element q_insn_opcode_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:782]
-WARNING: [Synth 8-6014] Unused sequential element q_insn_rs1_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:783]
-WARNING: [Synth 8-6014] Unused sequential element q_insn_rs2_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:784]
-WARNING: [Synth 8-6014] Unused sequential element q_insn_rd_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:785]
-WARNING: [Synth 8-6014] Unused sequential element dbg_next_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:786]
-WARNING: [Synth 8-6014] Unused sequential element dbg_valid_insn_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:789]
-WARNING: [Synth 8-6014] Unused sequential element cached_ascii_instr_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:794]
-WARNING: [Synth 8-6014] Unused sequential element cached_insn_imm_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:795]
-WARNING: [Synth 8-6014] Unused sequential element cached_insn_opcode_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:797]
-WARNING: [Synth 8-6014] Unused sequential element cached_insn_rs1_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:800]
-WARNING: [Synth 8-6014] Unused sequential element cached_insn_rs2_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:801]
-WARNING: [Synth 8-6014] Unused sequential element cached_insn_rd_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:802]
-WARNING: [Synth 8-6014] Unused sequential element dbg_insn_addr_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:806]
-WARNING: [Synth 8-6014] Unused sequential element clear_prefetched_high_word_q_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1291]
-WARNING: [Synth 8-6014] Unused sequential element set_mem_do_rinst_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1404]
-WARNING: [Synth 8-6014] Unused sequential element set_mem_do_rdata_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1405]
-WARNING: [Synth 8-6014] Unused sequential element set_mem_do_wdata_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1406]
-WARNING: [Synth 8-6014] Unused sequential element alu_out_0_q_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1408]
-WARNING: [Synth 8-6014] Unused sequential element alu_wait_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1411]
-WARNING: [Synth 8-6014] Unused sequential element alu_wait_2_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1412]
-WARNING: [Synth 8-6014] Unused sequential element dbg_rs1val_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1415]
-WARNING: [Synth 8-6014] Unused sequential element dbg_rs2val_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1416]
-WARNING: [Synth 8-6014] Unused sequential element dbg_rs1val_valid_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1417]
-WARNING: [Synth 8-6014] Unused sequential element dbg_rs2val_valid_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1418]
-WARNING: [Synth 8-6014] Unused sequential element next_irq_pending_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1438]
-WARNING: [Synth 8-6014] Unused sequential element decoder_trigger_q_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1445]
-WARNING: [Synth 8-6014] Unused sequential element decoder_pseudo_trigger_q_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1447]
-WARNING: [Synth 8-6014] Unused sequential element latched_trace_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1463]
-WARNING: [Synth 8-6014] Unused sequential element irq_active_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1469]
-WARNING: [Synth 8-6014] Unused sequential element irq_delay_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1470]
-WARNING: [Synth 8-6014] Unused sequential element irq_mask_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1471]
-WARNING: [Synth 8-6014] Unused sequential element irq_state_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1473]
-WARNING: [Synth 8-6014] Unused sequential element timer_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1475]
-WARNING: [Synth 8-6014] Unused sequential element current_pc_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1493]
-WARNING: [Synth 8-6014] Unused sequential element irq_pending_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1961]
-INFO: [Synth 8-4471] merging register 'trace_valid_reg' into 'do_waitirq_reg' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1450]
-WARNING: [Synth 8-6014] Unused sequential element trace_valid_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1450]
-INFO: [Synth 8-6155] done synthesizing module 'picorv32' (1#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:62]
-WARNING: [Synth 8-7023] instance 'cpu' of module 'picorv32' has 27 connections declared, but only 10 given [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picosoc.v:136]
-INFO: [Synth 8-6157] synthesizing module 'simpleuart' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/simpleuart.v:20]
+INFO: [Synth 8-6157] synthesizing module 'picorv32_pcpi_fast_mul' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:2316]
+	Parameter EXTRA_MUL_FFS bound to: 0 - type: integer 
+	Parameter EXTRA_INSN_FFS bound to: 0 - type: integer 
+	Parameter MUL_CLKGATE bound to: 0 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:2353]
+WARNING: [Synth 8-6014] Unused sequential element pcpi_insn_valid_q_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:2363]
+WARNING: [Synth 8-6014] Unused sequential element rs1_q_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:2365]
+WARNING: [Synth 8-6014] Unused sequential element rs2_q_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:2366]
+WARNING: [Synth 8-6014] Unused sequential element rd_q_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:2372]
+INFO: [Synth 8-6155] done synthesizing module 'picorv32_pcpi_fast_mul' (1#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:2316]
+INFO: [Synth 8-6157] synthesizing module 'picorv32_pcpi_div' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:2418]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:2443]
+INFO: [Synth 8-4471] merging register 'pcpi_wr_reg' into 'pcpi_ready_reg' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:2464]
+WARNING: [Synth 8-6014] Unused sequential element pcpi_wr_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:2464]
+INFO: [Synth 8-6155] done synthesizing module 'picorv32_pcpi_div' (2#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:2418]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:335]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:335]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:406]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1120]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1250]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1250]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1267]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1267]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1313]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1313]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1313]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1484]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1484]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1496]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1496]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1496]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1582]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1582]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1582]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1582]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1582]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1582]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1626]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1626]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1734]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1765]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1835]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1835]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1843]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1843]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1858]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1858]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1883]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1883]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1900]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1900]
+WARNING: [Synth 8-6014] Unused sequential element mem_la_firstword_reg_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:395]
+WARNING: [Synth 8-6014] Unused sequential element last_mem_valid_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:396]
+WARNING: [Synth 8-6014] Unused sequential element next_insn_opcode_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:436]
+WARNING: [Synth 8-6014] Unused sequential element mem_la_secondword_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:574]
+WARNING: [Synth 8-6014] Unused sequential element prefetched_high_word_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:575]
+WARNING: [Synth 8-6014] Unused sequential element q_ascii_instr_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:780]
+WARNING: [Synth 8-6014] Unused sequential element q_insn_imm_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:781]
+WARNING: [Synth 8-6014] Unused sequential element q_insn_opcode_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:782]
+WARNING: [Synth 8-6014] Unused sequential element q_insn_rs1_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:783]
+WARNING: [Synth 8-6014] Unused sequential element q_insn_rs2_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:784]
+WARNING: [Synth 8-6014] Unused sequential element q_insn_rd_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:785]
+WARNING: [Synth 8-6014] Unused sequential element dbg_next_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:786]
+WARNING: [Synth 8-6014] Unused sequential element dbg_valid_insn_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:789]
+WARNING: [Synth 8-6014] Unused sequential element cached_ascii_instr_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:794]
+WARNING: [Synth 8-6014] Unused sequential element cached_insn_imm_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:795]
+WARNING: [Synth 8-6014] Unused sequential element cached_insn_opcode_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:797]
+WARNING: [Synth 8-6014] Unused sequential element cached_insn_rs1_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:800]
+WARNING: [Synth 8-6014] Unused sequential element cached_insn_rs2_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:801]
+WARNING: [Synth 8-6014] Unused sequential element cached_insn_rd_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:802]
+WARNING: [Synth 8-6014] Unused sequential element dbg_insn_addr_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:806]
+WARNING: [Synth 8-6014] Unused sequential element is_sll_srl_sra_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1110]
+WARNING: [Synth 8-6014] Unused sequential element clear_prefetched_high_word_q_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1291]
+WARNING: [Synth 8-6014] Unused sequential element set_mem_do_rinst_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1404]
+WARNING: [Synth 8-6014] Unused sequential element set_mem_do_rdata_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1405]
+WARNING: [Synth 8-6014] Unused sequential element set_mem_do_wdata_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1406]
+WARNING: [Synth 8-6014] Unused sequential element alu_out_0_q_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1408]
+WARNING: [Synth 8-6014] Unused sequential element alu_wait_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1411]
+WARNING: [Synth 8-6014] Unused sequential element alu_wait_2_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1412]
+WARNING: [Synth 8-6014] Unused sequential element dbg_rs1val_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1415]
+WARNING: [Synth 8-6014] Unused sequential element dbg_rs2val_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1416]
+WARNING: [Synth 8-6014] Unused sequential element dbg_rs1val_valid_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1417]
+WARNING: [Synth 8-6014] Unused sequential element dbg_rs2val_valid_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1418]
+WARNING: [Synth 8-6014] Unused sequential element next_irq_pending_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1438]
+WARNING: [Synth 8-6014] Unused sequential element decoder_trigger_q_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1445]
+WARNING: [Synth 8-6014] Unused sequential element decoder_pseudo_trigger_q_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1447]
+WARNING: [Synth 8-6014] Unused sequential element latched_trace_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1463]
+WARNING: [Synth 8-6014] Unused sequential element irq_active_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1469]
+WARNING: [Synth 8-6014] Unused sequential element irq_delay_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1470]
+WARNING: [Synth 8-6014] Unused sequential element irq_mask_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1471]
+WARNING: [Synth 8-6014] Unused sequential element irq_state_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1473]
+WARNING: [Synth 8-6014] Unused sequential element timer_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1475]
+WARNING: [Synth 8-6014] Unused sequential element current_pc_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1493]
+WARNING: [Synth 8-6014] Unused sequential element irq_pending_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1961]
+INFO: [Synth 8-4471] merging register 'trace_valid_reg' into 'do_waitirq_reg' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1450]
+WARNING: [Synth 8-6014] Unused sequential element trace_valid_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1450]
+INFO: [Synth 8-6155] done synthesizing module 'picorv32' (3#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:62]
+WARNING: [Synth 8-7023] instance 'cpu' of module 'picorv32' has 27 connections declared, but only 10 given [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picosoc.v:136]
+INFO: [Synth 8-6157] synthesizing module 'simpleuart' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/simpleuart.v:20]
 	Parameter DEFAULT_DIV bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'simpleuart' (2#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/simpleuart.v:20]
-INFO: [Synth 8-6157] synthesizing module 'bram_config' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/bram_config.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'simpleuart' (4#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/simpleuart.v:20]
+INFO: [Synth 8-6157] synthesizing module 'bram_config' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/bram_config.v:3]
 	Parameter S_NUM_COL bound to: 4 - type: integer 
 	Parameter S_COL_WIDTH bound to: 8 - type: integer 
 	Parameter S_ADDR_WIDTH bound to: 14 - type: integer 
 	Parameter S_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 's_bramconfig' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/s_bramconfig.v:4]
+INFO: [Synth 8-6157] synthesizing module 's_bramconfig' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/s_bramconfig.v:4]
 	Parameter C_S_NUM_COL bound to: 4 - type: integer 
 	Parameter C_S_COL_WIDTH bound to: 8 - type: integer 
 	Parameter C_S_ADDR_WIDTH bound to: 14 - type: integer 
@@ -203,56 +220,56 @@ INFO: [Synth 8-6157] synthesizing module 's_bramconfig' [C:/Users/arthu/mrisc/mr
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
 	Parameter ADDR_LSB bound to: 2 - type: integer 
 	Parameter OPT_MEM_ADDR_BITS bound to: 1 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'ram' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/ram.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ram' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/ram.v:1]
 	Parameter NUM_COL bound to: 4 - type: integer 
 	Parameter COL_WIDTH bound to: 8 - type: integer 
 	Parameter ADDR_WIDTH bound to: 14 - type: integer 
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'ram' (3#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/ram.v:1]
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/s_bramconfig.v:303]
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/s_bramconfig.v:444]
-WARNING: [Synth 8-6104] Input port 'enaA' has an internal driver [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/s_bramconfig.v:474]
-WARNING: [Synth 8-6104] Input port 'weA' has an internal driver [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/s_bramconfig.v:475]
-WARNING: [Synth 8-6104] Input port 'addrA' has an internal driver [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/s_bramconfig.v:476]
-WARNING: [Synth 8-6104] Input port 'dinA' has an internal driver [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/s_bramconfig.v:479]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/s_bramconfig.v:297]
-WARNING: [Synth 8-3848] Net doutA in module/entity s_bramconfig does not have driver. [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/s_bramconfig.v:28]
-WARNING: [Synth 8-3848] Net doa_ok in module/entity s_bramconfig does not have driver. [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/s_bramconfig.v:29]
-WARNING: [Synth 8-3848] Net doutB in module/entity s_bramconfig does not have driver. [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/s_bramconfig.v:39]
-INFO: [Synth 8-6155] done synthesizing module 's_bramconfig' (4#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/s_bramconfig.v:4]
-WARNING: [Synth 8-7023] instance 's_bramconfig_inst' of module 's_bramconfig' has 34 connections declared, but only 28 given [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/bram_config.v:61]
-WARNING: [Synth 8-3848] Net doutB in module/entity bram_config does not have driver. [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/bram_config.v:21]
-INFO: [Synth 8-6155] done synthesizing module 'bram_config' (5#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/bram_config.v:3]
-WARNING: [Synth 8-689] width (22) of port connection 'addrB' does not match port width (14) of module 'bram_config' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picosoc.v:183]
-WARNING: [Synth 8-689] width (32) of port connection 's00_axi_awaddr' does not match port width (4) of module 'bram_config' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picosoc.v:191]
-WARNING: [Synth 8-689] width (15) of port connection 's00_axi_araddr' does not match port width (4) of module 'bram_config' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picosoc.v:202]
-INFO: [Synth 8-6155] done synthesizing module 'picosoc' (6#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picosoc.v:24]
-INFO: [Synth 8-638] synthesizing module 'pm_wrapper' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/pm_wrapper.vhd:80]
+INFO: [Synth 8-6155] done synthesizing module 'ram' (5#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/ram.v:1]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/s_bramconfig.v:303]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/s_bramconfig.v:444]
+WARNING: [Synth 8-6104] Input port 'enaA' has an internal driver [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/s_bramconfig.v:474]
+WARNING: [Synth 8-6104] Input port 'weA' has an internal driver [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/s_bramconfig.v:475]
+WARNING: [Synth 8-6104] Input port 'addrA' has an internal driver [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/s_bramconfig.v:476]
+WARNING: [Synth 8-6104] Input port 'dinA' has an internal driver [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/s_bramconfig.v:479]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/s_bramconfig.v:297]
+WARNING: [Synth 8-3848] Net doutA in module/entity s_bramconfig does not have driver. [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/s_bramconfig.v:28]
+WARNING: [Synth 8-3848] Net doa_ok in module/entity s_bramconfig does not have driver. [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/s_bramconfig.v:29]
+WARNING: [Synth 8-3848] Net doutB in module/entity s_bramconfig does not have driver. [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/s_bramconfig.v:39]
+INFO: [Synth 8-6155] done synthesizing module 's_bramconfig' (6#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/s_bramconfig.v:4]
+WARNING: [Synth 8-7023] instance 's_bramconfig_inst' of module 's_bramconfig' has 34 connections declared, but only 28 given [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/bram_config.v:61]
+WARNING: [Synth 8-3848] Net doutB in module/entity bram_config does not have driver. [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/bram_config.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'bram_config' (7#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/bram_config.v:3]
+WARNING: [Synth 8-689] width (22) of port connection 'addrB' does not match port width (14) of module 'bram_config' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picosoc.v:183]
+WARNING: [Synth 8-689] width (32) of port connection 's00_axi_awaddr' does not match port width (4) of module 'bram_config' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picosoc.v:191]
+WARNING: [Synth 8-689] width (15) of port connection 's00_axi_araddr' does not match port width (4) of module 'bram_config' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picosoc.v:202]
+INFO: [Synth 8-6155] done synthesizing module 'picosoc' (8#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picosoc.v:24]
+INFO: [Synth 8-638] synthesizing module 'pm_wrapper' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/pm_wrapper.vhd:80]
 	Parameter pix_depth bound to: 16 - type: integer 
 	Parameter addr_size bound to: 32 - type: integer 
-	Parameter mem_size bound to: 12800 - type: integer 
+	Parameter mem_size bound to: 64000 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
 	Parameter img_height bound to: 8 - type: integer 
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter n_steps bound to: 5 - type: integer 
 	Parameter n_frames bound to: 8 - type: integer 
-	Parameter a_steps bound to: 2 - type: integer 
+	Parameter a_steps bound to: 10 - type: integer 
 	Parameter a_frames bound to: 1 - type: integer 
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter addr_size bound to: 32 - type: integer 
-	Parameter mem_size bound to: 12800 - type: integer 
+	Parameter mem_size bound to: 64000 - type: integer 
 	Parameter pix_depth bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'rams_tdp_rf_rf_rf' declared at 'C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/rams_tdp_rf_rf.vhd:16' bound to instance 'inst_pm' of component 'rams_tdp_rf_rf_rf' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/pm_wrapper.vhd:297]
-INFO: [Synth 8-638] synthesizing module 'rams_tdp_rf_rf_rf' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/rams_tdp_rf_rf.vhd:42]
+INFO: [Synth 8-3491] module 'rams_tdp_rf_rf_rf' declared at 'C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/rams_tdp_rf_rf.vhd:16' bound to instance 'inst_pm' of component 'rams_tdp_rf_rf_rf' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/pm_wrapper.vhd:297]
+INFO: [Synth 8-638] synthesizing module 'rams_tdp_rf_rf_rf' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/rams_tdp_rf_rf.vhd:42]
 	Parameter pix_depth bound to: 8 - type: integer 
 	Parameter addr_size bound to: 32 - type: integer 
-	Parameter mem_size bound to: 12800 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'rams_tdp_rf_rf_rf' (7#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/rams_tdp_rf_rf.vhd:42]
-WARNING: [Synth 8-3848] Net dia in module/entity pm_wrapper does not have driver. [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/pm_wrapper.vhd:120]
-INFO: [Synth 8-256] done synthesizing module 'pm_wrapper' (8#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/pm_wrapper.vhd:80]
-INFO: [Synth 8-638] synthesizing module 'router_wrapper' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/router_wrapper.vhd:104]
+	Parameter mem_size bound to: 64000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rams_tdp_rf_rf_rf' (9#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/rams_tdp_rf_rf.vhd:42]
+WARNING: [Synth 8-3848] Net dia in module/entity pm_wrapper does not have driver. [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/pm_wrapper.vhd:120]
+INFO: [Synth 8-256] done synthesizing module 'pm_wrapper' (10#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/pm_wrapper.vhd:80]
+INFO: [Synth 8-638] synthesizing module 'router_wrapper' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/router_wrapper.vhd:104]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter pix_depth bound to: 16 - type: integer 
@@ -263,13 +280,13 @@ INFO: [Synth 8-638] synthesizing module 'router_wrapper' [C:/Users/arthu/mrisc/m
 	Parameter n_steps bound to: 5 - type: integer 
 	Parameter n_frames bound to: 8 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-WARNING: [Synth 8-3819] Generic 'ADDR_WIDTH' not present in instantiated entity will be ignored [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/zcu104.v:518]
-WARNING: [Synth 8-3819] Generic 'DATA_WIDTH' not present in instantiated entity will be ignored [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/zcu104.v:519]
-WARNING: [Synth 8-5640] Port 'in_i_pm_busy' is missing in component declaration [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/router_wrapper.vhd:108]
-WARNING: [Synth 8-5640] Port 'in_i_pe_busy' is missing in component declaration [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/router_wrapper.vhd:108]
-WARNING: [Synth 8-5640] Port 'in_i_n_busy' is missing in component declaration [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/router_wrapper.vhd:108]
-WARNING: [Synth 8-5640] Port 'in_i_s_busy' is missing in component declaration [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/router_wrapper.vhd:108]
-WARNING: [Synth 8-5640] Port 'in_i_e_busy' is missing in component declaration [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/router_wrapper.vhd:108]
+WARNING: [Synth 8-3819] Generic 'ADDR_WIDTH' not present in instantiated entity will be ignored [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/zcu104.v:518]
+WARNING: [Synth 8-3819] Generic 'DATA_WIDTH' not present in instantiated entity will be ignored [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/zcu104.v:519]
+WARNING: [Synth 8-5640] Port 'in_i_pm_busy' is missing in component declaration [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/router_wrapper.vhd:108]
+WARNING: [Synth 8-5640] Port 'in_i_pe_busy' is missing in component declaration [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/router_wrapper.vhd:108]
+WARNING: [Synth 8-5640] Port 'in_i_n_busy' is missing in component declaration [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/router_wrapper.vhd:108]
+WARNING: [Synth 8-5640] Port 'in_i_s_busy' is missing in component declaration [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/router_wrapper.vhd:108]
+WARNING: [Synth 8-5640] Port 'in_i_e_busy' is missing in component declaration [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/router_wrapper.vhd:108]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter pix_depth bound to: 16 - type: integer 
@@ -280,8 +297,8 @@ WARNING: [Synth 8-5640] Port 'in_i_e_busy' is missing in component declaration [
 	Parameter n_steps bound to: 5 - type: integer 
 	Parameter n_frames bound to: 8 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-3491] module 'router_new' declared at 'C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/router_new.vhd:35' bound to instance 'wrp_router' of component 'router_new' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/router_wrapper.vhd:437]
-INFO: [Synth 8-638] synthesizing module 'router_new' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/router_new.vhd:225]
+INFO: [Synth 8-3491] module 'router_new' declared at 'C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/router_new.vhd:35' bound to instance 'wrp_router' of component 'router_new' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/router_wrapper.vhd:437]
+INFO: [Synth 8-638] synthesizing module 'router_new' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/router_new.vhd:225]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter pix_depth bound to: 16 - type: integer 
@@ -292,7 +309,7 @@ INFO: [Synth 8-638] synthesizing module 'router_new' [C:/Users/arthu/mrisc/mrisc
 	Parameter n_steps bound to: 5 - type: integer 
 	Parameter n_frames bound to: 8 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'cf' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:234]
+INFO: [Synth 8-638] synthesizing module 'cf' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:234]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -303,44 +320,44 @@ INFO: [Synth 8-638] synthesizing module 'cf' [C:/Users/arthu/mrisc/mrisc.srcs/so
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-WARNING: [Synth 8-614] signal 'PM_stall_out_EB' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 'PM_stall_out_DEC' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 's_PM_busy' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 'PE_stall_out_EB' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 'PE_stall_out_DEC' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 's_PE_busy' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 'N_stall_out_EB' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 'N_stall_out_DEC' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 's_N_busy' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 'S_stall_out_EB' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 'S_stall_out_DEC' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 's_S_busy' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 'E_stall_out_EB' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 'E_stall_out_DEC' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 's_E_busy' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 'W_stall_out_EB' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 'W_stall_out_DEC' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 's_W_busy' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 'i_PE_busy' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 'i_PM_busy' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-WARNING: [Synth 8-614] signal 'buffer_direction' is read in the process but is not in the sensitivity list [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:567]
+WARNING: [Synth 8-614] signal 'PM_stall_out_EB' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 'PM_stall_out_DEC' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 's_PM_busy' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 'PE_stall_out_EB' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 'PE_stall_out_DEC' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 's_PE_busy' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 'N_stall_out_EB' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 'N_stall_out_DEC' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 's_N_busy' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 'S_stall_out_EB' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 'S_stall_out_DEC' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 's_S_busy' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 'E_stall_out_EB' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 'E_stall_out_DEC' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 's_E_busy' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 'W_stall_out_EB' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 'W_stall_out_DEC' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 's_W_busy' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 'i_PE_busy' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 'i_PM_busy' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+WARNING: [Synth 8-614] signal 'buffer_direction' is read in the process but is not in the sensitivity list [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:388]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:567]
 WARNING: [Synth 8-5858] RAM buffer_direction_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
 WARNING: [Synth 8-5858] RAM buffer_PROCEDURE_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
-WARNING: [Synth 8-6014] Unused sequential element counter_PM_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:613]
-WARNING: [Synth 8-6014] Unused sequential element counter_PE_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:628]
-WARNING: [Synth 8-6014] Unused sequential element counter_N_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:644]
-WARNING: [Synth 8-6014] Unused sequential element counter_S_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:662]
-WARNING: [Synth 8-6014] Unused sequential element counter_E_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:681]
-WARNING: [Synth 8-6014] Unused sequential element counter_W_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:703]
-WARNING: [Synth 8-3848] Net buffer_direction[1][counter] in module/entity cf does not have driver. [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:272]
-WARNING: [Synth 8-3848] Net buffer_direction[0][counter] in module/entity cf does not have driver. [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:272]
-WARNING: [Synth 8-3848] Net buffer_direction[2][counter] in module/entity cf does not have driver. [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:272]
-WARNING: [Synth 8-3848] Net buffer_direction[3][counter] in module/entity cf does not have driver. [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:272]
-WARNING: [Synth 8-3848] Net buffer_direction[4][counter] in module/entity cf does not have driver. [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:272]
-WARNING: [Synth 8-3848] Net buffer_direction[5][counter] in module/entity cf does not have driver. [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:272]
-INFO: [Synth 8-256] done synthesizing module 'cf' (9#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:234]
-INFO: [Synth 8-638] synthesizing module 'PM_wrapper_EB_DEC' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PM_wrapper_EB_DEC.vhd:84]
+WARNING: [Synth 8-6014] Unused sequential element counter_PM_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:613]
+WARNING: [Synth 8-6014] Unused sequential element counter_PE_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:628]
+WARNING: [Synth 8-6014] Unused sequential element counter_N_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:644]
+WARNING: [Synth 8-6014] Unused sequential element counter_S_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:662]
+WARNING: [Synth 8-6014] Unused sequential element counter_E_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:681]
+WARNING: [Synth 8-6014] Unused sequential element counter_W_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:703]
+WARNING: [Synth 8-3848] Net buffer_direction[1][counter] in module/entity cf does not have driver. [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:272]
+WARNING: [Synth 8-3848] Net buffer_direction[0][counter] in module/entity cf does not have driver. [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:272]
+WARNING: [Synth 8-3848] Net buffer_direction[2][counter] in module/entity cf does not have driver. [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:272]
+WARNING: [Synth 8-3848] Net buffer_direction[3][counter] in module/entity cf does not have driver. [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:272]
+WARNING: [Synth 8-3848] Net buffer_direction[4][counter] in module/entity cf does not have driver. [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:272]
+WARNING: [Synth 8-3848] Net buffer_direction[5][counter] in module/entity cf does not have driver. [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:272]
+INFO: [Synth 8-256] done synthesizing module 'cf' (11#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:234]
+INFO: [Synth 8-638] synthesizing module 'PM_wrapper_EB_DEC' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PM_wrapper_EB_DEC.vhd:84]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -351,7 +368,7 @@ INFO: [Synth 8-638] synthesizing module 'PM_wrapper_EB_DEC' [C:/Users/arthu/mris
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'PM_dec' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PM_dec.vhd:47]
+INFO: [Synth 8-638] synthesizing module 'PM_dec' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PM_dec.vhd:47]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -362,9 +379,9 @@ INFO: [Synth 8-638] synthesizing module 'PM_dec' [C:/Users/arthu/mrisc/mrisc.src
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PM_dec.vhd:99]
-INFO: [Synth 8-256] done synthesizing module 'PM_dec' (10#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PM_dec.vhd:47]
-INFO: [Synth 8-638] synthesizing module 'PM_elastic_buffer' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PM_elastic_buffer.vhd:69]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PM_dec.vhd:99]
+INFO: [Synth 8-256] done synthesizing module 'PM_dec' (12#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PM_dec.vhd:47]
+INFO: [Synth 8-638] synthesizing module 'PM_elastic_buffer' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PM_elastic_buffer.vhd:69]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -375,10 +392,10 @@ INFO: [Synth 8-638] synthesizing module 'PM_elastic_buffer' [C:/Users/arthu/mris
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PM_elastic_buffer.vhd:201]
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PM_elastic_buffer.vhd:251]
-INFO: [Synth 8-256] done synthesizing module 'PM_elastic_buffer' (11#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PM_elastic_buffer.vhd:69]
-INFO: [Synth 8-638] synthesizing module 'in_PM_controller' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/in_pm_ctrl.vhd:53]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PM_elastic_buffer.vhd:201]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PM_elastic_buffer.vhd:251]
+INFO: [Synth 8-256] done synthesizing module 'PM_elastic_buffer' (13#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PM_elastic_buffer.vhd:69]
+INFO: [Synth 8-638] synthesizing module 'in_PM_controller' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/in_pm_ctrl.vhd:53]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -386,20 +403,9 @@ INFO: [Synth 8-638] synthesizing module 'in_PM_controller' [C:/Users/arthu/mrisc
 	Parameter n_frames bound to: 8 - type: integer 
 	Parameter n_steps bound to: 5 - type: integer 
 	Parameter pix_depth bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'in_PM_controller' (12#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/in_pm_ctrl.vhd:53]
-INFO: [Synth 8-256] done synthesizing module 'PM_wrapper_EB_DEC' (13#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PM_wrapper_EB_DEC.vhd:84]
-INFO: [Synth 8-638] synthesizing module 'PE_wrapper_EB_DEC' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PE_wrapper_EB_DEC.vhd:85]
-	Parameter x_init bound to: 0 - type: integer 
-	Parameter y_init bound to: 160 - type: integer 
-	Parameter img_width bound to: 8 - type: integer 
-	Parameter img_height bound to: 8 - type: integer 
-	Parameter n_frames bound to: 8 - type: integer 
-	Parameter n_steps bound to: 5 - type: integer 
-	Parameter pix_depth bound to: 16 - type: integer 
-	Parameter subimg_width bound to: 80 - type: integer 
-	Parameter subimg_height bound to: 80 - type: integer 
-	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'PE_dec' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PE_dec.vhd:48]
+INFO: [Synth 8-256] done synthesizing module 'in_PM_controller' (14#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/in_pm_ctrl.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'PM_wrapper_EB_DEC' (15#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PM_wrapper_EB_DEC.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'PE_wrapper_EB_DEC' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PE_wrapper_EB_DEC.vhd:85]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -410,9 +416,7 @@ INFO: [Synth 8-638] synthesizing module 'PE_dec' [C:/Users/arthu/mrisc/mrisc.src
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PE_dec.vhd:100]
-INFO: [Synth 8-256] done synthesizing module 'PE_dec' (14#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PE_dec.vhd:48]
-INFO: [Synth 8-638] synthesizing module 'PE_elastic_buffer' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PE_elastic_buffer.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'PE_dec' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PE_dec.vhd:48]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -423,20 +427,9 @@ INFO: [Synth 8-638] synthesizing module 'PE_elastic_buffer' [C:/Users/arthu/mris
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PE_elastic_buffer.vhd:181]
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PE_elastic_buffer.vhd:231]
-INFO: [Synth 8-256] done synthesizing module 'PE_elastic_buffer' (15#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PE_elastic_buffer.vhd:70]
-INFO: [Synth 8-638] synthesizing module 'in_PE_controller' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/in_pe_ctrl.vhd:53]
-	Parameter x_init bound to: 0 - type: integer 
-	Parameter y_init bound to: 160 - type: integer 
-	Parameter img_width bound to: 8 - type: integer 
-	Parameter img_height bound to: 8 - type: integer 
-	Parameter n_frames bound to: 8 - type: integer 
-	Parameter n_steps bound to: 5 - type: integer 
-	Parameter pix_depth bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'in_PE_controller' (16#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/in_pe_ctrl.vhd:53]
-INFO: [Synth 8-256] done synthesizing module 'PE_wrapper_EB_DEC' (17#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PE_wrapper_EB_DEC.vhd:85]
-INFO: [Synth 8-638] synthesizing module 'N_wrapper_EB_DEC' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/N_wrapper_EB_DEC.vhd:85]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PE_dec.vhd:100]
+INFO: [Synth 8-256] done synthesizing module 'PE_dec' (16#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PE_dec.vhd:48]
+INFO: [Synth 8-638] synthesizing module 'PE_elastic_buffer' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PE_elastic_buffer.vhd:70]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -447,7 +440,20 @@ INFO: [Synth 8-638] synthesizing module 'N_wrapper_EB_DEC' [C:/Users/arthu/mrisc
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'N_dec' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/N_dec.vhd:48]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PE_elastic_buffer.vhd:181]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PE_elastic_buffer.vhd:231]
+INFO: [Synth 8-256] done synthesizing module 'PE_elastic_buffer' (17#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PE_elastic_buffer.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'in_PE_controller' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/in_pe_ctrl.vhd:53]
+	Parameter x_init bound to: 0 - type: integer 
+	Parameter y_init bound to: 160 - type: integer 
+	Parameter img_width bound to: 8 - type: integer 
+	Parameter img_height bound to: 8 - type: integer 
+	Parameter n_frames bound to: 8 - type: integer 
+	Parameter n_steps bound to: 5 - type: integer 
+	Parameter pix_depth bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'in_PE_controller' (18#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/in_pe_ctrl.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'PE_wrapper_EB_DEC' (19#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PE_wrapper_EB_DEC.vhd:85]
+INFO: [Synth 8-638] synthesizing module 'N_wrapper_EB_DEC' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/N_wrapper_EB_DEC.vhd:85]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -458,9 +464,7 @@ INFO: [Synth 8-638] synthesizing module 'N_dec' [C:/Users/arthu/mrisc/mrisc.srcs
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/N_dec.vhd:100]
-INFO: [Synth 8-256] done synthesizing module 'N_dec' (18#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/N_dec.vhd:48]
-INFO: [Synth 8-638] synthesizing module 'N_elastic_buffer' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/N_elastic_buffer.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'N_dec' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/N_dec.vhd:48]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -471,20 +475,9 @@ INFO: [Synth 8-638] synthesizing module 'N_elastic_buffer' [C:/Users/arthu/mrisc
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/N_elastic_buffer.vhd:181]
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/N_elastic_buffer.vhd:231]
-INFO: [Synth 8-256] done synthesizing module 'N_elastic_buffer' (19#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/N_elastic_buffer.vhd:70]
-INFO: [Synth 8-638] synthesizing module 'in_N_controller' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/in_N_ctrl.vhd:53]
-	Parameter x_init bound to: 0 - type: integer 
-	Parameter y_init bound to: 160 - type: integer 
-	Parameter img_width bound to: 8 - type: integer 
-	Parameter img_height bound to: 8 - type: integer 
-	Parameter n_frames bound to: 8 - type: integer 
-	Parameter n_steps bound to: 5 - type: integer 
-	Parameter pix_depth bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'in_N_controller' (20#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/in_N_ctrl.vhd:53]
-INFO: [Synth 8-256] done synthesizing module 'N_wrapper_EB_DEC' (21#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/N_wrapper_EB_DEC.vhd:85]
-INFO: [Synth 8-638] synthesizing module 'S_wrapper_EB_DEC' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/S_wrapper_EB_DEC.vhd:84]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/N_dec.vhd:100]
+INFO: [Synth 8-256] done synthesizing module 'N_dec' (20#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/N_dec.vhd:48]
+INFO: [Synth 8-638] synthesizing module 'N_elastic_buffer' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/N_elastic_buffer.vhd:70]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -495,7 +488,20 @@ INFO: [Synth 8-638] synthesizing module 'S_wrapper_EB_DEC' [C:/Users/arthu/mrisc
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'S_dec' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/S_dec.vhd:48]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/N_elastic_buffer.vhd:181]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/N_elastic_buffer.vhd:231]
+INFO: [Synth 8-256] done synthesizing module 'N_elastic_buffer' (21#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/N_elastic_buffer.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'in_N_controller' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/in_N_ctrl.vhd:53]
+	Parameter x_init bound to: 0 - type: integer 
+	Parameter y_init bound to: 160 - type: integer 
+	Parameter img_width bound to: 8 - type: integer 
+	Parameter img_height bound to: 8 - type: integer 
+	Parameter n_frames bound to: 8 - type: integer 
+	Parameter n_steps bound to: 5 - type: integer 
+	Parameter pix_depth bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'in_N_controller' (22#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/in_N_ctrl.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'N_wrapper_EB_DEC' (23#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/N_wrapper_EB_DEC.vhd:85]
+INFO: [Synth 8-638] synthesizing module 'S_wrapper_EB_DEC' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/S_wrapper_EB_DEC.vhd:84]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -506,9 +512,7 @@ INFO: [Synth 8-638] synthesizing module 'S_dec' [C:/Users/arthu/mrisc/mrisc.srcs
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/S_dec.vhd:100]
-INFO: [Synth 8-256] done synthesizing module 'S_dec' (22#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/S_dec.vhd:48]
-INFO: [Synth 8-638] synthesizing module 'S_elastic_buffer' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/S_elastic_buffer.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'S_dec' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/S_dec.vhd:48]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -519,20 +523,9 @@ INFO: [Synth 8-638] synthesizing module 'S_elastic_buffer' [C:/Users/arthu/mrisc
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/S_elastic_buffer.vhd:181]
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/S_elastic_buffer.vhd:231]
-INFO: [Synth 8-256] done synthesizing module 'S_elastic_buffer' (23#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/S_elastic_buffer.vhd:70]
-INFO: [Synth 8-638] synthesizing module 'in_S_controller' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/in_S_ctrl.vhd:53]
-	Parameter x_init bound to: 0 - type: integer 
-	Parameter y_init bound to: 160 - type: integer 
-	Parameter img_width bound to: 8 - type: integer 
-	Parameter img_height bound to: 8 - type: integer 
-	Parameter n_frames bound to: 8 - type: integer 
-	Parameter n_steps bound to: 5 - type: integer 
-	Parameter pix_depth bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'in_S_controller' (24#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/in_S_ctrl.vhd:53]
-INFO: [Synth 8-256] done synthesizing module 'S_wrapper_EB_DEC' (25#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/S_wrapper_EB_DEC.vhd:84]
-INFO: [Synth 8-638] synthesizing module 'E_wrapper_EB_DEC' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/E_wrapper_EB_DEC.vhd:84]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/S_dec.vhd:100]
+INFO: [Synth 8-256] done synthesizing module 'S_dec' (24#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/S_dec.vhd:48]
+INFO: [Synth 8-638] synthesizing module 'S_elastic_buffer' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/S_elastic_buffer.vhd:70]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -543,7 +536,20 @@ INFO: [Synth 8-638] synthesizing module 'E_wrapper_EB_DEC' [C:/Users/arthu/mrisc
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'E_dec' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/E_dec.vhd:48]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/S_elastic_buffer.vhd:181]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/S_elastic_buffer.vhd:231]
+INFO: [Synth 8-256] done synthesizing module 'S_elastic_buffer' (25#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/S_elastic_buffer.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'in_S_controller' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/in_S_ctrl.vhd:53]
+	Parameter x_init bound to: 0 - type: integer 
+	Parameter y_init bound to: 160 - type: integer 
+	Parameter img_width bound to: 8 - type: integer 
+	Parameter img_height bound to: 8 - type: integer 
+	Parameter n_frames bound to: 8 - type: integer 
+	Parameter n_steps bound to: 5 - type: integer 
+	Parameter pix_depth bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'in_S_controller' (26#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/in_S_ctrl.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'S_wrapper_EB_DEC' (27#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/S_wrapper_EB_DEC.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'E_wrapper_EB_DEC' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/E_wrapper_EB_DEC.vhd:84]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -554,9 +560,7 @@ INFO: [Synth 8-638] synthesizing module 'E_dec' [C:/Users/arthu/mrisc/mrisc.srcs
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/E_dec.vhd:100]
-INFO: [Synth 8-256] done synthesizing module 'E_dec' (26#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/E_dec.vhd:48]
-INFO: [Synth 8-638] synthesizing module 'E_elastic_buffer' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/E_elastic_buffer.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'E_dec' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/E_dec.vhd:48]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -567,20 +571,9 @@ INFO: [Synth 8-638] synthesizing module 'E_elastic_buffer' [C:/Users/arthu/mrisc
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/E_elastic_buffer.vhd:181]
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/E_elastic_buffer.vhd:231]
-INFO: [Synth 8-256] done synthesizing module 'E_elastic_buffer' (27#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/E_elastic_buffer.vhd:70]
-INFO: [Synth 8-638] synthesizing module 'in_E_controller' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/in_E_ctrl.vhd:53]
-	Parameter x_init bound to: 0 - type: integer 
-	Parameter y_init bound to: 160 - type: integer 
-	Parameter img_width bound to: 8 - type: integer 
-	Parameter img_height bound to: 8 - type: integer 
-	Parameter n_frames bound to: 8 - type: integer 
-	Parameter n_steps bound to: 5 - type: integer 
-	Parameter pix_depth bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'in_E_controller' (28#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/in_E_ctrl.vhd:53]
-INFO: [Synth 8-256] done synthesizing module 'E_wrapper_EB_DEC' (29#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/E_wrapper_EB_DEC.vhd:84]
-INFO: [Synth 8-638] synthesizing module 'W_wrapper_EB_DEC' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/W_wrapper_EB_DEC.vhd:84]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/E_dec.vhd:100]
+INFO: [Synth 8-256] done synthesizing module 'E_dec' (28#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/E_dec.vhd:48]
+INFO: [Synth 8-638] synthesizing module 'E_elastic_buffer' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/E_elastic_buffer.vhd:70]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -591,7 +584,20 @@ INFO: [Synth 8-638] synthesizing module 'W_wrapper_EB_DEC' [C:/Users/arthu/mrisc
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'W_dec' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/W_dec.vhd:48]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/E_elastic_buffer.vhd:181]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/E_elastic_buffer.vhd:231]
+INFO: [Synth 8-256] done synthesizing module 'E_elastic_buffer' (29#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/E_elastic_buffer.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'in_E_controller' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/in_E_ctrl.vhd:53]
+	Parameter x_init bound to: 0 - type: integer 
+	Parameter y_init bound to: 160 - type: integer 
+	Parameter img_width bound to: 8 - type: integer 
+	Parameter img_height bound to: 8 - type: integer 
+	Parameter n_frames bound to: 8 - type: integer 
+	Parameter n_steps bound to: 5 - type: integer 
+	Parameter pix_depth bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'in_E_controller' (30#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/in_E_ctrl.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'E_wrapper_EB_DEC' (31#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/E_wrapper_EB_DEC.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'W_wrapper_EB_DEC' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/W_wrapper_EB_DEC.vhd:84]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -602,9 +608,7 @@ INFO: [Synth 8-638] synthesizing module 'W_dec' [C:/Users/arthu/mrisc/mrisc.srcs
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/W_dec.vhd:100]
-INFO: [Synth 8-256] done synthesizing module 'W_dec' (30#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/W_dec.vhd:48]
-INFO: [Synth 8-638] synthesizing module 'W_elastic_buffer' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/W_elastic_buffer.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'W_dec' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/W_dec.vhd:48]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -615,10 +619,9 @@ INFO: [Synth 8-638] synthesizing module 'W_elastic_buffer' [C:/Users/arthu/mrisc
 	Parameter subimg_width bound to: 80 - type: integer 
 	Parameter subimg_height bound to: 80 - type: integer 
 	Parameter buffer_length bound to: 20 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/W_elastic_buffer.vhd:181]
-INFO: [Synth 8-226] default block is never used [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/W_elastic_buffer.vhd:231]
-INFO: [Synth 8-256] done synthesizing module 'W_elastic_buffer' (31#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/W_elastic_buffer.vhd:70]
-INFO: [Synth 8-638] synthesizing module 'in_W_controller' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/in_W_ctrl.vhd:53]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/W_dec.vhd:100]
+INFO: [Synth 8-256] done synthesizing module 'W_dec' (32#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/W_dec.vhd:48]
+INFO: [Synth 8-638] synthesizing module 'W_elastic_buffer' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/W_elastic_buffer.vhd:70]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -626,9 +629,13 @@ INFO: [Synth 8-638] synthesizing module 'in_W_controller' [C:/Users/arthu/mrisc/
 	Parameter n_frames bound to: 8 - type: integer 
 	Parameter n_steps bound to: 5 - type: integer 
 	Parameter pix_depth bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'in_W_controller' (32#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/in_W_ctrl.vhd:53]
-INFO: [Synth 8-256] done synthesizing module 'W_wrapper_EB_DEC' (33#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/W_wrapper_EB_DEC.vhd:84]
-INFO: [Synth 8-638] synthesizing module 'out_pm_controller' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/out_pm_controller.vhd:57]
+	Parameter subimg_width bound to: 80 - type: integer 
+	Parameter subimg_height bound to: 80 - type: integer 
+	Parameter buffer_length bound to: 20 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/W_elastic_buffer.vhd:181]
+INFO: [Synth 8-226] default block is never used [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/W_elastic_buffer.vhd:231]
+INFO: [Synth 8-256] done synthesizing module 'W_elastic_buffer' (33#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/W_elastic_buffer.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'in_W_controller' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/in_W_ctrl.vhd:53]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -636,8 +643,9 @@ INFO: [Synth 8-638] synthesizing module 'out_pm_controller' [C:/Users/arthu/mris
 	Parameter n_frames bound to: 8 - type: integer 
 	Parameter n_steps bound to: 5 - type: integer 
 	Parameter pix_depth bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'out_pm_controller' (34#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/out_pm_controller.vhd:57]
-INFO: [Synth 8-638] synthesizing module 'out_PE_controller' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/out_PE_controller.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'in_W_controller' (34#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/in_W_ctrl.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'W_wrapper_EB_DEC' (35#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/W_wrapper_EB_DEC.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'out_pm_controller' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/out_pm_controller.vhd:57]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -645,8 +653,8 @@ INFO: [Synth 8-638] synthesizing module 'out_PE_controller' [C:/Users/arthu/mris
 	Parameter n_frames bound to: 8 - type: integer 
 	Parameter n_steps bound to: 5 - type: integer 
 	Parameter pix_depth bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'out_PE_controller' (35#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/out_PE_controller.vhd:53]
-INFO: [Synth 8-638] synthesizing module 'out_N_controller' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/out_N_controller.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'out_pm_controller' (36#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/out_pm_controller.vhd:57]
+INFO: [Synth 8-638] synthesizing module 'out_PE_controller' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/out_PE_controller.vhd:53]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -654,8 +662,8 @@ INFO: [Synth 8-638] synthesizing module 'out_N_controller' [C:/Users/arthu/mrisc
 	Parameter n_frames bound to: 8 - type: integer 
 	Parameter n_steps bound to: 5 - type: integer 
 	Parameter pix_depth bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'out_N_controller' (36#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/out_N_controller.vhd:53]
-INFO: [Synth 8-638] synthesizing module 'out_S_controller' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/out_S_controller.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'out_PE_controller' (37#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/out_PE_controller.vhd:53]
+INFO: [Synth 8-638] synthesizing module 'out_N_controller' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/out_N_controller.vhd:53]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -663,8 +671,8 @@ INFO: [Synth 8-638] synthesizing module 'out_S_controller' [C:/Users/arthu/mrisc
 	Parameter n_frames bound to: 8 - type: integer 
 	Parameter n_steps bound to: 5 - type: integer 
 	Parameter pix_depth bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'out_S_controller' (37#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/out_S_controller.vhd:53]
-INFO: [Synth 8-638] synthesizing module 'out_E_controller' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/out_E_controller.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'out_N_controller' (38#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/out_N_controller.vhd:53]
+INFO: [Synth 8-638] synthesizing module 'out_S_controller' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/out_S_controller.vhd:53]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -672,8 +680,8 @@ INFO: [Synth 8-638] synthesizing module 'out_E_controller' [C:/Users/arthu/mrisc
 	Parameter n_frames bound to: 8 - type: integer 
 	Parameter n_steps bound to: 5 - type: integer 
 	Parameter pix_depth bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'out_E_controller' (38#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/out_E_controller.vhd:53]
-INFO: [Synth 8-638] synthesizing module 'out_W_controller' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/out_W_controller.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'out_S_controller' (39#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/out_S_controller.vhd:53]
+INFO: [Synth 8-638] synthesizing module 'out_E_controller' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/out_E_controller.vhd:53]
 	Parameter x_init bound to: 0 - type: integer 
 	Parameter y_init bound to: 160 - type: integer 
 	Parameter img_width bound to: 8 - type: integer 
@@ -681,22 +689,31 @@ INFO: [Synth 8-638] synthesizing module 'out_W_controller' [C:/Users/arthu/mrisc
 	Parameter n_frames bound to: 8 - type: integer 
 	Parameter n_steps bound to: 5 - type: integer 
 	Parameter pix_depth bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'out_W_controller' (39#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/out_W_controller.vhd:53]
-WARNING: [Synth 8-3848] Net IN_i_PE_busy in module/entity router_new does not have driver. [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/router_new.vhd:88]
-INFO: [Synth 8-256] done synthesizing module 'router_new' (40#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/router_new.vhd:225]
-INFO: [Synth 8-256] done synthesizing module 'router_wrapper' (41#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/router_wrapper.vhd:104]
-WARNING: [Synth 8-7023] instance 'router_wrapper' of module 'router_wrapper' has 36 connections declared, but only 26 given [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/zcu104.v:529]
-WARNING: [Synth 8-6014] Unused sequential element r_x_tiles_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/zcu104.v:159]
-WARNING: [Synth 8-6014] Unused sequential element r_y_tiles_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/zcu104.v:160]
-WARNING: [Synth 8-6014] Unused sequential element r_x_local_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/zcu104.v:161]
-WARNING: [Synth 8-6014] Unused sequential element r_y_local_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/zcu104.v:162]
-WARNING: [Synth 8-6014] Unused sequential element r_img_width_size_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/zcu104.v:163]
-WARNING: [Synth 8-6014] Unused sequential element r_img_height_size_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/zcu104.v:164]
-WARNING: [Synth 8-6014] Unused sequential element r_subimg_width_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/zcu104.v:165]
-WARNING: [Synth 8-6014] Unused sequential element r_subimg_height_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/zcu104.v:166]
-WARNING: [Synth 8-6014] Unused sequential element reset_cnt_reg was removed.  [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/zcu104.v:206]
-INFO: [Synth 8-6155] done synthesizing module 'zcu104' (42#1) [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/zcu104.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_zcu104_3_1' (43#1) [c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_3_1/synth/design_1_zcu104_3_1.v:58]
+INFO: [Synth 8-256] done synthesizing module 'out_E_controller' (40#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/out_E_controller.vhd:53]
+INFO: [Synth 8-638] synthesizing module 'out_W_controller' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/out_W_controller.vhd:53]
+	Parameter x_init bound to: 0 - type: integer 
+	Parameter y_init bound to: 160 - type: integer 
+	Parameter img_width bound to: 8 - type: integer 
+	Parameter img_height bound to: 8 - type: integer 
+	Parameter n_frames bound to: 8 - type: integer 
+	Parameter n_steps bound to: 5 - type: integer 
+	Parameter pix_depth bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'out_W_controller' (41#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/out_W_controller.vhd:53]
+WARNING: [Synth 8-3848] Net IN_i_PE_busy in module/entity router_new does not have driver. [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/router_new.vhd:88]
+INFO: [Synth 8-256] done synthesizing module 'router_new' (42#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/router_new.vhd:225]
+INFO: [Synth 8-256] done synthesizing module 'router_wrapper' (43#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/router_wrapper.vhd:104]
+WARNING: [Synth 8-7023] instance 'router_wrapper' of module 'router_wrapper' has 36 connections declared, but only 26 given [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/zcu104.v:529]
+WARNING: [Synth 8-6014] Unused sequential element r_x_tiles_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/zcu104.v:159]
+WARNING: [Synth 8-6014] Unused sequential element r_y_tiles_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/zcu104.v:160]
+WARNING: [Synth 8-6014] Unused sequential element r_x_local_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/zcu104.v:161]
+WARNING: [Synth 8-6014] Unused sequential element r_y_local_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/zcu104.v:162]
+WARNING: [Synth 8-6014] Unused sequential element r_img_width_size_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/zcu104.v:163]
+WARNING: [Synth 8-6014] Unused sequential element r_img_height_size_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/zcu104.v:164]
+WARNING: [Synth 8-6014] Unused sequential element r_subimg_width_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/zcu104.v:165]
+WARNING: [Synth 8-6014] Unused sequential element r_subimg_height_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/zcu104.v:166]
+WARNING: [Synth 8-6014] Unused sequential element reset_cnt_reg was removed.  [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/zcu104.v:206]
+INFO: [Synth 8-6155] done synthesizing module 'zcu104' (44#1) [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/zcu104.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_zcu104_3_1' (45#1) [c:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_3_1/synth/design_1_zcu104_3_1.v:58]
 WARNING: [Synth 8-3331] design out_pm_controller has unconnected port input_deadlockPM
 WARNING: [Synth 8-3331] design W_dec has unconnected port W_valid_EB_DEC
 WARNING: [Synth 8-3331] design E_dec has unconnected port E_valid_EB_DEC
@@ -730,8 +747,6 @@ WARNING: [Synth 8-3331] design rams_tdp_rf_rf_rf has unconnected port addra[19]
 WARNING: [Synth 8-3331] design rams_tdp_rf_rf_rf has unconnected port addra[18]
 WARNING: [Synth 8-3331] design rams_tdp_rf_rf_rf has unconnected port addra[17]
 WARNING: [Synth 8-3331] design rams_tdp_rf_rf_rf has unconnected port addra[16]
-WARNING: [Synth 8-3331] design rams_tdp_rf_rf_rf has unconnected port addra[15]
-WARNING: [Synth 8-3331] design rams_tdp_rf_rf_rf has unconnected port addra[14]
 WARNING: [Synth 8-3331] design rams_tdp_rf_rf_rf has unconnected port addrb[31]
 WARNING: [Synth 8-3331] design rams_tdp_rf_rf_rf has unconnected port addrb[30]
 WARNING: [Synth 8-3331] design rams_tdp_rf_rf_rf has unconnected port addrb[29]
@@ -748,8 +763,6 @@ WARNING: [Synth 8-3331] design rams_tdp_rf_rf_rf has unconnected port addrb[19]
 WARNING: [Synth 8-3331] design rams_tdp_rf_rf_rf has unconnected port addrb[18]
 WARNING: [Synth 8-3331] design rams_tdp_rf_rf_rf has unconnected port addrb[17]
 WARNING: [Synth 8-3331] design rams_tdp_rf_rf_rf has unconnected port addrb[16]
-WARNING: [Synth 8-3331] design rams_tdp_rf_rf_rf has unconnected port addrb[15]
-WARNING: [Synth 8-3331] design rams_tdp_rf_rf_rf has unconnected port addrb[14]
 WARNING: [Synth 8-3331] design pm_wrapper has unconnected port input_data[63]
 WARNING: [Synth 8-3331] design pm_wrapper has unconnected port input_data[62]
 WARNING: [Synth 8-3331] design pm_wrapper has unconnected port input_data[61]
@@ -793,13 +806,17 @@ WARNING: [Synth 8-3331] design pm_wrapper has unconnected port input_riscv_data[
 WARNING: [Synth 8-3331] design pm_wrapper has unconnected port input_riscv_data[41]
 WARNING: [Synth 8-3331] design pm_wrapper has unconnected port input_riscv_data[40]
 WARNING: [Synth 8-3331] design pm_wrapper has unconnected port input_riscv_data[31]
-WARNING: [Synth 8-3331] design pm_wrapper has unconnected port input_riscv_data[14]
-WARNING: [Synth 8-3331] design pm_wrapper has unconnected port input_riscv_data[13]
-WARNING: [Synth 8-3331] design pm_wrapper has unconnected port input_riscv_data[12]
-WARNING: [Synth 8-3331] design pm_wrapper has unconnected port input_riscv_data[11]
+WARNING: [Synth 8-3331] design pm_wrapper has unconnected port input_riscv_data[0]
+WARNING: [Synth 8-3331] design ram has unconnected port addrA[13]
+WARNING: [Synth 8-3331] design ram has unconnected port addrB[13]
+WARNING: [Synth 8-3331] design s_bramconfig has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design s_bramconfig has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design s_bramconfig has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design s_bramconfig has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design s_bramconfig has unconnected port S_AXI_ARPROT[1]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1588.520 ; gain = 214.844
+Finished RTL Elaboration : Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 1662.176 ; gain = 288.777
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -812,10 +829,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 1611.398 ; gain = 237.723
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 1684.098 ; gain = 310.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 1611.398 ; gain = 237.723
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 1684.098 ; gain = 310.699
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -823,15 +840,15 @@ Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1685.328 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1716.938 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1716.555 ; gain = 31.227
+Constraint Validation Runtime : Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1749.180 ; gain = 32.242
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:52 ; elapsed = 00:00:59 . Memory (MB): peak = 1716.555 ; gain = 342.879
+Finished Constraint Validation : Time (s): cpu = 00:00:45 ; elapsed = 00:00:58 . Memory (MB): peak = 1749.180 ; gain = 375.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -839,21 +856,21 @@ Start Loading Part and Timing Information
 Loading part: xczu7ev-ffvc1156-2-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:52 ; elapsed = 00:00:59 . Memory (MB): peak = 1716.555 ; gain = 342.879
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:45 ; elapsed = 00:00:58 . Memory (MB): peak = 1749.180 ; gain = 375.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:52 ; elapsed = 00:00:59 . Memory (MB): peak = 1716.555 ; gain = 342.879
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:45 ; elapsed = 00:00:58 . Memory (MB): peak = 1749.180 ; gain = 375.781
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4471] merging register 'instr_waitirq_reg' into 'instr_retirq_reg' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:873]
-INFO: [Synth 8-4471] merging register 'compressed_instr_reg' into 'instr_retirq_reg' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:893]
-INFO: [Synth 8-4471] merging register 'instr_setq_reg' into 'instr_getq_reg' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1091]
-INFO: [Synth 8-4471] merging register 'instr_maskirq_reg' into 'instr_getq_reg' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1092]
-INFO: [Synth 8-4471] merging register 'instr_timer_reg' into 'instr_getq_reg' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1093]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v:1238]
-INFO: [Synth 8-4471] merging register 'web_reg' into 'enb_reg' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/pm_wrapper.vhd:309]
+INFO: [Synth 8-4471] merging register 'instr_waitirq_reg' into 'instr_retirq_reg' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:873]
+INFO: [Synth 8-4471] merging register 'compressed_instr_reg' into 'instr_retirq_reg' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:893]
+INFO: [Synth 8-4471] merging register 'instr_setq_reg' into 'instr_getq_reg' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1091]
+INFO: [Synth 8-4471] merging register 'instr_maskirq_reg' into 'instr_getq_reg' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1092]
+INFO: [Synth 8-4471] merging register 'instr_timer_reg' into 'instr_getq_reg' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1093]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:1238]
+INFO: [Synth 8-4471] merging register 'web_reg' into 'enb_reg' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/pm_wrapper.vhd:309]
 INFO: [Synth 8-802] inferred FSM for state register 'mode_router_reg' in module 'pm_wrapper'
 INFO: [Synth 8-802] inferred FSM for state register 'mode_riscv_reg' in module 'pm_wrapper'
 INFO: [Synth 8-802] inferred FSM for state register 'contador_two_reg' in module 'cf'
@@ -881,8 +898,9 @@ INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 2 and width 8
 INFO: [Synth 8-5779] Default cascade height of 2 will be used for BRAM '"ram:/ram_block_reg"'.
 INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 2 and width 8 for RAM "ram:/ram_block_reg"
 INFO: [Synth 8-3971] The signal "ram:/ram_block_reg" was recognized as a true dual port RAM template.
-INFO: [Synth 8-5779] Default cascade height of 4 will be used for BRAM '"rams_tdp_rf_rf_rf:/RAM_reg"'.
-INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 4 and width 8 for RAM "rams_tdp_rf_rf_rf:/RAM_reg"
+INFO: [Synth 8-5779] Default cascade height of 8 will be used for BRAM '"rams_tdp_rf_rf_rf:/RAM_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "rams_tdp_rf_rf_rf:/RAM_reg"
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "rams_tdp_rf_rf_rf:/RAM_reg"
 INFO: [Synth 8-3971] The signal "rams_tdp_rf_rf_rf:/RAM_reg" was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -994,7 +1012,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'mode_reg' using encoding '
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'mode_reg' using encoding 'sequential' in module 'out_W_controller'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:08 ; elapsed = 00:01:16 . Memory (MB): peak = 1716.555 ; gain = 342.879
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:56 ; elapsed = 00:01:13 . Memory (MB): peak = 1749.180 ; gain = 375.781
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1007,38 +1025,44 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 10    
+	   2 Input     63 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 11    
 	   3 Input     32 Bit       Adders := 1     
 	   2 Input      5 Bit       Adders := 26    
-	   2 Input      4 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 3     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
-	               64 Bit    Registers := 2     
+	               64 Bit    Registers := 3     
+	               63 Bit    Registers := 1     
 	               36 Bit    Registers := 1     
-	               32 Bit    Registers := 27    
+	               33 Bit    Registers := 2     
+	               32 Bit    Registers := 31    
 	               20 Bit    Registers := 12    
 	               16 Bit    Registers := 145   
 	               10 Bit    Registers := 1     
 	                8 Bit    Registers := 731   
 	                6 Bit    Registers := 6     
 	                5 Bit    Registers := 163   
-	                4 Bit    Registers := 5     
+	                4 Bit    Registers := 7     
 	                2 Bit    Registers := 4     
-	                1 Bit    Registers := 270   
+	                1 Bit    Registers := 279   
 +---Multipliers : 
-	                 7x32  Multipliers := 2     
+	                33x33  Multipliers := 1     
+	                10x32  Multipliers := 2     
 +---RAMs : 
+	             500K Bit         RAMs := 1     
 	             203K Bit         RAMs := 1     
-	             100K Bit         RAMs := 1     
 	             1024 Bit         RAMs := 1     
 +---Muxes : 
 	  23 Input     64 Bit        Muxes := 1     
 	   2 Input     64 Bit        Muxes := 2     
 	  25 Input     64 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 51    
-	   8 Input     32 Bit        Muxes := 3     
-	   4 Input     32 Bit        Muxes := 11    
+	   2 Input     63 Bit        Muxes := 2     
+	   2 Input     33 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 57    
+	   4 Input     32 Bit        Muxes := 12    
+	   7 Input     32 Bit        Muxes := 3     
 	   9 Input     32 Bit        Muxes := 2     
 	  17 Input     32 Bit        Muxes := 1     
 	   2 Input     20 Bit        Muxes := 66    
@@ -1046,12 +1070,11 @@ Detailed RTL Component Info :
 	   3 Input     16 Bit        Muxes := 1     
 	   2 Input     10 Bit        Muxes := 3     
 	   4 Input      8 Bit        Muxes := 2     
-	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 4     
+	   7 Input      8 Bit        Muxes := 1     
 	   9 Input      8 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 3     
 	   3 Input      8 Bit        Muxes := 5     
 	   2 Input      6 Bit        Muxes := 16    
-	   8 Input      5 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 13    
 	   9 Input      5 Bit        Muxes := 2     
 	   3 Input      5 Bit        Muxes := 1     
@@ -1065,13 +1088,12 @@ Detailed RTL Component Info :
 	   6 Input      2 Bit        Muxes := 1     
 	   9 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 791   
+	   4 Input      1 Bit        Muxes := 24    
 	   9 Input      1 Bit        Muxes := 26    
-	   2 Input      1 Bit        Muxes := 778   
-	   4 Input      1 Bit        Muxes := 13    
-	   8 Input      1 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 47    
 	   3 Input      1 Bit        Muxes := 19    
 	   5 Input      1 Bit        Muxes := 30    
-	   7 Input      1 Bit        Muxes := 42    
 	   6 Input      1 Bit        Muxes := 2     
 	  23 Input      1 Bit        Muxes := 1     
 	  18 Input      1 Bit        Muxes := 1     
@@ -1082,12 +1104,41 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
+Module picorv32_pcpi_fast_mul 
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 1     
+	               33 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Multipliers : 
+	                33x33  Multipliers := 1     
++---Muxes : 
+	   2 Input     33 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 4     
+Module picorv32_pcpi_div 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     63 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 3     
++---Registers : 
+	               63 Bit    Registers := 1     
+	               32 Bit    Registers := 4     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input     63 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 4     
 Module picorv32 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 4     
 	   3 Input     32 Bit       Adders := 1     
 	   2 Input      5 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
@@ -1095,22 +1146,21 @@ Detailed RTL Component Info :
 	               32 Bit    Registers := 13    
 	                8 Bit    Registers := 1     
 	                5 Bit    Registers := 6     
-	                4 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 77    
+	                1 Bit    Registers := 76    
 +---RAMs : 
 	             1024 Bit         RAMs := 1     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 24    
-	   8 Input     32 Bit        Muxes := 3     
-	   4 Input     32 Bit        Muxes := 7     
+	   2 Input     32 Bit        Muxes := 25    
+	   4 Input     32 Bit        Muxes := 8     
+	   7 Input     32 Bit        Muxes := 3     
 	   9 Input     32 Bit        Muxes := 2     
 	   2 Input     16 Bit        Muxes := 1     
 	   4 Input      8 Bit        Muxes := 2     
-	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 2     
+	   7 Input      8 Bit        Muxes := 1     
 	   9 Input      8 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 1     
-	   8 Input      5 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 1     
 	   9 Input      5 Bit        Muxes := 2     
 	   3 Input      4 Bit        Muxes := 1     
@@ -1121,9 +1171,9 @@ Detailed RTL Component Info :
 	   6 Input      2 Bit        Muxes := 1     
 	   9 Input      2 Bit        Muxes := 1     
 	   9 Input      1 Bit        Muxes := 26    
-	   2 Input      1 Bit        Muxes := 20    
-	   4 Input      1 Bit        Muxes := 9     
-	   8 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 21    
+	   4 Input      1 Bit        Muxes := 12    
+	   7 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 2     
 Module simpleuart 
 Detailed RTL Component Info : 
@@ -1177,11 +1227,11 @@ Detailed RTL Component Info :
 	                8 Bit    Registers := 2     
 	                1 Bit    Registers := 2     
 +---RAMs : 
-	             100K Bit         RAMs := 1     
+	             500K Bit         RAMs := 1     
 Module pm_wrapper 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 4     
+	   2 Input     32 Bit       Adders := 2     
 +---Registers : 
 	               32 Bit    Registers := 2     
 	               16 Bit    Registers := 1     
@@ -1189,7 +1239,7 @@ Detailed RTL Component Info :
 	                5 Bit    Registers := 1     
 	                1 Bit    Registers := 8     
 +---Multipliers : 
-	                 7x32  Multipliers := 2     
+	                10x32  Multipliers := 2     
 +---Muxes : 
 	   3 Input     16 Bit        Muxes := 1     
 	   3 Input      8 Bit        Muxes := 5     
@@ -1508,39 +1558,55 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v:2369]
+DSP Report: Generating DSP rd0, operation Mode is: A2*B2.
+DSP Report: register rs1_reg is absorbed into DSP rd0.
+DSP Report: register rd0 is absorbed into DSP rd0.
+DSP Report: operator rd0 is absorbed into DSP rd0.
+DSP Report: operator rd0 is absorbed into DSP rd0.
+DSP Report: Generating DSP rd_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register rs2_reg is absorbed into DSP rd_reg.
+DSP Report: register rs1_reg is absorbed into DSP rd_reg.
+DSP Report: register rd_reg is absorbed into DSP rd_reg.
+DSP Report: operator rd0 is absorbed into DSP rd_reg.
+DSP Report: operator rd0 is absorbed into DSP rd_reg.
+DSP Report: Generating DSP rd0, operation Mode is: A2*B2.
+DSP Report: register rd0 is absorbed into DSP rd0.
+DSP Report: register rd0 is absorbed into DSP rd0.
+DSP Report: operator rd0 is absorbed into DSP rd0.
+DSP Report: operator rd0 is absorbed into DSP rd0.
+DSP Report: Generating DSP rd_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register rs2_reg is absorbed into DSP rd_reg.
+DSP Report: register rd_reg is absorbed into DSP rd_reg.
+DSP Report: register rd_reg is absorbed into DSP rd_reg.
+DSP Report: operator rd0 is absorbed into DSP rd_reg.
+DSP Report: operator rd0 is absorbed into DSP rd_reg.
 INFO: [Synth 8-6904] The RAM "inst/soc/cpu/cpuregs_reg" of size (depth=32 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
-WARNING: [Synth 8-3936] Found unconnected internal register 'addra_reg' and it is trimmed from '32' to '14' bits. [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/pm_wrapper.vhd:310]
-WARNING: [Synth 8-3936] Found unconnected internal register 'addrb_reg' and it is trimmed from '32' to '14' bits. [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/pm_wrapper.vhd:311]
-DSP Report: Generating DSP addra_reg, operation Mode is: C+A*(B:0x50).
-DSP Report: register addra_reg is absorbed into DSP addra_reg.
-DSP Report: operator xysf_1 is absorbed into DSP addra_reg.
-DSP Report: operator xysf_10 is absorbed into DSP addra_reg.
-DSP Report: Generating DSP addrb_reg, operation Mode is: C+A*(B:0x50).
-DSP Report: register addrb_reg is absorbed into DSP addrb_reg.
-DSP Report: operator xysf is absorbed into DSP addrb_reg.
-DSP Report: operator xysf0 is absorbed into DSP addrb_reg.
-INFO: [Synth 8-4471] merging register 'PM_stall_in_DEC_reg' into 'PM_stall_in_EB_reg' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:551]
-INFO: [Synth 8-4471] merging register 'PE_stall_in_DEC_reg' into 'PE_stall_in_EB_reg' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:553]
-INFO: [Synth 8-4471] merging register 'N_stall_in_DEC_reg' into 'N_stall_in_EB_reg' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:555]
-INFO: [Synth 8-4471] merging register 'S_stall_in_DEC_reg' into 'S_stall_in_EB_reg' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:557]
-INFO: [Synth 8-4471] merging register 'E_stall_in_DEC_reg' into 'E_stall_in_EB_reg' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:559]
-INFO: [Synth 8-4471] merging register 'W_stall_in_DEC_reg' into 'W_stall_in_EB_reg' [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:561]
-INFO: [Synth 8-6904] The RAM "\inst/soc /cpu/cpuregs_reg" of size (depth=32 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+WARNING: [Synth 8-3936] Found unconnected internal register 'addra_reg' and it is trimmed from '32' to '16' bits. [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/pm_wrapper.vhd:310]
+WARNING: [Synth 8-3936] Found unconnected internal register 'addrb_reg' and it is trimmed from '32' to '16' bits. [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/pm_wrapper.vhd:311]
+INFO: [Synth 8-4471] merging register 'PM_stall_in_DEC_reg' into 'PM_stall_in_EB_reg' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:551]
+INFO: [Synth 8-4471] merging register 'PE_stall_in_DEC_reg' into 'PE_stall_in_EB_reg' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:553]
+INFO: [Synth 8-4471] merging register 'N_stall_in_DEC_reg' into 'N_stall_in_EB_reg' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:555]
+INFO: [Synth 8-4471] merging register 'S_stall_in_DEC_reg' into 'S_stall_in_EB_reg' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:557]
+INFO: [Synth 8-4471] merging register 'E_stall_in_DEC_reg' into 'E_stall_in_EB_reg' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:559]
+INFO: [Synth 8-4471] merging register 'W_stall_in_DEC_reg' into 'W_stall_in_EB_reg' [C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd:561]
+INFO: [Synth 8-6904] The RAM "inst/soc/cpu/cpuregs_reg" of size (depth=32 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
 WARNING: [Synth 8-6841] Block RAM (bram/s_bramconfig_inst/tdraaa/ram_block_reg) originally specified as a Byte Wide Write Enable RAM cannot take advantage of ByteWide feature and is implemented with single write enable per RAM due to following reason.
 (address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired.)
-INFO: [Synth 8-5779] Default cascade height of 2 will be used for BRAM '"\inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg "'.
-INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 2 and width 8 for RAM "\inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg "
-INFO: [Synth 8-5779] Default cascade height of 2 will be used for BRAM '"\inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg "'.
-INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 2 and width 8 for RAM "\inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg "
-INFO: [Synth 8-5779] Default cascade height of 2 will be used for BRAM '"\inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg "'.
-INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 2 and width 8 for RAM "\inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg "
-INFO: [Synth 8-5779] Default cascade height of 2 will be used for BRAM '"\inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg "'.
-INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 2 and width 8 for RAM "\inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg "
-INFO: [Synth 8-3971] The signal "\inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg " was recognized as a true dual port RAM template.
-WARNING: [Synth 8-6014] Unused sequential element inst/pm_wrapper/inst_pm/RAM_reg was removed. 
-INFO: [Synth 8-5779] Default cascade height of 4 will be used for BRAM '"design_1_zcu104_3_1/inst/pm_wrapper/inst_pm/RAM_reg"'.
-INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 4 and width 8 for RAM "design_1_zcu104_3_1/inst/pm_wrapper/inst_pm/RAM_reg"
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\inst/soc /\simpleuart/send_pattern_reg[9] )
+INFO: [Synth 8-5779] Default cascade height of 2 will be used for BRAM '"inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 2 and width 8 for RAM "inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg"
+INFO: [Synth 8-5779] Default cascade height of 2 will be used for BRAM '"inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 2 and width 8 for RAM "inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg"
+INFO: [Synth 8-5779] Default cascade height of 2 will be used for BRAM '"inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 2 and width 8 for RAM "inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg"
+INFO: [Synth 8-5779] Default cascade height of 2 will be used for BRAM '"inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 2 and width 8 for RAM "inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg"
+INFO: [Synth 8-3971] The signal "inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg" was recognized as a true dual port RAM template.
+WARNING: [Synth 8-6014] Unused sequential element inst_pm/RAM_reg was removed. 
+INFO: [Synth 8-5779] Default cascade height of 8 will be used for BRAM '"inst/pm_wrapper/inst_pm/RAM_reg"'.
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "inst/pm_wrapper/inst_pm/RAM_reg"
+INFO: [Synth 8-5555] Implemented Block Ram Cascade chain of height 8 and width 8 for RAM "inst/pm_wrapper/inst_pm/RAM_reg"
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/soc/\simpleuart/send_pattern_reg[9] )
 INFO: [Synth 8-3886] merging instance 'inst/pm_wrapper/signal_i_PM_pixel_reg[8]' (FDCE) to 'inst/pm_wrapper/signal_i_PM_pixel_reg[9]'
 INFO: [Synth 8-3886] merging instance 'inst/pm_wrapper/signal_i_PM_pixel_reg[9]' (FDCE) to 'inst/pm_wrapper/signal_i_PM_pixel_reg[10]'
 INFO: [Synth 8-3886] merging instance 'inst/pm_wrapper/signal_i_PM_pixel_reg[10]' (FDCE) to 'inst/pm_wrapper/signal_i_PM_pixel_reg[11]'
@@ -1548,7 +1614,7 @@ INFO: [Synth 8-3886] merging instance 'inst/pm_wrapper/signal_i_PM_pixel_reg[11]
 INFO: [Synth 8-3886] merging instance 'inst/pm_wrapper/signal_i_PM_pixel_reg[12]' (FDCE) to 'inst/pm_wrapper/signal_i_PM_pixel_reg[13]'
 INFO: [Synth 8-3886] merging instance 'inst/pm_wrapper/signal_i_PM_pixel_reg[13]' (FDCE) to 'inst/pm_wrapper/signal_i_PM_pixel_reg[14]'
 INFO: [Synth 8-3886] merging instance 'inst/pm_wrapper/signal_i_PM_pixel_reg[14]' (FDCE) to 'inst/pm_wrapper/signal_i_PM_pixel_reg[15]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/pm_wrapper/signal_i_PM_pixel_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/pm_wrapper/\signal_i_PM_pixel_reg[15] )
 INFO: [Synth 8-3886] merging instance 'inst/soc/cpu/decoded_rs2_reg[0]' (FDE) to 'inst/soc/cpu/decoded_imm_j_reg[11]'
 INFO: [Synth 8-3886] merging instance 'inst/soc/cpu/decoded_rs2_reg[1]' (FDE) to 'inst/soc/cpu/decoded_imm_j_reg[1]'
 INFO: [Synth 8-3886] merging instance 'inst/soc/cpu/decoded_rs2_reg[2]' (FDE) to 'inst/soc/cpu/decoded_imm_j_reg[2]'
@@ -1570,27 +1636,91 @@ INFO: [Synth 8-3886] merging instance 'inst/soc/cpu/decoded_imm_j_reg[21]' (FDE)
 INFO: [Synth 8-3886] merging instance 'inst/soc/cpu/decoded_imm_j_reg[22]' (FDE) to 'inst/soc/cpu/decoded_imm_j_reg[23]'
 INFO: [Synth 8-3886] merging instance 'inst/soc/cpu/decoded_imm_j_reg[23]' (FDE) to 'inst/soc/cpu/decoded_imm_j_reg[24]'
 INFO: [Synth 8-3886] merging instance 'inst/soc/cpu/decoded_imm_j_reg[24]' (FDE) to 'inst/soc/cpu/decoded_imm_j_reg[25]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/soc /cpu/\decoded_imm_j_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/soc /cpu/do_waitirq_reg)
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/soc /cpu/instr_getq_reg)
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/soc /cpu/instr_retirq_reg)
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/soc /cpu/\cpu_state_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/router_wrapper/wrp_router /E_WRAPPER/\Inst_dec/E_out_direction_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/router_wrapper/wrp_router /PM_WRAPPER/\Inst_dec/PM_out_direction_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/router_wrapper/wrp_router /PE_WRAPPER/\Inst_dec/PE_out_direction_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/router_wrapper/wrp_router /N_WRAPPER/\Inst_dec/N_out_direction_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/router_wrapper/wrp_router /S_WRAPPER/\Inst_dec/S_out_direction_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/router_wrapper/wrp_router /W_WRAPPER/\Inst_dec/W_out_direction_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/soc/cpu/\decoded_imm_j_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/soc/cpu/do_waitirq_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/soc/cpu/instr_getq_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/soc/cpu/instr_retirq_reg)
+INFO: [Synth 8-3886] merging instance 'inst/soc/cpu/cpu_state_reg[4]' (FDRE) to 'inst/soc/cpu/cpu_state_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/soc/cpu/\cpu_state_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\router_wrapper/wrp_router /E_WRAPPER/\Inst_dec/E_out_direction_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\router_wrapper/wrp_router /PM_WRAPPER/\Inst_dec/PM_out_direction_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\router_wrapper/wrp_router /PE_WRAPPER/\Inst_dec/PE_out_direction_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\router_wrapper/wrp_router /N_WRAPPER/\Inst_dec/N_out_direction_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\router_wrapper/wrp_router /S_WRAPPER/\Inst_dec/S_out_direction_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\router_wrapper/wrp_router /W_WRAPPER/\Inst_dec/W_out_direction_reg[0] )
 INFO: [Synth 8-3886] merging instance 'inst/soc/cpu/mem_addr_reg[1]' (FDE) to 'inst/soc/cpu/mem_addr_reg[0]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/soc /cpu/\mem_addr_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/soc/cpu/\mem_addr_reg[0] )
 INFO: [Synth 8-3886] merging instance 'inst/soc/bram/s_bramconfig_inst/axi_rresp_reg[0]' (FDRE) to 'inst/soc/bram/s_bramconfig_inst/axi_rresp_reg[1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/soc /\bram/s_bramconfig_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/soc/\bram/s_bramconfig_inst/axi_rresp_reg[1] )
 INFO: [Synth 8-3886] merging instance 'inst/soc/bram/s_bramconfig_inst/axi_bresp_reg[0]' (FDRE) to 'inst/soc/bram/s_bramconfig_inst/axi_bresp_reg[1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/soc /\bram/s_bramconfig_inst/axi_bresp_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/soc /cpu/latched_compr_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/soc/\bram/s_bramconfig_inst/axi_bresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/soc/cpu/latched_compr_reg)
+WARNING: [Synth 8-3332] Sequential element (rd_reg[47]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[46]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[45]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[44]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[43]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[42]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[41]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[40]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[39]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[38]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[37]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[36]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[35]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[34]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[33]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[32]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[31]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[30]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[29]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[28]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[27]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[26]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[25]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[24]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[23]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[22]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[21]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[20]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[19]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[18]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[17]) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[47]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[46]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[45]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[44]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[43]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[42]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[41]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[40]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[39]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[38]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[37]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[36]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[35]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[34]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[33]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[32]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[31]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[30]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[29]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[28]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[27]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[26]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[25]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[24]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[23]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[22]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[21]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[20]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[19]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[18]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (rd_reg[17]__0) is unused and will be removed from module picorv32_pcpi_fast_mul.
+WARNING: [Synth 8-3332] Sequential element (inst_pm/RAM_reg_mux_sel_reg_1) is unused and will be removed from module pm_wrapper.
 INFO: [Synth 8-3886] merging instance 'inst/soc/cpu/reg_next_pc_reg[0]' (FDRE) to 'inst/soc/cpu/reg_pc_reg[0]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:49 ; elapsed = 00:04:03 . Memory (MB): peak = 1769.996 ; gain = 396.320
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:20 ; elapsed = 00:04:10 . Memory (MB): peak = 1805.602 ; gain = 432.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1601,27 +1731,29 @@ Block RAM: Preliminary Mapping  Report (see note below)
 |Module Name        | RTL Object    | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
 +-------------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
 |ram:               | ram_block_reg | 8 K x 32(READ_FIRST)   | W | R | 8 K x 32(READ_FIRST)   | W | R | Port A and B     | 0      | 8      | 2,2,2,2         | 
-|rams_tdp_rf_rf_rf: | RAM_reg       | 16 K x 8(READ_FIRST)   | W | R | 16 K x 8(READ_FIRST)   | W | R | Port A and B     | 0      | 4      | 4               | 
+|rams_tdp_rf_rf_rf: | RAM_reg       | 64 K x 8(READ_FIRST)   | W | R | 64 K x 8(READ_FIRST)   | W | R | Port A and B     | 0      | 16     | 8,8             | 
 +-------------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
 
 Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
 
 Distributed RAM: Preliminary Mapping  Report (see note below)
-+---------------+-------------+-----------+----------------------+----------------+
-|Module Name    | RTL Object  | Inference | Size (Depth x Width) | Primitives     | 
-+---------------+-------------+-----------+----------------------+----------------+
-|\inst/soc /cpu | cpuregs_reg | Implied   | 32 x 32              | RAM32M16 x 6   | 
-+---------------+-------------+-----------+----------------------+----------------+
++-------------+-------------+-----------+----------------------+----------------+
+|Module Name  | RTL Object  | Inference | Size (Depth x Width) | Primitives     | 
++-------------+-------------+-----------+----------------------+----------------+
+|inst/soc/cpu | cpuregs_reg | Implied   | 32 x 32              | RAM32M16 x 6   | 
++-------------+-------------+-----------+----------------------+----------------+
 
 Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 
 DSP: Preliminary Mapping  Report (see note below)
-+------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name | DSP Mapping  | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|pm_wrapper  | C+A*(B:0x50) | 14     | 7      | 8      | -      | 14     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
-|pm_wrapper  | C+A*(B:0x50) | 14     | 7      | 8      | -      | 14     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
-+------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++-----------------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name            | DSP Mapping      | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|picorv32_pcpi_fast_mul | A2*B2            | 18     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|picorv32_pcpi_fast_mul | (PCIN>>17)+A2*B2 | 16     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|picorv32_pcpi_fast_mul | A2*B2            | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|picorv32_pcpi_fast_mul | (PCIN>>17)+A2*B2 | 18     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
++-----------------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -1637,13 +1769,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:15 ; elapsed = 00:04:37 . Memory (MB): peak = 2202.559 ; gain = 828.883
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:42 ; elapsed = 00:04:45 . Memory (MB): peak = 2211.090 ; gain = 837.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:04:21 ; elapsed = 00:04:43 . Memory (MB): peak = 2203.980 ; gain = 830.305
+Finished Timing Optimization : Time (s): cpu = 00:03:49 ; elapsed = 00:04:52 . Memory (MB): peak = 2227.500 ; gain = 854.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1654,16 +1786,16 @@ Block RAM: Final Mapping  Report
 |Module Name        | RTL Object    | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
 +-------------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
 |ram:               | ram_block_reg | 8 K x 32(READ_FIRST)   | W | R | 8 K x 32(READ_FIRST)   | W | R | Port A and B     | 0      | 8      | 2,2,2,2         | 
-|rams_tdp_rf_rf_rf: | RAM_reg       | 16 K x 8(READ_FIRST)   | W | R | 16 K x 8(READ_FIRST)   | W | R | Port A and B     | 0      | 4      | 4               | 
+|rams_tdp_rf_rf_rf: | RAM_reg       | 64 K x 8(READ_FIRST)   | W | R | 64 K x 8(READ_FIRST)   | W | R | Port A and B     | 0      | 16     | 8,8             | 
 +-------------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
 
 
 Distributed RAM: Final Mapping  Report
-+---------------+-------------+-----------+----------------------+----------------+
-|Module Name    | RTL Object  | Inference | Size (Depth x Width) | Primitives     | 
-+---------------+-------------+-----------+----------------------+----------------+
-|\inst/soc /cpu | cpuregs_reg | Implied   | 32 x 32              | RAM32M16 x 6   | 
-+---------------+-------------+-----------+----------------------+----------------+
++-------------+-------------+-----------+----------------------+----------------+
+|Module Name  | RTL Object  | Inference | Size (Depth x Width) | Primitives     | 
++-------------+-------------+-----------+----------------------+----------------+
+|inst/soc/cpu | cpuregs_reg | Implied   | 32 x 32              | RAM32M16 x 6   | 
++-------------+-------------+-----------+----------------------+----------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
@@ -1677,8 +1809,6 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/out_pm_controller.vhd:71]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/out_pm_controller.vhd:70]
 INFO: [Synth 8-6837] The timing for the instance inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg_0_bram_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg_0_bram_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg_1_bram_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
@@ -1687,9 +1817,10 @@ INFO: [Synth 8-6837] The timing for the instance inst/soc/bram/s_bramconfig_inst
 INFO: [Synth 8-6837] The timing for the instance inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg_2_bram_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg_3_bram_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance inst/soc/bram/s_bramconfig_inst/tdraaa/ram_block_reg_3_bram_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance inst/pm_wrapper/inst_pm/RAM_reg_bram_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/pm_wrapper/inst_pm/RAM_reg_bram_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/pm_wrapper/inst_pm/RAM_reg_bram_17 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:04:31 ; elapsed = 00:04:53 . Memory (MB): peak = 2316.445 ; gain = 942.770
+Finished Technology Mapping : Time (s): cpu = 00:03:59 ; elapsed = 00:05:05 . Memory (MB): peak = 2336.863 ; gain = 963.465
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1713,7 +1844,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:36 ; elapsed = 00:04:59 . Memory (MB): peak = 2317.859 ; gain = 944.184
+Finished IO Insertion : Time (s): cpu = 00:04:03 ; elapsed = 00:05:11 . Memory (MB): peak = 2336.863 ; gain = 963.465
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1726,7 +1857,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:36 ; elapsed = 00:04:59 . Memory (MB): peak = 2317.859 ; gain = 944.184
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:04 ; elapsed = 00:05:11 . Memory (MB): peak = 2336.863 ; gain = 963.465
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1738,25 +1869,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:39 ; elapsed = 00:05:02 . Memory (MB): peak = 2317.859 ; gain = 944.184
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:06 ; elapsed = 00:05:15 . Memory (MB): peak = 2336.863 ; gain = 963.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:39 ; elapsed = 00:05:02 . Memory (MB): peak = 2317.859 ; gain = 944.184
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:06 ; elapsed = 00:05:15 . Memory (MB): peak = 2336.863 ; gain = 963.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:39 ; elapsed = 00:05:02 . Memory (MB): peak = 2317.859 ; gain = 944.184
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:06 ; elapsed = 00:05:15 . Memory (MB): peak = 2336.863 ; gain = 963.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:39 ; elapsed = 00:05:02 . Memory (MB): peak = 2317.859 ; gain = 944.184
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:06 ; elapsed = 00:05:16 . Memory (MB): peak = 2336.863 ; gain = 963.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1772,121 +1903,140 @@ Report Cell Usage:
 +------+----------------+------+
 |      |Cell            |Count |
 +------+----------------+------+
-|1     |CARRY8          |    62|
-|2     |DSP_ALU         |     2|
-|3     |DSP_A_B_DATA    |     2|
-|4     |DSP_C_DATA      |     2|
-|5     |DSP_MULTIPLIER  |     2|
-|6     |DSP_M_DATA      |     2|
-|7     |DSP_OUTPUT      |     2|
-|8     |DSP_PREADD      |     2|
-|9     |DSP_PREADD_DATA |     2|
-|10    |LUT1            |    17|
-|11    |LUT2            |   433|
-|12    |LUT3            |   337|
-|13    |LUT4            |   671|
-|14    |LUT5            |   783|
-|15    |LUT6            |  2991|
-|16    |MUXF7           |   754|
-|17    |MUXF8           |     4|
-|18    |RAM32M16        |     6|
-|19    |RAMB36E2        |     1|
-|20    |RAMB36E2_1      |     5|
-|21    |RAMB36E2_2      |     1|
-|22    |RAMB36E2_3      |     1|
-|23    |RAMB36E2_4      |     1|
-|24    |RAMB36E2_5      |     1|
-|25    |RAMB36E2_6      |     2|
-|26    |FDCE            |  8730|
-|27    |FDPE            |     1|
-|28    |FDRE            |  1386|
-|29    |FDSE            |    24|
+|1     |CARRY8          |   102|
+|2     |DSP_ALU         |     4|
+|3     |DSP_A_B_DATA    |     1|
+|4     |DSP_A_B_DATA_1  |     2|
+|5     |DSP_A_B_DATA_2  |     1|
+|6     |DSP_C_DATA      |     4|
+|7     |DSP_MULTIPLIER  |     4|
+|8     |DSP_M_DATA      |     4|
+|9     |DSP_OUTPUT      |     2|
+|10    |DSP_OUTPUT_1    |     2|
+|11    |DSP_PREADD      |     4|
+|12    |DSP_PREADD_DATA |     4|
+|13    |LUT1            |   146|
+|14    |LUT2            |   562|
+|15    |LUT3            |   482|
+|16    |LUT4            |   750|
+|17    |LUT5            |   910|
+|18    |LUT6            |  3292|
+|19    |MUXF7           |   754|
+|20    |MUXF8           |     4|
+|21    |RAM32M16        |     6|
+|22    |RAMB36E2        |     1|
+|23    |RAMB36E2_1      |     6|
+|24    |RAMB36E2_2      |     1|
+|25    |RAMB36E2_3      |     1|
+|26    |RAMB36E2_4      |     2|
+|27    |RAMB36E2_5      |     1|
+|28    |RAMB36E2_6      |    12|
+|29    |FDCE            |  8730|
+|30    |FDPE            |     1|
+|31    |FDRE            |  1668|
+|32    |FDSE            |    29|
 +------+----------------+------+
 
 Report Instance Areas: 
-+------+-------------------------------+--------------------------------------+------+
-|      |Instance                       |Module                                |Cells |
-+------+-------------------------------+--------------------------------------+------+
-|1     |top                            |                                      | 16227|
-|2     |  inst                         |zcu104                                | 16227|
-|3     |    pm_wrapper                 |pm_wrapper                            |   186|
-|4     |      addra_reg                |\inst/pm_wrapper/addra_reg_funnel     |     8|
-|5     |      addrb_reg                |\inst/pm_wrapper/addra_reg_funnel__1  |     8|
-|6     |      inst_pm                  |rams_tdp_rf_rf_rf                     |    39|
-|7     |    router_wrapper             |router_wrapper                        | 13163|
-|8     |      wrp_router               |router_new                            | 13148|
-|9     |        Control_flux           |cf                                    |   455|
-|10    |        E_WRAPPER              |E_wrapper_EB_DEC                      |  2067|
-|11    |          Inst_dec             |E_dec                                 |    17|
-|12    |          Inst_elastic_buffer  |E_elastic_buffer                      |  1976|
-|13    |          Inst_in_E_ctrl       |in_E_controller                       |    74|
-|14    |        N_WRAPPER              |N_wrapper_EB_DEC                      |  2135|
-|15    |          Inst_dec             |N_dec                                 |    23|
-|16    |          Inst_elastic_buffer  |N_elastic_buffer                      |  2038|
-|17    |          Inst_in_N_ctrl       |in_N_controller                       |    74|
-|18    |        PE_WRAPPER             |PE_wrapper_EB_DEC                     |  2086|
-|19    |          Inst_dec             |PE_dec                                |    22|
-|20    |          Inst_elastic_buffer  |PE_elastic_buffer                     |  1990|
-|21    |          Inst_in_PE_ctrl      |in_PE_controller                      |    74|
-|22    |        PM_WRAPPER             |PM_wrapper_EB_DEC                     |  1842|
-|23    |          Inst_dec             |PM_dec                                |    17|
-|24    |          Inst_elastic_buffer  |PM_elastic_buffer                     |  1758|
-|25    |          Inst_in_pm_ctrl      |in_PM_controller                      |    67|
-|26    |        S_WRAPPER              |S_wrapper_EB_DEC                      |  2068|
-|27    |          Inst_dec             |S_dec                                 |    18|
-|28    |          Inst_elastic_buffer  |S_elastic_buffer                      |  1976|
-|29    |          Inst_in_S_ctrl       |in_S_controller                       |    74|
-|30    |        W_WRAPPER              |W_wrapper_EB_DEC                      |  2147|
-|31    |          Inst_dec             |W_dec                                 |    97|
-|32    |          Inst_elastic_buffer  |W_elastic_buffer                      |  1976|
-|33    |          Inst_in_W_ctrl       |in_W_controller                       |    74|
-|34    |        out_E_controller_inst  |out_E_controller                      |    71|
-|35    |        out_N_controller_inst  |out_N_controller                      |    70|
-|36    |        out_S_controller_inst  |out_S_controller                      |    70|
-|37    |        out_W_controller_inst  |out_W_controller                      |     7|
-|38    |        out_pe_controller_inst |out_PE_controller                     |    70|
-|39    |        out_pm_controller_inst |out_pm_controller                     |    60|
-|40    |    soc                        |picosoc                               |  2646|
-|41    |      bram                     |bram_config                           |   245|
-|42    |        s_bramconfig_inst      |s_bramconfig                          |   245|
-|43    |          tdraaa               |ram                                   |    92|
-|44    |      cpu                      |picorv32                              |  2066|
-|45    |      simpleuart               |simpleuart                            |   334|
-+------+-------------------------------+--------------------------------------+------+
++------+-------------------------------+-----------------------------------------+------+
+|      |Instance                       |Module                                   |Cells |
++------+-------------------------------+-----------------------------------------+------+
+|1     |top                            |                                         | 17492|
+|2     |  inst                         |zcu104                                   | 17492|
+|3     |    pm_wrapper                 |pm_wrapper                               |   298|
+|4     |      inst_pm                  |rams_tdp_rf_rf_rf                        |    85|
+|5     |    router_wrapper             |router_wrapper                           | 13211|
+|6     |      wrp_router               |router_new                               | 13196|
+|7     |        Control_flux           |cf                                       |   455|
+|8     |        E_WRAPPER              |E_wrapper_EB_DEC                         |  2067|
+|9     |          Inst_dec             |E_dec                                    |    17|
+|10    |          Inst_elastic_buffer  |E_elastic_buffer                         |  1976|
+|11    |          Inst_in_E_ctrl       |in_E_controller                          |    74|
+|12    |        N_WRAPPER              |N_wrapper_EB_DEC                         |  2135|
+|13    |          Inst_dec             |N_dec                                    |    23|
+|14    |          Inst_elastic_buffer  |N_elastic_buffer                         |  2038|
+|15    |          Inst_in_N_ctrl       |in_N_controller                          |    74|
+|16    |        PE_WRAPPER             |PE_wrapper_EB_DEC                        |  2086|
+|17    |          Inst_dec             |PE_dec                                   |    22|
+|18    |          Inst_elastic_buffer  |PE_elastic_buffer                        |  1990|
+|19    |          Inst_in_PE_ctrl      |in_PE_controller                         |    74|
+|20    |        PM_WRAPPER             |PM_wrapper_EB_DEC                        |  1841|
+|21    |          Inst_dec             |PM_dec                                   |    17|
+|22    |          Inst_elastic_buffer  |PM_elastic_buffer                        |  1758|
+|23    |          Inst_in_pm_ctrl      |in_PM_controller                         |    66|
+|24    |        S_WRAPPER              |S_wrapper_EB_DEC                         |  2068|
+|25    |          Inst_dec             |S_dec                                    |    18|
+|26    |          Inst_elastic_buffer  |S_elastic_buffer                         |  1976|
+|27    |          Inst_in_S_ctrl       |in_S_controller                          |    74|
+|28    |        W_WRAPPER              |W_wrapper_EB_DEC                         |  2147|
+|29    |          Inst_dec             |W_dec                                    |    97|
+|30    |          Inst_elastic_buffer  |W_elastic_buffer                         |  1976|
+|31    |          Inst_in_W_ctrl       |in_W_controller                          |    74|
+|32    |        out_E_controller_inst  |out_E_controller                         |    71|
+|33    |        out_N_controller_inst  |out_N_controller                         |    70|
+|34    |        out_S_controller_inst  |out_S_controller                         |    70|
+|35    |        out_W_controller_inst  |out_W_controller                         |     7|
+|36    |        out_pe_controller_inst |out_PE_controller                        |    70|
+|37    |        out_pm_controller_inst |out_pm_controller                        |   109|
+|38    |    soc                        |picosoc                                  |  3757|
+|39    |      bram                     |bram_config                              |   253|
+|40    |        s_bramconfig_inst      |s_bramconfig                             |   253|
+|41    |          tdraaa               |ram                                      |    92|
+|42    |      cpu                      |picorv32                                 |  3177|
+|43    |        pcpi_div               |picorv32_pcpi_div                        |   670|
+|44    |        pcpi_mul               |picorv32_pcpi_fast_mul                   |   320|
+|45    |          rd0                  |\inst/soc/cpu/pcpi_mul/rd0_funnel        |     8|
+|46    |          rd_reg               |rd_reg_funnel                            |     8|
+|47    |          rd0__0               |\inst/soc/cpu/pcpi_mul/rd0__0_funnel     |     8|
+|48    |          rd_reg__0            |\inst/soc/cpu/pcpi_mul/rd_reg__0_funnel  |     8|
+|49    |      simpleuart               |simpleuart                               |   326|
++------+-------------------------------+-----------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:40 ; elapsed = 00:05:02 . Memory (MB): peak = 2317.859 ; gain = 944.184
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:06 ; elapsed = 00:05:16 . Memory (MB): peak = 2336.863 ; gain = 963.465
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 181 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:58 ; elapsed = 00:04:45 . Memory (MB): peak = 2317.859 ; gain = 839.027
-Synthesis Optimization Complete : Time (s): cpu = 00:04:40 ; elapsed = 00:05:03 . Memory (MB): peak = 2317.859 ; gain = 944.184
+Synthesis finished with 0 errors, 0 critical warnings and 196 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:30 ; elapsed = 00:05:01 . Memory (MB): peak = 2336.863 ; gain = 898.383
+Synthesis Optimization Complete : Time (s): cpu = 00:04:06 ; elapsed = 00:05:16 . Memory (MB): peak = 2336.863 ; gain = 963.465
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 828 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Netlist 29-17] Analyzing 870 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/pm_wrapper/inst_pm/RAM_reg_bram_0 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
-INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/pm_wrapper/inst_pm/RAM_reg_bram_1 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/pm_wrapper/inst_pm/RAM_reg_bram_10 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/pm_wrapper/inst_pm/RAM_reg_bram_11 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/pm_wrapper/inst_pm/RAM_reg_bram_12 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/pm_wrapper/inst_pm/RAM_reg_bram_13 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/pm_wrapper/inst_pm/RAM_reg_bram_14 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/pm_wrapper/inst_pm/RAM_reg_bram_15 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/pm_wrapper/inst_pm/RAM_reg_bram_16 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/pm_wrapper/inst_pm/RAM_reg_bram_17 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
 INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/pm_wrapper/inst_pm/RAM_reg_bram_2 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
 INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/pm_wrapper/inst_pm/RAM_reg_bram_3 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2343.652 ; gain = 0.000
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/pm_wrapper/inst_pm/RAM_reg_bram_4 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/pm_wrapper/inst_pm/RAM_reg_bram_5 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/pm_wrapper/inst_pm/RAM_reg_bram_6 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/pm_wrapper/inst_pm/RAM_reg_bram_7 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/pm_wrapper/inst_pm/RAM_reg_bram_8 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/pm_wrapper/inst_pm/RAM_reg_bram_9 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 2361.922 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 8 instances were transformed.
-  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD_DATA, DSP_PREADD): 2 instances
+  A total of 10 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD_DATA, DSP_PREADD): 4 instances
   RAM32M16 => RAM32M16 (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 6 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-286 Infos, 226 Warnings, 0 Critical Warnings and 0 Errors encountered.
+310 Infos, 294 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:05:09 ; elapsed = 00:05:50 . Memory (MB): peak = 2343.652 ; gain = 2045.293
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2343.652 ; gain = 0.000
+synth_design: Time (s): cpu = 00:04:32 ; elapsed = 00:06:18 . Memory (MB): peak = 2361.922 ; gain = 2063.676
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 2361.922 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_3_1_synth_1/design_1_zcu104_3_1.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/arthu/rep_git_riscvnoc/mrisc.runs/design_1_zcu104_3_1_synth_1/design_1_zcu104_3_1.dcp' has been generated.
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
-INFO: [Coretcl 2-1174] Renamed 42 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2343.652 ; gain = 0.000
+INFO: [Coretcl 2-1174] Renamed 44 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2361.922 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_3_1_synth_1/design_1_zcu104_3_1.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/arthu/rep_git_riscvnoc/mrisc.runs/design_1_zcu104_3_1_synth_1/design_1_zcu104_3_1.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_zcu104_3_1_utilization_synth.rpt -pb design_1_zcu104_3_1_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Sep 25 07:09:24 2022...
+INFO: [Common 17-206] Exiting Vivado at Tue Oct  4 15:30:32 2022...

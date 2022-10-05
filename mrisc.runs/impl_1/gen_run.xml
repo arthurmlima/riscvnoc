@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1664100184">
+<GenRun Id="impl_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1664907817">
   <File Type="BITSTR-BMM" Name="design_1_wrapper_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="design_1_wrapper_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="design_1_wrapper_timing_summary_init.rpt"/>
@@ -527,16 +527,15 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_4_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_3_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_4_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_1_3"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_0_4"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_img_set_v1_0_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_2_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_1_2"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_contador_ciclos_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_5_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_0_5"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_zcu104_5_1"/>
 </GenRun>

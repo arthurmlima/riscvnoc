@@ -250,8 +250,8 @@ su_s<=resize(unsigned(signal_input_riscv_steps),addr_size);
 r_x <= resize(su_x-c_x,addr_size);
 r_y <= resize(su_y-c_y,addr_size);
 
---xysf<=resize(sa_s*sa_f*(su_x-c_x) + tileheight*sa_s*sa_f*(su_y_1-c_y) +sa_f*su_s + su_f,addr_size);
-xysf<=resize((su_x-c_x) + tileheight*(su_y-c_y),xysf'length);
+xysf<=resize(sa_s*sa_f*(su_x-c_x) + tileheight*sa_s*sa_f*(su_y-c_y) +sa_f*su_s + su_f,addr_size);
+--xysf<=resize((su_x-c_x) + tileheight*(su_y-c_y),xysf'length);
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -267,8 +267,8 @@ su_s_1<=resize(unsigned(signal_t_PM_frame),addr_size);
 r_x_1 <= resize(su_x_1-c_x,addr_size);
 r_y_1 <= resize(su_y_1-c_y,addr_size);
 
---xysf_1<=resize(sa_s*sa_f*(su_x_1-c_x) + tileheight*sa_s*sa_f*(su_y_1-c_y) +sa_f*su_s_1 + su_f_1,addr_size);
-xysf_1<=resize((su_x_1-c_x) + tileheight*(su_y_1-c_y),xysf_1'length);
+xysf_1<=resize(sa_s*sa_f*(su_x_1-c_x) + tileheight*sa_s*sa_f*(su_y_1-c_y) +sa_f*su_s_1 + su_f_1,xysf_1'length);
+--xysf_1<=resize((su_x_1-c_x) + tileheight*(su_y_1-c_y),xysf_1'length);
 
 ----------------------------------------------------------------------------------------------------------
 

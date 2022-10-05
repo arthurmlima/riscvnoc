@@ -71,19 +71,19 @@ set rc [catch {
   set_property board_part xilinx.com:zcu104:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/arthu/mrisc/mrisc.cache/wt [current_project]
-  set_property parent.project_path C:/Users/arthu/mrisc/mrisc.xpr [current_project]
+  set_property webtalk.parent_dir C:/Users/arthu/rep_git_riscvnoc/mrisc.cache/wt [current_project]
+  set_property parent.project_path C:/Users/arthu/rep_git_riscvnoc/mrisc.xpr [current_project]
   set_property ip_repo_paths C:/Users/arthu/ip_repo/contador_ciclos_1.0 [current_project]
   update_ip_catalog
-  set_property ip_output_repo C:/Users/arthu/mrisc/mrisc.cache/ip [current_project]
+  set_property ip_output_repo C:/Users/arthu/rep_git_riscvnoc/mrisc.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet C:/Users/arthu/mrisc/mrisc.runs/synth_1/design_1_wrapper.dcp
+  add_files -quiet C:/Users/arthu/rep_git_riscvnoc/mrisc.runs/synth_1/design_1_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/design_1.bd
+  add_files C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/bd/design_1/design_1.bd
   set_param project.isImplRun false
-  read_xdc C:/Users/arthu/mrisc/mrisc.srcs/constrs_1/new/zcu104rev1.xdc
+  read_xdc C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/constrs_1/new/zcu104rev1.xdc
   set_param project.isImplRun true
   link_design -top design_1_wrapper -part xczu7ev-ffvc1156-2-e
   set_param project.isImplRun false

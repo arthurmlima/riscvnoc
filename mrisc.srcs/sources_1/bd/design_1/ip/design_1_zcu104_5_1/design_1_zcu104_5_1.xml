@@ -672,7 +672,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:1dce48bb</spirit:value>
+            <spirit:value>9:5893c197</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -683,7 +683,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:1dce48bb</spirit:value>
+            <spirit:value>9:5893c197</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -699,11 +699,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Sep 25 10:02:36 UTC 2022</spirit:value>
+            <spirit:value>Tue Oct 04 18:23:17 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:1dce48bb</spirit:value>
+            <spirit:value>9:5893c197</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -715,7 +715,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:ea2868f1</spirit:value>
+            <spirit:value>9:133a331f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -731,11 +731,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Sep 25 10:02:36 UTC 2022</spirit:value>
+            <spirit:value>Tue Oct 04 18:23:17 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:ea2868f1</spirit:value>
+            <spirit:value>9:133a331f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -749,11 +749,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Sep 25 10:09:00 UTC 2022</spirit:value>
+            <spirit:value>Tue Oct 04 18:29:58 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:1dce48bb</spirit:value>
+            <spirit:value>9:5893c197</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1578,7 +1578,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>a_steps</spirit:name>
         <spirit:displayName>A Steps</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.a_steps">2</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.a_steps">10</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>a_frames</spirit:name>
@@ -1748,7 +1748,7 @@
     <spirit:parameter>
       <spirit:name>a_steps</spirit:name>
       <spirit:displayName>A Steps</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.a_steps">2</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.a_steps">10</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>a_frames</spirit:name>

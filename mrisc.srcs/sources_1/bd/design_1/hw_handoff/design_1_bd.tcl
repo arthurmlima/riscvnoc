@@ -204,8 +204,16 @@ proc create_root_design { parentCell } {
   # Create instance: xlconcat_0, and set properties
   set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
   set_property -dict [ list \
-   CONFIG.NUM_PORTS {9} \
+   CONFIG.IN9_WIDTH {23} \
+   CONFIG.NUM_PORTS {10} \
  ] $xlconcat_0
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {0} \
+   CONFIG.CONST_WIDTH {23} \
+ ] $xlconstant_0
 
   # Create instance: zcu104_0, and set properties
   set block_name zcu104
@@ -218,7 +226,7 @@ proc create_root_design { parentCell } {
      return 1
    }
     set_property -dict [ list \
-   CONFIG.a_steps {2} \
+   CONFIG.a_steps {10} \
    CONFIG.buffer_length {20} \
    CONFIG.subimg_height {80} \
    CONFIG.subimg_width {80} \
@@ -236,7 +244,7 @@ proc create_root_design { parentCell } {
      return 1
    }
     set_property -dict [ list \
-   CONFIG.a_steps {2} \
+   CONFIG.a_steps {10} \
    CONFIG.buffer_length {20} \
    CONFIG.subimg_height {80} \
    CONFIG.subimg_width {80} \
@@ -256,7 +264,7 @@ proc create_root_design { parentCell } {
      return 1
    }
     set_property -dict [ list \
-   CONFIG.a_steps {2} \
+   CONFIG.a_steps {10} \
    CONFIG.buffer_length {20} \
    CONFIG.subimg_height {80} \
    CONFIG.subimg_width {80} \
@@ -276,7 +284,7 @@ proc create_root_design { parentCell } {
      return 1
    }
     set_property -dict [ list \
-   CONFIG.a_steps {2} \
+   CONFIG.a_steps {10} \
    CONFIG.buffer_length {20} \
    CONFIG.subimg_height {80} \
    CONFIG.subimg_width {80} \
@@ -296,7 +304,7 @@ proc create_root_design { parentCell } {
      return 1
    }
     set_property -dict [ list \
-   CONFIG.a_steps {2} \
+   CONFIG.a_steps {10} \
    CONFIG.buffer_length {20} \
    CONFIG.subimg_height {80} \
    CONFIG.subimg_width {80} \
@@ -317,7 +325,7 @@ proc create_root_design { parentCell } {
      return 1
    }
     set_property -dict [ list \
-   CONFIG.a_steps {2} \
+   CONFIG.a_steps {10} \
    CONFIG.buffer_length {20} \
    CONFIG.subimg_height {80} \
    CONFIG.subimg_width {80} \
@@ -338,7 +346,7 @@ proc create_root_design { parentCell } {
      return 1
    }
     set_property -dict [ list \
-   CONFIG.a_steps {2} \
+   CONFIG.a_steps {10} \
    CONFIG.buffer_length {20} \
    CONFIG.subimg_height {80} \
    CONFIG.subimg_width {80} \
@@ -359,7 +367,7 @@ proc create_root_design { parentCell } {
      return 1
    }
     set_property -dict [ list \
-   CONFIG.a_steps {2} \
+   CONFIG.a_steps {10} \
    CONFIG.buffer_length {20} \
    CONFIG.subimg_height {80} \
    CONFIG.subimg_width {80} \
@@ -380,7 +388,7 @@ proc create_root_design { parentCell } {
      return 1
    }
     set_property -dict [ list \
-   CONFIG.a_steps {2} \
+   CONFIG.a_steps {10} \
    CONFIG.buffer_length {20} \
    CONFIG.subimg_height {80} \
    CONFIG.subimg_width {80} \
@@ -990,7 +998,8 @@ proc create_root_design { parentCell } {
   connect_bd_net -net rst_ps8_0_100M_peripheral_aresetn [get_bd_pins contador_ciclos_0/s00_axi_aresetn] [get_bd_pins img_set_v1_0_0/s00_axi_aresetn] [get_bd_pins ps8_0_axi_periph/ARESETN] [get_bd_pins ps8_0_axi_periph/M00_ARESETN] [get_bd_pins ps8_0_axi_periph/M01_ARESETN] [get_bd_pins ps8_0_axi_periph/M02_ARESETN] [get_bd_pins ps8_0_axi_periph/M03_ARESETN] [get_bd_pins ps8_0_axi_periph/M04_ARESETN] [get_bd_pins ps8_0_axi_periph/M05_ARESETN] [get_bd_pins ps8_0_axi_periph/M06_ARESETN] [get_bd_pins ps8_0_axi_periph/M07_ARESETN] [get_bd_pins ps8_0_axi_periph/M08_ARESETN] [get_bd_pins ps8_0_axi_periph/M09_ARESETN] [get_bd_pins ps8_0_axi_periph/M10_ARESETN] [get_bd_pins ps8_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps8_0_100M/peripheral_aresetn] [get_bd_pins zcu104_0/s00_axi_aresetn] [get_bd_pins zcu104_1/s00_axi_aresetn] [get_bd_pins zcu104_2/s00_axi_aresetn] [get_bd_pins zcu104_3/s00_axi_aresetn] [get_bd_pins zcu104_4/s00_axi_aresetn] [get_bd_pins zcu104_5/s00_axi_aresetn] [get_bd_pins zcu104_6/s00_axi_aresetn] [get_bd_pins zcu104_7/s00_axi_aresetn] [get_bd_pins zcu104_8/s00_axi_aresetn]
   connect_bd_net -net ser_rx_0_1 [get_bd_ports ser_rx_0] [get_bd_pins zcu104_0/ser_rx]
   connect_bd_net -net ser_rx_1_1 [get_bd_ports ser_rx_1] [get_bd_pins zcu104_4/ser_rx]
-  connect_bd_net -net xlconcat_0_dout [get_bd_pins contador_ciclos_0/PROBE_IMAGE_COMPLETED] [get_bd_pins xlconcat_0/dout] [get_bd_pins zcu104_4/entrada_init_prog_fim]
+  connect_bd_net -net xlconcat_0_dout [get_bd_pins contador_ciclos_0/PROBE_IMAGE_COMPLETED] [get_bd_pins xlconcat_0/dout] [get_bd_pins zcu104_0/entrada_init_prog_fim] [get_bd_pins zcu104_1/entrada_init_prog_fim] [get_bd_pins zcu104_2/entrada_init_prog_fim] [get_bd_pins zcu104_3/entrada_init_prog_fim] [get_bd_pins zcu104_4/entrada_init_prog_fim] [get_bd_pins zcu104_5/entrada_init_prog_fim] [get_bd_pins zcu104_6/entrada_init_prog_fim] [get_bd_pins zcu104_7/entrada_init_prog_fim] [get_bd_pins zcu104_8/entrada_init_prog_fim]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins xlconcat_0/In9] [get_bd_pins xlconstant_0/dout]
   connect_bd_net -net zcu104_0_IN_E_ACK [get_bd_pins zcu104_0/IN_E_ACK] [get_bd_pins zcu104_1/OUT_W_ACK]
   connect_bd_net -net zcu104_0_IN_S_ACK [get_bd_pins zcu104_0/IN_S_ACK] [get_bd_pins zcu104_3/OUT_N_ACK]
   connect_bd_net -net zcu104_0_OUT_E [get_bd_pins zcu104_0/OUT_E] [get_bd_pins zcu104_1/IN_W]

@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_5_1_synth_1'
+HD_PWD='C:/Users/arthu/rep_git_riscvnoc/mrisc.runs/design_1_zcu104_5_1_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

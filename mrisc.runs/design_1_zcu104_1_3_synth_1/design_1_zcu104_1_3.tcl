@@ -26,65 +26,65 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/arthu/mrisc/mrisc.cache/wt [current_project]
-set_property parent.project_path C:/Users/arthu/mrisc/mrisc.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/arthu/rep_git_riscvnoc/mrisc.cache/wt [current_project]
+set_property parent.project_path C:/Users/arthu/rep_git_riscvnoc/mrisc.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part xilinx.com:zcu104:part0:1.1 [current_project]
 set_property ip_repo_paths c:/Users/arthu/ip_repo/contador_ciclos_1.0 [current_project]
 update_ip_catalog
-set_property ip_output_repo c:/Users/arthu/mrisc/mrisc.cache/ip [current_project]
+set_property ip_output_repo c:/Users/arthu/rep_git_riscvnoc/mrisc.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/bram_config.v
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picorv32.v
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/picosoc.v
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/ram.v
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/s_bramconfig.v
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/simpleuart.v
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/zcu104.v
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/bram_config.v
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picorv32.v
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/picosoc.v
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/ram.v
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/s_bramconfig.v
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/simpleuart.v
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/zcu104.v
 }
 read_vhdl -library xil_defaultlib {
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/E_dec.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/in_E_ctrl.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/E_wrapper_EB_DEC.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/N_dec.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/in_N_ctrl.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/N_wrapper_EB_DEC.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PE_dec.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/in_pe_ctrl.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PE_wrapper_EB_DEC.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PM_dec.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/in_pm_ctrl.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PM_wrapper_EB_DEC.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/S_dec.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/in_S_ctrl.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/S_wrapper_EB_DEC.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/W_dec.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/in_W_ctrl.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/W_wrapper_EB_DEC.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/out_E_controller.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/out_N_controller.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/out_PE_controller.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/out_S_controller.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/add/out_W_controller.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/out_pm_controller.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/pm_wrapper.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/rams_tdp_rf_rf.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/router_new.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/router_wrapper.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/CF.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/E_dec.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/in_E_ctrl.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/E_wrapper_EB_DEC.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/N_dec.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/in_N_ctrl.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/N_wrapper_EB_DEC.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PE_dec.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/in_pe_ctrl.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PE_wrapper_EB_DEC.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PM_dec.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/in_pm_ctrl.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PM_wrapper_EB_DEC.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/S_dec.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/in_S_ctrl.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/S_wrapper_EB_DEC.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/W_dec.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/in_W_ctrl.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/W_wrapper_EB_DEC.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/out_E_controller.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/out_N_controller.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/out_PE_controller.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/out_S_controller.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/add/out_W_controller.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/out_pm_controller.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/pm_wrapper.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/rams_tdp_rf_rf.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/router_new.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/new/router_wrapper.vhd
 }
 read_vhdl -vhdl2008 -library xil_defaultlib {
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/E_elastic_buffer.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/N_elastic_buffer.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PE_elastic_buffer.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/PM_elastic_buffer.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/S_elastic_buffer.vhd
-  C:/Users/arthu/mrisc/mrisc.srcs/sources_1/imports/noc_sources/W_elastic_buffer.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/E_elastic_buffer.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/N_elastic_buffer.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PE_elastic_buffer.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/PM_elastic_buffer.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/S_elastic_buffer.vhd
+  C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/imports/noc_sources/W_elastic_buffer.vhd
 }
-read_ip -quiet C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3.xci
+read_ip -quiet C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3.xci
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -96,7 +96,7 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 }
 set_param ips.enableIPCacheLiteLoad 1
 
-set cached_ip [config_ip_cache -export -no_bom  -dir C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_3_synth_1 -new_name design_1_zcu104_1_3 -ip [get_ips design_1_zcu104_1_3]]
+set cached_ip [config_ip_cache -export -no_bom  -dir C:/Users/arthu/rep_git_riscvnoc/mrisc.runs/design_1_zcu104_1_3_synth_1 -new_name design_1_zcu104_1_3 -ip [get_ips design_1_zcu104_1_3]]
 
 if { $cached_ip eq {} } {
 close [open __synthesis_is_running__ w]
@@ -137,32 +137,32 @@ write_checkpoint -force -noxdef design_1_zcu104_1_3.dcp
 create_report "design_1_zcu104_1_3_synth_1_synth_report_utilization_0" "report_utilization -file design_1_zcu104_1_3_utilization_synth.rpt -pb design_1_zcu104_1_3_utilization_synth.pb"
 
 if { [catch {
-  file copy -force C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_3_synth_1/design_1_zcu104_1_3.dcp C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3.dcp
+  file copy -force C:/Users/arthu/rep_git_riscvnoc/mrisc.runs/design_1_zcu104_1_3_synth_1/design_1_zcu104_1_3.dcp C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_stub.v
+  write_verilog -force -mode synth_stub C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_stub.vhdl
+  write_vhdl -force -mode synth_stub C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_sim_netlist.v
+  write_verilog -force -mode funcsim C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -172,47 +172,47 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_3_synth_1/design_1_zcu104_1_3.dcp C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3.dcp
+  file copy -force C:/Users/arthu/rep_git_riscvnoc/mrisc.runs/design_1_zcu104_1_3_synth_1/design_1_zcu104_1_3.dcp C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_3_synth_1/design_1_zcu104_1_3_stub.v C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_stub.v
+  file rename -force C:/Users/arthu/rep_git_riscvnoc/mrisc.runs/design_1_zcu104_1_3_synth_1/design_1_zcu104_1_3_stub.v C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_3_synth_1/design_1_zcu104_1_3_stub.vhdl C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_stub.vhdl
+  file rename -force C:/Users/arthu/rep_git_riscvnoc/mrisc.runs/design_1_zcu104_1_3_synth_1/design_1_zcu104_1_3_stub.vhdl C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_3_synth_1/design_1_zcu104_1_3_sim_netlist.v C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_sim_netlist.v
+  file rename -force C:/Users/arthu/rep_git_riscvnoc/mrisc.runs/design_1_zcu104_1_3_synth_1/design_1_zcu104_1_3_sim_netlist.v C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_3_synth_1/design_1_zcu104_1_3_sim_netlist.vhdl C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_sim_netlist.vhdl
+  file rename -force C:/Users/arthu/rep_git_riscvnoc/mrisc.runs/design_1_zcu104_1_3_synth_1/design_1_zcu104_1_3_sim_netlist.vhdl C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 }; # end if cached_ip 
 
-if {[file isdir C:/Users/arthu/mrisc/mrisc.ip_user_files/ip/design_1_zcu104_1_3]} {
+if {[file isdir C:/Users/arthu/rep_git_riscvnoc/mrisc.ip_user_files/ip/design_1_zcu104_1_3]} {
   catch { 
-    file copy -force C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_stub.v C:/Users/arthu/mrisc/mrisc.ip_user_files/ip/design_1_zcu104_1_3
+    file copy -force C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_stub.v C:/Users/arthu/rep_git_riscvnoc/mrisc.ip_user_files/ip/design_1_zcu104_1_3
   }
 }
 
-if {[file isdir C:/Users/arthu/mrisc/mrisc.ip_user_files/ip/design_1_zcu104_1_3]} {
+if {[file isdir C:/Users/arthu/rep_git_riscvnoc/mrisc.ip_user_files/ip/design_1_zcu104_1_3]} {
   catch { 
-    file copy -force C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_stub.vhdl C:/Users/arthu/mrisc/mrisc.ip_user_files/ip/design_1_zcu104_1_3
+    file copy -force C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_1_3/design_1_zcu104_1_3_stub.vhdl C:/Users/arthu/rep_git_riscvnoc/mrisc.ip_user_files/ip/design_1_zcu104_1_3
   }
 }
 file delete __synthesis_is_running__

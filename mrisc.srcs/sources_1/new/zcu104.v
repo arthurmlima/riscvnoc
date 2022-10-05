@@ -42,7 +42,7 @@ parameter    subimg_height=80,
 parameter    n_steps=5	 ,
 parameter    n_frames=8   	 ,
 
-parameter    a_steps=1	 ,
+parameter    a_steps=6	 ,
 parameter    a_frames=1   	 ,
 
 parameter    buffer_length=20,
@@ -426,8 +426,8 @@ end
 		
  
 	picosoc #(
-		.BARREL_SHIFTER(0),
-		.ENABLE_MULDIV(0),
+		.BARREL_SHIFTER(1),
+		.ENABLE_MULDIV(1),
 		.MEM_WORDS(MEM_WORDS)
 	) soc (
 		.clk          (clk         ),
@@ -477,7 +477,7 @@ end
 	pm_wrapper #( 
          .pix_depth      (pix_depth),
          .addr_size       (32),
-         .mem_size        (80*80*2),
+         .mem_size        (80*80*10),
 
          .img_width(img_width)	 ,  
          .img_height(img_height) 	 ,

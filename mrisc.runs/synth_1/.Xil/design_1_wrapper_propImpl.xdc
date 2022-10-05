@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/arthu/mrisc/mrisc.srcs/constrs_1/new/zcu104rev1.xdc rfile:../../../mrisc.srcs/constrs_1/new/zcu104rev1.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/arthu/rep_git_riscvnoc/mrisc.srcs/constrs_1/new/zcu104rev1.xdc rfile:../../../mrisc.srcs/constrs_1/new/zcu104rev1.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:30 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN A20      [get_ports "UART2_TXD_FPGA_RXD"] ;# Bank  28 VCCO - VCC1V8   - IO_L21P_T3L_N4_AD8P_28
 set_property src_info {type:XDC file:1 line:31 export:INPUT save:INPUT read:READ} [current_design]

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="design_1_zcu104_1_2_synth_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1664100173">
+<GenRun Id="design_1_zcu104_1_2_synth_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1664907809">
   <File Type="PA-TCL" Name="design_1_zcu104_1_2.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="design_1_zcu104_1_2_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="design_1_zcu104_1_2_reports.tcl"/>

@@ -1,0 +1,1571 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat Sep 24 19:48:12 2022
+# Process ID: 12992
+# Current directory: C:/Users/arthu/mrisc
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25396 C:\Users\arthu\mrisc\mrisc.xpr
+# Log file: C:/Users/arthu/mrisc/vivado.log
+# Journal file: C:/Users/arthu/mrisc\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/arthu/mrisc/mrisc.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-509] GeneratedRun file for 'design_1_zcu104_0_0_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'design_1_zcu104_0_4_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'design_1_zcu104_1_2_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'design_1_zcu104_0_5_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'design_1_zcu104_1_3_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'design_1_zcu104_3_1_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'design_1_img_set_v1_0_0_0_synth_1' not found
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'design_1_zcu104_2_1' generated file not found 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_2_1/design_1_zcu104_2_1.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'design_1_zcu104_2_1' generated file not found 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_2_1/design_1_zcu104_2_1_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'design_1_zcu104_2_1' generated file not found 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_2_1/design_1_zcu104_2_1_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'design_1_zcu104_2_1' generated file not found 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_2_1/design_1_zcu104_2_1_sim_netlist.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'design_1_zcu104_2_1' generated file not found 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_2_1/design_1_zcu104_2_1_sim_netlist.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'design_1_zcu104_4_0' generated file not found 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_4_0/design_1_zcu104_4_0.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'design_1_zcu104_4_0' generated file not found 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_4_0/design_1_zcu104_4_0_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'design_1_zcu104_4_0' generated file not found 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_4_0/design_1_zcu104_4_0_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'design_1_zcu104_4_0' generated file not found 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_4_0/design_1_zcu104_4_0_sim_netlist.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'design_1_zcu104_4_0' generated file not found 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_4_0/design_1_zcu104_4_0_sim_netlist.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'design_1_zcu104_5_1' generated file not found 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_5_1/design_1_zcu104_5_1.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'design_1_zcu104_5_1' generated file not found 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_5_1/design_1_zcu104_5_1_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'design_1_zcu104_5_1' generated file not found 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_5_1/design_1_zcu104_5_1_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'design_1_zcu104_5_1' generated file not found 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_5_1/design_1_zcu104_5_1_sim_netlist.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'design_1_zcu104_5_1' generated file not found 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_zcu104_5_1/design_1_zcu104_5_1_sim_netlist.vhdl'. Please regenerate to continue.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 741.566 ; gain = 139.168
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Sat Sep 24 19:51:18 2022] Launched design_1_zcu104_0_0_synth_1, design_1_zcu104_0_4_synth_1, design_1_zcu104_1_2_synth_1, design_1_zcu104_0_5_synth_1, design_1_zcu104_1_3_synth_1, design_1_zcu104_2_1_synth_1, design_1_zcu104_3_1_synth_1, design_1_zcu104_4_0_synth_1, design_1_zcu104_5_1_synth_1, design_1_img_set_v1_0_0_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_zcu104_0_0_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_0_synth_1/runme.log
+design_1_zcu104_0_4_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_4_synth_1/runme.log
+design_1_zcu104_1_2_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_2_synth_1/runme.log
+design_1_zcu104_0_5_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_5_synth_1/runme.log
+design_1_zcu104_1_3_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_3_synth_1/runme.log
+design_1_zcu104_2_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_2_1_synth_1/runme.log
+design_1_zcu104_3_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_3_1_synth_1/runme.log
+design_1_zcu104_4_0_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_4_0_synth_1/runme.log
+design_1_zcu104_5_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_5_1_synth_1/runme.log
+design_1_img_set_v1_0_0_0_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_img_set_v1_0_0_0_synth_1/runme.log
+synth_1: C:/Users/arthu/mrisc/mrisc.runs/synth_1/runme.log
+[Sat Sep 24 19:51:21 2022] Launched impl_1...
+Run output will be captured here: C:/Users/arthu/mrisc/mrisc.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 806.594 ; gain = 22.504
+create_peripheral xilinx.com user contador_ciclos 1.0 -dir C:/Users/arthu/mrisc/../ip_repo
+add_peripheral_interface S00_AXI -interface_mode slave -axi_type lite [ipx::find_open_core xilinx.com:user:contador_ciclos:1.0]
+set_property VALUE 7 [ipx::get_bus_parameters WIZ_NUM_REG -of_objects [ipx::get_bus_interfaces S00_AXI -of_objects [ipx::find_open_core xilinx.com:user:contador_ciclos:1.0]]]
+generate_peripheral -driver -bfm_example_design -debug_hw_example_design [ipx::find_open_core xilinx.com:user:contador_ciclos:1.0]
+write_peripheral [ipx::find_open_core xilinx.com:user:contador_ciclos:1.0]
+set_property  ip_repo_paths  C:/Users/arthu/mrisc/../ip_repo/contador_ciclos_1.0 [current_project]
+update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/arthu/ip_repo/contador_ciclos_1.0'.
+ipx::edit_ip_in_project -upgrade true -name edit_contador_ciclos_v1_0 -directory C:/Users/arthu/mrisc/../ip_repo c:/Users/arthu/ip_repo/contador_ciclos_1.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 846.457 ; gain = 15.598
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/arthu/ip_repo/contador_ciclos_1.0'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [c:/Users/arthu/ip_repo/contador_ciclos_1.0/hdl/contador_ciclos_v1_0_S00_AXI.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [c:/Users/arthu/ip_repo/contador_ciclos_1.0/hdl/contador_ciclos_v1_0.v:]
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 874.855 ; gain = 43.996
+current_project mrisc
+current_project edit_contador_ciclos_v1_0
+close_project
+close [ open C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/contador_ciclos_S00.vhd w ]
+add_files C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/contador_ciclos_S00.vhd
+close [ open C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/contador_ciclos.vhd w ]
+add_files C:/Users/arthu/mrisc/mrisc.srcs/sources_1/new/contador_ciclos.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_module_reference design_1_img_set_v1_0_0_0
+ERROR: [filemgmt 56-190] Failed to uniquely resolve reference. Multiple different modules were found that match the name 'img_set_v1_0'.
+update_module_reference: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 1044.203 ; gain = 0.000
+ERROR: [Common 17-39] 'update_module_reference' failed due to earlier errors.
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/design_1.bd}
+Adding component instance block -- xilinx.com:ip:zynq_ultra_ps_e:3.3 - zynq_ultra_ps_e_0
+WARNING: [BD 41-176] The physical port 'M_AXI_HPM0_FPD_aximm_wr_socket' specified in the portmap, is not found on the block! 
+WARNING: [BD 41-176] The physical port 'M_AXI_HPM0_FPD_aximm_rd_socket' specified in the portmap, is not found on the block! 
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - ps8_0_axi_periph
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps8_0_100M
+Adding component instance block -- xilinx.com:module_ref:img_set_v1_0:1.0 - img_set_v1_0_0
+Adding component instance block -- xilinx.com:module_ref:zcu104:1.0 - zcu104_0
+Adding component instance block -- xilinx.com:module_ref:zcu104:1.0 - zcu104_1
+Adding component instance block -- xilinx.com:module_ref:zcu104:1.0 - zcu104_3
+Adding component instance block -- xilinx.com:module_ref:zcu104:1.0 - zcu104_2
+Adding component instance block -- xilinx.com:module_ref:zcu104:1.0 - zcu104_4
+Adding component instance block -- xilinx.com:module_ref:zcu104:1.0 - zcu104_5
+Adding component instance block -- xilinx.com:module_ref:zcu104:1.0 - zcu104_6
+Adding component instance block -- xilinx.com:module_ref:zcu104:1.0 - zcu104_7
+Adding component instance block -- xilinx.com:module_ref:zcu104:1.0 - zcu104_8
+Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0
+Successfully read diagram <design_1> from BD file <C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/design_1.bd>
+open_bd_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1738.555 ; gain = 453.234
+create_bd_cell -type module -reference contador_ciclos contador_ciclos_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_BUSIF' with value 's00_axi'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/arthu/ip_repo/contador_ciclos_1.0'.
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/zynq_ultra_ps_e_0/pl_clk0 (100 MHz)} Clk_slave {Auto} Clk_xbar {/zynq_ultra_ps_e_0/pl_clk0 (100 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_FPD} Slave {/contador_ciclos_0/s00_axi} intc_ip {/ps8_0_axi_periph} master_apm {0}}  [get_bd_intf_pins contador_ciclos_0/s00_axi]
+Slave segment </contador_ciclos_0/s00_axi/reg0> is being mapped into address space </zynq_ultra_ps_e_0/Data> at <0xA000_1000 [ 4K ]>
+set_property location {2 1381 668} [get_bd_cells contador_ciclos_0]
+set_property location {2 1570 398} [get_bd_cells contador_ciclos_0]
+set_property location {3 2133 315} [get_bd_cells xlconcat_0]
+connect_bd_net [get_bd_pins xlconcat_0/dout] [get_bd_pins contador_ciclos_0/PROBE_IMAGE_COMPLETED]
+set_property location {2 1560 384} [get_bd_cells contador_ciclos_0]
+set_property location {2 1529 540} [get_bd_cells contador_ciclos_0]
+set_property location {2 1521 311} [get_bd_cells img_set_v1_0_0]
+save_bd_design
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_pc/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_pc/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-927] Following properties on pin /img_set_v1_0_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_0/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_1/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_1/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_3/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_3/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_2/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_2/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_4/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_4/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_5/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_5/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_6/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_6/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_7/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_7/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_8/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_8/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /contador_ciclos_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/zcu104_0/IN_N
+/zcu104_0/IN_W
+/zcu104_0/OUT_N_ACK
+/zcu104_0/OUT_W_ACK
+/zcu104_0/axi_image_pixel
+/zcu104_0/axi_image_x
+/zcu104_0/axi_image_y
+/zcu104_0/axi_image_req
+/zcu104_0/entrada_init_prog_fim
+/zcu104_1/ser_rx
+/zcu104_1/IN_N
+/zcu104_1/OUT_N_ACK
+/zcu104_1/axi_image_pixel
+/zcu104_1/axi_image_x
+/zcu104_1/axi_image_y
+/zcu104_1/axi_image_req
+/zcu104_1/entrada_init_prog_fim
+/zcu104_3/ser_rx
+/zcu104_3/IN_W
+/zcu104_3/OUT_W_ACK
+/zcu104_3/axi_image_pixel
+/zcu104_3/axi_image_x
+/zcu104_3/axi_image_y
+/zcu104_3/axi_image_req
+/zcu104_3/entrada_init_prog_fim
+/zcu104_2/ser_rx
+/zcu104_2/IN_N
+/zcu104_2/IN_E
+/zcu104_2/OUT_N_ACK
+/zcu104_2/OUT_E_ACK
+/zcu104_2/axi_image_pixel
+/zcu104_2/axi_image_x
+/zcu104_2/axi_image_y
+/zcu104_2/axi_image_req
+/zcu104_2/entrada_init_prog_fim
+/zcu104_5/ser_rx
+/zcu104_5/IN_E
+/zcu104_5/OUT_E_ACK
+/zcu104_5/axi_image_pixel
+/zcu104_5/axi_image_x
+/zcu104_5/axi_image_y
+/zcu104_5/axi_image_req
+/zcu104_5/entrada_init_prog_fim
+/zcu104_6/ser_rx
+/zcu104_6/IN_S
+/zcu104_6/IN_W
+/zcu104_6/OUT_S_ACK
+/zcu104_6/OUT_W_ACK
+/zcu104_6/axi_image_pixel
+/zcu104_6/axi_image_x
+/zcu104_6/axi_image_y
+/zcu104_6/axi_image_req
+/zcu104_6/entrada_init_prog_fim
+/zcu104_7/ser_rx
+/zcu104_7/IN_S
+/zcu104_7/OUT_S_ACK
+/zcu104_7/axi_image_pixel
+/zcu104_7/axi_image_x
+/zcu104_7/axi_image_y
+/zcu104_7/axi_image_req
+/zcu104_7/entrada_init_prog_fim
+/zcu104_8/ser_rx
+/zcu104_8/IN_S
+/zcu104_8/IN_E
+/zcu104_8/OUT_S_ACK
+/zcu104_8/OUT_E_ACK
+/zcu104_8/axi_image_pixel
+/zcu104_8/axi_image_x
+/zcu104_8/axi_image_y
+/zcu104_8/axi_image_req
+/zcu104_8/entrada_init_prog_fim
+
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/zcu104_4/entrada_init_prog_fim'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/contador_ciclos_0/PROBE_IMAGE_COMPLETED'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/synth/design_1.v
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/zcu104_4/entrada_init_prog_fim'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/contador_ciclos_0/PROBE_IMAGE_COMPLETED'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zynq_ultra_ps_e_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps8_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_4 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_5 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_6 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_7 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_8 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block img_set_v1_0_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block contador_ciclos_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 76f2fcc9ca3c3305; cache size = 280.690 MB.
+[Sat Sep 24 21:34:28 2022] Launched design_1_xbar_0_synth_1, design_1_contador_ciclos_0_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_xbar_0_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_xbar_0_synth_1/runme.log
+design_1_contador_ciclos_0_0_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_contador_ciclos_0_0_synth_1/runme.log
+synth_1: C:/Users/arthu/mrisc/mrisc.runs/synth_1/runme.log
+[Sat Sep 24 21:34:28 2022] Launched impl_1...
+Run output will be captured here: C:/Users/arthu/mrisc/mrisc.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:14 ; elapsed = 00:00:31 . Memory (MB): peak = 1755.680 ; gain = 0.000
+file copy -force C:/Users/arthu/mrisc/mrisc.runs/impl_1/design_1_wrapper.sysdef C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset_riscv' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 's00_axi'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+WARNING: [IP_Flow 19-3153] Bus Interface 's00_axi_aclk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/arthu/ip_repo/contador_ciclos_1.0'.
+Upgrading 'C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_4 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_5 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_2 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_3 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_2_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_3_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_4_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_5_1 to use current project options
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+upgrade_ip: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1786.598 ; gain = 4.230
+update_module_reference: Time (s): cpu = 00:00:06 ; elapsed = 00:00:46 . Memory (MB): peak = 1786.598 ; gain = 4.230
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_pc/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_pc/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-927] Following properties on pin /img_set_v1_0_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /contador_ciclos_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_0/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_1/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_1/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_3/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_3/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_2/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_2/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_4/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_4/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_5/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_5/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_6/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_6/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_7/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_7/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_8/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_8/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/zcu104_0/IN_N
+/zcu104_0/IN_W
+/zcu104_0/OUT_N_ACK
+/zcu104_0/OUT_W_ACK
+/zcu104_0/axi_image_pixel
+/zcu104_0/axi_image_x
+/zcu104_0/axi_image_y
+/zcu104_0/axi_image_req
+/zcu104_0/entrada_init_prog_fim
+/zcu104_1/ser_rx
+/zcu104_1/IN_N
+/zcu104_1/OUT_N_ACK
+/zcu104_1/axi_image_pixel
+/zcu104_1/axi_image_x
+/zcu104_1/axi_image_y
+/zcu104_1/axi_image_req
+/zcu104_1/entrada_init_prog_fim
+/zcu104_3/ser_rx
+/zcu104_3/IN_W
+/zcu104_3/OUT_W_ACK
+/zcu104_3/axi_image_pixel
+/zcu104_3/axi_image_x
+/zcu104_3/axi_image_y
+/zcu104_3/axi_image_req
+/zcu104_3/entrada_init_prog_fim
+/zcu104_2/ser_rx
+/zcu104_2/IN_N
+/zcu104_2/IN_E
+/zcu104_2/OUT_N_ACK
+/zcu104_2/OUT_E_ACK
+/zcu104_2/axi_image_pixel
+/zcu104_2/axi_image_x
+/zcu104_2/axi_image_y
+/zcu104_2/axi_image_req
+/zcu104_2/entrada_init_prog_fim
+/zcu104_5/ser_rx
+/zcu104_5/IN_E
+/zcu104_5/OUT_E_ACK
+/zcu104_5/axi_image_pixel
+/zcu104_5/axi_image_x
+/zcu104_5/axi_image_y
+/zcu104_5/axi_image_req
+/zcu104_5/entrada_init_prog_fim
+/zcu104_6/ser_rx
+/zcu104_6/IN_S
+/zcu104_6/IN_W
+/zcu104_6/OUT_S_ACK
+/zcu104_6/OUT_W_ACK
+/zcu104_6/axi_image_pixel
+/zcu104_6/axi_image_x
+/zcu104_6/axi_image_y
+/zcu104_6/axi_image_req
+/zcu104_6/entrada_init_prog_fim
+/zcu104_7/ser_rx
+/zcu104_7/IN_S
+/zcu104_7/OUT_S_ACK
+/zcu104_7/axi_image_pixel
+/zcu104_7/axi_image_x
+/zcu104_7/axi_image_y
+/zcu104_7/axi_image_req
+/zcu104_7/entrada_init_prog_fim
+/zcu104_8/ser_rx
+/zcu104_8/IN_S
+/zcu104_8/IN_E
+/zcu104_8/OUT_S_ACK
+/zcu104_8/OUT_E_ACK
+/zcu104_8/axi_image_pixel
+/zcu104_8/axi_image_x
+/zcu104_8/axi_image_y
+/zcu104_8/axi_image_req
+/zcu104_8/entrada_init_prog_fim
+
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/contador_ciclos_0/PROBE_IMAGE_COMPLETED'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/zcu104_4/entrada_init_prog_fim'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/synth/design_1.v
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/contador_ciclos_0/PROBE_IMAGE_COMPLETED'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/zcu104_4/entrada_init_prog_fim'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zynq_ultra_ps_e_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps8_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_4 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_5 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_6 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_7 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_8 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block img_set_v1_0_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block contador_ciclos_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 76f2fcc9ca3c3305; cache size = 281.711 MB.
+[Sun Sep 25 00:03:22 2022] Launched design_1_zcu104_1_3_synth_1, design_1_zcu104_5_1_synth_1, design_1_zcu104_0_4_synth_1, design_1_zcu104_0_0_synth_1, design_1_zcu104_1_2_synth_1, design_1_zcu104_0_5_synth_1, design_1_zcu104_2_1_synth_1, design_1_zcu104_3_1_synth_1, design_1_zcu104_4_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_zcu104_1_3_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_3_synth_1/runme.log
+design_1_zcu104_5_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_5_1_synth_1/runme.log
+design_1_zcu104_0_4_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_4_synth_1/runme.log
+design_1_zcu104_0_0_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_0_synth_1/runme.log
+design_1_zcu104_1_2_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_2_synth_1/runme.log
+design_1_zcu104_0_5_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_5_synth_1/runme.log
+design_1_zcu104_2_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_2_1_synth_1/runme.log
+design_1_zcu104_3_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_3_1_synth_1/runme.log
+design_1_zcu104_4_0_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_4_0_synth_1/runme.log
+synth_1: C:/Users/arthu/mrisc/mrisc.runs/synth_1/runme.log
+[Sun Sep 25 00:03:22 2022] Launched impl_1...
+Run output will be captured here: C:/Users/arthu/mrisc/mrisc.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:08 ; elapsed = 00:00:34 . Memory (MB): peak = 1823.734 ; gain = 37.137
+file copy -force C:/Users/arthu/mrisc/mrisc.runs/impl_1/design_1_wrapper.sysdef C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset_riscv' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 's00_axi'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+WARNING: [IP_Flow 19-3153] Bus Interface 's00_axi_aclk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/arthu/ip_repo/contador_ciclos_1.0'.
+Upgrading 'C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_4 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_5 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_2 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_3 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_2_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_3_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_4_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_5_1 to use current project options
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+upgrade_ip: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2375.078 ; gain = 25.426
+update_module_reference: Time (s): cpu = 00:00:12 ; elapsed = 00:01:15 . Memory (MB): peak = 2375.078 ; gain = 25.426
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset_riscv' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 's00_axi'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+WARNING: [IP_Flow 19-3153] Bus Interface 's00_axi_aclk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/arthu/ip_repo/contador_ciclos_1.0'.
+Upgrading 'C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_4 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_5 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_2 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_3 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_2_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_3_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_4_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_5_1 to use current project options
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+update_module_reference: Time (s): cpu = 00:00:02 ; elapsed = 00:00:18 . Memory (MB): peak = 2375.078 ; gain = 0.000
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset_riscv' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 's00_axi'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+WARNING: [IP_Flow 19-3153] Bus Interface 's00_axi_aclk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/arthu/ip_repo/contador_ciclos_1.0'.
+Upgrading 'C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_4 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_5 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_2 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_3 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_2_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_3_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_4_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_5_1 to use current project options
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_pc/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_pc/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-927] Following properties on pin /img_set_v1_0_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /contador_ciclos_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_0/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_1/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_1/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_3/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_3/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_2/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_2/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_4/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_4/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_5/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_5/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_6/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_6/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_7/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_7/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_8/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_8/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/zcu104_0/IN_N
+/zcu104_0/IN_W
+/zcu104_0/OUT_N_ACK
+/zcu104_0/OUT_W_ACK
+/zcu104_0/axi_image_pixel
+/zcu104_0/axi_image_x
+/zcu104_0/axi_image_y
+/zcu104_0/axi_image_req
+/zcu104_0/entrada_init_prog_fim
+/zcu104_1/ser_rx
+/zcu104_1/IN_N
+/zcu104_1/OUT_N_ACK
+/zcu104_1/axi_image_pixel
+/zcu104_1/axi_image_x
+/zcu104_1/axi_image_y
+/zcu104_1/axi_image_req
+/zcu104_1/entrada_init_prog_fim
+/zcu104_3/ser_rx
+/zcu104_3/IN_W
+/zcu104_3/OUT_W_ACK
+/zcu104_3/axi_image_pixel
+/zcu104_3/axi_image_x
+/zcu104_3/axi_image_y
+/zcu104_3/axi_image_req
+/zcu104_3/entrada_init_prog_fim
+/zcu104_2/ser_rx
+/zcu104_2/IN_N
+/zcu104_2/IN_E
+/zcu104_2/OUT_N_ACK
+/zcu104_2/OUT_E_ACK
+/zcu104_2/axi_image_pixel
+/zcu104_2/axi_image_x
+/zcu104_2/axi_image_y
+/zcu104_2/axi_image_req
+/zcu104_2/entrada_init_prog_fim
+/zcu104_5/ser_rx
+/zcu104_5/IN_E
+/zcu104_5/OUT_E_ACK
+/zcu104_5/axi_image_pixel
+/zcu104_5/axi_image_x
+/zcu104_5/axi_image_y
+/zcu104_5/axi_image_req
+/zcu104_5/entrada_init_prog_fim
+/zcu104_6/ser_rx
+/zcu104_6/IN_S
+/zcu104_6/IN_W
+/zcu104_6/OUT_S_ACK
+/zcu104_6/OUT_W_ACK
+/zcu104_6/axi_image_pixel
+/zcu104_6/axi_image_x
+/zcu104_6/axi_image_y
+/zcu104_6/axi_image_req
+/zcu104_6/entrada_init_prog_fim
+/zcu104_7/ser_rx
+/zcu104_7/IN_S
+/zcu104_7/OUT_S_ACK
+/zcu104_7/axi_image_pixel
+/zcu104_7/axi_image_x
+/zcu104_7/axi_image_y
+/zcu104_7/axi_image_req
+/zcu104_7/entrada_init_prog_fim
+/zcu104_8/ser_rx
+/zcu104_8/IN_S
+/zcu104_8/IN_E
+/zcu104_8/OUT_S_ACK
+/zcu104_8/OUT_E_ACK
+/zcu104_8/axi_image_pixel
+/zcu104_8/axi_image_x
+/zcu104_8/axi_image_y
+/zcu104_8/axi_image_req
+/zcu104_8/entrada_init_prog_fim
+
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/contador_ciclos_0/PROBE_IMAGE_COMPLETED'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/zcu104_4/entrada_init_prog_fim'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/synth/design_1.v
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/contador_ciclos_0/PROBE_IMAGE_COMPLETED'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/zcu104_4/entrada_init_prog_fim'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zynq_ultra_ps_e_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps8_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_4 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_5 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_6 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_7 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_8 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block img_set_v1_0_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block contador_ciclos_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 76f2fcc9ca3c3305; cache size = 281.711 MB.
+[Sun Sep 25 01:02:00 2022] Launched design_1_zcu104_1_3_synth_1, design_1_zcu104_5_1_synth_1, design_1_zcu104_0_4_synth_1, design_1_zcu104_0_0_synth_1, design_1_zcu104_1_2_synth_1, design_1_zcu104_0_5_synth_1, design_1_zcu104_2_1_synth_1, design_1_zcu104_3_1_synth_1, design_1_zcu104_4_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_zcu104_1_3_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_3_synth_1/runme.log
+design_1_zcu104_5_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_5_1_synth_1/runme.log
+design_1_zcu104_0_4_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_4_synth_1/runme.log
+design_1_zcu104_0_0_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_0_synth_1/runme.log
+design_1_zcu104_1_2_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_2_synth_1/runme.log
+design_1_zcu104_0_5_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_5_synth_1/runme.log
+design_1_zcu104_2_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_2_1_synth_1/runme.log
+design_1_zcu104_3_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_3_1_synth_1/runme.log
+design_1_zcu104_4_0_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_4_0_synth_1/runme.log
+synth_1: C:/Users/arthu/mrisc/mrisc.runs/synth_1/runme.log
+[Sun Sep 25 01:02:01 2022] Launched impl_1...
+Run output will be captured here: C:/Users/arthu/mrisc/mrisc.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:11 ; elapsed = 00:00:35 . Memory (MB): peak = 2445.438 ; gain = 56.469
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset_riscv' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 's00_axi'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+WARNING: [IP_Flow 19-3153] Bus Interface 's00_axi_aclk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/arthu/ip_repo/contador_ciclos_1.0'.
+Upgrading 'C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_4 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_5 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_2 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_3 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_2_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_3_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_4_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_5_1 to use current project options
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+upgrade_ip: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 3029.238 ; gain = 0.000
+update_module_reference: Time (s): cpu = 00:00:09 ; elapsed = 00:00:34 . Memory (MB): peak = 3029.238 ; gain = 0.000
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset_riscv' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 's00_axi'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+WARNING: [IP_Flow 19-3153] Bus Interface 's00_axi_aclk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/arthu/ip_repo/contador_ciclos_1.0'.
+Upgrading 'C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_4 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_5 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_2 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_3 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_2_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_3_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_4_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_5_1 to use current project options
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+update_module_reference: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 3029.238 ; gain = 0.000
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_pc/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_pc/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-927] Following properties on pin /img_set_v1_0_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /contador_ciclos_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_0/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_1/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_1/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_3/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_3/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_2/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_2/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_4/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_4/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_5/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_5/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_6/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_6/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_7/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_7/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_8/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_8/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/zcu104_0/IN_N
+/zcu104_0/IN_W
+/zcu104_0/OUT_N_ACK
+/zcu104_0/OUT_W_ACK
+/zcu104_0/axi_image_pixel
+/zcu104_0/axi_image_x
+/zcu104_0/axi_image_y
+/zcu104_0/axi_image_req
+/zcu104_0/entrada_init_prog_fim
+/zcu104_1/ser_rx
+/zcu104_1/IN_N
+/zcu104_1/OUT_N_ACK
+/zcu104_1/axi_image_pixel
+/zcu104_1/axi_image_x
+/zcu104_1/axi_image_y
+/zcu104_1/axi_image_req
+/zcu104_1/entrada_init_prog_fim
+/zcu104_3/ser_rx
+/zcu104_3/IN_W
+/zcu104_3/OUT_W_ACK
+/zcu104_3/axi_image_pixel
+/zcu104_3/axi_image_x
+/zcu104_3/axi_image_y
+/zcu104_3/axi_image_req
+/zcu104_3/entrada_init_prog_fim
+/zcu104_2/ser_rx
+/zcu104_2/IN_N
+/zcu104_2/IN_E
+/zcu104_2/OUT_N_ACK
+/zcu104_2/OUT_E_ACK
+/zcu104_2/axi_image_pixel
+/zcu104_2/axi_image_x
+/zcu104_2/axi_image_y
+/zcu104_2/axi_image_req
+/zcu104_2/entrada_init_prog_fim
+/zcu104_5/ser_rx
+/zcu104_5/IN_E
+/zcu104_5/OUT_E_ACK
+/zcu104_5/axi_image_pixel
+/zcu104_5/axi_image_x
+/zcu104_5/axi_image_y
+/zcu104_5/axi_image_req
+/zcu104_5/entrada_init_prog_fim
+/zcu104_6/ser_rx
+/zcu104_6/IN_S
+/zcu104_6/IN_W
+/zcu104_6/OUT_S_ACK
+/zcu104_6/OUT_W_ACK
+/zcu104_6/axi_image_pixel
+/zcu104_6/axi_image_x
+/zcu104_6/axi_image_y
+/zcu104_6/axi_image_req
+/zcu104_6/entrada_init_prog_fim
+/zcu104_7/ser_rx
+/zcu104_7/IN_S
+/zcu104_7/OUT_S_ACK
+/zcu104_7/axi_image_pixel
+/zcu104_7/axi_image_x
+/zcu104_7/axi_image_y
+/zcu104_7/axi_image_req
+/zcu104_7/entrada_init_prog_fim
+/zcu104_8/ser_rx
+/zcu104_8/IN_S
+/zcu104_8/IN_E
+/zcu104_8/OUT_S_ACK
+/zcu104_8/OUT_E_ACK
+/zcu104_8/axi_image_pixel
+/zcu104_8/axi_image_x
+/zcu104_8/axi_image_y
+/zcu104_8/axi_image_req
+/zcu104_8/entrada_init_prog_fim
+
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/contador_ciclos_0/PROBE_IMAGE_COMPLETED'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/zcu104_4/entrada_init_prog_fim'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/synth/design_1.v
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/contador_ciclos_0/PROBE_IMAGE_COMPLETED'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/zcu104_4/entrada_init_prog_fim'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zynq_ultra_ps_e_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps8_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_4 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_5 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_6 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_7 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_8 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block img_set_v1_0_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block contador_ciclos_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 76f2fcc9ca3c3305; cache size = 281.711 MB.
+[Sun Sep 25 01:09:36 2022] Launched design_1_zcu104_1_3_synth_1, design_1_zcu104_5_1_synth_1, design_1_zcu104_0_4_synth_1, design_1_zcu104_0_0_synth_1, design_1_zcu104_1_2_synth_1, design_1_zcu104_0_5_synth_1, design_1_zcu104_2_1_synth_1, design_1_zcu104_3_1_synth_1, design_1_zcu104_4_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_zcu104_1_3_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_3_synth_1/runme.log
+design_1_zcu104_5_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_5_1_synth_1/runme.log
+design_1_zcu104_0_4_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_4_synth_1/runme.log
+design_1_zcu104_0_0_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_0_synth_1/runme.log
+design_1_zcu104_1_2_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_2_synth_1/runme.log
+design_1_zcu104_0_5_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_5_synth_1/runme.log
+design_1_zcu104_2_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_2_1_synth_1/runme.log
+design_1_zcu104_3_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_3_1_synth_1/runme.log
+design_1_zcu104_4_0_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_4_0_synth_1/runme.log
+synth_1: C:/Users/arthu/mrisc/mrisc.runs/synth_1/runme.log
+[Sun Sep 25 01:09:37 2022] Launched impl_1...
+Run output will be captured here: C:/Users/arthu/mrisc/mrisc.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:14 ; elapsed = 00:00:34 . Memory (MB): peak = 3029.238 ; gain = 0.000
+file copy -force C:/Users/arthu/mrisc/mrisc.runs/impl_1/design_1_wrapper.sysdef C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset_riscv' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 's00_axi'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+WARNING: [IP_Flow 19-3153] Bus Interface 's00_axi_aclk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/arthu/ip_repo/contador_ciclos_1.0'.
+Upgrading 'C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_4 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_5 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_2 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_3 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_2_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_3_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_4_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_5_1 to use current project options
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+upgrade_ip: Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 3029.238 ; gain = 0.000
+update_module_reference: Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 3029.238 ; gain = 0.000
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset_riscv' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 's00_axi'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+WARNING: [IP_Flow 19-3153] Bus Interface 's00_axi_aclk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/arthu/ip_repo/contador_ciclos_1.0'.
+Upgrading 'C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_4 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_5 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_2 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_3 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_2_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_3_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_4_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_5_1 to use current project options
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+update_module_reference: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 3029.238 ; gain = 0.000
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_pc/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_pc/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-927] Following properties on pin /img_set_v1_0_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /contador_ciclos_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_0/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_1/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_1/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_3/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_3/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_2/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_2/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_4/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_4/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_5/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_5/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_6/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_6/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_7/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_7/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_8/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_8/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/zcu104_0/IN_N
+/zcu104_0/IN_W
+/zcu104_0/OUT_N_ACK
+/zcu104_0/OUT_W_ACK
+/zcu104_0/axi_image_pixel
+/zcu104_0/axi_image_x
+/zcu104_0/axi_image_y
+/zcu104_0/axi_image_req
+/zcu104_0/entrada_init_prog_fim
+/zcu104_1/ser_rx
+/zcu104_1/IN_N
+/zcu104_1/OUT_N_ACK
+/zcu104_1/axi_image_pixel
+/zcu104_1/axi_image_x
+/zcu104_1/axi_image_y
+/zcu104_1/axi_image_req
+/zcu104_1/entrada_init_prog_fim
+/zcu104_3/ser_rx
+/zcu104_3/IN_W
+/zcu104_3/OUT_W_ACK
+/zcu104_3/axi_image_pixel
+/zcu104_3/axi_image_x
+/zcu104_3/axi_image_y
+/zcu104_3/axi_image_req
+/zcu104_3/entrada_init_prog_fim
+/zcu104_2/ser_rx
+/zcu104_2/IN_N
+/zcu104_2/IN_E
+/zcu104_2/OUT_N_ACK
+/zcu104_2/OUT_E_ACK
+/zcu104_2/axi_image_pixel
+/zcu104_2/axi_image_x
+/zcu104_2/axi_image_y
+/zcu104_2/axi_image_req
+/zcu104_2/entrada_init_prog_fim
+/zcu104_5/ser_rx
+/zcu104_5/IN_E
+/zcu104_5/OUT_E_ACK
+/zcu104_5/axi_image_pixel
+/zcu104_5/axi_image_x
+/zcu104_5/axi_image_y
+/zcu104_5/axi_image_req
+/zcu104_5/entrada_init_prog_fim
+/zcu104_6/ser_rx
+/zcu104_6/IN_S
+/zcu104_6/IN_W
+/zcu104_6/OUT_S_ACK
+/zcu104_6/OUT_W_ACK
+/zcu104_6/axi_image_pixel
+/zcu104_6/axi_image_x
+/zcu104_6/axi_image_y
+/zcu104_6/axi_image_req
+/zcu104_6/entrada_init_prog_fim
+/zcu104_7/ser_rx
+/zcu104_7/IN_S
+/zcu104_7/OUT_S_ACK
+/zcu104_7/axi_image_pixel
+/zcu104_7/axi_image_x
+/zcu104_7/axi_image_y
+/zcu104_7/axi_image_req
+/zcu104_7/entrada_init_prog_fim
+/zcu104_8/ser_rx
+/zcu104_8/IN_S
+/zcu104_8/IN_E
+/zcu104_8/OUT_S_ACK
+/zcu104_8/OUT_E_ACK
+/zcu104_8/axi_image_pixel
+/zcu104_8/axi_image_x
+/zcu104_8/axi_image_y
+/zcu104_8/axi_image_req
+/zcu104_8/entrada_init_prog_fim
+
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/contador_ciclos_0/PROBE_IMAGE_COMPLETED'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/zcu104_4/entrada_init_prog_fim'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/synth/design_1.v
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/contador_ciclos_0/PROBE_IMAGE_COMPLETED'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/zcu104_4/entrada_init_prog_fim'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zynq_ultra_ps_e_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps8_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_4 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_5 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_6 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_7 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_8 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block img_set_v1_0_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block contador_ciclos_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 76f2fcc9ca3c3305; cache size = 281.711 MB.
+[Sun Sep 25 01:46:45 2022] Launched design_1_zcu104_1_3_synth_1, design_1_zcu104_5_1_synth_1, design_1_zcu104_0_4_synth_1, design_1_zcu104_0_0_synth_1, design_1_zcu104_1_2_synth_1, design_1_zcu104_0_5_synth_1, design_1_zcu104_2_1_synth_1, design_1_zcu104_3_1_synth_1, design_1_zcu104_4_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_zcu104_1_3_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_3_synth_1/runme.log
+design_1_zcu104_5_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_5_1_synth_1/runme.log
+design_1_zcu104_0_4_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_4_synth_1/runme.log
+design_1_zcu104_0_0_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_0_synth_1/runme.log
+design_1_zcu104_1_2_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_2_synth_1/runme.log
+design_1_zcu104_0_5_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_5_synth_1/runme.log
+design_1_zcu104_2_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_2_1_synth_1/runme.log
+design_1_zcu104_3_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_3_1_synth_1/runme.log
+design_1_zcu104_4_0_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_4_0_synth_1/runme.log
+synth_1: C:/Users/arthu/mrisc/mrisc.runs/synth_1/runme.log
+[Sun Sep 25 01:46:47 2022] Launched impl_1...
+Run output will be captured here: C:/Users/arthu/mrisc/mrisc.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:14 ; elapsed = 00:00:38 . Memory (MB): peak = 3029.238 ; gain = 0.000
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset_riscv' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 's00_axi'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+WARNING: [IP_Flow 19-3153] Bus Interface 's00_axi_aclk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/arthu/ip_repo/contador_ciclos_1.0'.
+Upgrading 'C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_4 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_5 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_2 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_3 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_2_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_3_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_4_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_5_1 to use current project options
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+upgrade_ip: Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 3029.238 ; gain = 0.000
+update_module_reference: Time (s): cpu = 00:00:18 ; elapsed = 00:01:18 . Memory (MB): peak = 3029.238 ; gain = 0.000
+startgroup
+set_property -dict [list CONFIG.subimg_width {80} CONFIG.subimg_height {80}] [get_bd_cells zcu104_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.x_init {80} CONFIG.subimg_width {80} CONFIG.subimg_height {80}] [get_bd_cells zcu104_1]
+endgroup
+startgroup
+1
+set_property -dict [list CONFIG.x_init {160} CONFIG.y_init {0} CONFIG.subimg_width {80} CONFIG.subimg_height {80}] [get_bd_cells zcu104_2]
+endgroup
+startgroup
+1
+set_property -dict [list CONFIG.x_init {0} CONFIG.y_init {80} CONFIG.subimg_width {80} CONFIG.subimg_height {80}] [get_bd_cells zcu104_3]
+endgroup
+startgroup
+1
+set_property -dict [list CONFIG.x_init {80} CONFIG.y_init {80} CONFIG.subimg_width {80} CONFIG.subimg_height {80}] [get_bd_cells zcu104_4]
+endgroup
+startgroup
+1
+set_property -dict [list CONFIG.x_init {160} CONFIG.y_init {80} CONFIG.subimg_width {80} CONFIG.subimg_height {80}] [get_bd_cells zcu104_5]
+endgroup
+startgroup
+1
+set_property -dict [list CONFIG.x_init {0} CONFIG.y_init {160} CONFIG.subimg_width {80} CONFIG.subimg_height {80}] [get_bd_cells zcu104_6]
+endgroup
+startgroup
+1
+set_property -dict [list CONFIG.x_init {80} CONFIG.y_init {160} CONFIG.subimg_width {80} CONFIG.subimg_height {80}] [get_bd_cells zcu104_7]
+endgroup
+startgroup
+1
+set_property -dict [list CONFIG.x_init {160} CONFIG.y_init {160} CONFIG.subimg_width {80} CONFIG.subimg_height {80}] [get_bd_cells zcu104_8]
+endgroup
+startgroup
+endgroup
+save_bd_design
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_pc/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_pc/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-927] Following properties on pin /img_set_v1_0_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /contador_ciclos_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_0/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_1/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_1/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_3/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_3/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_2/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_2/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_4/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_4/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_5/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_5/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_6/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_6/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_7/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_7/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_8/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_8/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/zcu104_0/IN_N
+/zcu104_0/IN_W
+/zcu104_0/OUT_N_ACK
+/zcu104_0/OUT_W_ACK
+/zcu104_0/axi_image_pixel
+/zcu104_0/axi_image_x
+/zcu104_0/axi_image_y
+/zcu104_0/axi_image_req
+/zcu104_0/entrada_init_prog_fim
+/zcu104_1/ser_rx
+/zcu104_1/IN_N
+/zcu104_1/OUT_N_ACK
+/zcu104_1/axi_image_pixel
+/zcu104_1/axi_image_x
+/zcu104_1/axi_image_y
+/zcu104_1/axi_image_req
+/zcu104_1/entrada_init_prog_fim
+/zcu104_3/ser_rx
+/zcu104_3/IN_W
+/zcu104_3/OUT_W_ACK
+/zcu104_3/axi_image_pixel
+/zcu104_3/axi_image_x
+/zcu104_3/axi_image_y
+/zcu104_3/axi_image_req
+/zcu104_3/entrada_init_prog_fim
+/zcu104_2/ser_rx
+/zcu104_2/IN_N
+/zcu104_2/IN_E
+/zcu104_2/OUT_N_ACK
+/zcu104_2/OUT_E_ACK
+/zcu104_2/axi_image_pixel
+/zcu104_2/axi_image_x
+/zcu104_2/axi_image_y
+/zcu104_2/axi_image_req
+/zcu104_2/entrada_init_prog_fim
+/zcu104_5/ser_rx
+/zcu104_5/IN_E
+/zcu104_5/OUT_E_ACK
+/zcu104_5/axi_image_pixel
+/zcu104_5/axi_image_x
+/zcu104_5/axi_image_y
+/zcu104_5/axi_image_req
+/zcu104_5/entrada_init_prog_fim
+/zcu104_6/ser_rx
+/zcu104_6/IN_S
+/zcu104_6/IN_W
+/zcu104_6/OUT_S_ACK
+/zcu104_6/OUT_W_ACK
+/zcu104_6/axi_image_pixel
+/zcu104_6/axi_image_x
+/zcu104_6/axi_image_y
+/zcu104_6/axi_image_req
+/zcu104_6/entrada_init_prog_fim
+/zcu104_7/ser_rx
+/zcu104_7/IN_S
+/zcu104_7/OUT_S_ACK
+/zcu104_7/axi_image_pixel
+/zcu104_7/axi_image_x
+/zcu104_7/axi_image_y
+/zcu104_7/axi_image_req
+/zcu104_7/entrada_init_prog_fim
+/zcu104_8/ser_rx
+/zcu104_8/IN_S
+/zcu104_8/IN_E
+/zcu104_8/OUT_S_ACK
+/zcu104_8/OUT_E_ACK
+/zcu104_8/axi_image_pixel
+/zcu104_8/axi_image_x
+/zcu104_8/axi_image_y
+/zcu104_8/axi_image_req
+/zcu104_8/entrada_init_prog_fim
+
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/contador_ciclos_0/PROBE_IMAGE_COMPLETED'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/zcu104_4/entrada_init_prog_fim'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/synth/design_1.v
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/contador_ciclos_0/PROBE_IMAGE_COMPLETED'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/zcu104_4/entrada_init_prog_fim'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zynq_ultra_ps_e_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps8_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_4 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_5 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_6 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_7 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_8 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block img_set_v1_0_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block contador_ciclos_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 76f2fcc9ca3c3305; cache size = 281.711 MB.
+[Sun Sep 25 04:24:17 2022] Launched design_1_zcu104_1_3_synth_1, design_1_zcu104_5_1_synth_1, design_1_zcu104_0_4_synth_1, design_1_zcu104_0_0_synth_1, design_1_zcu104_1_2_synth_1, design_1_zcu104_0_5_synth_1, design_1_zcu104_2_1_synth_1, design_1_zcu104_3_1_synth_1, design_1_zcu104_4_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_zcu104_1_3_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_3_synth_1/runme.log
+design_1_zcu104_5_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_5_1_synth_1/runme.log
+design_1_zcu104_0_4_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_4_synth_1/runme.log
+design_1_zcu104_0_0_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_0_synth_1/runme.log
+design_1_zcu104_1_2_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_2_synth_1/runme.log
+design_1_zcu104_0_5_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_5_synth_1/runme.log
+design_1_zcu104_2_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_2_1_synth_1/runme.log
+design_1_zcu104_3_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_3_1_synth_1/runme.log
+design_1_zcu104_4_0_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_4_0_synth_1/runme.log
+synth_1: C:/Users/arthu/mrisc/mrisc.runs/synth_1/runme.log
+[Sun Sep 25 04:24:19 2022] Launched impl_1...
+Run output will be captured here: C:/Users/arthu/mrisc/mrisc.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:16 ; elapsed = 00:00:35 . Memory (MB): peak = 3029.238 ; gain = 0.000
+launch_sdk -workspace C:/Users/arthu/mrisc/mrisc.sdk -hwspec C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/arthu/mrisc/mrisc.sdk -hwspec C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+file copy -force C:/Users/arthu/mrisc/mrisc.runs/impl_1/design_1_wrapper.sysdef C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+
+file copy -force C:/Users/arthu/mrisc/mrisc.runs/impl_1/design_1_wrapper.sysdef C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace C:/Users/arthu/mrisc/mrisc.sdk -hwspec C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/arthu/mrisc/mrisc.sdk -hwspec C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+update_module_reference {design_1_zcu104_0_0 design_1_zcu104_0_4 design_1_zcu104_0_5 design_1_zcu104_1_2 design_1_zcu104_1_3 design_1_zcu104_2_1 design_1_zcu104_3_1 design_1_zcu104_4_0 design_1_zcu104_5_1}
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset_riscv' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 's00_axi'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+WARNING: [IP_Flow 19-3153] Bus Interface 's00_axi_aclk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/arthu/ip_repo/contador_ciclos_1.0'.
+Upgrading 'C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_4 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_0_5 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_2 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_1_3 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_2_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_3_1 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_4_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_zcu104_5_1 to use current project options
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+upgrade_ip: Time (s): cpu = 00:00:21 ; elapsed = 00:00:19 . Memory (MB): peak = 3029.238 ; gain = 0.000
+update_module_reference: Time (s): cpu = 00:00:22 ; elapsed = 00:00:42 . Memory (MB): peak = 3029.238 ; gain = 0.000
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_pc/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_pc/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-927] Following properties on pin /img_set_v1_0_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /contador_ciclos_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_0/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_1/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_1/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_3/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_3/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_2/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_2/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_4/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_4/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_5/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_5/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_6/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_6/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_7/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_7/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_8/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+WARNING: [BD 41-927] Following properties on pin /zcu104_8/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_zynq_ultra_ps_e_0_0_pl_clk0 
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/zcu104_0/IN_N
+/zcu104_0/IN_W
+/zcu104_0/OUT_N_ACK
+/zcu104_0/OUT_W_ACK
+/zcu104_0/axi_image_pixel
+/zcu104_0/axi_image_x
+/zcu104_0/axi_image_y
+/zcu104_0/axi_image_req
+/zcu104_0/entrada_init_prog_fim
+/zcu104_1/ser_rx
+/zcu104_1/IN_N
+/zcu104_1/OUT_N_ACK
+/zcu104_1/axi_image_pixel
+/zcu104_1/axi_image_x
+/zcu104_1/axi_image_y
+/zcu104_1/axi_image_req
+/zcu104_1/entrada_init_prog_fim
+/zcu104_3/ser_rx
+/zcu104_3/IN_W
+/zcu104_3/OUT_W_ACK
+/zcu104_3/axi_image_pixel
+/zcu104_3/axi_image_x
+/zcu104_3/axi_image_y
+/zcu104_3/axi_image_req
+/zcu104_3/entrada_init_prog_fim
+/zcu104_2/ser_rx
+/zcu104_2/IN_N
+/zcu104_2/IN_E
+/zcu104_2/OUT_N_ACK
+/zcu104_2/OUT_E_ACK
+/zcu104_2/axi_image_pixel
+/zcu104_2/axi_image_x
+/zcu104_2/axi_image_y
+/zcu104_2/axi_image_req
+/zcu104_2/entrada_init_prog_fim
+/zcu104_5/ser_rx
+/zcu104_5/IN_E
+/zcu104_5/OUT_E_ACK
+/zcu104_5/axi_image_pixel
+/zcu104_5/axi_image_x
+/zcu104_5/axi_image_y
+/zcu104_5/axi_image_req
+/zcu104_5/entrada_init_prog_fim
+/zcu104_6/ser_rx
+/zcu104_6/IN_S
+/zcu104_6/IN_W
+/zcu104_6/OUT_S_ACK
+/zcu104_6/OUT_W_ACK
+/zcu104_6/axi_image_pixel
+/zcu104_6/axi_image_x
+/zcu104_6/axi_image_y
+/zcu104_6/axi_image_req
+/zcu104_6/entrada_init_prog_fim
+/zcu104_7/ser_rx
+/zcu104_7/IN_S
+/zcu104_7/OUT_S_ACK
+/zcu104_7/axi_image_pixel
+/zcu104_7/axi_image_x
+/zcu104_7/axi_image_y
+/zcu104_7/axi_image_req
+/zcu104_7/entrada_init_prog_fim
+/zcu104_8/ser_rx
+/zcu104_8/IN_S
+/zcu104_8/IN_E
+/zcu104_8/OUT_S_ACK
+/zcu104_8/OUT_E_ACK
+/zcu104_8/axi_image_pixel
+/zcu104_8/axi_image_x
+/zcu104_8/axi_image_y
+/zcu104_8/axi_image_req
+/zcu104_8/entrada_init_prog_fim
+
+Wrote  : <C:\Users\arthu\mrisc\mrisc.srcs\sources_1\bd\design_1\design_1.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/contador_ciclos_0/PROBE_IMAGE_COMPLETED'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/zcu104_4/entrada_init_prog_fim'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/synth/design_1.v
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/contador_ciclos_0/PROBE_IMAGE_COMPLETED'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/zcu104_4/entrada_init_prog_fim'(32) to net 'xlconcat_0_dout'(9) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zynq_ultra_ps_e_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps8_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_4 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_5 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_6 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_7 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zcu104_8 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block img_set_v1_0_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block contador_ciclos_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/arthu/mrisc/mrisc.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 76f2fcc9ca3c3305; cache size = 281.711 MB.
+[Sun Sep 25 07:03:04 2022] Launched design_1_zcu104_1_3_synth_1, design_1_zcu104_5_1_synth_1, design_1_zcu104_0_4_synth_1, design_1_zcu104_0_0_synth_1, design_1_zcu104_1_2_synth_1, design_1_zcu104_0_5_synth_1, design_1_zcu104_2_1_synth_1, design_1_zcu104_3_1_synth_1, design_1_zcu104_4_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_zcu104_1_3_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_3_synth_1/runme.log
+design_1_zcu104_5_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_5_1_synth_1/runme.log
+design_1_zcu104_0_4_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_4_synth_1/runme.log
+design_1_zcu104_0_0_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_0_synth_1/runme.log
+design_1_zcu104_1_2_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_1_2_synth_1/runme.log
+design_1_zcu104_0_5_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_0_5_synth_1/runme.log
+design_1_zcu104_2_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_2_1_synth_1/runme.log
+design_1_zcu104_3_1_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_3_1_synth_1/runme.log
+design_1_zcu104_4_0_synth_1: C:/Users/arthu/mrisc/mrisc.runs/design_1_zcu104_4_0_synth_1/runme.log
+synth_1: C:/Users/arthu/mrisc/mrisc.runs/synth_1/runme.log
+[Sun Sep 25 07:03:07 2022] Launched impl_1...
+Run output will be captured here: C:/Users/arthu/mrisc/mrisc.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:15 ; elapsed = 00:00:37 . Memory (MB): peak = 3029.238 ; gain = 0.000
+file copy -force C:/Users/arthu/mrisc/mrisc.runs/impl_1/design_1_wrapper.sysdef C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace C:/Users/arthu/mrisc/mrisc.sdk -hwspec C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/arthu/mrisc/mrisc.sdk -hwspec C:/Users/arthu/mrisc/mrisc.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.

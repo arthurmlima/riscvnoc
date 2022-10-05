@@ -273,7 +273,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>bca26a44</spirit:value>
+            <spirit:value>427f18b6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -286,7 +286,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>bca26a44</spirit:value>
+            <spirit:value>427f18b6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1119,7 +1119,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>a_steps</spirit:name>
         <spirit:displayName>A Steps</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.a_steps">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.a_steps">6</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>a_frames</spirit:name>
@@ -1246,7 +1246,7 @@
     <spirit:parameter>
       <spirit:name>a_steps</spirit:name>
       <spirit:displayName>A Steps</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.a_steps">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.a_steps">6</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>a_frames</spirit:name>
@@ -1303,7 +1303,7 @@
         <xilinx:designToolContext>IPI</xilinx:designToolContext>
       </xilinx:designToolContexts>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2022-09-25T10:01:18Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2022-10-03T11:23:28Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
